@@ -2,7 +2,9 @@
 Publie (et épingle) la question d'attribution DANS le canal.
 
 Le bot doit être ADMIN du canal avec le droit d'épingler.
-Lance une seule fois : python post_channel.py
+Utilisable de deux façons :
+  - en ligne de commande, une fois :         python post_channel.py
+  - automatiquement au démarrage du bot :     POST_ON_START=1 (voir bot.py)
 """
 
 import asyncio
@@ -12,8 +14,7 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
 from config import BOT_TOKEN, BOT_USERNAME, CHANNEL_ID, DISCLAIMER
 
 
-async def main() -> None:
-    bot = Bot(BOT_TOKEN)
+async def post_question(bot: Bot) -> None:
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("Adrien ou Romain", callback_data="src:founders")],
         [InlineKeyboardButton("Elisa",            callback_data="src:elisa")],
@@ -35,5 +36,9 @@ async def main() -> None:
     print(f"Message {msg.message_id} posté et épinglé dans {CHANNEL_ID}.")
 
 
+async def _main() -> None:
+    await post_question(Bot(BOT_TOKEN))
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(_main())

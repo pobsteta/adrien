@@ -18,7 +18,7 @@ VA = {
     "va_ines": "Inès",
 }
 
-DB_PATH = "attribution.db"
+DB_PATH = os.environ.get("DB_PATH", "attribution.db")  # pointe vers un volume persistant en prod
 
 DISCLAIMER = (
     "\n\n⚠️ _Trading de CFD/forex = risque de perte en capital. La majorité des "

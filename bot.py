@@ -14,6 +14,8 @@ Capte l'attribution des nouveaux arrivants pour répartir les commissions
 Le bot doit être ADMIN du canal. Lance : python bot.py
 """
 
+import os
+
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import (
     Application,
@@ -24,6 +26,7 @@ from telegram.ext import (
 
 from config import BOT_TOKEN, VA, DISCLAIMER, CHANNEL_INVITE_LINK
 from db import init_db, upsert_lead
+from post_channel import post_question
 
 
 def va_keyboard() -> InlineKeyboardMarkup:
@@ -113,9 +116,15 @@ async def on_button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         )
 
 
+async def _post_init(app: Application) -> None:
+    """Publie le post du canal au démarrage si POST_ON_START=1 (déploiement 1 clic)."""
+    if os.environ.get("POST_ON_START") == "1":
+        await post_question(app.bot)
+
+
 def main() -> None:
     init_db()
-    app = Application.builder().token(BOT_TOKEN).build()
+    app = Application.builder().token(BOT_TOKEN).post_init(_post_init).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(on_button))
     print("Bot démarré. Ctrl+C pour arrêter.")

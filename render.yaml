@@ -1,0 +1,21 @@
+services:
+  - type: worker
+    name: le-terminal-bot
+    runtime: docker
+    plan: starter
+    autoDeploy: true
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: DB_PATH
+        value: /data/attribution.db   # volume persistant -> on ne perd pas les leads
+      - key: BOT_TOKEN
+        sync: false                    # à coller dans l'interface Render
+      - key: BOT_USERNAME
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: POST_ON_START
+        value: "0"                     # passer à "1" une fois pour publier le post
