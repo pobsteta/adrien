@@ -33,13 +33,12 @@ Puis renseigne `CHANNEL_INVITE_LINK` et la liste `VA` dans `config.py`.
 3. `python bot.py` tourne en continu et capte les clics :
    - *Adrien/Romain*, *Elisa*, *Autre* → enregistré + confirmation en pop-up
      privé (le post public n'est pas modifié).
-   - *Un ambassadeur* → ouvre une **discussion privée** avec le bot, qui demande
-     discrètement **quel VA** (les noms des VA ne sont jamais affichés
-     publiquement dans le canal).
+   - *Ambassadeur* → ouvre une **discussion privée** avec le bot, qui demande à
+     la personne d'**écrire elle-même le prénom du VA** qui l'a envoyée.
 
-> Les VA n'ont pas de lien dédié : ils envoient leur audience vers le canal
-> d'Adrien/Romain, et la personne indique elle-même de quel VA elle vient via
-> le bouton « Un ambassadeur ».
+> Aucune liste de VA à maintenir : le client tape le prénom. Les VA envoient
+> leur audience vers le canal, et la personne indique de qui elle vient via le
+> bouton « Ambassadeur ».
 
 ## Rapport de commissions
 

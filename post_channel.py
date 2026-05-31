@@ -18,8 +18,8 @@ async def post_question(bot: Bot) -> None:
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("Adrien ou Romain", callback_data="src:founders")],
         [InlineKeyboardButton("Elisa",            callback_data="src:elisa")],
-        # Ouvre une discussion PRIVÉE -> les noms des VA ne sont pas exposés ici
-        [InlineKeyboardButton("Un ambassadeur",
+        # Ouvre une discussion PRIVÉE où la personne écrit le prénom du VA
+        [InlineKeyboardButton("Ambassadeur",
                               url=f"https://t.me/{BOT_USERNAME}?start=ambassadeur")],
         [InlineKeyboardButton("Autre",            callback_data="src:autre")],
     ])
