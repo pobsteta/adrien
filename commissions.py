@@ -1,6 +1,6 @@
 """
 Rapport d'attribution — compte les leads par source et par VA.
-Sert de base pour calculer les 20 % de commission des VA.
+Base de calcul des 20 % de commission des VA.
 
 Lance : python commissions.py
 """
@@ -8,22 +8,18 @@ Lance : python commissions.py
 import sqlite3
 from collections import Counter
 
-DB_PATH = "attribution.db"
+from config import DB_PATH
 
 
 def report() -> None:
     con = sqlite3.connect(DB_PATH)
-    rows = con.execute(
-        "SELECT declared_src, deeplink_src, va_name FROM leads"
-    ).fetchall()
+    rows = con.execute("SELECT declared_src, va_name FROM leads").fetchall()
     con.close()
 
     sources = Counter()
     par_va = Counter()
-    for declared, deeplink, va_name in rows:
-        # On privilégie la source déclarée, sinon celle du lien de parrainage
-        src = declared or deeplink or "inconnu"
-        sources[src] += 1
+    for declared, va_name in rows:
+        sources[declared or "inconnu"] += 1
         if va_name:
             par_va[va_name] += 1
 

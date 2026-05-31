@@ -1,42 +1,45 @@
 # Bot Telegram — Le Terminal
 
-Bot d'**attribution** des nouveaux arrivants : il demande à chaque personne d'où
-elle vient (Adrien/Romain, Elisa, un VA/ambassadeur, ou autre) et enregistre la
+Bot d'**attribution** des nouveaux arrivants : il demande d'où vient chaque
+personne (Adrien/Romain, Elisa, un ambassadeur/VA, ou autre) et enregistre la
 réponse pour répartir les commissions — notamment les **20 % des VA**.
+
+## Fichiers
+
+| Fichier | Rôle |
+|---|---|
+| `config.py` | Token, username du bot, canal, liste des VA, disclaimer |
+| `db.py` | Stockage SQLite des leads |
+| `bot.py` | Bot principal (à laisser tourner) — capte les clics |
+| `post_channel.py` | Publie + épingle la question dans le canal (une fois) |
+| `commissions.py` | Rapport leads par source / par VA |
 
 ## Installation
 
 ```bash
 pip install -r requirements.txt
-export BOT_TOKEN="le_token_donné_par_BotFather"
-python bot.py
+export BOT_TOKEN="le_token_de_BotFather"
+export BOT_USERNAME="LeTerminalBot"   # sans @
+export CHANNEL_ID="@LeTerminal"       # ou -100xxxx si canal privé
 ```
 
-## Configuration
+Puis renseigne `CHANNEL_INVITE_LINK` et la liste `VA` dans `config.py`.
 
-Dans `bot.py` :
-- `CHANNEL_INVITE_LINK` : le lien d'invitation de ton canal gratuit.
-- `VA` : la liste de tes ambassadeurs (clé technique → nom affiché).
+## Comment ça marche dans le canal (Option B)
 
-## Les liens de parrainage (attribution automatique)
+1. Le bot doit être **administrateur** du canal (avec droit d'épingler).
+2. `python post_channel.py` publie un message épinglé avec 4 boutons :
+   **Adrien ou Romain · Elisa · Un ambassadeur · Autre**.
+3. `python bot.py` tourne en continu et capte les clics :
+   - *Adrien/Romain*, *Elisa*, *Autre* → enregistré + confirmation en pop-up
+     privé (le post public n'est pas modifié).
+   - *Un ambassadeur* → ouvre une **discussion privée** avec le bot, qui demande
+     discrètement **quel VA** (les noms des VA ne sont jamais affichés
+     publiquement dans le canal).
 
-Chaque VA partage son **propre lien** au lieu du lien brut du canal :
-
-```
-https://t.me/LeTerminalBot?start=va_marie
-https://t.me/LeTerminalBot?start=va_karim
-...
-```
-
-Quand quelqu'un clique et lance le bot, la source est captée **automatiquement**
-(même s'il ne répond pas au sondage). Tu mets ces liens dans les bios TikTok/Insta
-de chaque VA, et dans celles d'Adrien/Romain/Elisa (`?start=founders`, `?start=elisa`).
-
-## Funnel
-
-```
-TikTok / Insta  →  t.me/LeTerminalBot?start=<source>  →  sondage  →  lien du canal + FxLift
-```
+> Les VA n'ont pas de lien dédié : ils envoient leur audience vers le canal
+> d'Adrien/Romain, et la personne indique elle-même de quel VA elle vient via
+> le bouton « Un ambassadeur ».
 
 ## Rapport de commissions
 
@@ -44,9 +47,9 @@ TikTok / Insta  →  t.me/LeTerminalBot?start=<source>  →  sondage  →  lien 
 python commissions.py
 ```
 
-Affiche le nombre de leads par source et par VA — base de calcul des 20 %.
+Affiche les leads par source et par VA — base de calcul des 20 %.
 
 ## Conformité
 
-Le message final inclut le disclaimer risque + disclosure d'affiliation (FxLift),
-conformément aux règles du projet. À ne pas retirer.
+Le post et les messages incluent le disclaimer risque + disclosure d'affiliation
+(FxLift). À ne pas retirer.
