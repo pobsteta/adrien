@@ -1,5 +1,7 @@
 __pycache__/
 *.pyc
 .env
+posts/.env
+posts/out/
 attribution.db
 *.db
