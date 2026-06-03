@@ -200,7 +200,35 @@ def schema_deux_traders(nom_fichier="schema_deux_traders.png"):
     return nom_fichier
 
 
-# Visuel à générer pour chacun des 15 posts LinkedIn (dans l'ordre du calendrier).
+def schema_levier(nom_fichier="schema_levier.png"):
+    """Effet de levier : amplifie gains (bleu, haut) ET pertes (rouge, bas)."""
+    img = _canvas()
+    d = ImageDraw.Draw(img)
+    _wordmark(d, MARGIN, MARGIN)
+
+    d.text((MARGIN, 320), "L'effet de levier", font=_f(BOLD, 60), fill=FG)
+    d.text((MARGIN, 400), "Il amplifie tout — gains ET pertes.",
+           font=_f(REG, 34), fill=MUTED)
+
+    base, bw = 820, 150
+    d.line([MARGIN, base, W - MARGIN, base], fill=(60, 68, 76), width=3)
+    # marché (petit, gris)
+    d.rectangle([180, base - 90, 180 + bw, base], fill=(120, 128, 140))
+    d.text((176, base + 20), "Marché : +1 %", font=_f(REG, 28), fill=MUTED)
+    # gain amplifié (bleu, vers le haut)
+    d.rectangle([500, base - 300, 500 + bw, base], fill=ACCENT)
+    d.text((500, base + 20), "Gain ×levier", font=_f(BOLD, 28), fill=FG)
+    # perte amplifiée (rouge, vers le bas)
+    d.rectangle([820, base, 820 + bw, base + 300], fill=RED)
+    d.text((820, base + 320), "Perte ×levier", font=_f(BOLD, 28), fill=FG)
+
+    d.text((MARGIN, H - 120), "Illustratif — le levier amplifie dans les deux sens.",
+           font=_f(REG, 28), fill=MUTED)
+    img.save(os.path.join(OUT, nom_fichier))
+    return nom_fichier
+
+
+# Visuel à générer pour chacun des posts LinkedIn (dans l'ordre du calendrier).
 LINKEDIN = [
     ("01_vie-dun-autre.png",     "carte", "Tu n'es pas en retard. Tu vis juste la vie d'un autre."),
     ("02_declic.png",            "carte", "2 ans de pertes. Puis le déclic."),
@@ -217,6 +245,14 @@ LINKEDIN = [
     ("13_dire-non.png",          "carte", "Chaque « oui » est un « non » à autre chose."),
     ("14_failli-arreter.png",    "carte", "Après 18 mois de pertes, j'ai failli tout arrêter."),
     ("15_risque-recompense.png", "risque", None),
+    # --- Semaine 3 ---
+    ("16_cout-inaction.png",     "carte", "Ne rien faire est aussi un choix. Avec un prix."),
+    ("17_famille.png",           "carte", "« Trouve un vrai métier. » J'ai quand même continué."),
+    ("18_journal.png",           "carte", "Ton journal de trading vaut plus que ton prochain indicateur."),
+    ("19_environnement.png",     "carte", "Tu deviens la moyenne de ce qui t'entoure."),
+    ("20_energie.png",           "carte", "Ton énergie passe avant ta productivité."),
+    ("21_couper-perte.png",      "carte", "Un bon trader perd petit. Et respecte son plan."),
+    ("22_levier.png",            "levier", None),
 ]
 
 
@@ -231,6 +267,8 @@ def generer_linkedin():
             faits.append(schema_interets_composes(nom))
         elif typ == "risque":
             faits.append(schema_risque_recompense(nom))
+        elif typ == "levier":
+            faits.append(schema_levier(nom))
     return faits
 
 
