@@ -163,17 +163,79 @@ def schema_interets_composes(nom_fichier="schema_interets_composes.png"):
     return nom_fichier
 
 
+def schema_deux_traders(nom_fichier="schema_deux_traders.png"):
+    """2 courbes : discipline (bleu, tient) vs sans gestion du risque (rouge, s'effondre)."""
+    img = _canvas()
+    d = ImageDraw.Draw(img)
+    _wordmark(d, MARGIN, MARGIN)
+
+    d.text((MARGIN, 320), "2 traders, même départ", font=_f(BOLD, 58), fill=FG)
+    d.text((MARGIN, 398), "La gestion du risque fait la différence.",
+           font=_f(REG, 34), fill=MUTED)
+
+    ox, oy = MARGIN, 1050
+    ax_w, ax_h = W - 2 * MARGIN, 540
+    d.line([ox, oy, ox + ax_w, oy], fill=(60, 68, 76), width=3)
+    d.line([ox, oy, ox, oy - ax_h], fill=(60, 68, 76), width=3)
+
+    disc, risky = [], []
+    for i in range(0, 101):
+        t = i / 100
+        disc.append((ox + t * ax_w, oy - (0.10 + 0.72 * t) * ax_h))
+        y = (0.10 + 1.6 * t) if t < 0.5 else (0.90 - 1.7 * (t - 0.5))
+        risky.append((ox + t * ax_w, oy - max(y, 0.03) * ax_h))
+    d.line(risky, fill=RED, width=7, joint="curve")
+    d.line(disc, fill=ACCENT, width=8, joint="curve")
+
+    # légende
+    ly = oy + 24
+    d.rectangle([ox, ly + 6, ox + 26, ly + 26], fill=ACCENT)
+    d.text((ox + 38, ly), "Discipline / risque maîtrisé", font=_f(REG, 30), fill=FG)
+    d.rectangle([ox, ly + 50, ox + 26, ly + 70], fill=RED)
+    d.text((ox + 38, ly + 44), "Sans gestion du risque", font=_f(REG, 30), fill=FG)
+
+    d.text((MARGIN, H - 120), "Illustratif — courbes de principe, sans montants.",
+           font=_f(REG, 28), fill=MUTED)
+    img.save(os.path.join(OUT, nom_fichier))
+    return nom_fichier
+
+
+# Visuel à générer pour chacun des 15 posts LinkedIn (dans l'ordre du calendrier).
+LINKEDIN = [
+    ("01_vie-dun-autre.png",     "carte", "Tu n'es pas en retard. Tu vis juste la vie d'un autre."),
+    ("02_declic.png",            "carte", "2 ans de pertes. Puis le déclic."),
+    ("03_2traders.png",          "deux_traders", None),
+    ("04_zone-confort.png",      "carte", "Ta zone de confort est l'endroit le plus dangereux pour tes rêves."),
+    ("05_routine.png",           "carte", "La motivation te lance. La routine te fait tenir."),
+    ("06_arreter-copier.png",    "carte", "Le jour où j'ai arrêté de copier, tout a changé."),
+    ("07_interets-composes.png", "interets", None),
+    ("08_comparaison.png",       "carte", "Tu compares ton chapitre 1 au chapitre 20 d'un autre."),
+    ("09_personne-te-sauver.png","carte", "Personne ne viendra te sauver. Et c'est une bonne nouvelle."),
+    ("10_pire-perte.png",        "carte", "Ma pire perte ne m'a pas ruiné. Elle m'a réveillé."),
+    ("11_pire-ennemi.png",       "carte", "Ton pire ennemi n'est pas le marché. C'est toi."),
+    ("12_regularite.png",        "carte", "La régularité bat l'intensité. À chaque fois."),
+    ("13_dire-non.png",          "carte", "Chaque « oui » est un « non » à autre chose."),
+    ("14_failli-arreter.png",    "carte", "Après 18 mois de pertes, j'ai failli tout arrêter."),
+    ("15_risque-recompense.png", "risque", None),
+]
+
+
+def generer_linkedin():
+    faits = []
+    for nom, typ, texte in LINKEDIN:
+        if typ == "carte":
+            faits.append(carte_citation(texte, nom))
+        elif typ == "deux_traders":
+            faits.append(schema_deux_traders(nom))
+        elif typ == "interets":
+            faits.append(schema_interets_composes(nom))
+        elif typ == "risque":
+            faits.append(schema_risque_recompense(nom))
+    return faits
+
+
 if __name__ == "__main__":
-    faits = [
-        carte_citation("Tu n'es pas en retard. Tu vis juste la vie d'un autre.",
-                       "carte_vie_dun_autre.png"),
-        carte_citation("La régularité bat l'intensité. À chaque fois.",
-                       "carte_regularite.png"),
-        carte_citation("Ton pire ennemi n'est pas le marché. C'est toi.",
-                       "carte_pire_ennemi.png"),
-        schema_risque_recompense(),
-        schema_interets_composes(),
-    ]
-    print("Visuels générés dans posts/visuals/out/ :")
+    faits = generer_linkedin()
+    print(f"{len(faits)} visuels LinkedIn générés dans posts/visuals/out/ :")
     for f in faits:
         print("  -", f)
