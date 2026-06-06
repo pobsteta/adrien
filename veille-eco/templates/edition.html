@@ -30,14 +30,12 @@
   <a class="tab" href="{% if is_archive %}../index.html{% else %}index.html{% endif %}">Édition du jour</a>
   <a class="tab" href="{{ archives_path }}">Archives</a>
   {% if menu %}
-  <details class="menu">
-    <summary class="tab menu__btn">Sections <span class="menu__caret" aria-hidden="true">▾</span></summary>
-    <div class="menu__panel">
-      {% for m in menu %}
-      <a class="menu__link" href="#{{ m.anchor }}">{{ m.label }}</a>
-      {% endfor %}
-    </div>
-  </details>
+  <span class="nav-div" aria-hidden="true"></span>
+  <nav class="navmenu" aria-label="Sections">
+    {% for m in menu %}
+    <a class="navlink" href="#{{ m.anchor }}">{{ m.label }}</a>
+    {% endfor %}
+  </nav>
   {% endif %}
 {% endblock %}
 
