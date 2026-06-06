@@ -30,6 +30,36 @@
     "weight": 3
   },
   {
+    "name": "Banque centrale européenne",
+    "url": "https://www.ecb.europa.eu/rss/press.html",
+    "category": "Europe",
+    "weight": 5
+  },
+  {
+    "name": "Commission européenne – Économie",
+    "url": "https://ec.europa.eu/info/rss_en.xml",
+    "category": "Europe",
+    "weight": 3
+  },
+  {
+    "name": "Reuters – Markets",
+    "url": "https://feeds.reuters.com/reuters/businessNews",
+    "category": "Amériques",
+    "weight": 4
+  },
+  {
+    "name": "Réserve fédérale (Fed)",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "category": "Amériques",
+    "weight": 4
+  },
+  {
+    "name": "Nikkei Asia – Economy",
+    "url": "https://asia.nikkei.com/rss/feed/nar",
+    "category": "Asie",
+    "weight": 2
+  },
+  {
     "name": "Le Monde – International",
     "url": "https://www.lemonde.fr/international/rss_full.xml",
     "category": "International",

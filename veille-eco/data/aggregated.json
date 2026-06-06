@@ -1,27 +1,49 @@
 {
-  "generated_at": "2026-06-06T08:21:59.824495+00:00",
-  "count": 9,
+  "generated_at": "2026-06-06T08:51:05.425702+00:00",
+  "count": 12,
   "articles": [
     {
-      "id": "16e2bb18b9b929d0",
-      "title": "La BCE temporise : pas de baisse de taux avant l'automne, selon les marchés",
-      "url": "https://www.example.org/685649eb",
-      "source": "Les Échos – Économie",
-      "category": "France",
+      "id": "df8cb60ba117211c",
+      "title": "La BCE laisse ses taux inchangés et prévient sur l'inflation des services",
+      "url": "https://www.example.org/f030916f",
+      "source": "Banque centrale européenne",
+      "category": "Europe",
       "weight": 5,
-      "published": "2026-06-06T07:09:59.824495+00:00",
-      "excerpt": "Les investisseurs revoient leur calendrier après des chiffres d'inflation des services plus tenaces qu'attendu en zone euro.",
+      "published": "2026-06-06T08:27:05.425702+00:00",
+      "excerpt": "Christine Lagarde temporise : pas d'engagement sur le calendrier de baisse, les marchés revoient leurs paris.",
       "summary": null
     },
     {
-      "id": "2301a9aaf897221a",
-      "title": "Industrie : le rebond de la production manufacturière surprend en avril",
-      "url": "https://www.example.org/d206069e",
+      "id": "8bbe042d0c427cbf",
+      "title": "Wall Street : la Fed maintient ses taux, les futures progressent",
+      "url": "https://www.example.org/694a0712",
+      "source": "Réserve fédérale (Fed)",
+      "category": "Amériques",
+      "weight": 5,
+      "published": "2026-06-06T07:57:05.425702+00:00",
+      "excerpt": "Jerome Powell évoque une économie résiliente mais reste prudent sur le calendrier d'assouplissement.",
+      "summary": null
+    },
+    {
+      "id": "6a26a6b475c935bf",
+      "title": "La BCE temporise : pas de baisse avant l'automne, selon les marchés",
+      "url": "https://www.example.org/b7660981",
       "source": "Les Échos – Économie",
       "category": "France",
       "weight": 5,
-      "published": "2026-06-06T04:51:59.824495+00:00",
-      "excerpt": "Portée par l'aéronautique et l'agroalimentaire, l'activité progresse pour le deuxième mois consécutif.",
+      "published": "2026-06-06T07:33:05.425702+00:00",
+      "excerpt": "Les investisseurs revoient leur calendrier après une inflation des services plus tenace qu'attendu.",
+      "summary": null
+    },
+    {
+      "id": "ad9a80b204de8110",
+      "title": "États-Unis : l'emploi non agricole surprend à la hausse",
+      "url": "https://www.example.org/9e2747f1",
+      "source": "Reuters – Markets",
+      "category": "Amériques",
+      "weight": 4,
+      "published": "2026-06-06T05:39:05.425702+00:00",
+      "excerpt": "Le marché du travail reste tendu, repoussant les anticipations de première baisse de taux.",
       "summary": null
     },
     {
@@ -31,8 +53,19 @@
       "source": "Le Monde – Économie",
       "category": "France",
       "weight": 4,
-      "published": "2026-06-06T06:15:59.824495+00:00",
+      "published": "2026-06-06T04:51:05.425702+00:00",
       "excerpt": "Après un trimestre atone, les dépenses repartent timidement, soutenues par le reflux de l'inflation alimentaire.",
+      "summary": null
+    },
+    {
+      "id": "27540d86624c78a1",
+      "title": "Allemagne : la production industrielle rebondit plus que prévu",
+      "url": "https://www.example.org/8ac99d8a",
+      "source": "Banque centrale européenne",
+      "category": "Europe",
+      "weight": 4,
+      "published": "2026-06-06T02:45:05.425702+00:00",
+      "excerpt": "Un signal encourageant pour la première économie de la zone euro, après des mois de stagnation.",
       "summary": null
     },
     {
@@ -42,30 +75,30 @@
       "source": "Banque de France",
       "category": "Institutions",
       "weight": 4,
-      "published": "2026-06-06T03:57:59.824495+00:00",
-      "excerpt": "L'institution table désormais sur une expansion un peu plus soutenue, sous l'effet de la désinflation.",
+      "published": "2026-06-06T01:27:05.425702+00:00",
+      "excerpt": "L'institution table sur une expansion un peu plus soutenue, sous l'effet de la désinflation.",
       "summary": null
     },
     {
-      "id": "e8d51f1c50a0958e",
-      "title": "Immobilier : les taux de crédit repassent sous les 3 %",
-      "url": "https://www.example.org/ce96267e",
-      "source": "Le Monde – Économie",
-      "category": "France",
-      "weight": 4,
-      "published": "2026-06-06T02:21:59.824495+00:00",
-      "excerpt": "Un assouplissement qui ravive prudemment la demande, sans inverser la baisse des volumes de transactions.",
-      "summary": null
-    },
-    {
-      "id": "ae722e69a2b056b1",
-      "title": "Start-up : levée de fonds record dans la deep tech française",
-      "url": "https://www.example.org/3d4f0ee2",
-      "source": "La Tribune",
-      "category": "France",
+      "id": "b00aeed1818e5199",
+      "title": "Zone euro : la croissance du PIB confirmée à 0,3 % au trimestre",
+      "url": "https://www.example.org/d82cf656",
+      "source": "Commission européenne – Économie",
+      "category": "Europe",
       "weight": 3,
-      "published": "2026-06-06T03:09:59.824495+00:00",
-      "excerpt": "Le secteur attire de nouveau les capitaux, malgré un climat de financement encore sélectif.",
+      "published": "2026-06-06T06:15:05.425702+00:00",
+      "excerpt": "Une expansion modeste mais positive, portée par la consommation et un léger rebond de l'investissement.",
+      "summary": null
+    },
+    {
+      "id": "13ef66f17a1248f8",
+      "title": "Le dollar se renforce face à l'euro après les chiffres de l'emploi",
+      "url": "https://www.example.org/7dcb693a",
+      "source": "Reuters – Markets",
+      "category": "Amériques",
+      "weight": 3,
+      "published": "2026-06-06T03:21:05.425702+00:00",
+      "excerpt": "Le billet vert profite d'un différentiel de taux toujours favorable et d'un appétit pour le risque mesuré.",
       "summary": null
     },
     {
@@ -75,8 +108,19 @@
       "source": "INSEE – À la une",
       "category": "Institutions",
       "weight": 3,
-      "published": "2026-06-06T00:21:59.824495+00:00",
+      "published": "2026-06-05T23:51:05.425702+00:00",
       "excerpt": "Le marché du travail résiste, avec un taux d'emploi des seniors au plus haut depuis vingt ans.",
+      "summary": null
+    },
+    {
+      "id": "ebf6b534f3ad5878",
+      "title": "Japon : la Banque centrale ouvre la porte à une hausse de taux",
+      "url": "https://www.example.org/f6b420b8",
+      "source": "Nikkei Asia – Economy",
+      "category": "Asie",
+      "weight": 2,
+      "published": "2026-06-06T00:39:05.425702+00:00",
+      "excerpt": "Un tournant prudent après des années de politique ultra-accommodante, sous l'effet d'une inflation persistante.",
       "summary": null
     },
     {
@@ -86,19 +130,8 @@
       "source": "Le Monde – International",
       "category": "International",
       "weight": 2,
-      "published": "2026-06-06T01:03:59.824495+00:00",
+      "published": "2026-06-05T22:21:05.425702+00:00",
       "excerpt": "Le rebond des échanges de biens manufacturés porte des prévisions plus optimistes pour l'année.",
-      "summary": null
-    },
-    {
-      "id": "4867c426a826a1ec",
-      "title": "Énergie : le prix du gaz européen recule avec la douceur du printemps",
-      "url": "https://www.example.org/d81230c3",
-      "source": "Le Monde – International",
-      "category": "International",
-      "weight": 2,
-      "published": "2026-06-05T21:51:59.824495+00:00",
-      "excerpt": "Des stocks confortables et une demande modérée pèsent sur les cours, soulageant les industriels.",
       "summary": null
     }
   ]

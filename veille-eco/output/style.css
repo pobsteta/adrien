@@ -253,6 +253,46 @@ a { color: inherit; text-decoration: none; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 14px; }
 
 /* =========================================================================
+   Flash — fil des dernières annonces (compact, 2 colonnes)
+   ========================================================================= */
+.flash {
+  list-style: none;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 6px 20px;
+}
+.flash__bolt { color: var(--v2); margin-right: 6px; filter: drop-shadow(0 0 8px var(--vglow)); }
+.flash__row { border-bottom: 1px solid var(--border); }
+.flash__link {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: baseline; gap: 10px;
+  padding: 13px 2px;
+}
+.flash__row:hover { background: rgba(255,255,255,0.02); }
+.flash__time {
+  font-size: 11px; font-weight: 600; color: var(--v2);
+  font-variant-numeric: tabular-nums; letter-spacing: 0.02em;
+}
+.flash__cat {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text3);
+  border: 1px solid var(--border); border-radius: var(--pill);
+  padding: 2px 8px; white-space: nowrap;
+}
+.flash__title {
+  font-family: var(--display); font-weight: 600; font-size: 14px; line-height: 1.3;
+  color: var(--text); transition: color 0.18s;
+  min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.flash__link:hover .flash__title { color: var(--v3); }
+.flash__src { font-size: 10px; color: var(--text3); white-space: nowrap; }
+.flash__go { color: var(--v2); font-size: 12px; opacity: 0; transition: opacity 0.18s; }
+.flash__link:hover .flash__go { opacity: 1; }
+
+/* =========================================================================
    Carte-annonce (verre)
    ========================================================================= */
 .card {
@@ -328,6 +368,9 @@ a { color: inherit; text-decoration: none; }
    ========================================================================= */
 @media (max-width: 680px) {
   .grid { grid-template-columns: 1fr; }
+  .flash { grid-template-columns: 1fr; gap: 0; }
+  .flash__link { grid-template-columns: auto 1fr auto; }
+  .flash__cat, .flash__src { display: none; }
   .topbar__date { display: none; }
   .brand__name { font-size: 16px; }
   .wrap { padding: 24px 16px 50px; }

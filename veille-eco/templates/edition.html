@@ -79,6 +79,29 @@
 </section>
 {% endif %}
 
+{# --- Flash : dernières annonces (fil compact) -------------------------- #}
+{% if flash %}
+<section class="block" aria-label="Flash">
+  <header class="block__head">
+    <h2 class="block__title"><span class="flash__bolt">⚡</span> Flash</h2>
+    <span class="block__sub">Dernières minutes</span>
+  </header>
+  <ul class="flash">
+    {% for art in flash %}
+    <li class="flash__row" style="--i: {{ loop.index0 }}">
+      <a class="flash__link" href="{{ art.url }}" target="_blank" rel="noopener noreferrer">
+        {% if art.time_display %}<span class="flash__time">{{ art.time_display }}</span>{% endif %}
+        <span class="flash__cat">{{ art.category }}</span>
+        <span class="flash__title">{{ art.title }}</span>
+        <span class="flash__src">{{ art.source }}</span>
+        <span class="flash__go" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
 {# --- La sélection (mise en avant) -------------------------------------- #}
 {% if selection %}
 <section class="block" aria-label="La sélection">

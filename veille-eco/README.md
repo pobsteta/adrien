@@ -62,10 +62,17 @@ Netlify, un simple serveur de fichiers…).
 { "name": "Le Monde – Économie", "url": "https://…/rss.xml", "category": "France", "weight": 4 }
 ```
 
-- `category` regroupe les articles en rubriques (ex. *France*, *Institutions*,
-  *International*).
+- `category` regroupe les articles en **rubriques géographiques** affichées
+  dans cet ordre : *Europe*, *Amériques*, *France*, *Institutions*, *Asie*,
+  *International* (ordre réglable via `CATEGORY_ORDER` dans `build.py` ;
+  toute autre valeur apparaît ensuite). Il suffit de changer le `category`
+  d'une source pour la déplacer de rubrique.
 - `weight` (1–5) influence le tri : un poids fort remonte la source, et le
   mieux classé devient l'article **à la une**.
+
+En plus des rubriques, une section **⚡ Flash** affiche automatiquement les
+annonces les plus récentes (tous flux confondus), réglable en haut de
+`build.py` : `FLASH_COUNT` (nombre) et `FLASH_MAX_AGE_HOURS` (fraîcheur max).
 
 > ⚠️ **Vérifiez les URLs des flux** livrées par défaut : elles changent souvent
 > selon les éditeurs. Remplacez-les par les flux RSS officiels à jour.

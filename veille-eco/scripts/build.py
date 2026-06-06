@@ -21,7 +21,7 @@ from __future__ import annotations
 import json
 import shutil
 import sys
-from datetime import datetime, timezone, date
+from datetime import datetime, timezone, date, timedelta
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -40,9 +40,16 @@ MANUAL_PATH = DATA_DIR / "manual.json"
 
 SELECTION_LABEL = "La sélection"
 
-# Ordre d'affichage des rubriques agrégées ; les rubriques absentes de cette
-# liste sont placées ensuite, par poids décroissant puis ordre alphabétique.
-CATEGORY_ORDER = ["France", "Institutions", "International"]
+# Section « Flash » : les annonces les plus récentes, tous flux confondus.
+FLASH_LABEL = "Flash"
+FLASH_COUNT = 6              # nombre d'annonces dans le fil Flash
+FLASH_MAX_AGE_HOURS = 12     # une annonce n'est « flash » que si récente
+
+# Ordre d'affichage des rubriques géographiques ; les rubriques absentes de
+# cette liste sont placées ensuite, par poids décroissant puis ordre alpha.
+CATEGORY_ORDER = [
+    "Europe", "Amériques", "France", "Institutions", "Asie", "International",
+]
 
 # --------------------------------------------------------------------------- #
 # Dates en français (sans dépendre de la locale système)                      #
@@ -148,6 +155,11 @@ def build_context(edition_date: str) -> dict:
     rest = aggregated[1:] if aggregated else []
     sections = group_by_category(rest)
 
+    # Fil « Flash » : les annonces les plus récentes (hors une), tous flux
+    # confondus, limitées aux plus fraîches. C'est un digest transversal :
+    # ses annonces peuvent réapparaître dans leur rubrique géographique.
+    flash = build_flash(rest)
+
     # Bandeau défilant (effet « terminal ») : un condensé source · titre.
     ticker = [
         {"label": a["source"], "title": a["title"]}
@@ -161,10 +173,28 @@ def build_context(edition_date: str) -> dict:
         "generated_at_human": datetime.now().strftime("%d/%m/%Y à %H:%M"),
         "selection": selection,
         "featured": featured,
+        "flash": flash,
         "sections": sections,
         "ticker": ticker,
         "total_count": len(aggregated) + len(selection),
     }
+
+
+def _published_key(article: dict) -> datetime:
+    """Clé de fraîcheur pour un article préparé (sans date -> très ancien)."""
+    if article.get("published"):
+        return datetime.fromisoformat(article["published"])
+    return datetime.min.replace(tzinfo=timezone.utc)
+
+
+def build_flash(articles: list[dict]) -> list[dict]:
+    """Sélectionne les annonces les plus récentes pour le fil Flash."""
+    now = datetime.now(timezone.utc)
+    horizon = now - timedelta(hours=FLASH_MAX_AGE_HOURS)
+    fresh = [a for a in articles
+             if a.get("published") and _published_key(a) >= horizon]
+    fresh.sort(key=_published_key, reverse=True)
+    return fresh[:FLASH_COUNT]
 
 
 # --------------------------------------------------------------------------- #
