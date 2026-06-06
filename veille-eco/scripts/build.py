@@ -19,8 +19,10 @@ qu'il est vide, l'affichage retombe sur ``excerpt`` (voir ``resolve_summary``).
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sys
+import unicodedata
 from datetime import datetime, timezone, date, timedelta
 from pathlib import Path
 
@@ -123,8 +125,15 @@ def prepare_manual(item: dict) -> dict:
     }
 
 
+def slugify(text: str) -> str:
+    """« Amériques » -> « ameriques » : ancre HTML stable et sûre."""
+    norm = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    norm = re.sub(r"[^a-zA-Z0-9]+", "-", norm).strip("-").lower()
+    return norm or "rubrique"
+
+
 def group_by_category(articles: list[dict]) -> list[dict]:
-    """Regroupe les articles agrégés en rubriques ordonnées."""
+    """Regroupe les articles agrégés en rubriques ordonnées (avec ancre)."""
     buckets: dict[str, list[dict]] = {}
     for art in articles:
         buckets.setdefault(art["category"], []).append(art)
@@ -136,7 +145,7 @@ def group_by_category(articles: list[dict]) -> list[dict]:
         return (1, -max_weight, category)
 
     return [
-        {"category": cat, "articles": buckets[cat]}
+        {"category": cat, "anchor": "r-" + slugify(cat), "articles": buckets[cat]}
         for cat in sorted(buckets, key=sort_key)
     ]
 
@@ -166,6 +175,17 @@ def build_context(edition_date: str) -> dict:
         for a in (selection + aggregated)
     ]
 
+    # Menu déroulant : toutes les sections réellement présentes, dans l'ordre
+    # d'apparition. `anchor` = id HTML vers lequel le lien saute.
+    menu: list[dict] = []
+    if featured:
+        menu.append({"label": "À la une", "anchor": "une"})
+    if flash:
+        menu.append({"label": "⚡ Flash", "anchor": "flash"})
+    if selection:
+        menu.append({"label": "La sélection", "anchor": "selection"})
+    menu += [{"label": s["category"], "anchor": s["anchor"]} for s in sections]
+
     d = date.fromisoformat(edition_date)
     return {
         "edition_date": edition_date,
@@ -176,6 +196,7 @@ def build_context(edition_date: str) -> dict:
         "flash": flash,
         "sections": sections,
         "ticker": ticker,
+        "menu": menu,
         "total_count": len(aggregated) + len(selection),
     }
 
@@ -275,7 +296,8 @@ def build(edition_date: str | None = None) -> int:
     (ARCHIVES_DIR / "index.html").write_text(
         archives_tpl.render(css_path="../style.css",
                             home_path="../index.html",
-                            archives=archives),
+                            archives=archives,
+                            menu=context["menu"]),
         encoding="utf-8",
     )
     print(f"  écrit : output/archives/index.html ({len(archives)} édition(s))")

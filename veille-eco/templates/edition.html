@@ -29,6 +29,16 @@
 {% block nav %}
   <a class="tab" href="{% if is_archive %}../index.html{% else %}index.html{% endif %}">Édition du jour</a>
   <a class="tab" href="{{ archives_path }}">Archives</a>
+  {% if menu %}
+  <details class="menu">
+    <summary class="tab menu__btn">Sections <span class="menu__caret" aria-hidden="true">▾</span></summary>
+    <div class="menu__panel">
+      {% for m in menu %}
+      <a class="menu__link" href="#{{ m.anchor }}">{{ m.label }}</a>
+      {% endfor %}
+    </div>
+  </details>
+  {% endif %}
 {% endblock %}
 
 {# --- Bandeau défilant type ticker -------------------------------------- #}
@@ -56,7 +66,7 @@
 
 {# --- À la une (hero) --------------------------------------------------- #}
 {% if featured %}
-<section class="hero" aria-label="À la une">
+<section id="une" class="hero" aria-label="À la une">
   <div class="hero__chrome">
     <span class="dots"><i></i><i></i><i></i></span>
     <span class="hero__pair">{{ featured.category|upper }} · ÉDITION</span>
@@ -81,7 +91,7 @@
 
 {# --- Flash : dernières annonces (fil compact) -------------------------- #}
 {% if flash %}
-<section class="block" aria-label="Flash">
+<section id="flash" class="block" aria-label="Flash">
   <header class="block__head">
     <h2 class="block__title"><span class="flash__bolt">⚡</span> Flash</h2>
     <span class="block__sub">Dernières minutes</span>
@@ -104,7 +114,7 @@
 
 {# --- La sélection (mise en avant) -------------------------------------- #}
 {% if selection %}
-<section class="block" aria-label="La sélection">
+<section id="selection" class="block" aria-label="La sélection">
   <header class="block__head">
     <h2 class="block__title"><span class="block__dot">●</span> La sélection</h2>
     <span class="block__sub">Le choix de la rédaction</span>
@@ -120,7 +130,7 @@
 {# --- Rubriques --------------------------------------------------------- #}
 {% if sections %}
 {% for section in sections %}
-<section class="block" aria-label="{{ section.category }}">
+<section id="{{ section.anchor }}" class="block" aria-label="{{ section.category }}">
   <header class="block__head">
     <h2 class="block__title">{{ section.category }}</h2>
     <span class="block__count">{{ section.articles|length }}</span>
