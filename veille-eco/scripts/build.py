@@ -39,6 +39,7 @@ ARCHIVES_DIR = OUTPUT_DIR / "archives"
 
 AGGREGATED_PATH = DATA_DIR / "aggregated.json"
 MANUAL_PATH = DATA_DIR / "manual.json"
+FEEDS_PATH = ROOT / "sources" / "feeds.json"
 
 SELECTION_LABEL = "La sélection"
 
@@ -86,6 +87,14 @@ def load_manual(edition_date: str) -> list[dict]:
     with MANUAL_PATH.open(encoding="utf-8") as fh:
         items = json.load(fh)
     return [it for it in items if it.get("date") == edition_date]
+
+
+def count_sources() -> int:
+    """Nombre de sources RSS configurées (pour la présentation)."""
+    if not FEEDS_PATH.exists():
+        return 0
+    with FEEDS_PATH.open(encoding="utf-8") as fh:
+        return len(json.load(fh))
 
 
 # --------------------------------------------------------------------------- #
@@ -202,6 +211,12 @@ def build_context(edition_date: str) -> dict:
         "ticker": ticker,
         "menu": menu,
         "total_count": len(aggregated) + len(selection),
+        # Chiffres pour le bandeau de présentation (première page).
+        "stats": {
+            "sources": count_sources(),
+            "zones": len(sections),
+            "annonces": len(aggregated) + len(selection),
+        },
     }
 
 

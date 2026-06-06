@@ -229,6 +229,94 @@ body.sb-toggled .sidebar {
 .btn--ghost:hover { background: rgba(46,91,255,0.15); box-shadow: 0 8px 26px rgba(46,91,255,0.25); }
 
 /* =========================================================================
+   Présentation (première page) : intro + illustration + features
+   ========================================================================= */
+.intro {
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: center;
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(46,91,255,0.10), transparent 55%),
+    var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 34px 34px;
+  margin-bottom: 18px;
+  animation: rise 0.5s cubic-bezier(.2,.7,.3,1) both;
+}
+.intro::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--v) 30%, var(--pink) 70%, transparent);
+}
+.intro__eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--v2); margin-bottom: 16px;
+}
+.intro__eyebrow svg { width: 15px; height: 15px; }
+.intro__title {
+  font-family: var(--display);
+  font-weight: 800; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.02;
+  letter-spacing: -0.03em; margin-bottom: 16px;
+}
+.intro__lead { font-size: 16px; font-weight: 300; color: var(--text2); line-height: 1.65; max-width: 56ch; margin-bottom: 18px; }
+.intro__lead strong { color: var(--text); font-weight: 600; }
+.intro__chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.intro__chips li {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12px; font-weight: 500; color: var(--text2);
+  padding: 6px 12px; border-radius: var(--pill);
+  border: 1px solid var(--border); background: rgba(255,255,255,0.02);
+}
+.intro__chips svg { width: 15px; height: 15px; color: var(--v2); }
+.intro__actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.intro__stats { display: flex; gap: 18px; }
+.stat { font-size: 12px; color: var(--text3); letter-spacing: 0.02em; }
+.stat b {
+  font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--text);
+  display: block; line-height: 1;
+}
+
+/* Illustration (carte « terminal ») */
+.intro__art {
+  position: relative;
+  background: linear-gradient(180deg, rgba(46,91,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+.artchart { width: 100%; height: 200px; display: block; }
+.artchart__chips { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.achip {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--text2); background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border); border-radius: var(--pill); padding: 4px 10px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.achip.up { color: var(--green); border-color: rgba(52,211,153,0.35); }
+.achip.live { color: var(--v2); border-color: var(--border-active); }
+
+/* Cartes « comment ça marche » */
+.features {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin-bottom: 34px;
+}
+.feat {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 20px;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+}
+.feat:hover { background: var(--card-hover); border-color: rgba(46,91,255,0.35); transform: translateY(-3px); }
+.feat__ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 11px;
+  color: var(--v2); background: var(--vglow2); border: 1px solid var(--border-active);
+  margin-bottom: 14px;
+}
+.feat__ico svg { width: 21px; height: 21px; }
+.feat__title { font-family: var(--display); font-weight: 700; font-size: 16px; margin-bottom: 7px; letter-spacing: -0.01em; }
+.feat__desc { font-size: 13px; font-weight: 300; color: var(--text2); line-height: 1.6; }
+
+/* =========================================================================
    À la une (hero, carte verre)
    ========================================================================= */
 .hero {
@@ -440,6 +528,12 @@ body.sb-toggled .sidebar {
   }
 }
 
+/* Présentation : illustration sous le texte, features sur deux colonnes. */
+@media (max-width: 920px) {
+  .intro { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+  .features { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 680px) {
   .grid { grid-template-columns: 1fr; }
   .flash { grid-template-columns: 1fr; gap: 0; }
@@ -451,4 +545,7 @@ body.sb-toggled .sidebar {
   .topbar__inner { padding: 0 12px; }
   .hero__hit, .hero .btn { padding-left: 22px; padding-right: 22px; }
   .hero .btn { margin-left: 22px; margin-right: 22px; }
+  .features { grid-template-columns: 1fr; }
+  .intro__actions { gap: 14px; }
+  .intro__title { font-size: 30px; }
 }
