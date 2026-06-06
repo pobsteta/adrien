@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fed officials signal patience before any move on interest rates — Le Terminal Économies</title>
+  <meta name="description" content="Le Terminal Économies — revue de presse économique en temps quasi réel : agrégation de flux RSS et sélection éditoriale.">
+  <meta name="theme-color" content="#070A12">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="topbar__left">
+        <button class="burger" id="navToggle" aria-label="Afficher ou masquer le menu" aria-controls="sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <a class="brand" href="../index.html">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
+        </a>
+      </div>
+      <div class="topbar__right">
+        <button class="langbtn" id="langToggle" type="button" aria-label="Switch language / Changer de langue" title="English / Français">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="lang__label">EN</span>
+        </button>
+        <span class="status"><span class="status__dot"></span>LIVE</span>
+        <span class="liveclock" id="liveClock" aria-hidden="true"></span>
+        <span class="topbar__date"><span class="js-term">Institutions</span></span>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation">
+<div class="sb-group">
+  <a class="sb-item " href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg><span data-en="Today's edition">Édition du jour</span></a>
+  <a class="sb-item " href="../calendrier.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg><span data-en="Economic calendar">Calendrier éco</span></a>
+  <a class="sb-item " href="../archives/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg><span data-en="Archives">Archives</span></a>
+  <a class="sb-item " href="../a-propos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg><span data-en="About">À propos</span></a>
+</div>
+
+<div class="sb-sep"></div>
+<nav class="sb-group" aria-label="L'édition">
+  <p class="sb-title" data-en="The edition">L'édition</p>
+  <a class="sb-item" href="../index.html#une"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg><span class="js-term">À la une</span></a>
+  <a class="sb-item" href="../index.html#flash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span class="js-term">Flash</span></a>
+  <a class="sb-item" href="../index.html#selection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="js-term">La sélection</span></a>
+</nav>
+
+<div class="sb-sep"></div>
+<nav class="sb-group" aria-label="Zones">
+  <p class="sb-title" data-en="Zones">Zones</p>
+  <a class="sb-item" href="../index.html#r-europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Europe</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="../index.html#r-ameriques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Amériques</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="../index.html#r-asie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Asie</span><span class="sb-count">1</span></a>
+  <a class="sb-item" href="../index.html#r-institutions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Institutions</span><span class="sb-count">5</span></a>
+  <a class="sb-item" href="../index.html#r-international"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">International</span><span class="sb-count">2</span></a>
+</nav>
+    </aside>
+
+    <div class="main-col">
+      <main class="wrap">
+<article class="annonce">
+  <a class="annonce__back" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg> <span data-en="Back to the edition">Retour à l'édition</span></a>
+
+  <p class="annonce__kicker">
+    <span class="card__cat js-term">Institutions</span>
+    <span class="card__sep">·</span>
+    <span class="card__source">Réserve fédérale (Fed)</span>
+<span class="card__time">08:20</span>  </p>
+
+  <h1 class="annonce__title">Fed officials signal patience before any move on interest rates</h1>
+
+  <div class="annonce__media">
+    <div class="annonce__ph" aria-hidden="true">
+      <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img">
+        <defs>
+          <linearGradient id="ph-bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#16224A"/><stop offset="55%" stop-color="#0B1330"/><stop offset="100%" stop-color="#0A1B3A"/>
+          </linearGradient>
+          <linearGradient id="ph-line" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#2E5BFF"/><stop offset="100%" stop-color="#38BDF8"/>
+          </linearGradient>
+        </defs>
+        <rect width="480" height="270" fill="url(#ph-bg)"/>
+        <path d="M0,210 C70,200 110,150 160,150 C220,150 240,110 300,96 C350,84 410,70 480,52" fill="none" stroke="url(#ph-line)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="480" cy="52" r="5" fill="#38BDF8"/>
+      </svg>
+      <span class="annonce__ph-cat js-term">Institutions</span>
+    </div>
+  </div>
+
+  <p class="annonce__eyebrow" data-en="Summary">Résumé</p>
+  <p class="annonce__lead">Minutes from the latest meeting show policymakers want more evidence that inflation is heading sustainably toward the 2 % target.</p>
+
+  <p class="annonce__note">
+    <span data-en="Excerpt provided by the source feed. The full article remains with the publisher.">Extrait fourni par le flux de la source. L'article complet reste chez l'éditeur.</span>
+  </p>
+
+  <a class="btn btn--lg annonce__src" href="https://www.federalreserve.gov/fed-officials-patience" target="_blank" rel="noopener noreferrer">
+    <span data-en="Read the full article">Lire l'article complet</span>
+    <span class="annonce__src-on" data-en="on"> sur </span>Réserve fédérale (Fed)
+    <span class="btn__arrow" aria-hidden="true">↗</span>
+  </a>
+</article>
+      </main>
+
+      <footer class="foot">
+        <div class="foot__inner">
+          <p class="foot__line" data-en='<strong>The Economy Terminal</strong> aggregates RSS feeds and republishes only the headline and a short excerpt, with a button to the source. All rights reserved to the original publishers.'>
+            <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
+            republie que le titre et un court extrait, avec un bouton vers la
+            source. Tous droits réservés aux éditeurs d'origine.
+          </p>
+          <p class="foot__meta"><span class="js-term">Institutions</span> · Réserve fédérale (Fed)</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

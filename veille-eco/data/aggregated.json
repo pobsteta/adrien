@@ -11,7 +11,8 @@
       "weight": 5,
       "published": "2026-06-06T08:42:00+00:00",
       "excerpt": "L'activité progresse de 0,4 % portée par les services, tandis que l'industrie allemande reste à la peine. Les marchés guettent le prochain mouvement de la BCE.",
-      "summary": null
+      "summary": "La croissance de la zone euro a légèrement accéléré au deuxième trimestre, portée par les services tandis que l'industrie allemande reste fragile. Les marchés y voient un argument de plus pour un assouplissement prudent de la BCE dans les prochains mois.",
+      "image": "https://picsum.photos/seed/7675a9fcc863f9e1/960/540"
     },
     {
       "id": "541bc9777db31434",
@@ -22,7 +23,8 @@
       "weight": 4,
       "published": "2026-06-06T08:25:00+00:00",
       "excerpt": "Investors trimmed bets on a hawkish ECB after softer inflation prints across the bloc, sending the euro and short-dated yields lower.",
-      "summary": null
+      "summary": null,
+      "image": ""
     },
     {
       "id": "bdbed2164f9610da",
@@ -33,7 +35,8 @@
       "weight": 3,
       "published": "2026-06-06T07:58:00+00:00",
       "excerpt": "Le repli des cours, conjugué à des stocks élevés, redonne de l'air aux industriels électro-intensifs avant l'hiver prochain.",
-      "summary": null
+      "summary": null,
+      "image": "https://picsum.photos/seed/bdbed2164f9610da/960/540"
     },
     {
       "id": "7372fe440a258896",
@@ -44,7 +47,8 @@
       "weight": 4,
       "published": "2026-06-06T08:38:00+00:00",
       "excerpt": "Nonfarm payrolls rose less than the prior month while wage growth held steady, keeping the Federal Reserve's path data-dependent.",
-      "summary": null
+      "summary": null,
+      "image": ""
     },
     {
       "id": "60fb4a2c2c0d3b26",
@@ -55,7 +59,8 @@
       "weight": 3,
       "published": "2026-06-06T08:12:00+00:00",
       "excerpt": "Megacap technology shares led broad gains as Treasury yields slipped, with investors looking ahead to next week's inflation data.",
-      "summary": null
+      "summary": null,
+      "image": "https://picsum.photos/seed/60fb4a2c2c0d3b26/960/540"
     },
     {
       "id": "802cbdf145a5c3d8",
@@ -66,7 +71,8 @@
       "weight": 3,
       "published": "2026-06-06T07:45:00+00:00",
       "excerpt": "Shipments rose for a third straight month, led by autos and chip-making equipment, even as demand from China remained subdued.",
-      "summary": null
+      "summary": null,
+      "image": ""
     },
     {
       "id": "0072c8418747a19c",
@@ -77,7 +83,8 @@
       "weight": 5,
       "published": "2026-06-06T08:48:00+00:00",
       "excerpt": "Le Conseil des gouverneurs laisse le taux de dépôt inchangé et réaffirme que les décisions dépendront des données d'inflation à venir.",
-      "summary": null
+      "summary": null,
+      "image": "https://picsum.photos/seed/0072c8418747a19c/960/540"
     },
     {
       "id": "a22c74101c1821ed",
@@ -88,7 +95,8 @@
       "weight": 4,
       "published": "2026-06-06T08:20:00+00:00",
       "excerpt": "Minutes from the latest meeting show policymakers want more evidence that inflation is heading sustainably toward the 2 % target.",
-      "summary": null
+      "summary": null,
+      "image": ""
     },
     {
       "id": "02111acdcf61052a",
@@ -99,7 +107,8 @@
       "weight": 4,
       "published": "2026-06-06T07:30:00+00:00",
       "excerpt": "L'institution table sur une activité plus résiliente qu'attendu, tout en alertant sur les risques liés à la dette publique et au commerce.",
-      "summary": null
+      "summary": null,
+      "image": "https://picsum.photos/seed/02111acdcf61052a/960/540"
     },
     {
       "id": "59a18a020ea75285",
@@ -110,7 +119,8 @@
       "weight": 4,
       "published": "2026-06-06T07:10:00+00:00",
       "excerpt": "Selon ses dernières projections, la désinflation se poursuit et le pouvoir d'achat des ménages se redresse progressivement.",
-      "summary": null
+      "summary": null,
+      "image": ""
     },
     {
       "id": "7c3b932286c44384",
@@ -121,7 +131,8 @@
       "weight": 3,
       "published": "2026-06-06T06:50:00+00:00",
       "excerpt": "L'indicateur reste au-dessus de sa moyenne de longue période, soutenu par les services, malgré un industrie toujours hésitante.",
-      "summary": null
+      "summary": null,
+      "image": "https://picsum.photos/seed/7c3b932286c44384/960/540"
     },
     {
       "id": "352fa986356c82d3",
@@ -132,7 +143,8 @@
       "weight": 4,
       "published": "2026-06-06T08:32:00+00:00",
       "excerpt": "Equities held firm and the dollar eased as traders digested mixed economic data and awaited fresh guidance from major central banks.",
-      "summary": null
+      "summary": null,
+      "image": ""
     },
     {
       "id": "0762aab6b6cc88dd",
@@ -143,7 +155,8 @@
       "weight": 3,
       "published": "2026-06-06T06:30:00+00:00",
       "excerpt": "Despite high rates and geopolitical strain, growth, jobs and corporate profits have held up. We examine what is keeping the expansion alive.",
-      "summary": null
+      "summary": null,
+      "image": "https://picsum.photos/seed/0762aab6b6cc88dd/960/540"
     }
   ]
 }

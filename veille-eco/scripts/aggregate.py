@@ -125,6 +125,34 @@ def best_excerpt(entry) -> str:
     return shorten(clean_text(raw))
 
 
+_IMG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
+
+
+def best_image(entry) -> str:
+    """Image illustrant l'entrée, si le flux en fournit une (sinon '')."""
+    # 1) Champs média standard (media:content, media:thumbnail).
+    for attr in ("media_content", "media_thumbnail"):
+        media = getattr(entry, attr, None) or []
+        for m in media:
+            url = m.get("url") if isinstance(m, dict) else None
+            if url:
+                return url.strip()
+    # 2) Pièces jointes de type image (enclosure).
+    for link in getattr(entry, "links", []) or []:
+        if (link.get("rel") == "enclosure"
+                and str(link.get("type", "")).startswith("image")
+                and link.get("href")):
+            return link["href"].strip()
+    # 3) Première <img> trouvée dans le contenu / le résumé HTML.
+    html_src = ""
+    if getattr(entry, "content", None):
+        html_src = entry.content[0].get("value", "")
+    elif getattr(entry, "summary", ""):
+        html_src = entry.summary
+    match = _IMG_RE.search(html_src or "")
+    return match.group(1).strip() if match else ""
+
+
 # --------------------------------------------------------------------------- #
 # Cœur de l'agrégation                                                         #
 # --------------------------------------------------------------------------- #
@@ -150,7 +178,8 @@ def normalize_entry(entry, source: dict) -> dict | None:
         "weight": int(source.get("weight", 1)),
         "published": published.isoformat() if published else None,
         "excerpt": best_excerpt(entry),
-        # Champ distinct, réservé à une future étape de résumé (IA).
+        "image": best_image(entry),
+        # Champ distinct, rempli par l'étape de résumé (summarize.py).
         # Tant qu'il vaut None, l'affichage retombe sur `excerpt`.
         "summary": None,
     }

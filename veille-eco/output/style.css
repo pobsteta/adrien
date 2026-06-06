@@ -335,6 +335,65 @@ body.sb-toggled .sidebar {
 .feat__title { font-family: var(--display); font-weight: 700; font-size: 16px; margin-bottom: 7px; letter-spacing: -0.01em; }
 .feat__desc { font-size: 13px; font-weight: 300; color: var(--text2); line-height: 1.6; }
 
+/* =========================================================================
+   Page dédiée d'une annonce (résumé + image + lien source)
+   ========================================================================= */
+.annonce { max-width: 760px; }
+.annonce__back {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 600; color: var(--v2);
+  text-decoration: none; margin-bottom: 18px;
+}
+.annonce__back svg { width: 15px; height: 15px; }
+.annonce__back:hover { color: #fff; }
+.annonce__kicker {
+  display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+  font-size: 12px; color: var(--text3); margin-bottom: 12px;
+}
+.annonce__kicker .card__cat {
+  color: var(--v2); font-weight: 600; background: var(--vglow2);
+  border: 1px solid var(--border-active); border-radius: var(--pill); padding: 3px 9px;
+}
+.annonce__kicker .card__source { color: var(--text2); font-weight: 500; }
+.annonce__title {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(24px, 4vw, 38px); line-height: 1.12; letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+.annonce__media {
+  position: relative; aspect-ratio: 16 / 9; width: 100%;
+  border-radius: 16px; overflow: hidden; margin-bottom: 26px;
+  border: 1px solid var(--border);
+}
+.annonce__media img {
+  position: relative; z-index: 1;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.annonce__ph { position: absolute; inset: 0; z-index: 0; }
+.annonce__ph svg { width: 100%; height: 100%; display: block; }
+.annonce__ph-cat {
+  position: absolute; left: 18px; bottom: 14px;
+  font-family: var(--display); font-weight: 800; font-size: 17px;
+  letter-spacing: 0.04em; color: #fff; text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.annonce__eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--v2); margin-bottom: 10px;
+}
+.annonce__lead {
+  font-size: 18px; font-weight: 300; line-height: 1.7; color: var(--text);
+  margin-bottom: 18px;
+}
+.annonce__lead--empty { color: var(--text2); font-style: italic; }
+.annonce__note {
+  font-size: 12.5px; color: var(--text3); line-height: 1.6;
+  padding: 12px 14px; margin-bottom: 24px;
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid var(--v); border-radius: 0 var(--r2) var(--r2) 0;
+}
+.annonce__src { margin: 0; }
+
 /* Bloc « À propos » repris en bas de l'accueil : séparé du flux d'actualité. */
 .home-about {
   margin-top: 40px; padding-top: 38px;

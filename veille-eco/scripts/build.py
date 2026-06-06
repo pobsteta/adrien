@@ -18,6 +18,7 @@ qu'il est vide, l'affichage retombe sur ``excerpt`` (voir ``resolve_summary``).
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import shutil
@@ -103,8 +104,24 @@ def count_sources() -> int:
 # Préparation pour l'affichage                                                  #
 # --------------------------------------------------------------------------- #
 def resolve_summary(article: dict) -> str:
-    """Texte à afficher : le résumé (futur, IA) sinon l'extrait du flux."""
+    """Texte à afficher : le résumé (IA) sinon l'extrait du flux."""
     return (article.get("summary") or article.get("excerpt") or "").strip()
+
+
+def article_id(article: dict) -> str:
+    """Identifiant stable d'une annonce (pour sa page dédiée)."""
+    if article.get("id"):
+        return article["id"]
+    basis = (article.get("url") or article.get("title") or "").strip().lower()
+    return hashlib.sha1(basis.encode("utf-8")).hexdigest()[:16]
+
+
+def summary_kind(article: dict, manual: bool = False) -> str:
+    """Origine du texte affiché : 'edito' (rédaction), 'ai' (résumé IA) ou
+    'excerpt' (extrait brut du flux). Pilote la mention sur la page dédiée."""
+    if manual:
+        return "edito"
+    return "ai" if (article.get("summary") or "").strip() else "excerpt"
 
 
 def time_display(published: str | None) -> str:
@@ -117,21 +134,31 @@ def time_display(published: str | None) -> str:
 
 def prepare_article(article: dict) -> dict:
     """Enrichit un article agrégé des champs d'affichage."""
+    aid = article_id(article)
     return {
         **article,
+        "id": aid,
+        "page_name": f"{aid}.html",
+        "image": (article.get("image") or "").strip(),
         "display_summary": resolve_summary(article),
+        "summary_kind": summary_kind(article),
         "time_display": time_display(article.get("published")),
     }
 
 
 def prepare_manual(item: dict) -> dict:
     """Adapte un item de la sélection manuelle au schéma d'affichage."""
+    aid = article_id(item)
     return {
+        "id": aid,
+        "page_name": f"{aid}.html",
         "title": item.get("title", ""),
         "url": item.get("url", ""),
         "source": item.get("source", ""),
         "category": SELECTION_LABEL,
+        "image": (item.get("image") or "").strip(),
         "display_summary": (item.get("summary") or "").strip(),
+        "summary_kind": "edito",
         "time_display": "",
     }
 
@@ -297,6 +324,7 @@ def build(edition_date: str | None = None) -> int:
                            js_path="app.js",
                            archives_path="archives/index.html",
                            anchor_base="",
+                           annonces_base="annonces/",
                            is_archive=False,
                            **context),
         encoding="utf-8",
@@ -310,6 +338,7 @@ def build(edition_date: str | None = None) -> int:
                            js_path="../app.js",
                            archives_path="index.html",
                            anchor_base="",
+                           annonces_base="../annonces/",
                            is_archive=True,
                            **context),
         encoding="utf-8",
@@ -348,6 +377,33 @@ def build(edition_date: str | None = None) -> int:
         encoding="utf-8",
     )
     print("  écrit : output/calendrier.html")
+
+    # 6) Une page dédiée par annonce (résumé + image + lien source).
+    annonces_dir = OUTPUT_DIR / "annonces"
+    annonces_dir.mkdir(parents=True, exist_ok=True)
+    annonce_tpl = env.get_template("annonce.html")
+
+    pool: dict[str, dict] = {}
+    if context["featured"]:
+        pool[context["featured"]["id"]] = context["featured"]
+    for section in context["sections"]:
+        for art in section["articles"]:
+            pool[art["id"]] = art
+    for art in context["selection"]:
+        pool.setdefault(art["id"], art)
+
+    for art in pool.values():
+        (annonces_dir / art["page_name"]).write_text(
+            annonce_tpl.render(css_path="../style.css",
+                               js_path="../app.js",
+                               home_path="../index.html",
+                               anchor_base="../index.html",
+                               annonces_base="",
+                               art=art,
+                               menu=context["menu"]),
+            encoding="utf-8",
+        )
+    print(f"  écrit : output/annonces/ ({len(pool)} page(s) d'annonce)")
 
     print("Terminé.")
     return 0

@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% import "_icons.html" as ic %}
 {% set anchor_base = anchor_base | default('') %}
+{% set annonces_base = annonces_base | default('') %}
 
 {# ----------------------------------------------------------------------- #}
 {# Macro : carte d'annonce cliquable (toute la carte + bouton)             #}
 {# ----------------------------------------------------------------------- #}
 {% macro card(art, index, tone='') %}
 <article class="card {{ tone }}" style="--i: {{ index }}">
-  <a class="card__hit" href="{{ art.url }}" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : {{ art.title }}">
+  <a class="card__hit" href="{{ annonces_base }}{{ art.page_name }}" aria-label="Lire le résumé : {{ art.title }}">
     <p class="card__kicker">
       <span class="card__cat js-term">{{ art.category }}</span>
       <span class="card__sep">·</span>
@@ -19,8 +20,8 @@
     <p class="card__summary">{{ art.display_summary }}</p>
     {% endif %}
   </a>
-  <a class="btn" href="{{ art.url }}" target="_blank" rel="noopener noreferrer">
-    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
+  <a class="btn" href="{{ annonces_base }}{{ art.page_name }}">
+    <span data-en="Read the summary">Lire le résumé</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 {% endmacro %}
@@ -91,7 +92,7 @@
     </ul>
     <div class="intro__actions">
       {% if featured %}
-      <a class="btn" href="{{ featured.url }}" target="_blank" rel="noopener noreferrer"><span data-en="Read the headline">Lire la une</span> <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="{{ annonces_base }}{{ featured.page_name }}"><span data-en="Read the headline">Lire la une</span> <span class="btn__arrow" aria-hidden="true">→</span></a>
       {% else %}
       <a class="btn" href="#{{ first_anchor }}"><span data-en="Explore the edition">Découvrir l'édition</span> <span class="btn__arrow" aria-hidden="true">→</span></a>
       {% endif %}
@@ -171,7 +172,7 @@
     <span class="hero__pair"><span class="js-term">{{ featured.category }}</span> · <span data-en="EDITION">ÉDITION</span></span>
     <span class="hero__live">● LIVE</span>
   </div>
-  <a class="hero__hit" href="{{ featured.url }}" target="_blank" rel="noopener noreferrer">
+  <a class="hero__hit" href="{{ annonces_base }}{{ featured.page_name }}">
     <p class="hero__kicker">
       <span class="hero__badge" data-en="FRONT PAGE">À LA UNE</span>
       <span class="card__source">{{ featured.source }}</span>
@@ -182,8 +183,8 @@
     <p class="hero__summary">{{ featured.display_summary }}</p>
     {% endif %}
   </a>
-  <a class="btn btn--lg" href="{{ featured.url }}" target="_blank" rel="noopener noreferrer">
-    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
+  <a class="btn btn--lg" href="{{ annonces_base }}{{ featured.page_name }}">
+    <span data-en="Read the summary">Lire le résumé</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </section>
 {% endif %}
@@ -198,12 +199,12 @@
   <ul class="flash">
     {% for art in flash %}
     <li class="flash__row" style="--i: {{ loop.index0 }}">
-      <a class="flash__link" href="{{ art.url }}" target="_blank" rel="noopener noreferrer">
+      <a class="flash__link" href="{{ annonces_base }}{{ art.page_name }}">
         {% if art.time_display %}<span class="flash__time">{{ art.time_display }}</span>{% endif %}
-        <span class="flash__cat">{{ art.category }}</span>
+        <span class="flash__cat js-term">{{ art.category }}</span>
         <span class="flash__title">{{ art.title }}</span>
         <span class="flash__src">{{ art.source }}</span>
-        <span class="flash__go" aria-hidden="true">↗</span>
+        <span class="flash__go" aria-hidden="true">→</span>
       </a>
     </li>
     {% endfor %}
