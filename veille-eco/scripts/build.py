@@ -132,32 +132,56 @@ def time_display(published: str | None) -> str:
     return dt.strftime("%H:%M")
 
 
+def paragraphs(text: str) -> list[str]:
+    """Découpe un texte en paragraphes (sur sauts de ligne), liste non vide."""
+    parts = [p.strip() for p in re.split(r"\n+", text or "") if p.strip()]
+    return parts
+
+
 def prepare_article(article: dict) -> dict:
-    """Enrichit un article agrégé des champs d'affichage."""
+    """Enrichit un article agrégé des champs d'affichage (FR + EN)."""
     aid = article_id(article)
+    excerpt = (article.get("excerpt") or "").strip()
+    full_fr = (article.get("summary_fr") or article.get("summary") or excerpt).strip()
+    full_en = (article.get("summary_en") or article.get("summary")
+               or article.get("excerpt_en") or excerpt).strip()
     return {
         **article,
         "id": aid,
         "page_name": f"{aid}.html",
         "image": (article.get("image") or "").strip(),
-        "display_summary": resolve_summary(article),
+        "title_fr": article.get("title_fr") or article.get("title", ""),
+        "title_en": article.get("title_en") or article.get("title", ""),
+        "display_summary": (article.get("summary_fr") or article.get("summary")
+                            or excerpt),
+        "display_summary_en": (article.get("excerpt_en") or excerpt),
+        "summary_fr_paras": paragraphs(full_fr),
+        "summary_en_paras": paragraphs(full_en),
         "summary_kind": summary_kind(article),
         "time_display": time_display(article.get("published")),
     }
 
 
 def prepare_manual(item: dict) -> dict:
-    """Adapte un item de la sélection manuelle au schéma d'affichage."""
+    """Adapte un item de la sélection manuelle au schéma d'affichage (FR + EN)."""
     aid = article_id(item)
+    full_fr = (item.get("summary") or item.get("summary_fr") or "").strip()
+    full_en = (item.get("summary_en") or full_fr).strip()
+    short_fr = (item.get("summary") or "").strip()
     return {
         "id": aid,
         "page_name": f"{aid}.html",
         "title": item.get("title", ""),
+        "title_fr": item.get("title_fr") or item.get("title", ""),
+        "title_en": item.get("title_en") or item.get("title", ""),
         "url": item.get("url", ""),
         "source": item.get("source", ""),
         "category": SELECTION_LABEL,
         "image": (item.get("image") or "").strip(),
-        "display_summary": (item.get("summary") or "").strip(),
+        "display_summary": short_fr,
+        "display_summary_en": (item.get("excerpt_en") or short_fr),
+        "summary_fr_paras": paragraphs(full_fr),
+        "summary_en_paras": paragraphs(full_en),
         "summary_kind": "edito",
         "time_display": "",
     }

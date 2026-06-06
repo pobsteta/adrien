@@ -4,13 +4,17 @@
     "url": "https://www.example.org/desinflation-france",
     "source": "Analyse maison",
     "summary": "Décryptage : malgré le ralentissement de la zone euro, les prix à la consommation refluent plus vite en France grâce au bouclier énergétique et à la modération salariale. Ce qu'il faut retenir avant la prochaine réunion de la BCE.",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "title_en": "Why French disinflation is holding up better than expected",
+    "summary_en": "Despite the euro-area slowdown, consumer prices are easing faster in France thanks to the energy shield and wage moderation. Key takeaways before the next ECB meeting."
   },
   {
     "title": "Budget 2027 : les trois arbitrages qui vont compter",
     "url": "https://www.example.org/budget-2027-arbitrages",
     "source": "Note de veille",
     "summary": "Dépenses sociales, fiscalité du capital, trajectoire de déficit : tour d'horizon des dossiers chauds de la rentrée et de leurs implications pour les entreprises.",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "title_en": "2027 Budget: the three trade-offs that will matter",
+    "summary_en": "Social spending, capital taxation, deficit path: an overview of the autumn's hot files and their implications for businesses."
   }
 ]

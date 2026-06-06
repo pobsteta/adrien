@@ -15,9 +15,9 @@
       <span class="card__source">{{ art.source }}</span>
       {% if art.time_display %}<span class="card__time">{{ art.time_display }}</span>{% endif %}
     </p>
-    <h3 class="card__title">{{ art.title }}</h3>
+    <h3 class="card__title" data-en="{{ art.title_en }}">{{ art.title_fr }}</h3>
     {% if art.display_summary %}
-    <p class="card__summary">{{ art.display_summary }}</p>
+    <p class="card__summary" data-en="{{ art.display_summary_en }}">{{ art.display_summary }}</p>
     {% endif %}
   </a>
   <a class="btn" href="{{ annonces_base }}{{ art.page_name }}">
@@ -178,9 +178,9 @@
       <span class="card__source">{{ featured.source }}</span>
       {% if featured.time_display %}<span class="card__time">{{ featured.time_display }}</span>{% endif %}
     </p>
-    <h2 class="hero__title">{{ featured.title }}</h2>
+    <h2 class="hero__title" data-en="{{ featured.title_en }}">{{ featured.title_fr }}</h2>
     {% if featured.display_summary %}
-    <p class="hero__summary">{{ featured.display_summary }}</p>
+    <p class="hero__summary" data-en="{{ featured.display_summary_en }}">{{ featured.display_summary }}</p>
     {% endif %}
   </a>
   <a class="btn btn--lg" href="{{ annonces_base }}{{ featured.page_name }}">
@@ -202,7 +202,7 @@
       <a class="flash__link" href="{{ annonces_base }}{{ art.page_name }}">
         {% if art.time_display %}<span class="flash__time">{{ art.time_display }}</span>{% endif %}
         <span class="flash__cat js-term">{{ art.category }}</span>
-        <span class="flash__title">{{ art.title }}</span>
+        <span class="flash__title" data-en="{{ art.title_en }}">{{ art.title_fr }}</span>
         <span class="flash__src">{{ art.source }}</span>
         <span class="flash__go" aria-hidden="true">→</span>
       </a>

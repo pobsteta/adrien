@@ -39,19 +39,40 @@ MAX_SUMMARIES = int(os.environ.get("SUMMARY_MAX", "50"))
 TIMEOUT = 30
 
 PROMPT = (
-    "Tu es un rédacteur de presse économique. Résume l'actualité ci-dessous "
-    "en deux phrases concises, neutres et claires, en français, pour un public "
-    "non spécialiste. Ne reprends pas le titre mot pour mot, n'ajoute aucune "
-    "phrase d'introduction ni de conclusion, ne mets pas de guillemets : "
-    "renvoie uniquement le résumé.\n\nTitre : {title}\nExtrait : {excerpt}"
+    "Tu es un rédacteur de presse économique. À partir du titre et de l'extrait "
+    "ci-dessous, rédige un RÉSUMÉ COMPLET et autonome (le lecteur ne doit pas "
+    "avoir besoin d'ouvrir l'article d'origine) : 3 à 4 courts paragraphes "
+    "expliquant le fait, son contexte et ses conséquences économiques, dans un "
+    "langage clair pour un public non spécialiste. N'invente aucun chiffre qui "
+    "ne soit pas plausible au vu de l'extrait, reste neutre et factuel.\n\n"
+    "Tu dois aussi fournir une version anglaise du résumé et la traduction du "
+    "titre dans les deux langues.\n\n"
+    "Réponds UNIQUEMENT par un objet JSON valide, sans texte autour, de la "
+    "forme :\n"
+    '{{"titre_fr": "...", "titre_en": "...", '
+    '"resume_fr": "par.1\\n\\npar.2\\n\\npar.3", '
+    '"resume_en": "p.1\\n\\np.2\\n\\np.3"}}\n\n'
+    "Titre : {title}\nExtrait : {excerpt}"
 )
 
 
-def summarize_one(title: str, excerpt: str, api_key: str) -> str | None:
-    """Un appel API ; renvoie le résumé ou None en cas d'échec."""
+def _extract_json(text: str) -> dict | None:
+    """Récupère le premier objet JSON présent dans une réponse texte."""
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end <= start:
+        return None
+    try:
+        return json.loads(text[start:end + 1])
+    except ValueError:
+        return None
+
+
+def summarize_one(title: str, excerpt: str, api_key: str) -> dict | None:
+    """Un appel API ; renvoie {titre_fr,titre_en,resume_fr,resume_en} ou None."""
     body = json.dumps({
         "model": MODEL,
-        "max_tokens": 200,
+        "max_tokens": 900,
         "messages": [{
             "role": "user",
             "content": PROMPT.format(title=title, excerpt=excerpt or title),
@@ -68,7 +89,7 @@ def summarize_one(title: str, excerpt: str, api_key: str) -> str | None:
             data = json.load(resp)
         parts = data.get("content", [])
         text = "".join(p.get("text", "") for p in parts if p.get("type") == "text")
-        return text.strip() or None
+        return _extract_json(text)
     except (urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError) as exc:
         print(f"    échec résumé ({exc})")
         return None
@@ -98,9 +119,13 @@ def main() -> int:
     print(f"summarize : génération de {len(todo)} résumé(s) via {MODEL}…")
     done = 0
     for art in todo:
-        summary = summarize_one(art.get("title", ""), art.get("excerpt", ""), api_key)
-        if summary:
-            art["summary"] = summary
+        res = summarize_one(art.get("title", ""), art.get("excerpt", ""), api_key)
+        if res and res.get("resume_fr"):
+            art["summary"] = res.get("resume_fr", "").strip()
+            art["summary_fr"] = res.get("resume_fr", "").strip()
+            art["summary_en"] = res.get("resume_en", "").strip()
+            art["title_fr"] = res.get("titre_fr", "").strip() or art.get("title")
+            art["title_en"] = res.get("titre_en", "").strip() or art.get("title")
             done += 1
         time.sleep(0.4)  # politesse vis-à-vis de l'API
 

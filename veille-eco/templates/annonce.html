@@ -26,7 +26,7 @@
     {% if art.time_display %}<span class="card__time">{{ art.time_display }}</span>{% endif %}
   </p>
 
-  <h1 class="annonce__title">{{ art.title }}</h1>
+  <h1 class="annonce__title" data-en="{{ art.title_en }}">{{ art.title_fr }}</h1>
 
   {# --- Visuel : image du flux si dispo, sinon repli généré --- #}
   <div class="annonce__media">
@@ -52,10 +52,12 @@
     </div>
   </div>
 
-  {# --- Résumé --- #}
-  <p class="annonce__eyebrow" data-en="Summary">Résumé</p>
-  {% if art.display_summary %}
-  <p class="annonce__lead">{{ art.display_summary }}</p>
+  {# --- Résumé complet (plusieurs paragraphes, FR affiché / EN via data-en) --- #}
+  <p class="annonce__eyebrow" data-en="Full summary">Résumé complet</p>
+  {% if art.summary_fr_paras %}
+  <div class="annonce__lead" data-en="{% for p in art.summary_en_paras %}<p>{{ p }}</p>{% endfor %}">
+    {% for p in art.summary_fr_paras %}<p>{{ p }}</p>{% endfor %}
+  </div>
   {% else %}
   <p class="annonce__lead annonce__lead--empty" data-en="No summary available for this item. Read it directly at the source.">Pas de résumé disponible pour cette annonce. Lisez-la directement à la source.</p>
   {% endif %}
