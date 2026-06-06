@@ -1,7 +1,9 @@
-# La Quotidienne Éco
+# Le Terminal Économies
 
-Un **site statique** qui publie chaque matin une revue de presse économique.
-Deux sources de contenu :
+Un **site statique** au look « terminal financier » (fond sombre, accent
+émeraude, ticker défilant) qui publie chaque matin une revue de presse
+économique. Chaque annonce est une carte cliquable avec un bouton vers la
+source. Deux sources de contenu :
 
 - **automatique** : agrégation de flux RSS de médias et institutions ;
 - **manuelle** : votre sélection éditoriale du jour, mise en avant en tête de page.

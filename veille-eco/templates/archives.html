@@ -1,28 +1,31 @@
 {% extends "base.html" %}
 
-{% block title %}Archives — La Quotidienne Éco{% endblock %}
-{% block dateline %}Les archives{% endblock %}
+{% block title %}Archives — Le Terminal Économies{% endblock %}
+{% block home_href %}{{ home_path }}{% endblock %}
+{% block dateline %}Archives{% endblock %}
 
 {% block nav %}
-  <a href="{{ home_path }}">L'édition du jour</a>
-  <span class="masthead__nav-sep">·</span>
-  <a href="index.html" aria-current="page">Archives</a>
+  <a class="tab" href="{{ home_path }}">Édition du jour</a>
+  <a class="tab" href="index.html" aria-current="page">Archives</a>
 {% endblock %}
 
 {% block content %}
-<section class="archives" aria-label="Archives des éditions">
-  <h2 class="rubric__title">Toutes les éditions</h2>
+<section class="block" aria-label="Archives des éditions">
+  <header class="block__head">
+    <h2 class="block__title">Toutes les éditions</h2>
+    <span class="block__count">{{ archives|length }}</span>
+  </header>
+
   {% if archives %}
-  <ol class="archives__list">
+  <div class="grid">
     {% for ed in archives %}
-    <li class="archives__item" style="--i: {{ loop.index0 }}">
-      <a class="archives__link" href="{{ ed.href }}">
-        <span class="archives__date">{{ ed.human }}</span>
-        <span class="archives__id">{{ ed.date }}</span>
-      </a>
-    </li>
+    <a class="arch" href="{{ ed.href }}" style="--i: {{ loop.index0 }}">
+      <span class="arch__date">{{ ed.human }}</span>
+      <span class="arch__id">{{ ed.date }}</span>
+      <span class="btn btn--ghost">Ouvrir l'édition <span class="btn__arrow" aria-hidden="true">→</span></span>
+    </a>
     {% endfor %}
-  </ol>
+  </div>
   {% else %}
   <p class="empty">Aucune édition archivée pour l'instant.</p>
   {% endif %}

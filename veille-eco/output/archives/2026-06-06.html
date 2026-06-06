@@ -3,204 +3,274 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>La Quotidienne Éco</title>
-  <meta name="description" content="Revue de presse économique quotidienne : agrégation de flux RSS et sélection éditoriale.">
+  <title>Le Terminal Économies</title>
+  <meta name="description" content="Le Terminal Économies — revue de presse économique en temps quasi réel : agrégation de flux RSS et sélection éditoriale.">
+  <meta name="theme-color" content="#0a0c10">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <header class="masthead">
-    <div class="masthead__rule masthead__rule--top"></div>
-    <div class="masthead__bar">
-      <span class="masthead__edition">Édition&nbsp;du&nbsp;jour</span>
-      <span class="masthead__dateline">samedi 6 juin 2026</span>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark" aria-hidden="true">◆</span>
+        <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
+      </a>
+      <div class="topbar__right">
+        <span class="status"><span class="status__dot"></span>LIVE</span>
+        <span class="topbar__date">samedi 6 juin 2026</span>
+      </div>
     </div>
-    <h1 class="masthead__title">La&nbsp;Quotidienne&nbsp;Éco</h1>
-    <p class="masthead__tagline">Revue de presse économique — agrégation &amp; sélection</p>
-    <nav class="masthead__nav">
-  <a href="../index.html">L'édition du jour</a>
-  <span class="masthead__nav-sep">·</span>
-  <a href="index.html">Archives</a>
+    <nav class="tabs">
+  <a class="tab" href="../index.html">Édition du jour</a>
+  <a class="tab" href="index.html">Archives</a>
     </nav>
-    <div class="masthead__rule masthead__rule--bottom"></div>
   </header>
 
-  <main class="sheet">
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__item"><span class="ticker__tag">Analyse maison</span>Pourquoi la désinflation française résiste mieux que prévu</span>
+    <span class="ticker__item"><span class="ticker__tag">Note de veille</span>Budget 2027 : les trois arbitrages qui vont compter</span>
+    <span class="ticker__item"><span class="ticker__tag">Les Échos – Économie</span>La BCE temporise : pas de baisse de taux avant l&#39;automne, selon les marchés</span>
+    <span class="ticker__item"><span class="ticker__tag">Les Échos – Économie</span>Industrie : le rebond de la production manufacturière surprend en avril</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – Économie</span>Pouvoir d&#39;achat : la consommation des ménages se stabilise</span>
+    <span class="ticker__item"><span class="ticker__tag">Banque de France</span>La Banque de France relève sa prévision de croissance pour 2026</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – Économie</span>Immobilier : les taux de crédit repassent sous les 3 %</span>
+    <span class="ticker__item"><span class="ticker__tag">La Tribune</span>Start-up : levée de fonds record dans la deep tech française</span>
+    <span class="ticker__item"><span class="ticker__tag">INSEE – À la une</span>INSEE : le taux de chômage stable au premier trimestre</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – International</span>Commerce mondial : l&#39;OMC révise ses projections à la hausse</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – International</span>Énergie : le prix du gaz européen recule avec la douceur du printemps</span>
+    <span class="ticker__item"><span class="ticker__tag">Analyse maison</span>Pourquoi la désinflation française résiste mieux que prévu</span>
+    <span class="ticker__item"><span class="ticker__tag">Note de veille</span>Budget 2027 : les trois arbitrages qui vont compter</span>
+    <span class="ticker__item"><span class="ticker__tag">Les Échos – Économie</span>La BCE temporise : pas de baisse de taux avant l&#39;automne, selon les marchés</span>
+    <span class="ticker__item"><span class="ticker__tag">Les Échos – Économie</span>Industrie : le rebond de la production manufacturière surprend en avril</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – Économie</span>Pouvoir d&#39;achat : la consommation des ménages se stabilise</span>
+    <span class="ticker__item"><span class="ticker__tag">Banque de France</span>La Banque de France relève sa prévision de croissance pour 2026</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – Économie</span>Immobilier : les taux de crédit repassent sous les 3 %</span>
+    <span class="ticker__item"><span class="ticker__tag">La Tribune</span>Start-up : levée de fonds record dans la deep tech française</span>
+    <span class="ticker__item"><span class="ticker__tag">INSEE – À la une</span>INSEE : le taux de chômage stable au premier trimestre</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – International</span>Commerce mondial : l&#39;OMC révise ses projections à la hausse</span>
+    <span class="ticker__item"><span class="ticker__tag">Le Monde – International</span>Énergie : le prix du gaz européen recule avec la douceur du printemps</span>
+  </div>
+</div>
 
-<p class="archive-flag">Édition archivée du samedi 6 juin 2026.</p>
+  <main class="wrap">
 
-<section class="selection" aria-label="La sélection">
-  <header class="selection__head">
-    <span class="selection__kicker">La sélection</span>
-    <span class="selection__sub">Le choix de la rédaction</span>
+<p class="archive-flag">⟲ Édition archivée du samedi 6 juin 2026</p>
+
+<section class="hero" aria-label="À la une">
+  <a class="hero__hit" href="https://www.example.org/685649eb" target="_blank" rel="noopener noreferrer">
+    <p class="hero__kicker">
+      <span class="hero__badge">À LA UNE</span>
+      <span class="card__source">Les Échos – Économie</span>
+<span class="card__time">07:09</span>    </p>
+    <h2 class="hero__title">La BCE temporise : pas de baisse de taux avant l&#39;automne, selon les marchés</h2>
+    <p class="hero__summary">Les investisseurs revoient leur calendrier après des chiffres d&#39;inflation des services plus tenaces qu&#39;attendu en zone euro.</p>
+  </a>
+  <a class="btn btn--lg" href="https://www.example.org/685649eb" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</section>
+
+<section class="block" aria-label="La sélection">
+  <header class="block__head">
+    <h2 class="block__title"><span class="block__dot">●</span> La sélection</h2>
+    <span class="block__sub">Le choix de la rédaction</span>
   </header>
-  <div class="selection__grid">
-    <article class="pick" style="--i: 0">
-      <p class="pick__kicker">Analyse maison</p>
-      <h3 class="pick__title">
-        <a href="https://www.example.org/desinflation-france" target="_blank" rel="noopener noreferrer">Pourquoi la désinflation française résiste mieux que prévu</a>
-      </h3>
-      <p class="pick__summary">Décryptage : malgré le ralentissement de la zone euro, les prix à la consommation refluent plus vite en France grâce au bouclier énergétique et à la modération salariale. Ce qu&#39;il faut retenir avant la prochaine réunion de la BCE.</p>
-      <a class="pick__read" href="https://www.example.org/desinflation-france" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
-    </article>
-    <article class="pick" style="--i: 1">
-      <p class="pick__kicker">Note de veille</p>
-      <h3 class="pick__title">
-        <a href="https://www.example.org/budget-2027-arbitrages" target="_blank" rel="noopener noreferrer">Budget 2027 : les trois arbitrages qui vont compter</a>
-      </h3>
-      <p class="pick__summary">Dépenses sociales, fiscalité du capital, trajectoire de déficit : tour d&#39;horizon des dossiers chauds de la rentrée et de leurs implications pour les entreprises.</p>
-      <a class="pick__read" href="https://www.example.org/budget-2027-arbitrages" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
-    </article>
+  <div class="grid">
+    <article class="card card--pick" style="--i: 0">
+  <a class="card__hit" href="https://www.example.org/desinflation-france" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Pourquoi la désinflation française résiste mieux que prévu">
+    <p class="card__kicker">
+      <span class="card__cat">La sélection</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Analyse maison</span>
+    </p>
+    <h3 class="card__title">Pourquoi la désinflation française résiste mieux que prévu</h3>
+    <p class="card__summary">Décryptage : malgré le ralentissement de la zone euro, les prix à la consommation refluent plus vite en France grâce au bouclier énergétique et à la modération salariale. Ce qu&#39;il faut retenir avant la prochaine réunion de la BCE.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/desinflation-france" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</article>
+
+    <article class="card card--pick" style="--i: 1">
+  <a class="card__hit" href="https://www.example.org/budget-2027-arbitrages" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Budget 2027 : les trois arbitrages qui vont compter">
+    <p class="card__kicker">
+      <span class="card__cat">La sélection</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Note de veille</span>
+    </p>
+    <h3 class="card__title">Budget 2027 : les trois arbitrages qui vont compter</h3>
+    <p class="card__summary">Dépenses sociales, fiscalité du capital, trajectoire de déficit : tour d&#39;horizon des dossiers chauds de la rentrée et de leurs implications pour les entreprises.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/budget-2027-arbitrages" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</article>
+
   </div>
 </section>
 
-<section class="lead" aria-label="À la une">
-  <p class="lead__kicker">
-    À la une <span class="card__sep">/</span>
-    <span class="card__source">Les Échos – Économie</span>
-<span class="card__time">· 07:09</span>  </p>
-  <h2 class="lead__title">
-    <a href="https://www.example.org/685649eb" target="_blank" rel="noopener noreferrer">La BCE temporise : pas de baisse de taux avant l&#39;automne, selon les marchés</a>
-  </h2>
-  <p class="lead__summary">Les investisseurs revoient leur calendrier après des chiffres d&#39;inflation des services plus tenaces qu&#39;attendu en zone euro.</p>
-  <a class="lead__read" href="https://www.example.org/685649eb" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+<section class="block" aria-label="France">
+  <header class="block__head">
+    <h2 class="block__title">France</h2>
+    <span class="block__count">4</span>
+  </header>
+  <div class="grid">
+    <article class="card " style="--i: 0">
+  <a class="card__hit" href="https://www.example.org/d206069e" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Industrie : le rebond de la production manufacturière surprend en avril">
+    <p class="card__kicker">
+      <span class="card__cat">France</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Les Échos – Économie</span>
+<span class="card__time">04:51</span>    </p>
+    <h3 class="card__title">Industrie : le rebond de la production manufacturière surprend en avril</h3>
+    <p class="card__summary">Portée par l&#39;aéronautique et l&#39;agroalimentaire, l&#39;activité progresse pour le deuxième mois consécutif.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/d206069e" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</article>
+
+    <article class="card " style="--i: 1">
+  <a class="card__hit" href="https://www.example.org/90088bc4" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Pouvoir d&#39;achat : la consommation des ménages se stabilise">
+    <p class="card__kicker">
+      <span class="card__cat">France</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Le Monde – Économie</span>
+<span class="card__time">06:15</span>    </p>
+    <h3 class="card__title">Pouvoir d&#39;achat : la consommation des ménages se stabilise</h3>
+    <p class="card__summary">Après un trimestre atone, les dépenses repartent timidement, soutenues par le reflux de l&#39;inflation alimentaire.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/90088bc4" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</article>
+
+    <article class="card " style="--i: 2">
+  <a class="card__hit" href="https://www.example.org/ce96267e" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Immobilier : les taux de crédit repassent sous les 3 %">
+    <p class="card__kicker">
+      <span class="card__cat">France</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Le Monde – Économie</span>
+<span class="card__time">02:21</span>    </p>
+    <h3 class="card__title">Immobilier : les taux de crédit repassent sous les 3 %</h3>
+    <p class="card__summary">Un assouplissement qui ravive prudemment la demande, sans inverser la baisse des volumes de transactions.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/ce96267e" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</article>
+
+    <article class="card " style="--i: 3">
+  <a class="card__hit" href="https://www.example.org/3d4f0ee2" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Start-up : levée de fonds record dans la deep tech française">
+    <p class="card__kicker">
+      <span class="card__cat">France</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">La Tribune</span>
+<span class="card__time">03:09</span>    </p>
+    <h3 class="card__title">Start-up : levée de fonds record dans la deep tech française</h3>
+    <p class="card__summary">Le secteur attire de nouveau les capitaux, malgré un climat de financement encore sélectif.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/3d4f0ee2" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</article>
+
+  </div>
 </section>
-
-<div class="columns">
-  <section class="rubric">
-    <h2 class="rubric__title">France</h2>
-    <article class="card" style="--i: 0">
-  <p class="card__kicker">
-    <span class="card__cat">France</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">Les Échos – Économie</span>
-    <span class="card__time">· 04:51</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/d206069e" target="_blank" rel="noopener noreferrer">Industrie : le rebond de la production manufacturière surprend en avril</a>
-  </h3>
-  <p class="card__summary">Portée par l&#39;aéronautique et l&#39;agroalimentaire, l&#39;activité progresse pour le deuxième mois consécutif.</p>
-  <a class="card__read" href="https://www.example.org/d206069e" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+<section class="block" aria-label="Institutions">
+  <header class="block__head">
+    <h2 class="block__title">Institutions</h2>
+    <span class="block__count">2</span>
+  </header>
+  <div class="grid">
+    <article class="card " style="--i: 0">
+  <a class="card__hit" href="https://www.example.org/9c28618f" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : La Banque de France relève sa prévision de croissance pour 2026">
+    <p class="card__kicker">
+      <span class="card__cat">Institutions</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Banque de France</span>
+<span class="card__time">03:57</span>    </p>
+    <h3 class="card__title">La Banque de France relève sa prévision de croissance pour 2026</h3>
+    <p class="card__summary">L&#39;institution table désormais sur une expansion un peu plus soutenue, sous l&#39;effet de la désinflation.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/9c28618f" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
 </article>
 
-    <article class="card" style="--i: 1">
-  <p class="card__kicker">
-    <span class="card__cat">France</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">Le Monde – Économie</span>
-    <span class="card__time">· 06:15</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/90088bc4" target="_blank" rel="noopener noreferrer">Pouvoir d&#39;achat : la consommation des ménages se stabilise</a>
-  </h3>
-  <p class="card__summary">Après un trimestre atone, les dépenses repartent timidement, soutenues par le reflux de l&#39;inflation alimentaire.</p>
-  <a class="card__read" href="https://www.example.org/90088bc4" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+    <article class="card " style="--i: 1">
+  <a class="card__hit" href="https://www.example.org/0618877c" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : INSEE : le taux de chômage stable au premier trimestre">
+    <p class="card__kicker">
+      <span class="card__cat">Institutions</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">INSEE – À la une</span>
+<span class="card__time">00:21</span>    </p>
+    <h3 class="card__title">INSEE : le taux de chômage stable au premier trimestre</h3>
+    <p class="card__summary">Le marché du travail résiste, avec un taux d&#39;emploi des seniors au plus haut depuis vingt ans.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/0618877c" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
 </article>
 
-    <article class="card" style="--i: 2">
-  <p class="card__kicker">
-    <span class="card__cat">France</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">Le Monde – Économie</span>
-    <span class="card__time">· 02:21</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/ce96267e" target="_blank" rel="noopener noreferrer">Immobilier : les taux de crédit repassent sous les 3 %</a>
-  </h3>
-  <p class="card__summary">Un assouplissement qui ravive prudemment la demande, sans inverser la baisse des volumes de transactions.</p>
-  <a class="card__read" href="https://www.example.org/ce96267e" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+  </div>
+</section>
+<section class="block" aria-label="International">
+  <header class="block__head">
+    <h2 class="block__title">International</h2>
+    <span class="block__count">2</span>
+  </header>
+  <div class="grid">
+    <article class="card " style="--i: 0">
+  <a class="card__hit" href="https://www.example.org/c5eee09b" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Commerce mondial : l&#39;OMC révise ses projections à la hausse">
+    <p class="card__kicker">
+      <span class="card__cat">International</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Le Monde – International</span>
+<span class="card__time">01:03</span>    </p>
+    <h3 class="card__title">Commerce mondial : l&#39;OMC révise ses projections à la hausse</h3>
+    <p class="card__summary">Le rebond des échanges de biens manufacturés porte des prévisions plus optimistes pour l&#39;année.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/c5eee09b" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
 </article>
 
-    <article class="card" style="--i: 3">
-  <p class="card__kicker">
-    <span class="card__cat">France</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">La Tribune</span>
-    <span class="card__time">· 03:09</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/3d4f0ee2" target="_blank" rel="noopener noreferrer">Start-up : levée de fonds record dans la deep tech française</a>
-  </h3>
-  <p class="card__summary">Le secteur attire de nouveau les capitaux, malgré un climat de financement encore sélectif.</p>
-  <a class="card__read" href="https://www.example.org/3d4f0ee2" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+    <article class="card " style="--i: 1">
+  <a class="card__hit" href="https://www.example.org/d81230c3" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Énergie : le prix du gaz européen recule avec la douceur du printemps">
+    <p class="card__kicker">
+      <span class="card__cat">International</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">Le Monde – International</span>
+<span class="card__time">21:51</span>    </p>
+    <h3 class="card__title">Énergie : le prix du gaz européen recule avec la douceur du printemps</h3>
+    <p class="card__summary">Des stocks confortables et une demande modérée pèsent sur les cours, soulageant les industriels.</p>
+  </a>
+  <a class="btn" href="https://www.example.org/d81230c3" target="_blank" rel="noopener noreferrer">
+    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
 </article>
 
-  </section>
-  <section class="rubric">
-    <h2 class="rubric__title">Institutions</h2>
-    <article class="card" style="--i: 0">
-  <p class="card__kicker">
-    <span class="card__cat">Institutions</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">Banque de France</span>
-    <span class="card__time">· 03:57</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/9c28618f" target="_blank" rel="noopener noreferrer">La Banque de France relève sa prévision de croissance pour 2026</a>
-  </h3>
-  <p class="card__summary">L&#39;institution table désormais sur une expansion un peu plus soutenue, sous l&#39;effet de la désinflation.</p>
-  <a class="card__read" href="https://www.example.org/9c28618f" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
-</article>
-
-    <article class="card" style="--i: 1">
-  <p class="card__kicker">
-    <span class="card__cat">Institutions</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">INSEE – À la une</span>
-    <span class="card__time">· 00:21</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/0618877c" target="_blank" rel="noopener noreferrer">INSEE : le taux de chômage stable au premier trimestre</a>
-  </h3>
-  <p class="card__summary">Le marché du travail résiste, avec un taux d&#39;emploi des seniors au plus haut depuis vingt ans.</p>
-  <a class="card__read" href="https://www.example.org/0618877c" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
-</article>
-
-  </section>
-  <section class="rubric">
-    <h2 class="rubric__title">International</h2>
-    <article class="card" style="--i: 0">
-  <p class="card__kicker">
-    <span class="card__cat">International</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">Le Monde – International</span>
-    <span class="card__time">· 01:03</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/c5eee09b" target="_blank" rel="noopener noreferrer">Commerce mondial : l&#39;OMC révise ses projections à la hausse</a>
-  </h3>
-  <p class="card__summary">Le rebond des échanges de biens manufacturés porte des prévisions plus optimistes pour l&#39;année.</p>
-  <a class="card__read" href="https://www.example.org/c5eee09b" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
-</article>
-
-    <article class="card" style="--i: 1">
-  <p class="card__kicker">
-    <span class="card__cat">International</span>
-    <span class="card__sep">/</span>
-    <span class="card__source">Le Monde – International</span>
-    <span class="card__time">· 21:51</span>
-  </p>
-  <h3 class="card__title">
-    <a href="https://www.example.org/d81230c3" target="_blank" rel="noopener noreferrer">Énergie : le prix du gaz européen recule avec la douceur du printemps</a>
-  </h3>
-  <p class="card__summary">Des stocks confortables et une demande modérée pèsent sur les cours, soulageant les industriels.</p>
-  <a class="card__read" href="https://www.example.org/d81230c3" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
-</article>
-
-  </section>
-</div>
+  </div>
+</section>
 
   </main>
 
-  <footer class="colophon">
-    <p class="colophon__line">
-      <strong>La Quotidienne Éco</strong> agrège des flux RSS et n'en republie
-      que le titre et un court extrait, avec lien vers la source. Tous droits
-      réservés aux éditeurs d'origine.
-    </p>
-    <p class="colophon__meta">Édition du samedi 6 juin 2026 — 11 article(s) · générée le 06/06/2026 à 08:23</p>
+  <footer class="foot">
+    <div class="foot__inner">
+      <p class="foot__line">
+        <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
+        republie que le titre et un court extrait, avec un bouton vers la
+        source. Tous droits réservés aux éditeurs d'origine.
+      </p>
+      <p class="foot__meta">Édition du samedi 6 juin 2026 — 11 annonce(s) · générée le 06/06/2026 à 08:30</p>
+    </div>
   </footer>
 </body>
 </html>

@@ -148,6 +148,12 @@ def build_context(edition_date: str) -> dict:
     rest = aggregated[1:] if aggregated else []
     sections = group_by_category(rest)
 
+    # Bandeau défilant (effet « terminal ») : un condensé source · titre.
+    ticker = [
+        {"label": a["source"], "title": a["title"]}
+        for a in (selection + aggregated)
+    ]
+
     d = date.fromisoformat(edition_date)
     return {
         "edition_date": edition_date,
@@ -156,6 +162,7 @@ def build_context(edition_date: str) -> dict:
         "selection": selection,
         "featured": featured,
         "sections": sections,
+        "ticker": ticker,
         "total_count": len(aggregated) + len(selection),
     }
 

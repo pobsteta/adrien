@@ -3,39 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}La Quotidienne Éco{% endblock %}</title>
-  <meta name="description" content="Revue de presse économique quotidienne : agrégation de flux RSS et sélection éditoriale.">
+  <title>{% block title %}Le Terminal Économies{% endblock %}</title>
+  <meta name="description" content="Le Terminal Économies — revue de presse économique en temps quasi réel : agrégation de flux RSS et sélection éditoriale.">
+  <meta name="theme-color" content="#0a0c10">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ css_path }}">
 </head>
 <body>
-  <header class="masthead">
-    <div class="masthead__rule masthead__rule--top"></div>
-    <div class="masthead__bar">
-      <span class="masthead__edition">Édition&nbsp;du&nbsp;jour</span>
-      <span class="masthead__dateline">{% block dateline %}{% endblock %}</span>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="{% block home_href %}index.html{% endblock %}">
+        <span class="brand__mark" aria-hidden="true">◆</span>
+        <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
+      </a>
+      <div class="topbar__right">
+        <span class="status"><span class="status__dot"></span>LIVE</span>
+        <span class="topbar__date">{% block dateline %}{% endblock %}</span>
+      </div>
     </div>
-    <h1 class="masthead__title">La&nbsp;Quotidienne&nbsp;Éco</h1>
-    <p class="masthead__tagline">Revue de presse économique — agrégation &amp; sélection</p>
-    <nav class="masthead__nav">
+    <nav class="tabs">
       {% block nav %}{% endblock %}
     </nav>
-    <div class="masthead__rule masthead__rule--bottom"></div>
   </header>
 
-  <main class="sheet">
+  {% block ticker %}{% endblock %}
+
+  <main class="wrap">
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="colophon">
-    <p class="colophon__line">
-      <strong>La Quotidienne Éco</strong> agrège des flux RSS et n'en republie
-      que le titre et un court extrait, avec lien vers la source. Tous droits
-      réservés aux éditeurs d'origine.
-    </p>
-    <p class="colophon__meta">{% block colophon_meta %}{% endblock %}</p>
+  <footer class="foot">
+    <div class="foot__inner">
+      <p class="foot__line">
+        <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
+        republie que le titre et un court extrait, avec un bouton vers la
+        source. Tous droits réservés aux éditeurs d'origine.
+      </p>
+      <p class="foot__meta">{% block colophon_meta %}{% endblock %}</p>
+    </div>
   </footer>
 </body>
 </html>
