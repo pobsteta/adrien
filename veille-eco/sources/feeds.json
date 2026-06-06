@@ -1,20 +1,62 @@
 [
   {
-    "name": "Le Monde – Économie",
-    "url": "https://www.lemonde.fr/economie/rss_full.xml",
-    "category": "France",
-    "weight": 4
-  },
-  {
     "name": "Les Échos – Économie",
     "url": "https://services.lesechos.fr/rss/les-echos-economie.xml",
-    "category": "France",
+    "category": "Europe",
     "weight": 5
   },
   {
-    "name": "La Tribune",
+    "name": "La Tribune – Économie",
     "url": "https://www.latribune.fr/rss/rubriques/economie.html",
-    "category": "France",
+    "category": "Europe",
+    "weight": 3
+  },
+  {
+    "name": "Financial Times – Markets",
+    "url": "https://www.ft.com/markets?format=rss",
+    "category": "Europe",
+    "weight": 4
+  },
+  {
+    "name": "CNBC – Economy",
+    "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html",
+    "category": "Amériques",
+    "weight": 4
+  },
+  {
+    "name": "MarketWatch – Top Stories",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "category": "Amériques",
+    "weight": 3
+  },
+  {
+    "name": "Nikkei Asia – Economy",
+    "url": "https://asia.nikkei.com/rss/feed/nar",
+    "category": "Asie",
+    "weight": 3
+  },
+  {
+    "name": "Banque centrale européenne",
+    "url": "https://www.ecb.europa.eu/rss/press.html",
+    "category": "Institutions",
+    "weight": 5
+  },
+  {
+    "name": "Réserve fédérale (Fed)",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "category": "Institutions",
+    "weight": 4
+  },
+  {
+    "name": "Fonds monétaire international (FMI)",
+    "url": "https://www.imf.org/en/News/rss?language=ENG",
+    "category": "Institutions",
+    "weight": 4
+  },
+  {
+    "name": "OCDE – Salle de presse",
+    "url": "https://www.oecd.org/newsroom/rss.xml",
+    "category": "Institutions",
     "weight": 3
   },
   {
@@ -30,39 +72,15 @@
     "weight": 3
   },
   {
-    "name": "Banque centrale européenne",
-    "url": "https://www.ecb.europa.eu/rss/press.html",
-    "category": "Europe",
-    "weight": 5
-  },
-  {
-    "name": "Commission européenne – Économie",
-    "url": "https://ec.europa.eu/info/rss_en.xml",
-    "category": "Europe",
-    "weight": 3
-  },
-  {
-    "name": "Reuters – Markets",
-    "url": "https://feeds.reuters.com/reuters/businessNews",
-    "category": "Amériques",
-    "weight": 4
-  },
-  {
-    "name": "Réserve fédérale (Fed)",
-    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
-    "category": "Amériques",
-    "weight": 4
-  },
-  {
-    "name": "Nikkei Asia – Economy",
-    "url": "https://asia.nikkei.com/rss/feed/nar",
-    "category": "Asie",
-    "weight": 2
-  },
-  {
-    "name": "Le Monde – International",
-    "url": "https://www.lemonde.fr/international/rss_full.xml",
+    "name": "Reuters – Business",
+    "url": "https://news.google.com/rss/search?q=when:1d%20site:reuters.com%20business&hl=en-US&gl=US&ceid=US:en",
     "category": "International",
-    "weight": 2
+    "weight": 4
+  },
+  {
+    "name": "The Economist – Finance & economics",
+    "url": "https://www.economist.com/finance-and-economics/rss.xml",
+    "category": "International",
+    "weight": 3
   }
 ]

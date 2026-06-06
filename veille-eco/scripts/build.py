@@ -48,10 +48,12 @@ FLASH_LABEL = "Flash"
 FLASH_COUNT = 6              # nombre d'annonces dans le fil Flash
 FLASH_MAX_AGE_HOURS = 12     # une annonce n'est « flash » que si récente
 
-# Ordre d'affichage des rubriques géographiques ; les rubriques absentes de
-# cette liste sont placées ensuite, par poids décroissant puis ordre alpha.
+# Ordre d'affichage des rubriques ; les continents d'abord, puis les
+# institutions et l'international. Les rubriques absentes de cette liste sont
+# placées ensuite, par poids décroissant puis ordre alpha.
 CATEGORY_ORDER = [
-    "Europe", "Amériques", "France", "Institutions", "Asie", "International",
+    "Europe", "Amériques", "Asie", "Afrique", "Océanie",
+    "Institutions", "International",
 ]
 
 # --------------------------------------------------------------------------- #
