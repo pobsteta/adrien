@@ -1,27 +1,28 @@
 /* =========================================================================
-   Le Terminal Économies — thème « violet glass »
-   Inspiré d'une UI sombre moderne : fond #08080F, accent violet→magenta,
-   cartes en verre translucide, boutons pilule à halo, typo Bricolage
+   Le Terminal Économies — thème « bleu nuit »
+   Inspiré du logo (hangar industriel, métal brossé, lueur bleu réacteur) :
+   fond noir nuit bleuté, accent bleu électrique → cyan, wordmark métal
+   argenté, cartes en verre, boutons pilule à halo, typo Bricolage
    Grotesque (titres) / Inter (texte).
    ========================================================================= */
 
 :root {
-  --bg:           #08080F;
+  --bg:           #070A12;
   --card:         rgba(255,255,255,0.04);
   --card-hover:   rgba(255,255,255,0.07);
   --border:       rgba(255,255,255,0.08);
-  --border-active:rgba(139,92,246,0.45);
+  --border-active:rgba(46,91,255,0.45);
 
-  --v:    #8B5CF6;   /* violet */
-  --v2:   #A78BFA;
-  --v3:   #C4B5FD;
-  --pink: #E879F9;   /* fin de dégradé */
-  --vglow:  rgba(139,92,246,0.25);
-  --vglow2: rgba(139,92,246,0.08);
+  --v:    #2E5BFF;   /* violet */
+  --v2:   #5B8DEF;
+  --v3:   #9DBEFB;
+  --pink: #38BDF8;   /* fin de dégradé */
+  --vglow:  rgba(46,91,255,0.25);
+  --vglow2: rgba(46,91,255,0.08);
 
-  --text:  #F0EEFF;
-  --text2: #9B96B8;
-  --text3: #5A5570;
+  --text:  #EAEFFA;
+  --text2: #97A3BE;
+  --text3: #57617B;
 
   --green: #34D399;
   --red:   #F87171;
@@ -62,8 +63,8 @@ a { color: inherit; text-decoration: none; }
 .glow {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background:
-    radial-gradient(46% 38% at 80% -8%, rgba(139,92,246,0.18), transparent 70%),
-    radial-gradient(42% 34% at 5% 4%, rgba(232,121,249,0.10), transparent 70%);
+    radial-gradient(46% 38% at 80% -8%, rgba(46,91,255,0.18), transparent 70%),
+    radial-gradient(42% 34% at 5% 4%, rgba(56,189,248,0.10), transparent 70%);
 }
 .wrap, .topbar, .ticker, .foot__inner { position: relative; z-index: 1; }
 
@@ -72,7 +73,7 @@ a { color: inherit; text-decoration: none; }
    ========================================================================= */
 .topbar {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(8,8,15,0.82);
+  background: rgba(7,10,18,0.82);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
@@ -86,6 +87,9 @@ a { color: inherit; text-decoration: none; }
 .brand__name {
   font-family: var(--display);
   font-weight: 800; font-size: 18px; letter-spacing: -0.01em;
+  /* wordmark métal brossé, comme le lettrage du logo */
+  background: linear-gradient(160deg, #f4f6fb 0%, #c4cad6 38%, #8a93a6 60%, #e8ebf2 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .brand__accent {
   background: linear-gradient(135deg, var(--v), var(--v2), var(--pink));
@@ -105,7 +109,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 0 0 var(--vglow); animation: pulse 1.8s infinite;
 }
 @keyframes pulse {
-  0%{box-shadow:0 0 0 0 rgba(139,92,246,.5)} 70%{box-shadow:0 0 0 7px rgba(139,92,246,0)} 100%{box-shadow:0 0 0 0 rgba(139,92,246,0)}
+  0%{box-shadow:0 0 0 0 rgba(46,91,255,.5)} 70%{box-shadow:0 0 0 7px rgba(46,91,255,0)} 100%{box-shadow:0 0 0 0 rgba(46,91,255,0)}
 }
 .topbar__date { font-size: 12px; color: var(--text3); letter-spacing: 0.02em; }
 
@@ -120,7 +124,7 @@ a { color: inherit; text-decoration: none; }
 .tab:hover { color: var(--text); border-color: var(--border-active); }
 .tab[aria-current="page"] {
   color: #fff; border-color: transparent;
-  background: linear-gradient(135deg, var(--v), #7C3AED);
+  background: linear-gradient(135deg, var(--v), #1E3A8A);
 }
 
 /* =========================================================================
@@ -159,12 +163,12 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--display);
   font-size: 13px; font-weight: 700; letter-spacing: 0.03em;
   color: #fff;
-  background: linear-gradient(135deg, var(--v), #7C3AED);
+  background: linear-gradient(135deg, var(--v), #1E3A8A);
   padding: 11px 20px; border-radius: var(--pill); border: none; cursor: pointer;
-  box-shadow: 0 8px 26px rgba(139,92,246,0.32);
+  box-shadow: 0 8px 26px rgba(46,91,255,0.32);
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 38px rgba(139,92,246,0.5); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 38px rgba(46,91,255,0.5); }
 .btn__arrow { transition: transform 0.2s; }
 .btn:hover .btn__arrow { transform: translateX(3px); }
 .btn--lg { font-size: 15px; padding: 14px 28px; }
@@ -172,7 +176,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--vglow2); color: var(--v2);
   border: 1px solid var(--border-active); box-shadow: none;
 }
-.btn--ghost:hover { background: rgba(139,92,246,0.15); box-shadow: 0 8px 26px rgba(139,92,246,0.25); }
+.btn--ghost:hover { background: rgba(46,91,255,0.15); box-shadow: 0 8px 26px rgba(46,91,255,0.25); }
 
 /* =========================================================================
    À la une (hero, carte verre)
@@ -193,7 +197,7 @@ a { color: inherit; text-decoration: none; }
 .hero::after {
   content: ''; position: absolute; top: -60px; right: -60px;
   width: 260px; height: 260px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(46,91,255,0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero__chrome {
@@ -210,7 +214,7 @@ a { color: inherit; text-decoration: none; }
 .hero__live {
   margin-left: auto; font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
   color: var(--v2); background: var(--vglow2);
-  padding: 3px 11px; border-radius: var(--pill); border: 1px solid rgba(139,92,246,0.2);
+  padding: 3px 11px; border-radius: var(--pill); border: 1px solid rgba(46,91,255,0.2);
 }
 .hero__hit { display: block; padding: 24px 30px 0; }
 .hero__kicker { display: flex; align-items: center; gap: 12px; font-size: 12px; color: var(--text3); margin-bottom: 14px; }
@@ -261,9 +265,9 @@ a { color: inherit; text-decoration: none; }
 }
 .card:hover {
   background: var(--card-hover);
-  border-color: rgba(139,92,246,0.35);
+  border-color: rgba(46,91,255,0.35);
   transform: translateY(-4px);
-  box-shadow: 0 24px 50px -28px rgba(139,92,246,0.6), 0 0 50px var(--vglow2);
+  box-shadow: 0 24px 50px -28px rgba(46,91,255,0.6), 0 0 50px var(--vglow2);
 }
 .card__hit { display: block; }
 .card__kicker {
@@ -297,7 +301,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--card); border: 1px solid var(--border);
   border-radius: var(--r); padding: 22px 20px 18px; transition: all 0.2s;
 }
-.arch:hover { background: var(--card-hover); border-color: rgba(139,92,246,0.35); transform: translateY(-4px); }
+.arch:hover { background: var(--card-hover); border-color: rgba(46,91,255,0.35); transform: translateY(-4px); }
 .arch__date { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
 .arch__id { font-size: 11px; color: var(--text3); letter-spacing: 0.04em; margin-bottom: 4px; }
 
