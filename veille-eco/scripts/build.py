@@ -339,6 +339,16 @@ def build(edition_date: str | None = None) -> int:
     )
     print("  écrit : output/a-propos.html")
 
+    # 5) Page « Calendrier économique » (widget Investing.com, 3 étoiles).
+    cal_tpl = env.get_template("calendrier.html")
+    (OUTPUT_DIR / "calendrier.html").write_text(
+        cal_tpl.render(css_path="style.css",
+                       js_path="app.js",
+                       **context),
+        encoding="utf-8",
+    )
+    print("  écrit : output/calendrier.html")
+
     print("Terminé.")
     return 0
 

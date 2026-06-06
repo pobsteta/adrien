@@ -36,11 +36,13 @@ veille-eco/
 └── README.md
 ```
 
-Le site comporte trois types de pages : l'**édition du jour** (`index.html`,
-avec un bandeau de présentation et un lien « En savoir plus »), les **archives**
-(`archives/`), et une page **« À propos »** (`a-propos.html`) qui détaille la
-mission, le fonctionnement et une FAQ. Toutes partagent la barre latérale
-(partiel `templates/_sidebar.html`).
+Le site comporte plusieurs pages : l'**édition du jour** (`index.html`, avec un
+bandeau de présentation et un lien « En savoir plus »), le **calendrier
+économique** (`calendrier.html`, widget Investing.com filtré sur les seules
+annonces « 3 étoiles » à forte importance), les **archives** (`archives/`), et
+une page **« À propos »** (`a-propos.html`) qui détaille la mission, le
+fonctionnement et une FAQ. Toutes partagent la barre latérale (partiel
+`templates/_sidebar.html`).
 
 ## Utilisation
 

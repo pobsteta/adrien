@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% import "_icons.html" as ic %}
+
+{% block title %}Calendrier économique — Le Terminal Économies{% endblock %}
+{% block home_href %}index.html{% endblock %}
+{% block dateline %}Calendrier éco{% endblock %}
+
+{% block sidebar %}
+  {% set active = 'calendar' %}
+  {% set home_href = 'index.html' %}
+  {% set archives_href = 'archives/index.html' %}
+  {% set calendar_href = 'calendrier.html' %}
+  {% set about_href = 'a-propos.html' %}
+  {% set anchor_base = 'index.html' %}
+  {% include "_sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+
+<section class="prose" aria-label="Calendrier économique">
+  <span class="prose__kicker">{{ ic.icon('calendar') }} Calendrier économique</span>
+  <h1 class="prose__h">Les rendez-vous à fort impact de la semaine</h1>
+  <p>
+    Décisions de banques centrales, inflation, emploi, PIB… Ce calendrier ne
+    montre que les annonces classées <strong>« forte importance »
+    (3 étoiles ★★★)</strong> — celles qui font réellement bouger les marchés.
+    Les publications de moindre importance sont volontairement masquées pour
+    aller à l'essentiel. Données et heures fournies en temps réel par
+    Investing.com.
+  </p>
+</section>
+
+<div class="calcard">
+  <div class="calcard__bar">
+    <span class="calcard__legend">★★★ Forte importance uniquement</span>
+    <a class="calcard__full" href="https://fr.investing.com/economic-calendar/" target="_blank" rel="noopener nofollow">
+      Calendrier complet sur Investing.com <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+  {# Widget officiel Investing.com — importance=3 ne garde que les
+     événements « 3 étoiles » ; lang=5 (français), timeZone=58 (Paris). #}
+  <iframe
+    class="calcard__frame"
+    title="Calendrier économique 3 étoiles — Investing.com"
+    src="https://sslecal2.investing.com/?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&category=_employment,_economicActivity,_inflation,_credit,_centralBanks,_confidenceIndex,_balance,_Bonds&importance=3&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,10,35,43,56,36,110,11,26,12,4,5&calType=week&timeZone=58&lang=5"
+    loading="lazy"
+    frameborder="0"
+    allowtransparency="true">
+  </iframe>
+
+  <p class="calcard__credit">
+    Calendrier économique en temps réel fourni par
+    <a href="https://fr.investing.com/" target="_blank" rel="noopener nofollow">Investing.com France</a>.
+  </p>
+</div>
+
+{% endblock %}
+
+{% block colophon_meta %}Calendrier économique · Le Terminal Économies{% endblock %}
