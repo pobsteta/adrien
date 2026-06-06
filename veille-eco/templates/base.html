@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% import "_icons.html" as ic %}<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -16,35 +16,47 @@
 
   <header class="topbar">
     <div class="topbar__inner">
-      <a class="brand" href="{% block home_href %}index.html{% endblock %}">
-        <span class="brand__mark" aria-hidden="true">◆</span>
-        <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
-      </a>
+      <div class="topbar__left">
+        <button class="burger" id="navToggle" aria-label="Afficher ou masquer le menu" aria-controls="sidebar">{{ ic.icon('menu') }}</button>
+        <a class="brand" href="{% block home_href %}index.html{% endblock %}">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
+        </a>
+      </div>
       <div class="topbar__right">
         <span class="status"><span class="status__dot"></span>LIVE</span>
         <span class="topbar__date">{% block dateline %}{% endblock %}</span>
       </div>
     </div>
-    <nav class="tabs">
-      {% block nav %}{% endblock %}
-    </nav>
   </header>
 
   {% block ticker %}{% endblock %}
 
-  <main class="wrap">
-    {% block content %}{% endblock %}
-  </main>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation">
+      {% block sidebar %}{% endblock %}
+    </aside>
 
-  <footer class="foot">
-    <div class="foot__inner">
-      <p class="foot__line">
-        <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
-        republie que le titre et un court extrait, avec un bouton vers la
-        source. Tous droits réservés aux éditeurs d'origine.
-      </p>
-      <p class="foot__meta">{% block colophon_meta %}{% endblock %}</p>
+    <div class="main-col">
+      <main class="wrap">
+        {% block content %}{% endblock %}
+      </main>
+
+      <footer class="foot">
+        <div class="foot__inner">
+          <p class="foot__line">
+            <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
+            republie que le titre et un court extrait, avec un bouton vers la
+            source. Tous droits réservés aux éditeurs d'origine.
+          </p>
+          <p class="foot__meta">{% block colophon_meta %}{% endblock %}</p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </div>
+
+  <div class="backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <script src="{{ js_path }}" defer></script>
 </body>
 </html>

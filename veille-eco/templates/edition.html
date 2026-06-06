@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% import "_icons.html" as ic %}
+{% set anchor_base = anchor_base | default('') %}
 
 {# ----------------------------------------------------------------------- #}
 {# Macro : carte d'annonce cliquable (toute la carte + bouton)             #}
@@ -26,14 +28,30 @@
 {% block home_href %}{% if is_archive %}../index.html{% else %}index.html{% endif %}{% endblock %}
 {% block dateline %}{{ edition_date_human }}{% endblock %}
 
-{% block nav %}
-  <a class="tab" href="{% if is_archive %}../index.html{% else %}index.html{% endif %}">Édition du jour</a>
-  <a class="tab" href="{{ archives_path }}">Archives</a>
-  {% if menu %}
-  <span class="nav-div" aria-hidden="true"></span>
-  <nav class="navmenu" aria-label="Sections">
-    {% for m in menu %}
-    <a class="navlink" href="#{{ m.anchor }}">{{ m.label }}</a>
+{% block sidebar %}
+  <div class="sb-group">
+    <a class="sb-item {% if not is_archive %}on{% endif %}" href="{% if is_archive %}../index.html{% else %}index.html{% endif %}">{{ ic.icon('home') }}<span>Édition du jour</span></a>
+    <a class="sb-item" href="{{ archives_path }}">{{ ic.icon('archive') }}<span>Archives</span></a>
+  </div>
+
+  {% set ed_items = menu | selectattr('group', 'equalto', 'edition') | list %}
+  {% if ed_items %}
+  <div class="sb-sep"></div>
+  <nav class="sb-group" aria-label="L'édition">
+    <p class="sb-title">L'édition</p>
+    {% for m in ed_items %}
+    <a class="sb-item" href="{{ anchor_base }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span></a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  {% set zone_items = menu | selectattr('group', 'equalto', 'zone') | list %}
+  {% if zone_items %}
+  <div class="sb-sep"></div>
+  <nav class="sb-group" aria-label="Zones">
+    <p class="sb-title">Zones</p>
+    {% for m in zone_items %}
+    <a class="sb-item" href="{{ anchor_base }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span>{% if m.count %}<span class="sb-count">{{ m.count }}</span>{% endif %}</a>
     {% endfor %}
   </nav>
   {% endif %}

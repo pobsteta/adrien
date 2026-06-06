@@ -16,31 +16,18 @@
 
   <header class="topbar">
     <div class="topbar__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true">◆</span>
-        <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
-      </a>
+      <div class="topbar__left">
+        <button class="burger" id="navToggle" aria-label="Afficher ou masquer le menu" aria-controls="sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
+        </a>
+      </div>
       <div class="topbar__right">
         <span class="status"><span class="status__dot"></span>LIVE</span>
         <span class="topbar__date">samedi 6 juin 2026</span>
       </div>
     </div>
-    <nav class="tabs">
-  <a class="tab" href="index.html">Édition du jour</a>
-  <a class="tab" href="archives/index.html">Archives</a>
-  <span class="nav-div" aria-hidden="true"></span>
-  <nav class="navmenu" aria-label="Sections">
-    <a class="navlink" href="#une">À la une</a>
-    <a class="navlink" href="#flash">⚡ Flash</a>
-    <a class="navlink" href="#selection">La sélection</a>
-    <a class="navlink" href="#r-europe">Europe</a>
-    <a class="navlink" href="#r-ameriques">Amériques</a>
-    <a class="navlink" href="#r-france">France</a>
-    <a class="navlink" href="#r-institutions">Institutions</a>
-    <a class="navlink" href="#r-asie">Asie</a>
-    <a class="navlink" href="#r-international">International</a>
-  </nav>
-    </nav>
   </header>
 
 <div class="ticker" aria-hidden="true">
@@ -76,7 +63,35 @@
   </div>
 </div>
 
-  <main class="wrap">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation">
+  <div class="sb-group">
+    <a class="sb-item on" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg><span>Édition du jour</span></a>
+    <a class="sb-item" href="archives/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg><span>Archives</span></a>
+  </div>
+
+  <div class="sb-sep"></div>
+  <nav class="sb-group" aria-label="L'édition">
+    <p class="sb-title">L'édition</p>
+    <a class="sb-item" href="#une"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg><span>À la une</span></a>
+    <a class="sb-item" href="#flash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span>Flash</span></a>
+    <a class="sb-item" href="#selection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>La sélection</span></a>
+  </nav>
+
+  <div class="sb-sep"></div>
+  <nav class="sb-group" aria-label="Zones">
+    <p class="sb-title">Zones</p>
+    <a class="sb-item" href="#r-europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Europe</span><span class="sb-count">2</span></a>
+    <a class="sb-item" href="#r-ameriques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Amériques</span><span class="sb-count">3</span></a>
+    <a class="sb-item" href="#r-france"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>France</span><span class="sb-count">2</span></a>
+    <a class="sb-item" href="#r-institutions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Institutions</span><span class="sb-count">2</span></a>
+    <a class="sb-item" href="#r-asie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Asie</span><span class="sb-count">1</span></a>
+    <a class="sb-item" href="#r-international"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>International</span><span class="sb-count">1</span></a>
+  </nav>
+    </aside>
+
+    <div class="main-col">
+      <main class="wrap">
 
 
 <section id="une" class="hero" aria-label="À la une">
@@ -408,17 +423,23 @@
   </div>
 </section>
 
-  </main>
+      </main>
 
-  <footer class="foot">
-    <div class="foot__inner">
-      <p class="foot__line">
-        <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
-        republie que le titre et un court extrait, avec un bouton vers la
-        source. Tous droits réservés aux éditeurs d'origine.
-      </p>
-      <p class="foot__meta">Édition du samedi 6 juin 2026 — 14 annonce(s) · générée le 06/06/2026 à 09:01</p>
+      <footer class="foot">
+        <div class="foot__inner">
+          <p class="foot__line">
+            <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
+            republie que le titre et un court extrait, avec un bouton vers la
+            source. Tous droits réservés aux éditeurs d'origine.
+          </p>
+          <p class="foot__meta">Édition du samedi 6 juin 2026 — 14 annonce(s) · générée le 06/06/2026 à 09:16</p>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </div>
+
+  <div class="backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <script src="app.js" defer></script>
 </body>
 </html>

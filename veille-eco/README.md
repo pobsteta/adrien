@@ -62,6 +62,13 @@ Netlify, un simple serveur de fichiers…).
 { "name": "Le Monde – Économie", "url": "https://…/rss.xml", "category": "France", "weight": 4 }
 ```
 
+La navigation se fait via une **barre latérale gauche rétractable** (façon
+YouTube) : l'icône ☰ en haut à gauche la replie/déplie, et l'état est mémorisé
+d'une page à l'autre (`templates/app.js`, copié dans `output/app.js`). Sur
+mobile, elle s'ouvre en surimpression. Le menu liste *Édition du jour*,
+*Archives*, le groupe *L'édition* (À la une, Flash, La sélection) et le groupe
+*Zones* (chaque rubrique avec son nombre d'annonces).
+
 - `category` regroupe les articles en **rubriques géographiques** affichées
   dans cet ordre : *Europe*, *Amériques*, *France*, *Institutions*, *Asie*,
   *International* (ordre réglable via `CATEGORY_ORDER` dans `build.py` ;

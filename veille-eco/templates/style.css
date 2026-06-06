@@ -81,11 +81,20 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--border);
 }
 .topbar__inner {
-  max-width: var(--wrap); margin: 0 auto;
-  height: 60px; padding: 0 24px;
+  height: 60px; padding: 0 18px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.brand { display: flex; align-items: center; gap: 10px; }
+.topbar__left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.burger {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 10px;
+  background: transparent; border: 1px solid var(--border); color: var(--text);
+  cursor: pointer; transition: background 0.15s, border-color 0.15s;
+}
+.burger:hover { background: var(--vglow2); border-color: var(--border-active); }
+.burger svg { width: 21px; height: 21px; }
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .brand__mark { color: var(--v2); font-size: 16px; filter: drop-shadow(0 0 10px var(--vglow)); }
 .brand__name {
   font-family: var(--display);
@@ -116,31 +125,57 @@ a { color: inherit; text-decoration: none; }
 }
 .topbar__date { font-size: 12px; color: var(--text3); letter-spacing: 0.02em; }
 
-/* Onglets */
-.tabs { max-width: var(--wrap); margin: 0 auto; padding: 0 24px 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.tab {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--text2);
-  padding: 6px 15px; border-radius: var(--pill);
-  border: 1px solid var(--border); transition: all 0.2s;
+/* =========================================================================
+   Mise en page : barre latérale rétractable + contenu
+   ========================================================================= */
+.shell { display: flex; align-items: flex-start; }
+
+.sidebar {
+  flex: 0 0 250px; width: 250px;
+  position: sticky; top: 60px; align-self: flex-start;
+  height: calc(100vh - 60px); overflow-y: auto;
+  padding: 16px 12px 40px;
+  border-right: 1px solid var(--border);
+  transition: flex-basis 0.26s cubic-bezier(.4,0,.2,1),
+              width 0.26s cubic-bezier(.4,0,.2,1),
+              padding 0.26s, opacity 0.2s, transform 0.26s;
 }
-.tab:hover { color: var(--text); border-color: var(--border-active); }
-.tab[aria-current="page"] {
-  color: #fff; border-color: transparent;
-  background: linear-gradient(135deg, var(--v), #1E3A8A);
+.main-col { flex: 1 1 auto; min-width: 0; }
+
+/* État rétracté (grand écran) : la barre se replie, le contenu s'élargit. */
+body.sb-toggled .sidebar {
+  flex-basis: 0; width: 0; padding-left: 0; padding-right: 0;
+  opacity: 0; transform: translateX(-16px);
+  pointer-events: none; overflow: hidden; border-right-color: transparent;
 }
 
-/* Menu des sections, en ligne et toujours visible (haut gauche) */
-.nav-div { width: 1px; height: 16px; background: var(--border); margin: 0 5px; }
-.navmenu { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 1px; }
-.navlink {
-  font-size: 12px; font-weight: 500; letter-spacing: 0.01em;
-  color: var(--text2);
-  padding: 5px 10px; border-radius: 8px;
-  transition: background 0.15s, color 0.15s;
+/* Groupes & items */
+.sb-group { display: flex; flex-direction: column; gap: 2px; }
+.sb-sep { height: 1px; background: var(--border); margin: 12px 10px; }
+.sb-title {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text3); padding: 6px 14px 8px;
 }
-.navlink:hover { color: var(--text); background: var(--vglow2); }
-.navlink:active { color: var(--v2); }
+.sb-item {
+  display: flex; align-items: center; gap: 15px;
+  padding: 9px 14px; border-radius: 10px;
+  color: var(--text2); font-size: 14px; font-weight: 500;
+  white-space: nowrap; transition: background 0.15s, color 0.15s;
+}
+.sb-item svg { width: 21px; height: 21px; flex: 0 0 auto; opacity: 0.85; }
+.sb-item span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.sb-item:hover { background: var(--card-hover); color: var(--text); }
+.sb-item:hover svg { opacity: 1; }
+.sb-item.on { background: var(--vglow2); color: var(--text); font-weight: 600; }
+.sb-item.on svg { color: var(--v2); opacity: 1; }
+.sb-count {
+  margin-left: auto; font-size: 11px; color: var(--text3);
+  font-variant-numeric: tabular-nums;
+  border: 1px solid var(--border); border-radius: var(--pill); padding: 1px 8px;
+}
+
+/* Fond sombre (mobile uniquement, géré plus bas) */
+.backdrop { display: none; }
 
 /* =========================================================================
    Ticker
@@ -381,6 +416,30 @@ a { color: inherit; text-decoration: none; }
 /* =========================================================================
    Responsive
    ========================================================================= */
+
+/* Tablette / mobile : la barre passe en surimpression (off-canvas). */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed; top: 60px; left: 0; z-index: 80;
+    flex-basis: 268px; width: 268px; height: calc(100vh - 60px);
+    padding: 16px 12px 40px;
+    background: rgba(10,13,22,0.98); backdrop-filter: blur(22px);
+    border-right: 1px solid var(--border);
+    transform: translateX(-100%); opacity: 1; pointer-events: auto; overflow-y: auto;
+    transition: transform 0.26s cubic-bezier(.4,0,.2,1);
+  }
+  /* sur mobile, `sb-toggled` OUVRE la barre (état inversé). */
+  body.sb-toggled .sidebar {
+    transform: translateX(0); flex-basis: 268px; width: 268px;
+    padding: 16px 12px 40px; opacity: 1; pointer-events: auto;
+    border-right-color: var(--border); overflow-y: auto;
+  }
+  body.sb-toggled .backdrop {
+    display: block; position: fixed; inset: 60px 0 0 0; z-index: 70;
+    background: rgba(0,0,0,0.55); backdrop-filter: blur(2px);
+  }
+}
+
 @media (max-width: 680px) {
   .grid { grid-template-columns: 1fr; }
   .flash { grid-template-columns: 1fr; gap: 0; }
@@ -389,8 +448,7 @@ a { color: inherit; text-decoration: none; }
   .topbar__date { display: none; }
   .brand__name { font-size: 16px; }
   .wrap { padding: 24px 16px 50px; }
-  .tabs { padding: 0 16px 12px; }
-  .topbar__inner { padding: 0 16px; }
+  .topbar__inner { padding: 0 12px; }
   .hero__hit, .hero .btn { padding-left: 22px; padding-right: 22px; }
   .hero .btn { margin-left: 22px; margin-right: 22px; }
 }

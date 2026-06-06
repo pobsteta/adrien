@@ -1,17 +1,34 @@
 {% extends "base.html" %}
+{% import "_icons.html" as ic %}
 
 {% block title %}Archives — Le Terminal Économies{% endblock %}
 {% block home_href %}{{ home_path }}{% endblock %}
 {% block dateline %}Archives{% endblock %}
 
-{% block nav %}
-  <a class="tab" href="{{ home_path }}">Édition du jour</a>
-  <a class="tab" href="index.html" aria-current="page">Archives</a>
-  {% if menu %}
-  <span class="nav-div" aria-hidden="true"></span>
-  <nav class="navmenu" aria-label="Sections">
-    {% for m in menu %}
-    <a class="navlink" href="{{ home_path }}#{{ m.anchor }}">{{ m.label }}</a>
+{% block sidebar %}
+  <div class="sb-group">
+    <a class="sb-item" href="{{ home_path }}">{{ ic.icon('home') }}<span>Édition du jour</span></a>
+    <a class="sb-item on" href="index.html">{{ ic.icon('archive') }}<span>Archives</span></a>
+  </div>
+
+  {% set ed_items = menu | selectattr('group', 'equalto', 'edition') | list %}
+  {% if ed_items %}
+  <div class="sb-sep"></div>
+  <nav class="sb-group" aria-label="L'édition">
+    <p class="sb-title">L'édition</p>
+    {% for m in ed_items %}
+    <a class="sb-item" href="{{ home_path }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span></a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  {% set zone_items = menu | selectattr('group', 'equalto', 'zone') | list %}
+  {% if zone_items %}
+  <div class="sb-sep"></div>
+  <nav class="sb-group" aria-label="Zones">
+    <p class="sb-title">Zones</p>
+    {% for m in zone_items %}
+    <a class="sb-item" href="{{ home_path }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span>{% if m.count %}<span class="sb-count">{{ m.count }}</span>{% endif %}</a>
     {% endfor %}
   </nav>
   {% endif %}

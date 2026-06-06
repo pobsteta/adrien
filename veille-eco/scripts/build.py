@@ -179,12 +179,16 @@ def build_context(edition_date: str) -> dict:
     # d'apparition. `anchor` = id HTML vers lequel le lien saute.
     menu: list[dict] = []
     if featured:
-        menu.append({"label": "À la une", "anchor": "une"})
+        menu.append({"label": "À la une", "anchor": "une",
+                     "icon": "star", "group": "edition"})
     if flash:
-        menu.append({"label": "⚡ Flash", "anchor": "flash"})
+        menu.append({"label": "Flash", "anchor": "flash",
+                     "icon": "bolt", "group": "edition"})
     if selection:
-        menu.append({"label": "La sélection", "anchor": "selection"})
-    menu += [{"label": s["category"], "anchor": s["anchor"]} for s in sections]
+        menu.append({"label": "La sélection", "anchor": "selection",
+                     "icon": "bookmark", "group": "edition"})
+    menu += [{"label": s["category"], "anchor": s["anchor"], "icon": "globe",
+              "group": "zone", "count": len(s["articles"])} for s in sections]
 
     d = date.fromisoformat(edition_date)
     return {
@@ -258,8 +262,9 @@ def build(edition_date: str | None = None) -> int:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     ARCHIVES_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Feuille de style copiée à la racine du site.
+    # Ressources statiques copiées à la racine du site.
     shutil.copyfile(TEMPLATES_DIR / "style.css", OUTPUT_DIR / "style.css")
+    shutil.copyfile(TEMPLATES_DIR / "app.js", OUTPUT_DIR / "app.js")
 
     env = make_env()
     context = build_context(edition_date)
@@ -269,21 +274,25 @@ def build(edition_date: str | None = None) -> int:
 
     edition_tpl = env.get_template("edition.html")
 
-    # 1) Édition du jour : output/index.html (css à la racine).
+    # 1) Édition du jour : output/index.html (ressources à la racine).
     (OUTPUT_DIR / "index.html").write_text(
         edition_tpl.render(css_path="style.css",
+                           js_path="app.js",
                            archives_path="archives/index.html",
+                           anchor_base="",
                            is_archive=False,
                            **context),
         encoding="utf-8",
     )
     print("  écrit : output/index.html")
 
-    # 2) Copie archivée : output/archives/AAAA-MM-JJ.html (css un cran au-dessus).
+    # 2) Copie archivée : output/archives/AAAA-MM-JJ.html (ressources au-dessus).
     archive_file = ARCHIVES_DIR / f"{edition_date}.html"
     archive_file.write_text(
         edition_tpl.render(css_path="../style.css",
+                           js_path="../app.js",
                            archives_path="index.html",
+                           anchor_base="",
                            is_archive=True,
                            **context),
         encoding="utf-8",
@@ -295,6 +304,7 @@ def build(edition_date: str | None = None) -> int:
     archives_tpl = env.get_template("archives.html")
     (ARCHIVES_DIR / "index.html").write_text(
         archives_tpl.render(css_path="../style.css",
+                            js_path="../app.js",
                             home_path="../index.html",
                             archives=archives,
                             menu=context["menu"]),
