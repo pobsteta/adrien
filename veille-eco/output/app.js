@@ -48,3 +48,76 @@
     });
   }
 })();
+
+/* Graphique d'ambiance de l'accueil : on remplace la courbe décorative par
+   les VRAIES valeurs de l'EUR/USD (taux de référence BCE, ~6 mois), via l'API
+   gratuite Frankfurter (sans clé, CORS). Si le réseau échoue, on garde le
+   visuel décoratif d'origine — la page reste parfaite hors-ligne. */
+(function () {
+  "use strict";
+  var line = document.getElementById("ig-line-path");
+  var area = document.getElementById("ig-area-path");
+  if (!line || !area) return;            // présent uniquement sur l'accueil
+
+  var W = 360, TOP = 44, BOTTOM = 180, FLOOR = 240;
+
+  function iso(d) { return d.toISOString().slice(0, 10); }
+  function frFixed(n, dec) {
+    return n.toLocaleString("fr-FR",
+      { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  }
+
+  var end = new Date();
+  var start = new Date();
+  start.setDate(start.getDate() - 182);
+  var url = "https://api.frankfurter.app/" + iso(start) + ".." + iso(end) +
+            "?from=EUR&to=USD";
+
+  fetch(url).then(function (r) { return r.json(); }).then(function (data) {
+    var rates = data && data.rates ? data.rates : {};
+    var dates = Object.keys(rates).sort();
+    var vals = dates.map(function (d) { return rates[d].USD; })
+                    .filter(function (v) { return typeof v === "number"; });
+    if (vals.length < 2) return;
+
+    var min = Math.min.apply(null, vals);
+    var max = Math.max.apply(null, vals);
+    var span = (max - min) || 1;
+
+    var pts = vals.map(function (v, i) {
+      var x = (i / (vals.length - 1)) * W;
+      var y = BOTTOM - ((v - min) / span) * (BOTTOM - TOP);
+      return [x, y];
+    });
+
+    var dLine = "M" + pts.map(function (p) {
+      return p[0].toFixed(1) + "," + p[1].toFixed(1);
+    }).join(" L");
+    line.setAttribute("d", dLine);
+    area.setAttribute("d", dLine + " L" + W + "," + FLOOR + " L0," + FLOOR + " Z");
+
+    // Repositionne le point lumineux de fin de courbe.
+    var last = pts[pts.length - 1];
+    var dot = document.getElementById("ig-dot");
+    var halo = document.getElementById("ig-dot-halo");
+    if (dot) { dot.setAttribute("cx", last[0].toFixed(1)); dot.setAttribute("cy", last[1].toFixed(1)); }
+    if (halo) { halo.setAttribute("cx", last[0].toFixed(1)); halo.setAttribute("cy", last[1].toFixed(1)); }
+
+    // Les barres décoratives n'ont plus de sens face à des données réelles.
+    var bars = document.getElementById("ig-bars");
+    if (bars) bars.style.display = "none";
+
+    // Badges : variation sur la période + dernière valeur réelle.
+    var first = vals[0], lastV = vals[vals.length - 1];
+    var chg = ((lastV - first) / first) * 100;
+    var up = chg >= 0;
+    var trend = document.getElementById("ig-trend");
+    if (trend) {
+      trend.textContent = (up ? "▲ +" : "▼ ") + frFixed(chg, 2) + " %";
+      trend.classList.toggle("up", up);
+      trend.classList.toggle("down", !up);
+    }
+    var rate = document.getElementById("ig-rate");
+    if (rate) rate.textContent = "1 € = " + frFixed(lastV, 4) + " $";
+  }).catch(function () { /* hors-ligne : on garde le visuel décoratif */ });
+})();

@@ -293,6 +293,7 @@ body.sb-toggled .sidebar {
   display: inline-flex; align-items: center; gap: 6px;
 }
 .achip.up { color: var(--green); border-color: rgba(52,211,153,0.35); }
+.achip.down { color: var(--red); border-color: rgba(248,113,113,0.35); }
 .achip.live { color: var(--v2); border-color: var(--border-active); }
 
 /* Cartes « comment ça marche » */
