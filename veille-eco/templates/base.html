@@ -24,6 +24,9 @@
         </a>
       </div>
       <div class="topbar__right">
+        <button class="langbtn" id="langToggle" type="button" aria-label="Switch language / Changer de langue" title="English / Français">
+          {{ ic.icon('globe') }}<span class="lang__label">EN</span>
+        </button>
         <span class="status"><span class="status__dot"></span>LIVE</span>
         <span class="topbar__date">{% block dateline %}{% endblock %}</span>
       </div>
@@ -44,7 +47,7 @@
 
       <footer class="foot">
         <div class="foot__inner">
-          <p class="foot__line">
+          <p class="foot__line" data-en='<strong>The Economy Terminal</strong> aggregates RSS feeds and republishes only the headline and a short excerpt, with a button to the source. All rights reserved to the original publishers.'>
             <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
             republie que le titre et un court extrait, avec un bouton vers la
             source. Tous droits réservés aux éditeurs d'origine.

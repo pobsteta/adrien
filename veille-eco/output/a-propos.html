@@ -24,8 +24,11 @@
         </a>
       </div>
       <div class="topbar__right">
+        <button class="langbtn" id="langToggle" type="button" aria-label="Switch language / Changer de langue" title="English / Français">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="lang__label">EN</span>
+        </button>
         <span class="status"><span class="status__dot"></span>LIVE</span>
-        <span class="topbar__date">À propos</span>
+        <span class="topbar__date"><span data-en="About">À propos</span></span>
       </div>
     </div>
   </header>
@@ -34,28 +37,28 @@
   <div class="shell">
     <aside class="sidebar" id="sidebar" aria-label="Navigation">
 <div class="sb-group">
-  <a class="sb-item " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg><span>Édition du jour</span></a>
-  <a class="sb-item " href="calendrier.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg><span>Calendrier éco</span></a>
-  <a class="sb-item " href="archives/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg><span>Archives</span></a>
-  <a class="sb-item on" href="a-propos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg><span>À propos</span></a>
+  <a class="sb-item " href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg><span data-en="Today's edition">Édition du jour</span></a>
+  <a class="sb-item " href="calendrier.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg><span data-en="Economic calendar">Calendrier éco</span></a>
+  <a class="sb-item " href="archives/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg><span data-en="Archives">Archives</span></a>
+  <a class="sb-item on" href="a-propos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg><span data-en="About">À propos</span></a>
 </div>
 
 <div class="sb-sep"></div>
 <nav class="sb-group" aria-label="L'édition">
-  <p class="sb-title">L'édition</p>
-  <a class="sb-item" href="index.html#une"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg><span>À la une</span></a>
-  <a class="sb-item" href="index.html#flash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span>Flash</span></a>
-  <a class="sb-item" href="index.html#selection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>La sélection</span></a>
+  <p class="sb-title" data-en="The edition">L'édition</p>
+  <a class="sb-item" href="index.html#une"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg><span class="js-term">À la une</span></a>
+  <a class="sb-item" href="index.html#flash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span class="js-term">Flash</span></a>
+  <a class="sb-item" href="index.html#selection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="js-term">La sélection</span></a>
 </nav>
 
 <div class="sb-sep"></div>
 <nav class="sb-group" aria-label="Zones">
-  <p class="sb-title">Zones</p>
-  <a class="sb-item" href="index.html#r-europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Europe</span><span class="sb-count">2</span></a>
-  <a class="sb-item" href="index.html#r-ameriques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Amériques</span><span class="sb-count">2</span></a>
-  <a class="sb-item" href="index.html#r-asie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Asie</span><span class="sb-count">1</span></a>
-  <a class="sb-item" href="index.html#r-institutions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Institutions</span><span class="sb-count">5</span></a>
-  <a class="sb-item" href="index.html#r-international"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>International</span><span class="sb-count">2</span></a>
+  <p class="sb-title" data-en="Zones">Zones</p>
+  <a class="sb-item" href="index.html#r-europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Europe</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="index.html#r-ameriques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Amériques</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="index.html#r-asie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Asie</span><span class="sb-count">1</span></a>
+  <a class="sb-item" href="index.html#r-institutions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Institutions</span><span class="sb-count">5</span></a>
+  <a class="sb-item" href="index.html#r-international"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">International</span><span class="sb-count">2</span></a>
 </nav>
     </aside>
 
@@ -64,9 +67,9 @@
 
 <section class="intro" aria-label="À propos">
   <div class="intro__text">
-    <p class="intro__eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg> À propos du projet</p>
-    <h1 class="intro__title">L'actualité économique,<br><span class="grad">claire et sans bruit.</span></h1>
-    <p class="intro__lead">
+    <p class="intro__eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg> <span data-en="About the project">À propos du projet</span></p>
+    <h1 class="intro__title" data-en='Economic news,<br><span class="grad">clear and noise-free.</span>'>L'actualité économique,<br><span class="grad">claire et sans bruit.</span></h1>
+    <p class="intro__lead" data-en='Every day, dozens of media and institutions publish hundreds of economic articles. Impossible to follow it all. <strong>The Economy Terminal</strong> sorts it for you: it gathers the essentials in one place, organises them, and highlights what truly matters — to grasp the day in a few minutes.'>
       Chaque jour, des dizaines de médias et d'institutions publient des
       centaines d'articles économiques. Impossible de tout suivre.
       <strong>Le Terminal Économies</strong> fait le tri pour vous : il
@@ -74,11 +77,11 @@
       compte vraiment — pour comprendre la journée en quelques minutes.
     </p>
     <div class="intro__actions">
-      <a class="btn" href="index.html">Voir l'édition du jour <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="index.html"><span data-en="See today's edition">Voir l'édition du jour</span> <span class="btn__arrow" aria-hidden="true">→</span></a>
       <div class="intro__stats">
-        <span class="stat"><b>15</b> sources</span>
-        <span class="stat"><b>5</b> zones</span>
-        <span class="stat"><b>1×</b> par jour</span>
+        <span class="stat"><b>15</b> <span data-en="sources">sources</span></span>
+        <span class="stat"><b>5</b> <span data-en="zones">zones</span></span>
+        <span class="stat"><b>1×</b> <span data-en="a day">par jour</span></span>
       </div>
     </div>
   </div>
@@ -101,23 +104,23 @@
       <circle cx="360" cy="50" r="9" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.4"/>
     </svg>
     <div class="artchart__chips">
-      <span class="achip up">▲ Synthèse</span>
-      <span class="achip">Sans pub</span>
-      <span class="achip live"><span class="status__dot"></span>Quotidien</span>
+      <span class="achip up" data-en="▲ Synthesis">▲ Synthèse</span>
+      <span class="achip" data-en="Ad-free">Sans pub</span>
+      <span class="achip live"><span class="status__dot"></span><span data-en="Daily">Quotidien</span></span>
     </div>
   </div>
 </section>
 
 <section class="prose" aria-label="Notre mission">
-  <span class="prose__kicker">Notre mission</span>
-  <h2 class="prose__h">Remettre de l'ordre dans le flot de l'info éco</h2>
-  <p>
+  <span class="prose__kicker" data-en="Our mission">Notre mission</span>
+  <h2 class="prose__h" data-en="Bringing order to the flood of economic news">Remettre de l'ordre dans le flot de l'info éco</h2>
+  <p data-en="We have all been there: you just want to know “what's going on” in the economy, and you end up with fifteen tabs open, alarmist headlines, articles that repeat each other and others you already read yesterday. Information is everywhere… but time is always short.">
     On a tous vécu ça : on veut juste savoir « ce qui se passe » en économie,
     et on se retrouve avec quinze onglets ouverts, des titres alarmistes, des
     articles qui se répètent et d'autres qu'on a déjà lus la veille. L'information
     est partout… mais le temps, lui, manque toujours.
   </p>
-  <p>
+  <p data-en="The Economy Terminal starts from a simple idea: <strong>you don't need more articles, you need an overview.</strong> The site fetches publications where they appear (the official feeds of media and institutions), removes duplicates, keeps the most recent ones, and arranges them by major regions of the world. Above them, a short editorial selection points to what truly deserves your attention.">
     Le Terminal Économies part d'une idée simple : <strong>vous n'avez pas
     besoin de plus d'articles, vous avez besoin d'une vue d'ensemble.</strong>
     Le site va chercher les publications là où elles paraissent (les flux
@@ -125,7 +128,7 @@
     récentes, et les range par grandes zones du monde. Au-dessus, une courte
     sélection éditoriale pointe ce qui mérite vraiment votre attention.
   </p>
-  <p>
+  <p data-en="The result: a single, sober and fast page that you skim in the morning with your coffee. No account to create, no advertising, no paywall — just the essentials, dated and always linked back to their original source.">
     Résultat : une page unique, sobre et rapide, que l'on parcourt le matin
     avec son café. Pas de compte à créer, pas de publicité, pas de mur payant —
     juste l'essentiel, daté et toujours relié à sa source d'origine.
@@ -135,104 +138,104 @@
 <section class="features" aria-label="Ce que ça vous apporte">
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-    <h3 class="feat__title">Vous gagnez du temps</h3>
-    <p class="feat__desc">Une seule page à ouvrir au lieu de courir entre dix sites. L'essentiel se lit en quelques minutes.</p>
+    <h3 class="feat__title" data-en="You save time">Vous gagnez du temps</h3>
+    <p class="feat__desc" data-en="One page to open instead of hopping between ten sites. The essentials read in a few minutes.">Une seule page à ouvrir au lieu de courir entre dix sites. L'essentiel se lit en quelques minutes.</p>
   </article>
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
-    <h3 class="feat__title">Vous voyez l'ensemble</h3>
-    <p class="feat__desc">Europe, Amériques, France, Asie… Les nouvelles sont rangées par zone pour saisir la tendance d'un coup d'œil.</p>
+    <h3 class="feat__title" data-en="You see the whole picture">Vous voyez l'ensemble</h3>
+    <p class="feat__desc" data-en="Europe, Americas, Asia… News is sorted by zone to grasp the trend at a glance.">Europe, Amériques, France, Asie… Les nouvelles sont rangées par zone pour saisir la tendance d'un coup d'œil.</p>
   </article>
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span>
-    <h3 class="feat__title">Vous allez à l'important</h3>
-    <p class="feat__desc">Le fil « Flash » remonte les dernières minutes, et « La sélection » met en avant les analyses qui comptent.</p>
+    <h3 class="feat__title" data-en="You go to what matters">Vous allez à l'important</h3>
+    <p class="feat__desc" data-en="The “Flash” feed surfaces the latest minutes, and “The selection” highlights the analyses that count.">Le fil « Flash » remonte les dernières minutes, et « La sélection » met en avant les analyses qui comptent.</p>
   </article>
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-    <h3 class="feat__title">Vous gardez confiance</h3>
-    <p class="feat__desc">Chaque annonce mène à l'article d'origine, toujours crédité. Vous lisez la vraie source, jamais une copie.</p>
+    <h3 class="feat__title" data-en="You stay confident">Vous gardez confiance</h3>
+    <p class="feat__desc" data-en="Every item leads to the original article, always credited. You read the real source, never a copy.">Chaque annonce mène à l'article d'origine, toujours crédité. Vous lisez la vraie source, jamais une copie.</p>
   </article>
 </section>
 
 <section class="steps" aria-label="En pratique">
-  <span class="prose__kicker">En pratique</span>
-  <h2 class="prose__h">Comment l'édition du jour est fabriquée</h2>
+  <span class="prose__kicker" data-en="In practice">En pratique</span>
+  <h2 class="prose__h" data-en="How the daily edition is made">Comment l'édition du jour est fabriquée</h2>
   <div class="steps__grid">
     <div class="step">
       <span class="step__num">1</span>
-      <h3 class="step__title">On rassemble</h3>
-      <p class="step__desc">Le site récupère automatiquement les flux des médias et institutions suivis, puis nettoie chaque annonce.</p>
+      <h3 class="step__title" data-en="We gather">On rassemble</h3>
+      <p class="step__desc" data-en="The site automatically fetches the feeds of the media and institutions followed, then cleans each item.">Le site récupère automatiquement les flux des médias et institutions suivis, puis nettoie chaque annonce.</p>
     </div>
     <div class="step">
       <span class="step__num">2</span>
-      <h3 class="step__title">On trie</h3>
-      <p class="step__desc">Doublons écartés, annonces trop anciennes retirées, le reste classé par fraîcheur et par zone.</p>
+      <h3 class="step__title" data-en="We sort">On trie</h3>
+      <p class="step__desc" data-en="Duplicates removed, items too old discarded, the rest sorted by freshness and by zone.">Doublons écartés, annonces trop anciennes retirées, le reste classé par fraîcheur et par zone.</p>
     </div>
     <div class="step">
       <span class="step__num">3</span>
-      <h3 class="step__title">Vous lisez</h3>
-      <p class="step__desc">L'édition est publiée, mise en avant et archivée chaque jour. Vous parcourez, vous cliquez, vous lisez la source.</p>
+      <h3 class="step__title" data-en="You read">Vous lisez</h3>
+      <p class="step__desc" data-en="The edition is published, highlighted and archived every day. You browse, you click, you read the source.">L'édition est publiée, mise en avant et archivée chaque jour. Vous parcourez, vous cliquez, vous lisez la source.</p>
     </div>
   </div>
 </section>
 
 <section class="quote" aria-label="Notre conviction">
-  <p class="quote__text">« Être bien informé, ce n'est pas tout lire. C'est lire ce qu'il faut, au bon moment, et savoir d'où ça vient. »</p>
-  <p class="quote__by">— L'esprit du Terminal Économies</p>
+  <p class="quote__text" data-en="“Being well informed isn't reading everything. It's reading what matters, at the right time, and knowing where it comes from.”">« Être bien informé, ce n'est pas tout lire. C'est lire ce qu'il faut, au bon moment, et savoir d'où ça vient. »</p>
+  <p class="quote__by" data-en="— The spirit of The Economy Terminal">— L'esprit du Terminal Économies</p>
 </section>
 
 <section class="faq" aria-label="Questions fréquentes">
   <span class="prose__kicker">FAQ</span>
-  <h2 class="prose__h">Les questions qu'on nous pose</h2>
+  <h2 class="prose__h" data-en="The questions we get asked">Les questions qu'on nous pose</h2>
 
   <details class="qa">
-    <summary>C'est vraiment gratuit ?</summary>
-    <div class="qa__body"><p>Oui, entièrement. Pas d'abonnement, pas de publicité, pas de compte à créer. Le site est « statique » : il s'agit de simples pages, gratuites à héberger et instantanées à charger.</p></div>
+    <summary data-en="Is it really free?">C'est vraiment gratuit ?</summary>
+    <div class="qa__body"><p data-en="Yes, entirely. No subscription, no advertising, no account to create. The site is “static”: just plain pages, free to host and instant to load.">Oui, entièrement. Pas d'abonnement, pas de publicité, pas de compte à créer. Le site est « statique » : il s'agit de simples pages, gratuites à héberger et instantanées à charger.</p></div>
   </details>
 
   <details class="qa">
-    <summary>D'où vient l'information ?</summary>
-    <div class="qa__body"><p>Uniquement des flux publics (RSS) des médias et institutions économiques. Le site n'invente rien et ne réécrit pas les articles : il affiche le titre, un court extrait, et un lien vers l'article original.</p></div>
+    <summary data-en="Where does the information come from?">D'où vient l'information ?</summary>
+    <div class="qa__body"><p data-en="Only from the public feeds (RSS) of economic media and institutions. The site invents nothing and does not rewrite articles: it shows the headline, a short excerpt, and a link to the original article.">Uniquement des flux publics (RSS) des médias et institutions économiques. Le site n'invente rien et ne réécrit pas les articles : il affiche le titre, un court extrait, et un lien vers l'article original.</p></div>
   </details>
 
   <details class="qa">
-    <summary>À quelle fréquence est-ce mis à jour ?</summary>
-    <div class="qa__body"><p>Une nouvelle édition est produite chaque jour, et le fil « Flash » met en avant les annonces des dernières heures. Chaque édition est aussi archivée pour pouvoir y revenir.</p></div>
+    <summary data-en="How often is it updated?">À quelle fréquence est-ce mis à jour ?</summary>
+    <div class="qa__body"><p data-en="A new edition is produced every day, and the “Flash” feed highlights the announcements of the last few hours. Each edition is also archived so you can come back to it.">Une nouvelle édition est produite chaque jour, et le fil « Flash » met en avant les annonces des dernières heures. Chaque édition est aussi archivée pour pouvoir y revenir.</p></div>
   </details>
 
   <details class="qa">
-    <summary>Pourquoi ne pas afficher l'article en entier ?</summary>
-    <div class="qa__body"><p>Par respect du travail des journalistes et des règles de droit d'auteur. On ne reprend qu'un court extrait pour vous donner envie de lire — puis on vous envoie directement chez l'éditeur, toujours crédité.</p></div>
+    <summary data-en="Why not show the full article?">Pourquoi ne pas afficher l'article en entier ?</summary>
+    <div class="qa__body"><p data-en="Out of respect for journalists' work and copyright rules. We only take a short excerpt to make you want to read — then we send you straight to the publisher, always credited.">Par respect du travail des journalistes et des règles de droit d'auteur. On ne reprend qu'un court extrait pour vous donner envie de lire — puis on vous envoie directement chez l'éditeur, toujours crédité.</p></div>
   </details>
 
   <details class="qa">
-    <summary>Puis-je proposer une source ou une zone ?</summary>
-    <div class="qa__body"><p>Bien sûr. La liste des sources et leur classement par zone sont entièrement modifiables : on peut ajouter un média, créer une nouvelle rubrique (Bourse, Énergie, Crypto…) ou ajuster les priorités très facilement.</p></div>
+    <summary data-en="Can I suggest a source or a zone?">Puis-je proposer une source ou une zone ?</summary>
+    <div class="qa__body"><p data-en="Of course. The list of sources and their classification by zone are fully editable: you can add a media outlet, create a new section (Markets, Energy, Crypto…) or adjust priorities very easily.">Bien sûr. La liste des sources et leur classement par zone sont entièrement modifiables : on peut ajouter un média, créer une nouvelle rubrique (Bourse, Énergie, Crypto…) ou ajuster les priorités très facilement.</p></div>
   </details>
 
   <details class="qa">
-    <summary>Mes données sont-elles suivies ?</summary>
-    <div class="qa__body"><p>Non. Il n'y a ni compte, ni traceur publicitaire imposé par le site. Vous consultez des pages, c'est tout.</p></div>
+    <summary data-en="Is my data tracked?">Mes données sont-elles suivies ?</summary>
+    <div class="qa__body"><p data-en="No. There is no account and no advertising tracker imposed by the site. You just browse pages, that's all.">Non. Il n'y a ni compte, ni traceur publicitaire imposé par le site. Vous consultez des pages, c'est tout.</p></div>
   </details>
 </section>
 
 <section class="cta" aria-label="Commencer">
-  <h2 class="cta__title">Prêt à faire le point sur l'éco ?</h2>
-  <p class="cta__sub">L'édition du jour vous attend — du plus chaud au plus utile, en une page.</p>
-  <a class="btn btn--lg" href="index.html">Ouvrir l'édition du jour <span class="btn__arrow" aria-hidden="true">→</span></a>
+  <h2 class="cta__title" data-en="Ready to catch up on the economy?">Prêt à faire le point sur l'éco ?</h2>
+  <p class="cta__sub" data-en="Today's edition is waiting — from the hottest to the most useful, in one page.">L'édition du jour vous attend — du plus chaud au plus utile, en une page.</p>
+  <a class="btn btn--lg" href="index.html"><span data-en="Open today's edition">Ouvrir l'édition du jour</span> <span class="btn__arrow" aria-hidden="true">→</span></a>
 </section>
 
       </main>
 
       <footer class="foot">
         <div class="foot__inner">
-          <p class="foot__line">
+          <p class="foot__line" data-en='<strong>The Economy Terminal</strong> aggregates RSS feeds and republishes only the headline and a short excerpt, with a button to the source. All rights reserved to the original publishers.'>
             <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
             republie que le titre et un court extrait, avec un bouton vers la
             source. Tous droits réservés aux éditeurs d'origine.
           </p>
-          <p class="foot__meta">À propos · Le Terminal Économies</p>
+          <p class="foot__meta"><span data-en="About · The Economy Terminal">À propos · Le Terminal Économies</span></p>
         </div>
       </footer>
     </div>

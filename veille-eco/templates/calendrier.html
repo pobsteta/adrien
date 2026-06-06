@@ -3,7 +3,7 @@
 
 {% block title %}Calendrier économique — Le Terminal Économies{% endblock %}
 {% block home_href %}index.html{% endblock %}
-{% block dateline %}Calendrier éco{% endblock %}
+{% block dateline %}<span data-en="Economic calendar">Calendrier éco</span>{% endblock %}
 
 {% block sidebar %}
   {% set active = 'calendar' %}
@@ -18,9 +18,9 @@
 {% block content %}
 
 <section class="prose" aria-label="Calendrier économique">
-  <span class="prose__kicker">{{ ic.icon('calendar') }} Calendrier économique</span>
-  <h1 class="prose__h">Les rendez-vous à fort impact de la semaine</h1>
-  <p>
+  <span class="prose__kicker">{{ ic.icon('calendar') }} <span data-en="Economic calendar">Calendrier économique</span></span>
+  <h1 class="prose__h" data-en="The week's high-impact events">Les rendez-vous à fort impact de la semaine</h1>
+  <p data-en='Central bank decisions, inflation, employment, GDP… This calendar shows only the announcements rated <strong>“high importance” (3 stars ★★★)</strong> — the ones that really move the markets. Lower-importance releases are deliberately hidden to keep things essential. Data and times provided in real time by Investing.com.'>
     Décisions de banques centrales, inflation, emploi, PIB… Ce calendrier ne
     montre que les annonces classées <strong>« forte importance »
     (3 étoiles ★★★)</strong> — celles qui font réellement bouger les marchés.
@@ -32,9 +32,9 @@
 
 <div class="calcard">
   <div class="calcard__bar">
-    <span class="calcard__legend">★★★ Forte importance uniquement</span>
+    <span class="calcard__legend" data-en="★★★ High importance only">★★★ Forte importance uniquement</span>
     <a class="calcard__full" href="https://fr.investing.com/economic-calendar/" target="_blank" rel="noopener nofollow">
-      Calendrier complet sur Investing.com <span aria-hidden="true">↗</span>
+      <span data-en="Full calendar on Investing.com">Calendrier complet sur Investing.com</span> <span aria-hidden="true">↗</span>
     </a>
   </div>
 
@@ -49,7 +49,7 @@
     allowtransparency="true">
   </iframe>
 
-  <p class="calcard__credit">
+  <p class="calcard__credit" data-en='Real-time economic calendar provided by <a href="https://www.investing.com/" target="_blank" rel="noopener nofollow">Investing.com</a>.'>
     Calendrier économique en temps réel fourni par
     <a href="https://fr.investing.com/" target="_blank" rel="noopener nofollow">Investing.com France</a>.
   </p>
@@ -57,4 +57,4 @@
 
 {% endblock %}
 
-{% block colophon_meta %}Calendrier économique · Le Terminal Économies{% endblock %}
+{% block colophon_meta %}<span data-en="Economic calendar · The Economy Terminal">Calendrier économique · Le Terminal Économies</span>{% endblock %}

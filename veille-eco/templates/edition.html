@@ -9,7 +9,7 @@
 <article class="card {{ tone }}" style="--i: {{ index }}">
   <a class="card__hit" href="{{ art.url }}" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : {{ art.title }}">
     <p class="card__kicker">
-      <span class="card__cat">{{ art.category }}</span>
+      <span class="card__cat js-term">{{ art.category }}</span>
       <span class="card__sep">·</span>
       <span class="card__source">{{ art.source }}</span>
       {% if art.time_display %}<span class="card__time">{{ art.time_display }}</span>{% endif %}
@@ -20,13 +20,13 @@
     {% endif %}
   </a>
   <a class="btn" href="{{ art.url }}" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 {% endmacro %}
 
 {% block home_href %}{% if is_archive %}../index.html{% else %}index.html{% endif %}{% endblock %}
-{% block dateline %}{{ edition_date_human }}{% endblock %}
+{% block dateline %}<span class="js-date">{{ edition_date_human }}</span>{% endblock %}
 
 {% block sidebar %}
   {% if is_archive %}
@@ -67,7 +67,7 @@
 {% block content %}
 
 {% if is_archive %}
-<p class="archive-flag">⟲ Édition archivée du {{ edition_date_human }}</p>
+<p class="archive-flag">⟲ <span data-en="Archived edition of">Édition archivée du</span> <span class="js-date">{{ edition_date_human }}</span></p>
 {% endif %}
 
 {# --- Présentation du site (uniquement sur la première page) ------------ #}
@@ -75,27 +75,27 @@
 {% set first_anchor = menu[0].anchor if menu else 'flash' %}
 <section class="intro" aria-label="Présentation">
   <div class="intro__text">
-    <p class="intro__eyebrow">{{ ic.icon('spark') }} Revue de presse économique · Quotidienne</p>
-    <h1 class="intro__title">Toute l'éco du jour,<br><span class="grad">en un coup d'œil.</span></h1>
-    <p class="intro__lead">
+    <p class="intro__eyebrow">{{ ic.icon('spark') }} <span data-en="Economic press review · Daily">Revue de presse économique · Quotidienne</span></p>
+    <h1 class="intro__title" data-en='All of today&#39;s economy,<br><span class="grad">at a glance.</span>'>Toute l'éco du jour,<br><span class="grad">en un coup d'œil.</span></h1>
+    <p class="intro__lead" data-en='<strong>The Economy Terminal</strong> gathers the essentials of economic news every morning: feeds from major media and institutions are aggregated automatically, sorted and dated, then rounded out with an editorial selection. One screen, from the hottest to the most useful.'>
       <strong>Le Terminal Économies</strong> rassemble chaque matin l'essentiel
       de l'actualité économique : les flux des grands médias et institutions
       sont agrégés automatiquement, triés et datés, puis complétés par une
       sélection éditoriale. Un seul écran, du plus chaud au plus utile.
     </p>
     <ul class="intro__chips">
-      <li>{{ ic.icon('rss') }} Agrégation RSS</li>
-      <li>{{ ic.icon('globe') }} Couverture mondiale</li>
-      <li>{{ ic.icon('bolt') }} Fil Flash en direct</li>
-      <li>{{ ic.icon('shield') }} Sources créditées</li>
+      <li>{{ ic.icon('rss') }} <span data-en="RSS aggregation">Agrégation RSS</span></li>
+      <li>{{ ic.icon('globe') }} <span data-en="Global coverage">Couverture mondiale</span></li>
+      <li>{{ ic.icon('bolt') }} <span data-en="Live Flash feed">Fil Flash en direct</span></li>
+      <li>{{ ic.icon('shield') }} <span data-en="Credited sources">Sources créditées</span></li>
     </ul>
     <div class="intro__actions">
-      <a class="btn" href="#{{ first_anchor }}">Découvrir l'édition <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a class="btn btn--ghost" href="a-propos.html">En savoir plus</a>
+      <a class="btn" href="#{{ first_anchor }}"><span data-en="Explore the edition">Découvrir l'édition</span> <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" href="a-propos.html" data-en="Learn more">En savoir plus</a>
       <div class="intro__stats">
-        <span class="stat"><b>{{ stats.sources }}</b> sources</span>
-        <span class="stat"><b>{{ stats.zones }}</b> zones</span>
-        <span class="stat"><b>{{ stats.annonces }}</b> annonces</span>
+        <span class="stat"><b>{{ stats.sources }}</b> <span data-en="sources">sources</span></span>
+        <span class="stat"><b>{{ stats.zones }}</b> <span data-en="zones">zones</span></span>
+        <span class="stat"><b>{{ stats.annonces }}</b> <span data-en="items">annonces</span></span>
       </div>
     </div>
   </div>
@@ -138,23 +138,23 @@
 <section class="features" aria-label="Comment ça marche">
   <article class="feat">
     <span class="feat__ico">{{ ic.icon('rss') }}</span>
-    <h3 class="feat__title">Agrégation automatique</h3>
-    <p class="feat__desc">Les flux RSS des médias et institutions sont récupérés, nettoyés, dédupliqués et triés par fraîcheur.</p>
+    <h3 class="feat__title" data-en="Automatic aggregation">Agrégation automatique</h3>
+    <p class="feat__desc" data-en="RSS feeds from media and institutions are fetched, cleaned, de-duplicated and sorted by freshness.">Les flux RSS des médias et institutions sont récupérés, nettoyés, dédupliqués et triés par fraîcheur.</p>
   </article>
   <article class="feat">
     <span class="feat__ico">{{ ic.icon('bookmark') }}</span>
-    <h3 class="feat__title">Sélection éditoriale</h3>
-    <p class="feat__desc">Une rubrique « La sélection » met en avant les analyses choisies à la main pour la journée.</p>
+    <h3 class="feat__title" data-en="Editorial selection">Sélection éditoriale</h3>
+    <p class="feat__desc" data-en="A “The selection” section highlights analyses hand-picked for the day.">Une rubrique « La sélection » met en avant les analyses choisies à la main pour la journée.</p>
   </article>
   <article class="feat">
     <span class="feat__ico">{{ ic.icon('layers') }}</span>
-    <h3 class="feat__title">Classé par zones</h3>
-    <p class="feat__desc">Europe, Amériques, France, Institutions, Asie… plus un fil Flash des dernières minutes.</p>
+    <h3 class="feat__title" data-en="Sorted by zone">Classé par zones</h3>
+    <p class="feat__desc" data-en="Europe, Americas, Asia, Institutions… plus a Flash feed of the latest minutes.">Europe, Amériques, France, Institutions, Asie… plus un fil Flash des dernières minutes.</p>
   </article>
   <article class="feat">
     <span class="feat__ico">{{ ic.icon('clock') }}</span>
-    <h3 class="feat__title">Régénéré chaque matin</h3>
-    <p class="feat__desc">Site statique, gratuit à héberger et instantané. Une commande suffit à publier l'édition du jour.</p>
+    <h3 class="feat__title" data-en="Refreshed every morning">Régénéré chaque matin</h3>
+    <p class="feat__desc" data-en="A static site, free to host and instant. A single command publishes the day's edition.">Site statique, gratuit à héberger et instantané. Une commande suffit à publier l'édition du jour.</p>
   </article>
 </section>
 {% endif %}
@@ -164,12 +164,12 @@
 <section id="une" class="hero" aria-label="À la une">
   <div class="hero__chrome">
     <span class="dots"><i></i><i></i><i></i></span>
-    <span class="hero__pair">{{ featured.category|upper }} · ÉDITION</span>
+    <span class="hero__pair"><span class="js-term">{{ featured.category }}</span> · <span data-en="EDITION">ÉDITION</span></span>
     <span class="hero__live">● LIVE</span>
   </div>
   <a class="hero__hit" href="{{ featured.url }}" target="_blank" rel="noopener noreferrer">
     <p class="hero__kicker">
-      <span class="hero__badge">À LA UNE</span>
+      <span class="hero__badge" data-en="FRONT PAGE">À LA UNE</span>
       <span class="card__source">{{ featured.source }}</span>
       {% if featured.time_display %}<span class="card__time">{{ featured.time_display }}</span>{% endif %}
     </p>
@@ -179,7 +179,7 @@
     {% endif %}
   </a>
   <a class="btn btn--lg" href="{{ featured.url }}" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </section>
 {% endif %}
@@ -189,7 +189,7 @@
 <section id="flash" class="block" aria-label="Flash">
   <header class="block__head">
     <h2 class="block__title"><span class="flash__bolt">⚡</span> Flash</h2>
-    <span class="block__sub">Dernières minutes</span>
+    <span class="block__sub" data-en="Last few minutes">Dernières minutes</span>
   </header>
   <ul class="flash">
     {% for art in flash %}
@@ -211,8 +211,8 @@
 {% if selection %}
 <section id="selection" class="block" aria-label="La sélection">
   <header class="block__head">
-    <h2 class="block__title"><span class="block__dot">●</span> La sélection</h2>
-    <span class="block__sub">Le choix de la rédaction</span>
+    <h2 class="block__title" data-en='<span class="block__dot">●</span> The selection'><span class="block__dot">●</span> La sélection</h2>
+    <span class="block__sub" data-en="Editor's picks">Le choix de la rédaction</span>
   </header>
   <div class="grid">
     {% for art in selection %}
@@ -227,7 +227,7 @@
 {% for section in sections %}
 <section id="{{ section.anchor }}" class="block" aria-label="{{ section.category }}">
   <header class="block__head">
-    <h2 class="block__title">{{ section.category }}</h2>
+    <h2 class="block__title js-term">{{ section.category }}</h2>
     <span class="block__count">{{ section.articles|length }}</span>
   </header>
   <div class="grid">
@@ -238,10 +238,10 @@
 </section>
 {% endfor %}
 {% elif not featured and not selection %}
-<p class="empty">Aucune annonce pour cette édition. Lancez l'agrégation ou
+<p class="empty" data-en="No items for this edition. Run the aggregation or add a manual selection.">Aucune annonce pour cette édition. Lancez l'agrégation ou
 ajoutez une sélection manuelle.</p>
 {% endif %}
 
 {% endblock %}
 
-{% block colophon_meta %}Édition du {{ edition_date_human }} — {{ total_count }} annonce(s) · générée le {{ generated_at_human }}{% endblock %}
+{% block colophon_meta %}<span data-en="Edition of">Édition du</span> <span class="js-date">{{ edition_date_human }}</span> — {{ total_count }} <span data-en="item(s)">annonce(s)</span> · <span data-en="generated on">générée le</span> <span class="js-date">{{ generated_at_human }}</span>{% endblock %}

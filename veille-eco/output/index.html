@@ -24,8 +24,11 @@
         </a>
       </div>
       <div class="topbar__right">
+        <button class="langbtn" id="langToggle" type="button" aria-label="Switch language / Changer de langue" title="English / Français">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="lang__label">EN</span>
+        </button>
         <span class="status"><span class="status__dot"></span>LIVE</span>
-        <span class="topbar__date">samedi 6 juin 2026</span>
+        <span class="topbar__date"><span class="js-date">samedi 6 juin 2026</span></span>
       </div>
     </div>
   </header>
@@ -68,28 +71,28 @@
   <div class="shell">
     <aside class="sidebar" id="sidebar" aria-label="Navigation">
 <div class="sb-group">
-  <a class="sb-item on" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg><span>Édition du jour</span></a>
-  <a class="sb-item " href="calendrier.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg><span>Calendrier éco</span></a>
-  <a class="sb-item " href="archives/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg><span>Archives</span></a>
-  <a class="sb-item " href="a-propos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg><span>À propos</span></a>
+  <a class="sb-item on" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg><span data-en="Today's edition">Édition du jour</span></a>
+  <a class="sb-item " href="calendrier.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg><span data-en="Economic calendar">Calendrier éco</span></a>
+  <a class="sb-item " href="archives/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg><span data-en="Archives">Archives</span></a>
+  <a class="sb-item " href="a-propos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg><span data-en="About">À propos</span></a>
 </div>
 
 <div class="sb-sep"></div>
 <nav class="sb-group" aria-label="L'édition">
-  <p class="sb-title">L'édition</p>
-  <a class="sb-item" href="#une"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg><span>À la une</span></a>
-  <a class="sb-item" href="#flash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span>Flash</span></a>
-  <a class="sb-item" href="#selection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>La sélection</span></a>
+  <p class="sb-title" data-en="The edition">L'édition</p>
+  <a class="sb-item" href="#une"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg><span class="js-term">À la une</span></a>
+  <a class="sb-item" href="#flash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg><span class="js-term">Flash</span></a>
+  <a class="sb-item" href="#selection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="js-term">La sélection</span></a>
 </nav>
 
 <div class="sb-sep"></div>
 <nav class="sb-group" aria-label="Zones">
-  <p class="sb-title">Zones</p>
-  <a class="sb-item" href="#r-europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Europe</span><span class="sb-count">2</span></a>
-  <a class="sb-item" href="#r-ameriques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Amériques</span><span class="sb-count">2</span></a>
-  <a class="sb-item" href="#r-asie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Asie</span><span class="sb-count">1</span></a>
-  <a class="sb-item" href="#r-institutions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>Institutions</span><span class="sb-count">5</span></a>
-  <a class="sb-item" href="#r-international"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span>International</span><span class="sb-count">2</span></a>
+  <p class="sb-title" data-en="Zones">Zones</p>
+  <a class="sb-item" href="#r-europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Europe</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="#r-ameriques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Amériques</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="#r-asie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Asie</span><span class="sb-count">1</span></a>
+  <a class="sb-item" href="#r-institutions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">Institutions</span><span class="sb-count">5</span></a>
+  <a class="sb-item" href="#r-international"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">International</span><span class="sb-count">2</span></a>
 </nav>
     </aside>
 
@@ -99,27 +102,27 @@
 
 <section class="intro" aria-label="Présentation">
   <div class="intro__text">
-    <p class="intro__eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> Revue de presse économique · Quotidienne</p>
-    <h1 class="intro__title">Toute l'éco du jour,<br><span class="grad">en un coup d'œil.</span></h1>
-    <p class="intro__lead">
+    <p class="intro__eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> <span data-en="Economic press review · Daily">Revue de presse économique · Quotidienne</span></p>
+    <h1 class="intro__title" data-en='All of today&#39;s economy,<br><span class="grad">at a glance.</span>'>Toute l'éco du jour,<br><span class="grad">en un coup d'œil.</span></h1>
+    <p class="intro__lead" data-en='<strong>The Economy Terminal</strong> gathers the essentials of economic news every morning: feeds from major media and institutions are aggregated automatically, sorted and dated, then rounded out with an editorial selection. One screen, from the hottest to the most useful.'>
       <strong>Le Terminal Économies</strong> rassemble chaque matin l'essentiel
       de l'actualité économique : les flux des grands médias et institutions
       sont agrégés automatiquement, triés et datés, puis complétés par une
       sélection éditoriale. Un seul écran, du plus chaud au plus utile.
     </p>
     <ul class="intro__chips">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="5.5" cy="18.5" r="1.6" fill="currentColor" stroke="none"/></svg> Agrégation RSS</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg> Couverture mondiale</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Fil Flash en direct</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Sources créditées</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="5.5" cy="18.5" r="1.6" fill="currentColor" stroke="none"/></svg> <span data-en="RSS aggregation">Agrégation RSS</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg> <span data-en="Global coverage">Couverture mondiale</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> <span data-en="Live Flash feed">Fil Flash en direct</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg> <span data-en="Credited sources">Sources créditées</span></li>
     </ul>
     <div class="intro__actions">
-      <a class="btn" href="#une">Découvrir l'édition <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a class="btn btn--ghost" href="a-propos.html">En savoir plus</a>
+      <a class="btn" href="#une"><span data-en="Explore the edition">Découvrir l'édition</span> <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" href="a-propos.html" data-en="Learn more">En savoir plus</a>
       <div class="intro__stats">
-        <span class="stat"><b>15</b> sources</span>
-        <span class="stat"><b>5</b> zones</span>
-        <span class="stat"><b>15</b> annonces</span>
+        <span class="stat"><b>15</b> <span data-en="sources">sources</span></span>
+        <span class="stat"><b>5</b> <span data-en="zones">zones</span></span>
+        <span class="stat"><b>15</b> <span data-en="items">annonces</span></span>
       </div>
     </div>
   </div>
@@ -162,49 +165,49 @@
 <section class="features" aria-label="Comment ça marche">
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="5.5" cy="18.5" r="1.6" fill="currentColor" stroke="none"/></svg></span>
-    <h3 class="feat__title">Agrégation automatique</h3>
-    <p class="feat__desc">Les flux RSS des médias et institutions sont récupérés, nettoyés, dédupliqués et triés par fraîcheur.</p>
+    <h3 class="feat__title" data-en="Automatic aggregation">Agrégation automatique</h3>
+    <p class="feat__desc" data-en="RSS feeds from media and institutions are fetched, cleaned, de-duplicated and sorted by freshness.">Les flux RSS des médias et institutions sont récupérés, nettoyés, dédupliqués et triés par fraîcheur.</p>
   </article>
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span>
-    <h3 class="feat__title">Sélection éditoriale</h3>
-    <p class="feat__desc">Une rubrique « La sélection » met en avant les analyses choisies à la main pour la journée.</p>
+    <h3 class="feat__title" data-en="Editorial selection">Sélection éditoriale</h3>
+    <p class="feat__desc" data-en="A “The selection” section highlights analyses hand-picked for the day.">Une rubrique « La sélection » met en avant les analyses choisies à la main pour la journée.</p>
   </article>
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
-    <h3 class="feat__title">Classé par zones</h3>
-    <p class="feat__desc">Europe, Amériques, France, Institutions, Asie… plus un fil Flash des dernières minutes.</p>
+    <h3 class="feat__title" data-en="Sorted by zone">Classé par zones</h3>
+    <p class="feat__desc" data-en="Europe, Americas, Asia, Institutions… plus a Flash feed of the latest minutes.">Europe, Amériques, France, Institutions, Asie… plus un fil Flash des dernières minutes.</p>
   </article>
   <article class="feat">
     <span class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-    <h3 class="feat__title">Régénéré chaque matin</h3>
-    <p class="feat__desc">Site statique, gratuit à héberger et instantané. Une commande suffit à publier l'édition du jour.</p>
+    <h3 class="feat__title" data-en="Refreshed every morning">Régénéré chaque matin</h3>
+    <p class="feat__desc" data-en="A static site, free to host and instant. A single command publishes the day's edition.">Site statique, gratuit à héberger et instantané. Une commande suffit à publier l'édition du jour.</p>
   </article>
 </section>
 
 <section id="une" class="hero" aria-label="À la une">
   <div class="hero__chrome">
     <span class="dots"><i></i><i></i><i></i></span>
-    <span class="hero__pair">EUROPE · ÉDITION</span>
+    <span class="hero__pair"><span class="js-term">Europe</span> · <span data-en="EDITION">ÉDITION</span></span>
     <span class="hero__live">● LIVE</span>
   </div>
   <a class="hero__hit" href="https://www.lesechos.fr/eco/zone-euro-croissance-t2" target="_blank" rel="noopener noreferrer">
     <p class="hero__kicker">
-      <span class="hero__badge">À LA UNE</span>
+      <span class="hero__badge" data-en="FRONT PAGE">À LA UNE</span>
       <span class="card__source">Les Échos – Économie</span>
 <span class="card__time">08:42</span>    </p>
     <h2 class="hero__title">Zone euro : la croissance accélère légèrement au deuxième trimestre</h2>
     <p class="hero__summary">L&#39;activité progresse de 0,4 % portée par les services, tandis que l&#39;industrie allemande reste à la peine. Les marchés guettent le prochain mouvement de la BCE.</p>
   </a>
   <a class="btn btn--lg" href="https://www.lesechos.fr/eco/zone-euro-croissance-t2" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </section>
 
 <section id="flash" class="block" aria-label="Flash">
   <header class="block__head">
     <h2 class="block__title"><span class="flash__bolt">⚡</span> Flash</h2>
-    <span class="block__sub">Dernières minutes</span>
+    <span class="block__sub" data-en="Last few minutes">Dernières minutes</span>
   </header>
   <ul class="flash">
     <li class="flash__row" style="--i: 0">
@@ -260,14 +263,14 @@
 
 <section id="selection" class="block" aria-label="La sélection">
   <header class="block__head">
-    <h2 class="block__title"><span class="block__dot">●</span> La sélection</h2>
-    <span class="block__sub">Le choix de la rédaction</span>
+    <h2 class="block__title" data-en='<span class="block__dot">●</span> The selection'><span class="block__dot">●</span> La sélection</h2>
+    <span class="block__sub" data-en="Editor's picks">Le choix de la rédaction</span>
   </header>
   <div class="grid">
     <article class="card card--pick" style="--i: 0">
   <a class="card__hit" href="https://www.example.org/desinflation-france" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Pourquoi la désinflation française résiste mieux que prévu">
     <p class="card__kicker">
-      <span class="card__cat">La sélection</span>
+      <span class="card__cat js-term">La sélection</span>
       <span class="card__sep">·</span>
       <span class="card__source">Analyse maison</span>
     </p>
@@ -275,14 +278,14 @@
     <p class="card__summary">Décryptage : malgré le ralentissement de la zone euro, les prix à la consommation refluent plus vite en France grâce au bouclier énergétique et à la modération salariale. Ce qu&#39;il faut retenir avant la prochaine réunion de la BCE.</p>
   </a>
   <a class="btn" href="https://www.example.org/desinflation-france" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card card--pick" style="--i: 1">
   <a class="card__hit" href="https://www.example.org/budget-2027-arbitrages" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Budget 2027 : les trois arbitrages qui vont compter">
     <p class="card__kicker">
-      <span class="card__cat">La sélection</span>
+      <span class="card__cat js-term">La sélection</span>
       <span class="card__sep">·</span>
       <span class="card__source">Note de veille</span>
     </p>
@@ -290,7 +293,7 @@
     <p class="card__summary">Dépenses sociales, fiscalité du capital, trajectoire de déficit : tour d&#39;horizon des dossiers chauds de la rentrée et de leurs implications pour les entreprises.</p>
   </a>
   <a class="btn" href="https://www.example.org/budget-2027-arbitrages" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
@@ -299,14 +302,14 @@
 
 <section id="r-europe" class="block" aria-label="Europe">
   <header class="block__head">
-    <h2 class="block__title">Europe</h2>
+    <h2 class="block__title js-term">Europe</h2>
     <span class="block__count">2</span>
   </header>
   <div class="grid">
     <article class="card " style="--i: 0">
   <a class="card__hit" href="https://www.ft.com/content/eu-bond-yields-rate-cut" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : European bond yields edge lower as traders bet on a summer rate cut">
     <p class="card__kicker">
-      <span class="card__cat">Europe</span>
+      <span class="card__cat js-term">Europe</span>
       <span class="card__sep">·</span>
       <span class="card__source">Financial Times – Markets</span>
 <span class="card__time">08:25</span>    </p>
@@ -314,14 +317,14 @@
     <p class="card__summary">Investors trimmed bets on a hawkish ECB after softer inflation prints across the bloc, sending the euro and short-dated yields lower.</p>
   </a>
   <a class="btn" href="https://www.ft.com/content/eu-bond-yields-rate-cut" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card " style="--i: 1">
   <a class="card__hit" href="https://www.latribune.fr/energie-gaz-prix-gros" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Énergie : les prix de gros du gaz repartent à la baisse en Europe">
     <p class="card__kicker">
-      <span class="card__cat">Europe</span>
+      <span class="card__cat js-term">Europe</span>
       <span class="card__sep">·</span>
       <span class="card__source">La Tribune – Économie</span>
 <span class="card__time">07:58</span>    </p>
@@ -329,7 +332,7 @@
     <p class="card__summary">Le repli des cours, conjugué à des stocks élevés, redonne de l&#39;air aux industriels électro-intensifs avant l&#39;hiver prochain.</p>
   </a>
   <a class="btn" href="https://www.latribune.fr/energie-gaz-prix-gros" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
@@ -337,14 +340,14 @@
 </section>
 <section id="r-ameriques" class="block" aria-label="Amériques">
   <header class="block__head">
-    <h2 class="block__title">Amériques</h2>
+    <h2 class="block__title js-term">Amériques</h2>
     <span class="block__count">2</span>
   </header>
   <div class="grid">
     <article class="card " style="--i: 0">
   <a class="card__hit" href="https://www.cnbc.com/us-job-growth-cools" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : U.S. job growth cools but stays resilient, easing recession fears">
     <p class="card__kicker">
-      <span class="card__cat">Amériques</span>
+      <span class="card__cat js-term">Amériques</span>
       <span class="card__sep">·</span>
       <span class="card__source">CNBC – Economy</span>
 <span class="card__time">08:38</span>    </p>
@@ -352,14 +355,14 @@
     <p class="card__summary">Nonfarm payrolls rose less than the prior month while wage growth held steady, keeping the Federal Reserve&#39;s path data-dependent.</p>
   </a>
   <a class="btn" href="https://www.cnbc.com/us-job-growth-cools" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card " style="--i: 1">
   <a class="card__hit" href="https://www.marketwatch.com/wall-street-tech-record" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Wall Street closes higher as tech rally lifts the Nasdaq to a record">
     <p class="card__kicker">
-      <span class="card__cat">Amériques</span>
+      <span class="card__cat js-term">Amériques</span>
       <span class="card__sep">·</span>
       <span class="card__source">MarketWatch – Top Stories</span>
 <span class="card__time">08:12</span>    </p>
@@ -367,7 +370,7 @@
     <p class="card__summary">Megacap technology shares led broad gains as Treasury yields slipped, with investors looking ahead to next week&#39;s inflation data.</p>
   </a>
   <a class="btn" href="https://www.marketwatch.com/wall-street-tech-record" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
@@ -375,14 +378,14 @@
 </section>
 <section id="r-asie" class="block" aria-label="Asie">
   <header class="block__head">
-    <h2 class="block__title">Asie</h2>
+    <h2 class="block__title js-term">Asie</h2>
     <span class="block__count">1</span>
   </header>
   <div class="grid">
     <article class="card " style="--i: 0">
   <a class="card__hit" href="https://asia.nikkei.com/japan-exports-rebound" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Japan&#39;s exports rebound as a weaker yen boosts carmakers">
     <p class="card__kicker">
-      <span class="card__cat">Asie</span>
+      <span class="card__cat js-term">Asie</span>
       <span class="card__sep">·</span>
       <span class="card__source">Nikkei Asia – Economy</span>
 <span class="card__time">07:45</span>    </p>
@@ -390,7 +393,7 @@
     <p class="card__summary">Shipments rose for a third straight month, led by autos and chip-making equipment, even as demand from China remained subdued.</p>
   </a>
   <a class="btn" href="https://asia.nikkei.com/japan-exports-rebound" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
@@ -398,14 +401,14 @@
 </section>
 <section id="r-institutions" class="block" aria-label="Institutions">
   <header class="block__head">
-    <h2 class="block__title">Institutions</h2>
+    <h2 class="block__title js-term">Institutions</h2>
     <span class="block__count">5</span>
   </header>
   <div class="grid">
     <article class="card " style="--i: 0">
   <a class="card__hit" href="https://www.ecb.europa.eu/press/decisions-taux" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : La BCE maintient ses taux et confirme une approche réunion par réunion">
     <p class="card__kicker">
-      <span class="card__cat">Institutions</span>
+      <span class="card__cat js-term">Institutions</span>
       <span class="card__sep">·</span>
       <span class="card__source">Banque centrale européenne</span>
 <span class="card__time">08:48</span>    </p>
@@ -413,14 +416,14 @@
     <p class="card__summary">Le Conseil des gouverneurs laisse le taux de dépôt inchangé et réaffirme que les décisions dépendront des données d&#39;inflation à venir.</p>
   </a>
   <a class="btn" href="https://www.ecb.europa.eu/press/decisions-taux" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card " style="--i: 1">
   <a class="card__hit" href="https://www.federalreserve.gov/fed-officials-patience" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Fed officials signal patience before any move on interest rates">
     <p class="card__kicker">
-      <span class="card__cat">Institutions</span>
+      <span class="card__cat js-term">Institutions</span>
       <span class="card__sep">·</span>
       <span class="card__source">Réserve fédérale (Fed)</span>
 <span class="card__time">08:20</span>    </p>
@@ -428,14 +431,14 @@
     <p class="card__summary">Minutes from the latest meeting show policymakers want more evidence that inflation is heading sustainably toward the 2 % target.</p>
   </a>
   <a class="btn" href="https://www.federalreserve.gov/fed-officials-patience" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card " style="--i: 2">
   <a class="card__hit" href="https://www.imf.org/croissance-mondiale-2026" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Le FMI relève légèrement sa prévision de croissance mondiale pour 2026">
     <p class="card__kicker">
-      <span class="card__cat">Institutions</span>
+      <span class="card__cat js-term">Institutions</span>
       <span class="card__sep">·</span>
       <span class="card__source">Fonds monétaire international (FMI)</span>
 <span class="card__time">07:30</span>    </p>
@@ -443,14 +446,14 @@
     <p class="card__summary">L&#39;institution table sur une activité plus résiliente qu&#39;attendu, tout en alertant sur les risques liés à la dette publique et au commerce.</p>
   </a>
   <a class="btn" href="https://www.imf.org/croissance-mondiale-2026" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card " style="--i: 3">
   <a class="card__hit" href="https://www.banque-france.fr/projections-inflation" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : La Banque de France confirme une inflation sous les 2 % à l&#39;horizon 2027">
     <p class="card__kicker">
-      <span class="card__cat">Institutions</span>
+      <span class="card__cat js-term">Institutions</span>
       <span class="card__sep">·</span>
       <span class="card__source">Banque de France</span>
 <span class="card__time">07:10</span>    </p>
@@ -458,14 +461,14 @@
     <p class="card__summary">Selon ses dernières projections, la désinflation se poursuit et le pouvoir d&#39;achat des ménages se redresse progressivement.</p>
   </a>
   <a class="btn" href="https://www.banque-france.fr/projections-inflation" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card " style="--i: 4">
   <a class="card__hit" href="https://www.insee.fr/climat-affaires-juin" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Le climat des affaires se stabilise en France en juin">
     <p class="card__kicker">
-      <span class="card__cat">Institutions</span>
+      <span class="card__cat js-term">Institutions</span>
       <span class="card__sep">·</span>
       <span class="card__source">INSEE – À la une</span>
 <span class="card__time">06:50</span>    </p>
@@ -473,7 +476,7 @@
     <p class="card__summary">L&#39;indicateur reste au-dessus de sa moyenne de longue période, soutenu par les services, malgré un industrie toujours hésitante.</p>
   </a>
   <a class="btn" href="https://www.insee.fr/climat-affaires-juin" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
@@ -481,14 +484,14 @@
 </section>
 <section id="r-international" class="block" aria-label="International">
   <header class="block__head">
-    <h2 class="block__title">International</h2>
+    <h2 class="block__title js-term">International</h2>
     <span class="block__count">2</span>
   </header>
   <div class="grid">
     <article class="card " style="--i: 0">
   <a class="card__hit" href="https://www.reuters.com/markets/global-markets-steady" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Global markets steady as investors weigh growth and central bank signals">
     <p class="card__kicker">
-      <span class="card__cat">International</span>
+      <span class="card__cat js-term">International</span>
       <span class="card__sep">·</span>
       <span class="card__source">Reuters – Business</span>
 <span class="card__time">08:32</span>    </p>
@@ -496,14 +499,14 @@
     <p class="card__summary">Equities held firm and the dollar eased as traders digested mixed economic data and awaited fresh guidance from major central banks.</p>
   </a>
   <a class="btn" href="https://www.reuters.com/markets/global-markets-steady" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
     <article class="card " style="--i: 1">
   <a class="card__hit" href="https://www.economist.com/finance/world-economy-resilient" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir : Why the world economy is proving more resilient than the doomsayers feared">
     <p class="card__kicker">
-      <span class="card__cat">International</span>
+      <span class="card__cat js-term">International</span>
       <span class="card__sep">·</span>
       <span class="card__source">The Economist – Finance &amp; economics</span>
 <span class="card__time">06:30</span>    </p>
@@ -511,7 +514,7 @@
     <p class="card__summary">Despite high rates and geopolitical strain, growth, jobs and corporate profits have held up. We examine what is keeping the expansion alive.</p>
   </a>
   <a class="btn" href="https://www.economist.com/finance/world-economy-resilient" target="_blank" rel="noopener noreferrer">
-    Ouvrir l'annonce <span class="btn__arrow" aria-hidden="true">→</span>
+    <span data-en="Open article">Ouvrir l'annonce</span> <span class="btn__arrow" aria-hidden="true">→</span>
   </a>
 </article>
 
@@ -522,12 +525,12 @@
 
       <footer class="foot">
         <div class="foot__inner">
-          <p class="foot__line">
+          <p class="foot__line" data-en='<strong>The Economy Terminal</strong> aggregates RSS feeds and republishes only the headline and a short excerpt, with a button to the source. All rights reserved to the original publishers.'>
             <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
             republie que le titre et un court extrait, avec un bouton vers la
             source. Tous droits réservés aux éditeurs d'origine.
           </p>
-          <p class="foot__meta">Édition du samedi 6 juin 2026 — 15 annonce(s) · générée le 06/06/2026 à 12:41</p>
+          <p class="foot__meta"><span data-en="Edition of">Édition du</span> <span class="js-date">samedi 6 juin 2026</span> — 15 <span data-en="item(s)">annonce(s)</span> · <span data-en="generated on">générée le</span> <span class="js-date">06/06/2026 à 13:05</span></p>
         </div>
       </footer>
     </div>

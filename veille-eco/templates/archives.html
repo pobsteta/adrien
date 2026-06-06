@@ -3,7 +3,7 @@
 
 {% block title %}Archives — Le Terminal Économies{% endblock %}
 {% block home_href %}{{ home_path }}{% endblock %}
-{% block dateline %}Archives{% endblock %}
+{% block dateline %}<span data-en="Archives">Archives</span>{% endblock %}
 
 {% block sidebar %}
   {% set active = 'archives' %}
@@ -18,7 +18,7 @@
 {% block content %}
 <section class="block" aria-label="Archives des éditions">
   <header class="block__head">
-    <h2 class="block__title">Toutes les éditions</h2>
+    <h2 class="block__title" data-en="All editions">Toutes les éditions</h2>
     <span class="block__count">{{ archives|length }}</span>
   </header>
 
@@ -26,16 +26,16 @@
   <div class="grid">
     {% for ed in archives %}
     <a class="arch" href="{{ ed.href }}" style="--i: {{ loop.index0 }}">
-      <span class="arch__date">{{ ed.human }}</span>
+      <span class="arch__date js-date">{{ ed.human }}</span>
       <span class="arch__id">{{ ed.date }}</span>
-      <span class="btn btn--ghost">Ouvrir l'édition <span class="btn__arrow" aria-hidden="true">→</span></span>
+      <span class="btn btn--ghost"><span data-en="Open the edition">Ouvrir l'édition</span> <span class="btn__arrow" aria-hidden="true">→</span></span>
     </a>
     {% endfor %}
   </div>
   {% else %}
-  <p class="empty">Aucune édition archivée pour l'instant.</p>
+  <p class="empty" data-en="No archived edition yet.">Aucune édition archivée pour l'instant.</p>
   {% endif %}
 </section>
 {% endblock %}
 
-{% block colophon_meta %}{{ archives|length }} édition(s) archivée(s){% endblock %}
+{% block colophon_meta %}{{ archives|length }} <span data-en="archived edition(s)">édition(s) archivée(s)</span>{% endblock %}

@@ -109,6 +109,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 .topbar__right { display: flex; align-items: center; gap: 12px; }
+.langbtn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--v2); background: var(--vglow2);
+  border: 1px solid var(--border-active); border-radius: var(--pill);
+  padding: 5px 11px; cursor: pointer; transition: background 0.18s, color 0.18s;
+  -webkit-tap-highlight-color: transparent;
+}
+.langbtn:hover { color: #fff; background: var(--v); }
+.langbtn svg { width: 15px; height: 15px; }
 .status {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
@@ -484,7 +494,7 @@ body.sb-toggled .sidebar {
 .dots i:nth-child(1){ background:#FF5F57; }
 .dots i:nth-child(2){ background:#FFBD2E; }
 .dots i:nth-child(3){ background:#28C840; }
-.hero__pair { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--text2); }
+.hero__pair { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--text2); text-transform: uppercase; }
 .hero__live {
   margin-left: auto; font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
   color: var(--v2); background: var(--vglow2);

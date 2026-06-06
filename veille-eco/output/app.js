@@ -49,6 +49,89 @@
   }
 })();
 
+/* Bascule de langue FR ⇄ EN, sans rechargement ni service externe.
+   - [data-en]   : éléments à texte unique ; l'original FR est mémorisé dans
+                   data-fr au premier passage, puis on alterne innerHTML.
+   - .js-term    : termes dynamiques (zones, libellés de menu) traduits via un
+                   petit dictionnaire.
+   - .js-date    : dates ; on traduit les noms de jours/mois et « à » → « at ».
+   L'état est mémorisé dans localStorage et appliqué dès le chargement. */
+(function () {
+  "use strict";
+  var KEY = "lte_lang";
+  var btn = document.getElementById("langToggle");
+
+  var TERMS = {
+    "Amériques": "Americas", "Asie": "Asia", "Afrique": "Africa",
+    "Océanie": "Oceania", "Europe": "Europe", "Institutions": "Institutions",
+    "International": "International", "France": "France",
+    "À la une": "Front page", "Flash": "Flash", "La sélection": "The selection"
+  };
+  var DAYS = {
+    "lundi": "Monday", "mardi": "Tuesday", "mercredi": "Wednesday",
+    "jeudi": "Thursday", "vendredi": "Friday", "samedi": "Saturday",
+    "dimanche": "Sunday"
+  };
+  var MONTHS = {
+    "janvier": "January", "février": "February", "mars": "March",
+    "avril": "April", "mai": "May", "juin": "June", "juillet": "July",
+    "août": "August", "septembre": "September", "octobre": "October",
+    "novembre": "November", "décembre": "December"
+  };
+
+  function translateDate(t) {
+    var out = t;
+    Object.keys(DAYS).forEach(function (k) { out = out.replace(k, DAYS[k]); });
+    Object.keys(MONTHS).forEach(function (k) { out = out.replace(k, MONTHS[k]); });
+    return out.replace(" à ", " at ");
+  }
+
+  function apply(en) {
+    document.documentElement.lang = en ? "en" : "fr";
+
+    document.querySelectorAll("[data-en]").forEach(function (el) {
+      if (el.getAttribute("data-fr") === null) {
+        el.setAttribute("data-fr", el.innerHTML);
+      }
+      el.innerHTML = en ? el.getAttribute("data-en") : el.getAttribute("data-fr");
+    });
+
+    document.querySelectorAll(".js-term").forEach(function (el) {
+      if (el.getAttribute("data-fr") === null) {
+        el.setAttribute("data-fr", el.textContent.trim());
+      }
+      var fr = el.getAttribute("data-fr");
+      el.textContent = en ? (TERMS[fr] || fr) : fr;
+    });
+
+    document.querySelectorAll(".js-date").forEach(function (el) {
+      if (el.getAttribute("data-fr") === null) {
+        el.setAttribute("data-fr", el.textContent);
+      }
+      var fr = el.getAttribute("data-fr");
+      el.textContent = en ? translateDate(fr) : fr;
+    });
+
+    if (btn) {
+      var label = btn.querySelector(".lang__label");
+      if (label) label.textContent = en ? "FR" : "EN";
+      btn.setAttribute("aria-pressed", en ? "true" : "false");
+    }
+  }
+
+  var saved = "fr";
+  try { saved = localStorage.getItem(KEY) || "fr"; } catch (e) { /* ignore */ }
+  apply(saved === "en");
+
+  if (btn) {
+    btn.addEventListener("click", function () {
+      var en = document.documentElement.lang !== "en";  // bascule
+      apply(en);
+      try { localStorage.setItem(KEY, en ? "en" : "fr"); } catch (e) { /* ignore */ }
+    });
+  }
+})();
+
 /* Graphique d'ambiance de l'accueil : on remplace la courbe décorative par
    les VRAIES valeurs de l'EUR/USD (taux de référence BCE, ~6 mois), via l'API
    gratuite Frankfurter (sans clé, CORS). Si le réseau échoue, on garde le
