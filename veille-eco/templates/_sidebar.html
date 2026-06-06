@@ -1,0 +1,37 @@
+{# Barre latérale partagée par toutes les pages.
+   Variables attendues (définies par la page qui inclut) :
+     active       'edition' | 'archives' | 'about' | ''
+     home_href, archives_href, about_href
+     anchor_base  préfixe vers les sections ('' si elles sont sur la page courante)
+     menu         liste des sections (group 'edition' / 'zone')
+#}
+{% import "_icons.html" as ic %}
+<div class="sb-group">
+  <a class="sb-item {% if active == 'edition' %}on{% endif %}" href="{{ home_href }}">{{ ic.icon('home') }}<span>Édition du jour</span></a>
+  <a class="sb-item {% if active == 'archives' %}on{% endif %}" href="{{ archives_href }}">{{ ic.icon('archive') }}<span>Archives</span></a>
+  <a class="sb-item {% if active == 'about' %}on{% endif %}" href="{{ about_href }}">{{ ic.icon('info') }}<span>À propos</span></a>
+</div>
+
+{% if menu %}
+{% set ed_items = menu | selectattr('group', 'equalto', 'edition') | list %}
+{% if ed_items %}
+<div class="sb-sep"></div>
+<nav class="sb-group" aria-label="L'édition">
+  <p class="sb-title">L'édition</p>
+  {% for m in ed_items %}
+  <a class="sb-item" href="{{ anchor_base }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span></a>
+  {% endfor %}
+</nav>
+{% endif %}
+
+{% set zone_items = menu | selectattr('group', 'equalto', 'zone') | list %}
+{% if zone_items %}
+<div class="sb-sep"></div>
+<nav class="sb-group" aria-label="Zones">
+  <p class="sb-title">Zones</p>
+  {% for m in zone_items %}
+  <a class="sb-item" href="{{ anchor_base }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span>{% if m.count %}<span class="sb-count">{{ m.count }}</span>{% endif %}</a>
+  {% endfor %}
+</nav>
+{% endif %}
+{% endif %}

@@ -6,32 +6,12 @@
 {% block dateline %}Archives{% endblock %}
 
 {% block sidebar %}
-  <div class="sb-group">
-    <a class="sb-item" href="{{ home_path }}">{{ ic.icon('home') }}<span>Édition du jour</span></a>
-    <a class="sb-item on" href="index.html">{{ ic.icon('archive') }}<span>Archives</span></a>
-  </div>
-
-  {% set ed_items = menu | selectattr('group', 'equalto', 'edition') | list %}
-  {% if ed_items %}
-  <div class="sb-sep"></div>
-  <nav class="sb-group" aria-label="L'édition">
-    <p class="sb-title">L'édition</p>
-    {% for m in ed_items %}
-    <a class="sb-item" href="{{ home_path }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span></a>
-    {% endfor %}
-  </nav>
-  {% endif %}
-
-  {% set zone_items = menu | selectattr('group', 'equalto', 'zone') | list %}
-  {% if zone_items %}
-  <div class="sb-sep"></div>
-  <nav class="sb-group" aria-label="Zones">
-    <p class="sb-title">Zones</p>
-    {% for m in zone_items %}
-    <a class="sb-item" href="{{ home_path }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span>{% if m.count %}<span class="sb-count">{{ m.count }}</span>{% endif %}</a>
-    {% endfor %}
-  </nav>
-  {% endif %}
+  {% set active = 'archives' %}
+  {% set home_href = home_path %}
+  {% set archives_href = 'index.html' %}
+  {% set about_href = '../a-propos.html' %}
+  {% set anchor_base = home_path %}
+  {% include "_sidebar.html" %}
 {% endblock %}
 
 {% block content %}

@@ -29,32 +29,20 @@
 {% block dateline %}{{ edition_date_human }}{% endblock %}
 
 {% block sidebar %}
-  <div class="sb-group">
-    <a class="sb-item {% if not is_archive %}on{% endif %}" href="{% if is_archive %}../index.html{% else %}index.html{% endif %}">{{ ic.icon('home') }}<span>Édition du jour</span></a>
-    <a class="sb-item" href="{{ archives_path }}">{{ ic.icon('archive') }}<span>Archives</span></a>
-  </div>
-
-  {% set ed_items = menu | selectattr('group', 'equalto', 'edition') | list %}
-  {% if ed_items %}
-  <div class="sb-sep"></div>
-  <nav class="sb-group" aria-label="L'édition">
-    <p class="sb-title">L'édition</p>
-    {% for m in ed_items %}
-    <a class="sb-item" href="{{ anchor_base }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span></a>
-    {% endfor %}
-  </nav>
+  {% if is_archive %}
+    {% set active = '' %}
+    {% set home_href = '../index.html' %}
+    {% set archives_href = 'index.html' %}
+    {% set about_href = '../a-propos.html' %}
+    {% set anchor_base = '' %}
+  {% else %}
+    {% set active = 'edition' %}
+    {% set home_href = 'index.html' %}
+    {% set archives_href = 'archives/index.html' %}
+    {% set about_href = 'a-propos.html' %}
+    {% set anchor_base = '' %}
   {% endif %}
-
-  {% set zone_items = menu | selectattr('group', 'equalto', 'zone') | list %}
-  {% if zone_items %}
-  <div class="sb-sep"></div>
-  <nav class="sb-group" aria-label="Zones">
-    <p class="sb-title">Zones</p>
-    {% for m in zone_items %}
-    <a class="sb-item" href="{{ anchor_base }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span>{{ m.label }}</span>{% if m.count %}<span class="sb-count">{{ m.count }}</span>{% endif %}</a>
-    {% endfor %}
-  </nav>
-  {% endif %}
+  {% include "_sidebar.html" %}
 {% endblock %}
 
 {# --- Bandeau défilant type ticker -------------------------------------- #}
@@ -101,6 +89,7 @@
     </ul>
     <div class="intro__actions">
       <a class="btn" href="#{{ first_anchor }}">Découvrir l'édition <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" href="a-propos.html">En savoir plus</a>
       <div class="intro__stats">
         <span class="stat"><b>{{ stats.sources }}</b> sources</span>
         <span class="stat"><b>{{ stats.zones }}</b> zones</span>

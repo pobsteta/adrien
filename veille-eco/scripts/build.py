@@ -327,6 +327,16 @@ def build(edition_date: str | None = None) -> int:
     )
     print(f"  écrit : output/archives/index.html ({len(archives)} édition(s))")
 
+    # 4) Page « À propos » (présentation détaillée du site).
+    about_tpl = env.get_template("apropos.html")
+    (OUTPUT_DIR / "a-propos.html").write_text(
+        about_tpl.render(css_path="style.css",
+                         js_path="app.js",
+                         **context),
+        encoding="utf-8",
+    )
+    print("  écrit : output/a-propos.html")
+
     print("Terminé.")
     return 0
 
