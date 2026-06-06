@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-06-06T08:21:59.824495+00:00",
+  "count": 9,
+  "articles": [
+    {
+      "id": "16e2bb18b9b929d0",
+      "title": "La BCE temporise : pas de baisse de taux avant l'automne, selon les marchés",
+      "url": "https://www.example.org/685649eb",
+      "source": "Les Échos – Économie",
+      "category": "France",
+      "weight": 5,
+      "published": "2026-06-06T07:09:59.824495+00:00",
+      "excerpt": "Les investisseurs revoient leur calendrier après des chiffres d'inflation des services plus tenaces qu'attendu en zone euro.",
+      "summary": null
+    },
+    {
+      "id": "2301a9aaf897221a",
+      "title": "Industrie : le rebond de la production manufacturière surprend en avril",
+      "url": "https://www.example.org/d206069e",
+      "source": "Les Échos – Économie",
+      "category": "France",
+      "weight": 5,
+      "published": "2026-06-06T04:51:59.824495+00:00",
+      "excerpt": "Portée par l'aéronautique et l'agroalimentaire, l'activité progresse pour le deuxième mois consécutif.",
+      "summary": null
+    },
+    {
+      "id": "587aec4e8ab74b17",
+      "title": "Pouvoir d'achat : la consommation des ménages se stabilise",
+      "url": "https://www.example.org/90088bc4",
+      "source": "Le Monde – Économie",
+      "category": "France",
+      "weight": 4,
+      "published": "2026-06-06T06:15:59.824495+00:00",
+      "excerpt": "Après un trimestre atone, les dépenses repartent timidement, soutenues par le reflux de l'inflation alimentaire.",
+      "summary": null
+    },
+    {
+      "id": "0a82dc7bc58605f4",
+      "title": "La Banque de France relève sa prévision de croissance pour 2026",
+      "url": "https://www.example.org/9c28618f",
+      "source": "Banque de France",
+      "category": "Institutions",
+      "weight": 4,
+      "published": "2026-06-06T03:57:59.824495+00:00",
+      "excerpt": "L'institution table désormais sur une expansion un peu plus soutenue, sous l'effet de la désinflation.",
+      "summary": null
+    },
+    {
+      "id": "e8d51f1c50a0958e",
+      "title": "Immobilier : les taux de crédit repassent sous les 3 %",
+      "url": "https://www.example.org/ce96267e",
+      "source": "Le Monde – Économie",
+      "category": "France",
+      "weight": 4,
+      "published": "2026-06-06T02:21:59.824495+00:00",
+      "excerpt": "Un assouplissement qui ravive prudemment la demande, sans inverser la baisse des volumes de transactions.",
+      "summary": null
+    },
+    {
+      "id": "ae722e69a2b056b1",
+      "title": "Start-up : levée de fonds record dans la deep tech française",
+      "url": "https://www.example.org/3d4f0ee2",
+      "source": "La Tribune",
+      "category": "France",
+      "weight": 3,
+      "published": "2026-06-06T03:09:59.824495+00:00",
+      "excerpt": "Le secteur attire de nouveau les capitaux, malgré un climat de financement encore sélectif.",
+      "summary": null
+    },
+    {
+      "id": "febad046ec3f56a2",
+      "title": "INSEE : le taux de chômage stable au premier trimestre",
+      "url": "https://www.example.org/0618877c",
+      "source": "INSEE – À la une",
+      "category": "Institutions",
+      "weight": 3,
+      "published": "2026-06-06T00:21:59.824495+00:00",
+      "excerpt": "Le marché du travail résiste, avec un taux d'emploi des seniors au plus haut depuis vingt ans.",
+      "summary": null
+    },
+    {
+      "id": "67dd31dfe912d262",
+      "title": "Commerce mondial : l'OMC révise ses projections à la hausse",
+      "url": "https://www.example.org/c5eee09b",
+      "source": "Le Monde – International",
+      "category": "International",
+      "weight": 2,
+      "published": "2026-06-06T01:03:59.824495+00:00",
+      "excerpt": "Le rebond des échanges de biens manufacturés porte des prévisions plus optimistes pour l'année.",
+      "summary": null
+    },
+    {
+      "id": "4867c426a826a1ec",
+      "title": "Énergie : le prix du gaz européen recule avec la douceur du printemps",
+      "url": "https://www.example.org/d81230c3",
+      "source": "Le Monde – International",
+      "category": "International",
+      "weight": 2,
+      "published": "2026-06-05T21:51:59.824495+00:00",
+      "excerpt": "Des stocks confortables et une demande modérée pèsent sur les cours, soulageant les industriels.",
+      "summary": null
+    }
+  ]
+}

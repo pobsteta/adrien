@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{# ----------------------------------------------------------------------- #}
+{# Macro : carte d'article standard                                        #}
+{# ----------------------------------------------------------------------- #}
+{% macro article_card(art, index) %}
+<article class="card" style="--i: {{ index }}">
+  <p class="card__kicker">
+    <span class="card__cat">{{ art.category }}</span>
+    <span class="card__sep">/</span>
+    <span class="card__source">{{ art.source }}</span>
+    {% if art.time_display %}
+    <span class="card__time">· {{ art.time_display }}</span>
+    {% endif %}
+  </p>
+  <h3 class="card__title">
+    <a href="{{ art.url }}" target="_blank" rel="noopener noreferrer">{{ art.title }}</a>
+  </h3>
+  {% if art.display_summary %}
+  <p class="card__summary">{{ art.display_summary }}</p>
+  {% endif %}
+  <a class="card__read" href="{{ art.url }}" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+</article>
+{% endmacro %}
+
+{% block dateline %}{{ edition_date_human }}{% endblock %}
+
+{% block nav %}
+  <a href="{% if is_archive %}../index.html{% else %}index.html{% endif %}">L'édition du jour</a>
+  <span class="masthead__nav-sep">·</span>
+  <a href="{{ archives_path }}">Archives</a>
+{% endblock %}
+
+{% block content %}
+
+{% if is_archive %}
+<p class="archive-flag">Édition archivée du {{ edition_date_human }}.</p>
+{% endif %}
+
+{# --- La sélection (encadré sombre, en premier) ------------------------- #}
+{% if selection %}
+<section class="selection" aria-label="La sélection">
+  <header class="selection__head">
+    <span class="selection__kicker">La sélection</span>
+    <span class="selection__sub">Le choix de la rédaction</span>
+  </header>
+  <div class="selection__grid">
+    {% for art in selection %}
+    <article class="pick" style="--i: {{ loop.index0 }}">
+      <p class="pick__kicker">{{ art.source }}</p>
+      <h3 class="pick__title">
+        <a href="{{ art.url }}" target="_blank" rel="noopener noreferrer">{{ art.title }}</a>
+      </h3>
+      {% if art.display_summary %}
+      <p class="pick__summary">{{ art.display_summary }}</p>
+      {% endif %}
+      <a class="pick__read" href="{{ art.url }}" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{# --- À la une (grand article avec lettrine) ---------------------------- #}
+{% if featured %}
+<section class="lead" aria-label="À la une">
+  <p class="lead__kicker">
+    À la une <span class="card__sep">/</span>
+    <span class="card__source">{{ featured.source }}</span>
+    {% if featured.time_display %}<span class="card__time">· {{ featured.time_display }}</span>{% endif %}
+  </p>
+  <h2 class="lead__title">
+    <a href="{{ featured.url }}" target="_blank" rel="noopener noreferrer">{{ featured.title }}</a>
+  </h2>
+  {% if featured.display_summary %}
+  <p class="lead__summary">{{ featured.display_summary }}</p>
+  {% endif %}
+  <a class="lead__read" href="{{ featured.url }}" target="_blank" rel="noopener noreferrer">→ Lire la source</a>
+</section>
+{% endif %}
+
+{# --- Rubriques en colonnes de journal --------------------------------- #}
+{% if sections %}
+<div class="columns">
+  {% for section in sections %}
+  <section class="rubric">
+    <h2 class="rubric__title">{{ section.category }}</h2>
+    {% for art in section.articles %}
+    {{ article_card(art, loop.index0) }}
+    {% endfor %}
+  </section>
+  {% endfor %}
+</div>
+{% elif not featured and not selection %}
+<p class="empty">Aucun article pour cette édition. Lancez l'agrégation ou
+ajoutez une sélection manuelle.</p>
+{% endif %}
+
+{% endblock %}
+
+{% block colophon_meta %}Édition du {{ edition_date_human }} — {{ total_count }} article(s) · générée le {{ generated_at_human }}{% endblock %}

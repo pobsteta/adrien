@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Archives — La Quotidienne Éco{% endblock %}
+{% block dateline %}Les archives{% endblock %}
+
+{% block nav %}
+  <a href="{{ home_path }}">L'édition du jour</a>
+  <span class="masthead__nav-sep">·</span>
+  <a href="index.html" aria-current="page">Archives</a>
+{% endblock %}
+
+{% block content %}
+<section class="archives" aria-label="Archives des éditions">
+  <h2 class="rubric__title">Toutes les éditions</h2>
+  {% if archives %}
+  <ol class="archives__list">
+    {% for ed in archives %}
+    <li class="archives__item" style="--i: {{ loop.index0 }}">
+      <a class="archives__link" href="{{ ed.href }}">
+        <span class="archives__date">{{ ed.human }}</span>
+        <span class="archives__id">{{ ed.date }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty">Aucune édition archivée pour l'instant.</p>
+  {% endif %}
+</section>
+{% endblock %}
+
+{% block colophon_meta %}{{ archives|length }} édition(s) archivée(s){% endblock %}

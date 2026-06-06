@@ -1,0 +1,429 @@
+/* =========================================================================
+   La Quotidienne Éco — feuille de style
+   Esthétique de quotidien économique imprimé : papier ivoire, encre profonde,
+   un seul accent oxblood. Fraunces (display) / Newsreader (texte) / IBM Plex
+   Mono (métadonnées).
+   ========================================================================= */
+
+:root {
+  --paper:        #f4efe3;  /* ivoire */
+  --paper-edge:   #ece5d4;  /* ivoire un peu plus sombre */
+  --ink:          #1c1814;  /* encre profonde */
+  --ink-soft:     #443c33;  /* gris-brun pour le texte secondaire */
+  --ink-faint:    #8a7d6b;  /* métadonnées discrètes */
+  --accent:       #6e1423;  /* oxblood / bordeaux */
+  --accent-dark:  #531019;
+  --rule:         #cdbfa6;  /* filets fins */
+  --dark-panel:   #1c1814;  /* encadré sombre « La sélection » */
+
+  --serif-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --serif-text:    "Newsreader", Georgia, serif;
+  --mono:          "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+
+  --measure: 1180px;
+}
+
+/* --- Base --------------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  /* Légère trame papier (dégradés très subtils, aucune image). */
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,.45), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(110,20,35,.03), transparent 55%);
+  color: var(--ink);
+  font-family: var(--serif-text);
+  font-size: 19px;
+  line-height: 1.55;
+  font-optical-sizing: auto;
+}
+
+a { color: inherit; }
+
+/* =========================================================================
+   Bandeau / Manchette
+   ========================================================================= */
+.masthead {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 28px 24px 6px;
+  text-align: center;
+}
+
+.masthead__rule { height: 0; border-top: 1px solid var(--ink); }
+.masthead__rule--top { border-top-width: 3px; }
+.masthead__rule--bottom {
+  border-top-width: 2px;
+  margin-top: 14px;
+  position: relative;
+}
+.masthead__rule--bottom::after {
+  content: "";
+  display: block;
+  border-top: 1px solid var(--ink);
+  margin-top: 3px;
+}
+
+.masthead__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 8px 2px 4px;
+}
+.masthead__edition { color: var(--accent); font-weight: 500; }
+
+.masthead__title {
+  font-family: var(--serif-display);
+  font-weight: 900;
+  font-size: clamp(40px, 9vw, 104px);
+  line-height: .92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 6px 0 0;
+  color: var(--ink);
+}
+
+.masthead__tagline {
+  font-family: var(--serif-text);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 8px 0 12px;
+}
+
+.masthead__nav {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.masthead__nav a { text-decoration: none; color: var(--ink); padding: 0 4px; }
+.masthead__nav a:hover { color: var(--accent); }
+.masthead__nav a[aria-current="page"] { color: var(--accent); }
+.masthead__nav-sep { color: var(--rule); margin: 0 6px; }
+
+/* =========================================================================
+   Feuille / Corps
+   ========================================================================= */
+.sheet {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 22px 24px 48px;
+}
+
+.archive-flag {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px;
+  margin: 0 0 20px;
+}
+
+.empty {
+  font-style: italic;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* =========================================================================
+   La sélection — encadré sombre contrasté
+   ========================================================================= */
+.selection {
+  background: var(--dark-panel);
+  color: var(--paper);
+  padding: 26px 30px 30px;
+  margin: 0 0 36px;
+  border: 1px solid var(--ink);
+  box-shadow: 6px 6px 0 rgba(28,24,20,.12);
+}
+
+.selection__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-bottom: 1px solid rgba(244,239,227,.25);
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+}
+.selection__kicker {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--paper);
+}
+.selection__sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #c79a86;
+}
+
+.selection__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+}
+.pick {
+  padding: 20px 26px 4px;
+  border-right: 1px solid rgba(244,239,227,.16);
+}
+.pick:last-child { border-right: 0; }
+.pick__kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #d8a48f;
+  margin: 0 0 8px;
+}
+.pick__title {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 1.12;
+  margin: 0 0 10px;
+}
+.pick__title a { text-decoration: none; }
+.pick__title a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pick__summary {
+  font-size: 16px;
+  color: #ded4c2;
+  margin: 0 0 12px;
+}
+.pick__read {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #e0b3a0;
+  text-decoration: none;
+}
+.pick__read:hover { color: var(--paper); }
+
+/* =========================================================================
+   À la une — grand article avec lettrine
+   ========================================================================= */
+.lead {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+}
+.lead__kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+.lead__title {
+  font-family: var(--serif-display);
+  font-weight: 900;
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  max-width: 18ch;
+}
+.lead__title a { text-decoration: none; }
+.lead__title a:hover { color: var(--accent); }
+.lead__summary {
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 62ch;
+  margin: 0 0 14px;
+}
+/* Lettrine */
+.lead__summary::first-letter {
+  font-family: var(--serif-display);
+  font-weight: 900;
+  font-size: 3.4em;
+  line-height: .78;
+  float: left;
+  padding: 6px 10px 0 0;
+  color: var(--accent);
+}
+.lead__read {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+.lead__read:hover { color: var(--accent-dark); }
+
+/* =========================================================================
+   Rubriques en colonnes de journal
+   ========================================================================= */
+.columns {
+  column-count: 2;
+  column-gap: 40px;
+  column-rule: 1px solid var(--rule);
+}
+.rubric {
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 26px;
+}
+.rubric__title {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 5px;
+  margin: 0 0 14px;
+}
+
+/* --- Carte d'article ---------------------------------------------------- */
+.card {
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--rule); /* filet fin entre articles */
+}
+.rubric .card:last-child { border-bottom: 0; margin-bottom: 0; }
+
+.card__kicker {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 6px;
+}
+.card__cat { color: var(--accent); font-weight: 500; }
+.card__sep { color: var(--rule); margin: 0 2px; }
+.card__time { color: var(--ink-faint); }
+
+.card__title {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.14;
+  margin: 0 0 8px;
+}
+.card__title a { text-decoration: none; }
+.card__title a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+.card__summary {
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+.card__read {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+.card__read:hover { color: var(--accent-dark); text-decoration: underline; }
+
+/* =========================================================================
+   Archives
+   ========================================================================= */
+.archives__list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.archives__item { border-bottom: 1px solid var(--rule); }
+.archives__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 4px;
+  text-decoration: none;
+}
+.archives__link:hover { background: var(--paper-edge); }
+.archives__link:hover .archives__date { color: var(--accent); }
+.archives__date {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 22px;
+}
+.archives__id {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--ink-faint);
+}
+
+/* =========================================================================
+   Colophon / pied
+   ========================================================================= */
+.colophon {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 22px 24px 50px;
+  border-top: 1px solid var(--ink);
+}
+.colophon__line {
+  font-size: 14px;
+  color: var(--ink-soft);
+  max-width: 70ch;
+  margin: 14px 0 8px;
+}
+.colophon__meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+/* =========================================================================
+   Apparition discrète au chargement
+   ========================================================================= */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card, .pick, .lead, .archives__item, .selection {
+  animation: rise .5s ease both;
+  animation-delay: calc(var(--i, 0) * 55ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .pick, .lead, .archives__item, .selection { animation: none; }
+}
+
+/* =========================================================================
+   Responsive — une colonne sur mobile
+   ========================================================================= */
+@media (max-width: 760px) {
+  body { font-size: 18px; }
+  .columns { column-count: 1; column-rule: 0; }
+  .selection__grid { grid-template-columns: 1fr; }
+  .pick { border-right: 0; border-bottom: 1px solid rgba(244,239,227,.16); }
+  .pick:last-child { border-bottom: 0; }
+  .selection { padding: 22px 20px; }
+  .masthead { padding-top: 18px; }
+  .lead__summary { font-size: 19px; }
+  .archives__link { flex-direction: column; gap: 2px; }
+}

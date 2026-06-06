@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}La Quotidienne Éco{% endblock %}</title>
+  <meta name="description" content="Revue de presse économique quotidienne : agrégation de flux RSS et sélection éditoriale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ css_path }}">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__rule masthead__rule--top"></div>
+    <div class="masthead__bar">
+      <span class="masthead__edition">Édition&nbsp;du&nbsp;jour</span>
+      <span class="masthead__dateline">{% block dateline %}{% endblock %}</span>
+    </div>
+    <h1 class="masthead__title">La&nbsp;Quotidienne&nbsp;Éco</h1>
+    <p class="masthead__tagline">Revue de presse économique — agrégation &amp; sélection</p>
+    <nav class="masthead__nav">
+      {% block nav %}{% endblock %}
+    </nav>
+    <div class="masthead__rule masthead__rule--bottom"></div>
+  </header>
+
+  <main class="sheet">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="colophon">
+    <p class="colophon__line">
+      <strong>La Quotidienne Éco</strong> agrège des flux RSS et n'en republie
+      que le titre et un court extrait, avec lien vers la source. Tous droits
+      réservés aux éditeurs d'origine.
+    </p>
+    <p class="colophon__meta">{% block colophon_meta %}{% endblock %}</p>
+  </footer>
+</body>
+</html>
