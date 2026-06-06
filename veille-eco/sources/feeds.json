@@ -72,6 +72,12 @@
     "weight": 3
   },
   {
+    "name": "Commission européenne – Économie",
+    "url": "https://ec.europa.eu/info/rss_en.xml",
+    "category": "Institutions",
+    "weight": 3
+  },
+  {
     "name": "Reuters – Business",
     "url": "https://news.google.com/rss/search?q=when:1d%20site:reuters.com%20business&hl=en-US&gl=US&ceid=US:en",
     "category": "International",
