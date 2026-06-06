@@ -132,6 +132,25 @@
   }
 })();
 
+/* Horloge « live » : date + heure réelles à côté du badge LIVE, rafraîchies
+   chaque seconde. Le format suit la langue courante (FR ⇄ EN). */
+(function () {
+  "use strict";
+  var el = document.getElementById("liveClock");
+  if (!el) return;
+
+  function tick() {
+    var loc = document.documentElement.lang === "en" ? "en-GB" : "fr-FR";
+    var now = new Date();
+    var d = now.toLocaleDateString(loc, { weekday: "short", day: "numeric", month: "short" });
+    var t = now.toLocaleTimeString(loc, { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+    el.textContent = d + " · " + t;
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+
 /* Graphique d'ambiance de l'accueil : on remplace la courbe décorative par
    les VRAIES valeurs de l'EUR/USD (taux de référence BCE, ~6 mois), via l'API
    gratuite Frankfurter (sans clé, CORS). Si le réseau échoue, on garde le
