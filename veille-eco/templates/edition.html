@@ -242,6 +242,14 @@
 ajoutez une sélection manuelle.</p>
 {% endif %}
 
+{# --- Présentation détaillée « À propos » (uniquement sur l'accueil) ---- #}
+{% if not is_archive %}
+<div class="home-about" aria-label="À propos">
+  {% set about_embed = true %}
+  {% include "_about_content.html" %}
+</div>
+{% endif %}
+
 {% endblock %}
 
 {% block colophon_meta %}<span data-en="Edition of">Édition du</span> <span class="js-date">{{ edition_date_human }}</span> — {{ total_count }} <span data-en="item(s)">annonce(s)</span> · <span data-en="generated on">générée le</span> <span class="js-date">{{ generated_at_human }}</span>{% endblock %}

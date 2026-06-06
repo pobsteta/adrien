@@ -335,6 +335,18 @@ body.sb-toggled .sidebar {
 .feat__title { font-family: var(--display); font-weight: 700; font-size: 16px; margin-bottom: 7px; letter-spacing: -0.01em; }
 .feat__desc { font-size: 13px; font-weight: 300; color: var(--text2); line-height: 1.6; }
 
+/* Bloc « À propos » repris en bas de l'accueil : séparé du flux d'actualité. */
+.home-about {
+  margin-top: 40px; padding-top: 38px;
+  border-top: 1px solid var(--border);
+}
+.home-about::before {
+  content: "À PROPOS"; display: block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+  color: var(--v2); margin-bottom: 22px;
+}
+html[lang="en"] .home-about::before { content: "ABOUT"; }
+
 /* =========================================================================
    Page « À propos » : prose, étapes, citation, FAQ, CTA
    ========================================================================= */
