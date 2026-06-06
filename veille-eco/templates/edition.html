@@ -57,6 +57,11 @@
 {# --- À la une (hero) --------------------------------------------------- #}
 {% if featured %}
 <section class="hero" aria-label="À la une">
+  <div class="hero__chrome">
+    <span class="dots"><i></i><i></i><i></i></span>
+    <span class="hero__pair">{{ featured.category|upper }} · ÉDITION</span>
+    <span class="hero__live">● LIVE</span>
+  </div>
   <a class="hero__hit" href="{{ featured.url }}" target="_blank" rel="noopener noreferrer">
     <p class="hero__kicker">
       <span class="hero__badge">À LA UNE</span>
