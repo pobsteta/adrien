@@ -314,6 +314,7 @@ def build_context(edition_date: str) -> dict:
         "flash": flash,
         "sections": sections,
         "crypto": crypto,
+        "crypto_count": len(crypto),
         "ticker": ticker,
         "menu": menu,
         "total_count": len(aggregated) + len(selection),
@@ -430,7 +431,8 @@ def build(edition_date: str | None = None) -> int:
                             js_path="../app.js",
                             home_path="../index.html",
                             archives=archives,
-                            menu=context["menu"]),
+                            menu=context["menu"],
+                            crypto_count=context["crypto_count"]),
         encoding="utf-8",
     )
     print(f"  écrit : output/archives/index.html ({len(archives)} édition(s))")
@@ -490,7 +492,8 @@ def build(edition_date: str | None = None) -> int:
                                anchor_base="../index.html",
                                annonces_base="",
                                art=art,
-                               menu=context["menu"]),
+                               menu=context["menu"],
+                               crypto_count=context["crypto_count"]),
             encoding="utf-8",
         )
     print(f"  écrit : output/annonces/ ({len(pool)} page(s) d'annonce)")

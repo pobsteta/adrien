@@ -32,6 +32,6 @@
   {% for m in zone_items %}
   <a class="sb-item" href="{{ anchor_base }}#{{ m.anchor }}">{{ ic.icon(m.icon) }}<span class="js-term">{{ m.label }}</span>{% if m.count %}<span class="sb-count">{{ m.count }}</span>{% endif %}</a>
   {% endfor %}
-  <a class="sb-item {% if active == 'crypto' %}on{% endif %}" href="{{ crypto_href }}">{{ ic.icon('crypto') }}<span>Crypto</span></a>
+  <a class="sb-item {% if active == 'crypto' %}on{% endif %}" href="{{ crypto_href }}">{{ ic.icon('crypto') }}<span>Crypto</span>{% if crypto_count %}<span class="sb-count">{{ crypto_count }}</span>{% endif %}</a>
 </nav>
 {% endif %}
