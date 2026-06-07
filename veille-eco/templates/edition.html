@@ -1,31 +1,8 @@
 {% extends "base.html" %}
 {% import "_icons.html" as ic %}
+{% import "_card.html" as cards with context %}
 {% set anchor_base = anchor_base | default('') %}
 {% set annonces_base = annonces_base | default('') %}
-
-{# ----------------------------------------------------------------------- #}
-{# Macro : carte d'annonce cliquable (toute la carte + bouton)             #}
-{# ----------------------------------------------------------------------- #}
-{% macro card(art, index, tone='') %}
-<article class="card {{ tone }}" style="--i: {{ index }}">
-  <a class="card__hit" href="{{ annonces_base }}{{ art.page_name }}" aria-label="Lire le résumé : {{ art.title }}">
-    <p class="card__kicker">
-      <span class="card__cat js-term">{{ art.category }}</span>
-      <span class="card__sep">·</span>
-      <span class="card__source">{{ art.source }}</span>
-      {% if art.time_display %}<span class="card__time">{{ art.time_display }}</span>{% endif %}
-      {% if art.bias %}<span class="bias bias--{{ art.bias.tone }} card__bias" data-en="{{ art.bias.en }}">{{ art.bias.fr }}</span>{% endif %}
-    </p>
-    <h3 class="card__title" data-en="{{ art.title_en }}">{{ art.title_fr }}</h3>
-    {% if art.display_summary %}
-    <p class="card__summary" data-en="{{ art.display_summary_en }}">{{ art.display_summary }}</p>
-    {% endif %}
-  </a>
-  <a class="btn" href="{{ annonces_base }}{{ art.page_name }}">
-    <span data-en="Read the summary">Lire le résumé</span> <span class="btn__arrow" aria-hidden="true">→</span>
-  </a>
-</article>
-{% endmacro %}
 
 {% block home_href %}{% if is_archive %}../index.html{% else %}index.html{% endif %}{% endblock %}
 {% block dateline %}<span class="js-date">{{ edition_date_human }}</span>{% endblock %}
@@ -36,6 +13,7 @@
     {% set home_href = '../index.html' %}
     {% set archives_href = 'index.html' %}
     {% set calendar_href = '../calendrier.html' %}
+    {% set crypto_href = '../crypto.html' %}
     {% set about_href = '../a-propos.html' %}
     {% set anchor_base = '' %}
   {% else %}
@@ -43,6 +21,7 @@
     {% set home_href = 'index.html' %}
     {% set archives_href = 'archives/index.html' %}
     {% set calendar_href = 'calendrier.html' %}
+    {% set crypto_href = 'crypto.html' %}
     {% set about_href = 'a-propos.html' %}
     {% set anchor_base = '' %}
   {% endif %}
@@ -252,7 +231,7 @@
   </header>
   <div class="grid">
     {% for art in selection %}
-    {{ card(art, loop.index0, 'card--pick') }}
+    {{ cards.card(art, loop.index0, 'card--pick') }}
     {% endfor %}
   </div>
 </section>
@@ -268,7 +247,7 @@
   </header>
   <div class="grid">
     {% for art in section.articles %}
-    {{ card(art, loop.index0) }}
+    {{ cards.card(art, loop.index0) }}
     {% endfor %}
   </div>
 </section>

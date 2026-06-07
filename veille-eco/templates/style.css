@@ -404,6 +404,29 @@ body.sb-toggled .sidebar {
 }
 .annonce__src { margin: 0; }
 
+/* --- En-tête de page dédiée (Crypto…) --- */
+.pagehead { margin-bottom: 26px; }
+.pagehead__eyebrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12px; font-weight: 600; color: var(--v2);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;
+}
+.pagehead__eyebrow svg { width: 16px; height: 16px; }
+.pagehead__title {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.02em; line-height: 1.05;
+  margin-bottom: 10px;
+}
+.pagehead__lead {
+  font-size: 16px; font-weight: 300; color: var(--text2);
+  line-height: 1.6; max-width: 60ch;
+}
+.pagehead__empty {
+  color: var(--text2); font-style: italic;
+  padding: 40px; text-align: center;
+  border: 1px dashed var(--border); border-radius: var(--r2);
+}
+
 /* --- Section « Lecture marché » (pour traders news / macro) --- */
 .bias {
   display: inline-flex; align-items: center; gap: 5px;

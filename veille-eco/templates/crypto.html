@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% import "_icons.html" as ic %}
+{% import "_card.html" as cards with context %}
+{% set annonces_base = annonces_base | default('') %}
+
+{% block title %}Crypto — Le Terminal Économies{% endblock %}
+{% block home_href %}index.html{% endblock %}
+{% block dateline %}<span data-en="Crypto">Crypto</span>{% endblock %}
+
+{% block sidebar %}
+  {% set active = 'crypto' %}
+  {% set home_href = 'index.html' %}
+  {% set archives_href = 'archives/index.html' %}
+  {% set calendar_href = 'calendrier.html' %}
+  {% set crypto_href = 'crypto.html' %}
+  {% set about_href = 'a-propos.html' %}
+  {% set anchor_base = 'index.html' %}
+  {% include "_sidebar.html" %}
+{% endblock %}
+
+{# --- Bandeau de cours crypto en direct (widget TradingView) ----------- #}
+{% block ticker %}
+<div class="pricetape">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "BITSTAMP:BTCUSD", "title": "Bitcoin"},
+        {"proName": "BITSTAMP:ETHUSD", "title": "Ethereum"},
+        {"proName": "BINANCE:SOLUSD", "title": "Solana"},
+        {"proName": "BINANCE:BNBUSD", "title": "BNB"},
+        {"proName": "BINANCE:XRPUSD", "title": "XRP"},
+        {"proName": "BINANCE:ADAUSD", "title": "Cardano"},
+        {"proName": "BINANCE:DOGEUSD", "title": "Dogecoin"},
+        {"proName": "CRYPTOCAP:TOTAL", "title": "Cap. totale"},
+        {"proName": "CRYPTOCAP:BTC.D", "title": "Dominance BTC"}
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "fr"
+    }
+    </script>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="pagehead" aria-label="Crypto">
+  <p class="pagehead__eyebrow">{{ ic.icon('crypto') }} <span data-en="Cryptocurrencies · Live">Crypto-monnaies · En direct</span></p>
+  <h1 class="pagehead__title">Crypto</h1>
+  <p class="pagehead__lead" data-en="All the crypto news, aggregated and summarized: Bitcoin, Ethereum, DeFi, regulation and market moves — newest first.">
+    Toute l'actualité crypto, agrégée et résumée : Bitcoin, Ethereum, DeFi,
+    régulation et mouvements de marché — les plus récentes d'abord.
+  </p>
+</section>
+
+{% if crypto %}
+<section class="block" aria-label="Actualité crypto">
+  <header class="block__head">
+    <h2 class="block__title"><span class="block__ico">{{ ic.icon('crypto') }}</span> <span data-en="Crypto news">Actualité crypto</span></h2>
+    <span class="block__count">{{ crypto|length }}</span>
+  </header>
+  <div class="grid">
+    {% for art in crypto %}
+    {{ cards.card(art, loop.index0) }}
+    {% endfor %}
+  </div>
+</section>
+{% else %}
+<p class="pagehead__empty" data-en="No crypto news at the moment. Come back soon.">Pas d'actualité crypto pour le moment. Revenez bientôt.</p>
+{% endif %}
+{% endblock %}

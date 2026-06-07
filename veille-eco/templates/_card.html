@@ -1,0 +1,22 @@
+{# Carte d'annonce cliquable (toute la carte + bouton « Lire le résumé »).
+   Importé « with context » pour accéder à `annonces_base`. #}
+{% macro card(art, index, tone='') %}
+<article class="card {{ tone }}" style="--i: {{ index }}">
+  <a class="card__hit" href="{{ annonces_base }}{{ art.page_name }}" aria-label="Lire le résumé : {{ art.title }}">
+    <p class="card__kicker">
+      <span class="card__cat js-term">{{ art.category }}</span>
+      <span class="card__sep">·</span>
+      <span class="card__source">{{ art.source }}</span>
+      {% if art.time_display %}<span class="card__time">{{ art.time_display }}</span>{% endif %}
+      {% if art.bias %}<span class="bias bias--{{ art.bias.tone }} card__bias" data-en="{{ art.bias.en }}">{{ art.bias.fr }}</span>{% endif %}
+    </p>
+    <h3 class="card__title" data-en="{{ art.title_en }}">{{ art.title_fr }}</h3>
+    {% if art.display_summary %}
+    <p class="card__summary" data-en="{{ art.display_summary_en }}">{{ art.display_summary }}</p>
+    {% endif %}
+  </a>
+  <a class="btn" href="{{ annonces_base }}{{ art.page_name }}">
+    <span data-en="Read the summary">Lire le résumé</span> <span class="btn__arrow" aria-hidden="true">→</span>
+  </a>
+</article>
+{% endmacro %}

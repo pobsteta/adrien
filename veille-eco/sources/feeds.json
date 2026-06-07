@@ -100,5 +100,29 @@
     "url": "https://news.google.com/rss/search?q=when:7d%20(Ostrum%20OR%20%22Natixis%20Investment%20Managers%22)%20(march%C3%A9s%20OR%20taux%20OR%20cr%C3%A9dit)&hl=fr&gl=FR&ceid=FR:fr",
     "category": "Marchés",
     "weight": 4
+  },
+  {
+    "name": "CoinDesk",
+    "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+    "category": "Crypto",
+    "weight": 4
+  },
+  {
+    "name": "Cointelegraph",
+    "url": "https://cointelegraph.com/rss",
+    "category": "Crypto",
+    "weight": 3
+  },
+  {
+    "name": "Decrypt",
+    "url": "https://decrypt.co/feed",
+    "category": "Crypto",
+    "weight": 3
+  },
+  {
+    "name": "Cryptoast (FR)",
+    "url": "https://cryptoast.fr/feed/",
+    "category": "Crypto",
+    "weight": 3
   }
 ]

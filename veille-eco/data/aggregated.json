@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-06-06T09:00:00+00:00",
-  "count": 15,
+  "count": 18,
   "articles": [
     {
       "id": "7675a9fcc863f9e1",
@@ -58,6 +58,138 @@
           "previous": "+0,1 %"
         }
       ]
+    },
+    {
+      "id": "e7d09ded30eabb4c",
+      "title": "Bitcoin repasse au-dessus d'un seuil clé porté par les entrées en ETF",
+      "title_fr": "Bitcoin repasse au-dessus d'un seuil clé porté par les entrées en ETF",
+      "title_en": "Bitcoin tops a key level on strong ETF inflows",
+      "url": "https://www.coindesk.com/markets/bitcoin-etf-inflows",
+      "source": "CoinDesk",
+      "category": "Crypto",
+      "weight": 4,
+      "published": "2026-06-06T08:52:00+00:00",
+      "image": "https://picsum.photos/seed/e7d09ded30eabb4c/960/540",
+      "excerpt": "Le bitcoin rebondit, soutenu par des entrées record dans les ETF au comptant.",
+      "excerpt_en": "Bitcoin rebounds, supported by record spot-ETF inflows.",
+      "summary": "Le bitcoin est repassé au-dessus d'un seuil technique surveillé, porté par des entrées soutenues dans les ETF au comptant américains. La demande institutionnelle reste le principal moteur du marché.\n\nDepuis leur lancement, ces fonds cotés ont drainé des milliards de dollars, offrant aux investisseurs traditionnels une exposition simple au bitcoin sans détenir directement la cryptomonnaie.\n\nLe mouvement s'accompagne d'une baisse de l'offre disponible sur les plateformes d'échange, signe que les détenteurs privilégient la conservation de long terme plutôt que la vente.\n\nPour les traders, la dynamique reste haussière tant que les flux ETF demeurent positifs, mais la volatilité élevée impose une gestion stricte du risque autour des seuils techniques.\n\nÀ surveiller : les chiffres quotidiens de collecte des ETF et les prochaines échéances macro (inflation US, ton de la Fed) qui pilotent l'appétit pour le risque.",
+      "summary_fr": "Le bitcoin est repassé au-dessus d'un seuil technique surveillé, porté par des entrées soutenues dans les ETF au comptant américains. La demande institutionnelle reste le principal moteur du marché.\n\nDepuis leur lancement, ces fonds cotés ont drainé des milliards de dollars, offrant aux investisseurs traditionnels une exposition simple au bitcoin sans détenir directement la cryptomonnaie.\n\nLe mouvement s'accompagne d'une baisse de l'offre disponible sur les plateformes d'échange, signe que les détenteurs privilégient la conservation de long terme plutôt que la vente.\n\nPour les traders, la dynamique reste haussière tant que les flux ETF demeurent positifs, mais la volatilité élevée impose une gestion stricte du risque autour des seuils techniques.\n\nÀ surveiller : les chiffres quotidiens de collecte des ETF et les prochaines échéances macro (inflation US, ton de la Fed) qui pilotent l'appétit pour le risque.",
+      "summary_en": "Bitcoin moved back above a closely watched technical level, lifted by sustained inflows into U.S. spot ETFs. Institutional demand remains the market's main driver.\n\nSince launch, these listed funds have drawn in billions of dollars, giving traditional investors simple exposure to bitcoin without holding the cryptocurrency directly.\n\nThe move comes with a drop in available supply on exchanges, a sign that holders favour long-term storage over selling.\n\nFor traders, the trend stays bullish as long as ETF flows remain positive, but high volatility demands strict risk management around technical levels.\n\nWatch: daily ETF inflow figures and upcoming macro events (U.S. inflation, Fed tone) that drive risk appetite.",
+      "bias": {
+        "fr": "Haussier (flux ETF)",
+        "en": "Bullish (ETF flows)",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "BTC",
+          "dir": "up"
+        },
+        {
+          "asset": "ETH",
+          "dir": "up"
+        },
+        {
+          "asset": "Actions minières crypto",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "Tendance haussière tant que les flux ETF restent positifs ; volatilité élevée, gérer le risque autour des seuils.",
+        "en": "Bullish while ETF flows stay positive; high volatility, manage risk around levels."
+      },
+      "watch": {
+        "fr": "Collecte quotidienne des ETF et CPI américain.",
+        "en": "Daily ETF inflows and U.S. CPI."
+      }
+    },
+    {
+      "id": "4f471aaa73349cda",
+      "title": "Ethereum : la mise à jour réseau relance le débat sur les frais",
+      "title_fr": "Ethereum : la mise à jour réseau relance le débat sur les frais",
+      "title_en": "Ethereum: network upgrade reignites the fee debate",
+      "url": "https://cointelegraph.com/news/ethereum-upgrade-fees",
+      "source": "Cointelegraph",
+      "category": "Crypto",
+      "weight": 3,
+      "published": "2026-06-06T08:30:00+00:00",
+      "image": "https://picsum.photos/seed/4f471aaa73349cda/960/540",
+      "excerpt": "Une mise à jour vise à réduire les frais et améliorer la scalabilité d'Ethereum.",
+      "excerpt_en": "An upgrade aims to cut fees and improve Ethereum scalability.",
+      "summary": "Une nouvelle mise à jour du réseau Ethereum vise à réduire les frais de transaction et à améliorer la scalabilité, deux freins récurrents à l'adoption de masse.\n\nLes améliorations ciblent notamment les solutions de seconde couche (« layer 2 »), qui traitent les transactions hors de la chaîne principale avant de les y inscrire, allégeant la congestion.\n\nDes frais plus faibles renforceraient la compétitivité d'Ethereum face aux blockchains concurrentes qui se positionnent sur la rapidité et le faible coût, comme Solana.\n\nPour l'écosystème DeFi et les applications, c'est un facteur de soutien : des coûts réduits élargissent les usages possibles et peuvent attirer de nouveaux utilisateurs et développeurs.\n\nÀ surveiller : l'adoption effective de la mise à jour, l'évolution des frais réels et les flux entre Ethereum et ses concurrents.",
+      "summary_fr": "Une nouvelle mise à jour du réseau Ethereum vise à réduire les frais de transaction et à améliorer la scalabilité, deux freins récurrents à l'adoption de masse.\n\nLes améliorations ciblent notamment les solutions de seconde couche (« layer 2 »), qui traitent les transactions hors de la chaîne principale avant de les y inscrire, allégeant la congestion.\n\nDes frais plus faibles renforceraient la compétitivité d'Ethereum face aux blockchains concurrentes qui se positionnent sur la rapidité et le faible coût, comme Solana.\n\nPour l'écosystème DeFi et les applications, c'est un facteur de soutien : des coûts réduits élargissent les usages possibles et peuvent attirer de nouveaux utilisateurs et développeurs.\n\nÀ surveiller : l'adoption effective de la mise à jour, l'évolution des frais réels et les flux entre Ethereum et ses concurrents.",
+      "summary_en": "A new Ethereum network upgrade aims to cut transaction fees and improve scalability, two recurring barriers to mass adoption.\n\nThe improvements target layer-2 solutions in particular, which process transactions off the main chain before settling them on it, easing congestion.\n\nLower fees would strengthen Ethereum's competitiveness against rival blockchains positioned on speed and low cost, such as Solana.\n\nFor the DeFi ecosystem and applications, it is a supportive factor: lower costs broaden possible use cases and can attract new users and developers.\n\nWatch: actual adoption of the upgrade, the path of real fees and flows between Ethereum and its competitors.",
+      "bias": {
+        "fr": "Constructif (ETH)",
+        "en": "Constructive (ETH)",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "ETH",
+          "dir": "up"
+        },
+        {
+          "asset": "Layer 2",
+          "dir": "up"
+        },
+        {
+          "asset": "SOL",
+          "dir": "down"
+        }
+      ],
+      "market_read": {
+        "fr": "Soutien fondamental pour ETH et les layer 2 si les frais baissent réellement ; pression relative sur les chaînes concurrentes.",
+        "en": "Fundamental support for ETH and layer 2 if fees truly fall; relative pressure on competing chains."
+      },
+      "watch": {
+        "fr": "Adoption de la mise à jour et niveau des frais réels.",
+        "en": "Upgrade adoption and real fee levels."
+      }
+    },
+    {
+      "id": "a957264b5de004d7",
+      "title": "Régulation : un nouveau cadre crypto se précise en Europe",
+      "title_fr": "Régulation : un nouveau cadre crypto se précise en Europe",
+      "title_en": "Regulation: a new crypto framework takes shape in Europe",
+      "url": "https://decrypt.co/news/europe-crypto-framework",
+      "source": "Decrypt",
+      "category": "Crypto",
+      "weight": 3,
+      "published": "2026-06-06T07:50:00+00:00",
+      "image": "",
+      "excerpt": "Les régulateurs européens précisent les règles applicables aux actifs numériques.",
+      "excerpt_en": "European regulators clarify rules for digital assets.",
+      "summary": "Les régulateurs européens précisent la mise en œuvre du cadre encadrant les crypto-actifs, avec des obligations renforcées pour les plateformes et les émetteurs de stablecoins.\n\nL'objectif affiché est de protéger les investisseurs et d'assurer la stabilité financière, tout en offrant une sécurité juridique propice au développement du secteur sur le continent.\n\nPour les acteurs établis, un cadre clair est plutôt une bonne nouvelle : il réduit l'incertitude réglementaire et peut attirer des capitaux institutionnels jusqu'ici prudents.\n\nÀ l'inverse, les exigences de conformité et de capital pourraient peser sur les plus petits acteurs et accélérer la consolidation du marché.\n\nÀ surveiller : le calendrier d'application, le traitement des stablecoins et l'attitude des grandes plateformes internationales.",
+      "summary_fr": "Les régulateurs européens précisent la mise en œuvre du cadre encadrant les crypto-actifs, avec des obligations renforcées pour les plateformes et les émetteurs de stablecoins.\n\nL'objectif affiché est de protéger les investisseurs et d'assurer la stabilité financière, tout en offrant une sécurité juridique propice au développement du secteur sur le continent.\n\nPour les acteurs établis, un cadre clair est plutôt une bonne nouvelle : il réduit l'incertitude réglementaire et peut attirer des capitaux institutionnels jusqu'ici prudents.\n\nÀ l'inverse, les exigences de conformité et de capital pourraient peser sur les plus petits acteurs et accélérer la consolidation du marché.\n\nÀ surveiller : le calendrier d'application, le traitement des stablecoins et l'attitude des grandes plateformes internationales.",
+      "summary_en": "European regulators are clarifying the implementation of the framework governing crypto-assets, with stronger obligations for platforms and stablecoin issuers.\n\nThe stated goal is to protect investors and ensure financial stability, while offering legal certainty conducive to the sector's development on the continent.\n\nFor established players, a clear framework is rather good news: it reduces regulatory uncertainty and can attract institutional capital that has so far been cautious.\n\nConversely, compliance and capital requirements could weigh on smaller players and accelerate market consolidation.\n\nWatch: the implementation timeline, the treatment of stablecoins and the stance of large international platforms.",
+      "bias": {
+        "fr": "Neutre à positif",
+        "en": "Neutral to positive",
+        "tone": "flat"
+      },
+      "impacts": [
+        {
+          "asset": "Plateformes (CEX)",
+          "dir": "flat"
+        },
+        {
+          "asset": "Stablecoins",
+          "dir": "flat"
+        },
+        {
+          "asset": "BTC",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Clarté réglementaire = soutien de moyen terme pour les acteurs établis ; impact prix court terme limité.",
+        "en": "Regulatory clarity = medium-term support for established players; limited short-term price impact."
+      },
+      "watch": {
+        "fr": "Calendrier d'application et traitement des stablecoins.",
+        "en": "Implementation timeline and stablecoin treatment."
+      }
     },
     {
       "id": "0cfd45407d810a63",

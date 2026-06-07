@@ -62,6 +62,7 @@ CATEGORY_ICONS = {
     "Europe": "euro", "Amériques": "dollar", "Asie": "yen",
     "Afrique": "sun", "Océanie": "waves", "Marchés": "chart",
     "Institutions": "bank", "International": "globe", "France": "hexagon",
+    "Crypto": "crypto",
 }
 
 # --------------------------------------------------------------------------- #
@@ -137,6 +138,22 @@ def time_display(published: str | None) -> str:
         return ""
     dt = datetime.fromisoformat(published).astimezone()
     return dt.strftime("%H:%M")
+
+
+# Catégorie dédiée à sa propre page (hors flux d'actualité générale).
+CRYPTO_LABEL = "Crypto"
+
+
+def freshness_key(article: dict):
+    """Date de publication pour trier du plus récent au plus ancien.
+
+    Les annonces sans date passent en dernier. Toujours « aware » (UTC) pour
+    permettre la comparaison.
+    """
+    published = article.get("published")
+    if published:
+        return datetime.fromisoformat(published)
+    return datetime.min.replace(tzinfo=timezone.utc)
 
 
 def paragraphs(text: str) -> list[str]:
@@ -234,7 +251,8 @@ def group_by_category(articles: list[dict]) -> list[dict]:
 
     return [
         {"category": cat, "anchor": "r-" + slugify(cat),
-         "icon": CATEGORY_ICONS.get(cat, "globe"), "articles": buckets[cat]}
+         "icon": CATEGORY_ICONS.get(cat, "globe"),
+         "articles": sorted(buckets[cat], key=freshness_key, reverse=True)}
         for cat in sorted(buckets, key=sort_key)
     ]
 
@@ -246,11 +264,17 @@ def build_context(edition_date: str) -> dict:
     aggregated = [prepare_article(a) for a in load_aggregated()]
     selection = [prepare_manual(m) for m in load_manual(edition_date)]
 
-    # L'article « à la une » : le mieux classé des agrégés (déjà trié par
-    # poids puis fraîcheur dans aggregate.py). On le retire de sa rubrique
-    # pour éviter le doublon.
-    featured = aggregated[0] if aggregated else None
-    rest = aggregated[1:] if aggregated else []
+    # Tri par fraîcheur (plus récent d'abord), appliqué à tout l'agrégat.
+    aggregated.sort(key=freshness_key, reverse=True)
+
+    # La crypto a sa page dédiée : on la sort du flux d'actualité générale.
+    crypto = [a for a in aggregated if a.get("category") == CRYPTO_LABEL]
+    mainstream = [a for a in aggregated if a.get("category") != CRYPTO_LABEL]
+
+    # L'article « à la une » : la plus fraîche des annonces générales. On la
+    # retire de sa rubrique pour éviter le doublon.
+    featured = mainstream[0] if mainstream else None
+    rest = mainstream[1:] if mainstream else []
     sections = group_by_category(rest)
 
     # Fil « Flash » : les annonces les plus récentes (hors une), tous flux
@@ -289,6 +313,7 @@ def build_context(edition_date: str) -> dict:
         "featured": featured,
         "flash": flash,
         "sections": sections,
+        "crypto": crypto,
         "ticker": ticker,
         "menu": menu,
         "total_count": len(aggregated) + len(selection),
@@ -430,7 +455,18 @@ def build(edition_date: str | None = None) -> int:
     )
     print("  écrit : output/calendrier.html")
 
-    # 6) Une page dédiée par annonce (résumé + image + lien source).
+    # 6) Page dédiée « Crypto » (ticker crypto + grille d'annonces).
+    crypto_tpl = env.get_template("crypto.html")
+    (OUTPUT_DIR / "crypto.html").write_text(
+        crypto_tpl.render(css_path="style.css",
+                          js_path="app.js",
+                          annonces_base="annonces/",
+                          **context),
+        encoding="utf-8",
+    )
+    print(f"  écrit : output/crypto.html ({len(context['crypto'])} annonce(s))")
+
+    # 7) Une page dédiée par annonce (résumé + image + lien source).
     annonces_dir = OUTPUT_DIR / "annonces"
     annonces_dir.mkdir(parents=True, exist_ok=True)
     annonce_tpl = env.get_template("annonce.html")
@@ -441,6 +477,8 @@ def build(edition_date: str | None = None) -> int:
     for section in context["sections"]:
         for art in section["articles"]:
             pool[art["id"]] = art
+    for art in context["crypto"]:
+        pool[art["id"]] = art
     for art in context["selection"]:
         pool.setdefault(art["id"], art)
 
