@@ -263,7 +263,7 @@
 {% for section in sections %}
 <section id="{{ section.anchor }}" class="block" aria-label="{{ section.category }}">
   <header class="block__head">
-    <h2 class="block__title js-term">{{ section.category }}</h2>
+    <h2 class="block__title"><span class="block__ico">{{ ic.icon(section.icon) }}</span> <span class="js-term">{{ section.category }}</span></h2>
     <span class="block__count">{{ section.articles|length }}</span>
   </header>
   <div class="grid">

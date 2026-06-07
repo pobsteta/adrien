@@ -690,7 +690,9 @@ html[lang="en"] .home-about::before { content: "ABOUT"; }
   display: flex; align-items: center; gap: 12px;
   margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
 }
-.block__title { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+.block__title { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; display: inline-flex; align-items: center; gap: 9px; }
+.block__ico { display: inline-flex; color: var(--v2); }
+.block__ico svg { width: 20px; height: 20px; }
 .block__dot { color: var(--v2); margin-right: 5px; font-size: 12px; vertical-align: middle; }
 .block__sub { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3); }
 .block__count {

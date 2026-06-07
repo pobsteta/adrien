@@ -57,6 +57,13 @@ CATEGORY_ORDER = [
     "Marchés", "Institutions", "International",
 ]
 
+# Icône de menu propre à chaque rubrique (thème finance), repli sur « globe ».
+CATEGORY_ICONS = {
+    "Europe": "euro", "Amériques": "dollar", "Asie": "yen",
+    "Afrique": "sun", "Océanie": "waves", "Marchés": "chart",
+    "Institutions": "bank", "International": "globe", "France": "hexagon",
+}
+
 # --------------------------------------------------------------------------- #
 # Dates en français (sans dépendre de la locale système)                      #
 # --------------------------------------------------------------------------- #
@@ -226,7 +233,8 @@ def group_by_category(articles: list[dict]) -> list[dict]:
         return (1, -max_weight, category)
 
     return [
-        {"category": cat, "anchor": "r-" + slugify(cat), "articles": buckets[cat]}
+        {"category": cat, "anchor": "r-" + slugify(cat),
+         "icon": CATEGORY_ICONS.get(cat, "globe"), "articles": buckets[cat]}
         for cat in sorted(buckets, key=sort_key)
     ]
 
@@ -268,7 +276,8 @@ def build_context(edition_date: str) -> dict:
     if selection:
         menu.append({"label": "La sélection", "anchor": "selection",
                      "icon": "bookmark", "group": "edition"})
-    menu += [{"label": s["category"], "anchor": s["anchor"], "icon": "globe",
+    menu += [{"label": s["category"], "anchor": s["anchor"],
+              "icon": CATEGORY_ICONS.get(s["category"], "globe"),
               "group": "zone", "count": len(s["articles"])} for s in sections]
 
     d = date.fromisoformat(edition_date)
