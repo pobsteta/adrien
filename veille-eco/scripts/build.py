@@ -138,6 +138,18 @@ def paragraphs(text: str) -> list[str]:
     return parts
 
 
+def short_teaser(text: str, limit: int = 90) -> str:
+    """Accroche courte pour l'accueil : une ligne tronquée proprement.
+
+    Le résumé complet, lui, reste sur la page dédiée de l'annonce.
+    """
+    text = " ".join((text or "").split())
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(" ,;:.—-")
+    return f"{cut}…"
+
+
 def prepare_article(article: dict) -> dict:
     """Enrichit un article agrégé des champs d'affichage (FR + EN)."""
     aid = article_id(article)
@@ -145,6 +157,7 @@ def prepare_article(article: dict) -> dict:
     full_fr = (article.get("summary_fr") or article.get("summary") or excerpt).strip()
     full_en = (article.get("summary_en") or article.get("summary")
                or article.get("excerpt_en") or excerpt).strip()
+    excerpt_en = (article.get("excerpt_en") or excerpt).strip()
     return {
         **article,
         "id": aid,
@@ -152,9 +165,9 @@ def prepare_article(article: dict) -> dict:
         "image": (article.get("image") or "").strip(),
         "title_fr": article.get("title_fr") or article.get("title", ""),
         "title_en": article.get("title_en") or article.get("title", ""),
-        "display_summary": (article.get("summary_fr") or article.get("summary")
-                            or excerpt),
-        "display_summary_en": (article.get("excerpt_en") or excerpt),
+        # Accroche COURTE pour l'accueil ; le détail complet est sur la page dédiée.
+        "display_summary": short_teaser(excerpt or full_fr),
+        "display_summary_en": short_teaser(excerpt_en or full_en),
         "summary_fr_paras": paragraphs(full_fr),
         "summary_en_paras": paragraphs(full_en),
         "summary_kind": summary_kind(article),
@@ -167,7 +180,6 @@ def prepare_manual(item: dict) -> dict:
     aid = article_id(item)
     full_fr = (item.get("summary") or item.get("summary_fr") or "").strip()
     full_en = (item.get("summary_en") or full_fr).strip()
-    short_fr = (item.get("summary") or "").strip()
     return {
         "id": aid,
         "page_name": f"{aid}.html",
@@ -178,8 +190,9 @@ def prepare_manual(item: dict) -> dict:
         "source": item.get("source", ""),
         "category": SELECTION_LABEL,
         "image": (item.get("image") or "").strip(),
-        "display_summary": short_fr,
-        "display_summary_en": (item.get("excerpt_en") or short_fr),
+        # Accroche COURTE pour l'accueil ; le détail complet est sur la page dédiée.
+        "display_summary": short_teaser(full_fr),
+        "display_summary_en": short_teaser(item.get("excerpt_en") or full_en),
         "summary_fr_paras": paragraphs(full_fr),
         "summary_en_paras": paragraphs(full_en),
         "summary_kind": "edito",
