@@ -40,11 +40,13 @@ TIMEOUT = 30
 
 PROMPT = (
     "Tu es un rédacteur de presse économique. À partir du titre et de l'extrait "
-    "ci-dessous, rédige un RÉSUMÉ COMPLET et autonome (le lecteur ne doit pas "
-    "avoir besoin d'ouvrir l'article d'origine) : 3 à 4 courts paragraphes "
-    "expliquant le fait, son contexte et ses conséquences économiques, dans un "
-    "langage clair pour un public non spécialiste. N'invente aucun chiffre qui "
-    "ne soit pas plausible au vu de l'extrait, reste neutre et factuel.\n\n"
+    "ci-dessous, rédige un RÉSUMÉ COMPLET, riche et autonome (le lecteur ne doit "
+    "pas avoir besoin d'ouvrir l'article d'origine) : 4 à 6 paragraphes "
+    "DÉVELOPPÉS de 2 à 3 phrases chacun. Couvre successivement le fait principal, "
+    "son contexte, les chiffres et acteurs concernés, les conséquences "
+    "économiques, et ce qu'il faut surveiller ensuite. Adopte un langage clair "
+    "pour un public non spécialiste. N'invente aucun chiffre qui ne soit pas "
+    "plausible au vu de l'extrait, reste neutre et factuel.\n\n"
     "Tu dois aussi fournir une version anglaise du résumé et la traduction du "
     "titre dans les deux langues.\n\n"
     "Réponds UNIQUEMENT par un objet JSON valide, sans texte autour, de la "
@@ -72,7 +74,7 @@ def summarize_one(title: str, excerpt: str, api_key: str) -> dict | None:
     """Un appel API ; renvoie {titre_fr,titre_en,resume_fr,resume_en} ou None."""
     body = json.dumps({
         "model": MODEL,
-        "max_tokens": 900,
+        "max_tokens": 1600,
         "messages": [{
             "role": "user",
             "content": PROMPT.format(title=title, excerpt=excerpt or title),
