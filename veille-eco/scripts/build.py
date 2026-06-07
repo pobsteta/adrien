@@ -468,6 +468,14 @@ def build(edition_date: str | None = None) -> int:
     )
     print(f"  écrit : output/crypto.html ({len(context['crypto'])} annonce(s))")
 
+    # 6 bis) Page « Flash Info » (fils live : news marché + comptes X).
+    flash_tpl = env.get_template("flash-info.html")
+    (OUTPUT_DIR / "flash-info.html").write_text(
+        flash_tpl.render(css_path="style.css", js_path="app.js", **context),
+        encoding="utf-8",
+    )
+    print("  écrit : output/flash-info.html")
+
     # 7) Une page dédiée par annonce (résumé + image + lien source).
     annonces_dir = OUTPUT_DIR / "annonces"
     annonces_dir.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% import "_icons.html" as ic %}
+
+{% block title %}Flash Info — Le Terminal Économies{% endblock %}
+{% block home_href %}index.html{% endblock %}
+{% block dateline %}<span data-en="Live">En direct</span>{% endblock %}
+
+{% block sidebar %}
+  {% set active = 'flashinfo' %}
+  {% set home_href = 'index.html' %}
+  {% set archives_href = 'archives/index.html' %}
+  {% set calendar_href = 'calendrier.html' %}
+  {% set crypto_href = 'crypto.html' %}
+  {% set flashinfo_href = 'flash-info.html' %}
+  {% set about_href = 'a-propos.html' %}
+  {% set anchor_base = 'index.html' %}
+  {% include "_sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+<section class="pagehead" aria-label="Flash Info">
+  <p class="pagehead__eyebrow">{{ ic.icon('radio') }} <span class="fi-livedot"></span> <span data-en="Live newswire · Market-moving">Fil en direct · Ce qui fait bouger les marchés</span></p>
+  <h1 class="pagehead__title">Flash Info</h1>
+  <p class="pagehead__lead" data-en="Real-time market-moving headlines and posts: macro releases, central banks, geopolitics and the accounts traders watch — straight from the source.">
+    Les informations susceptibles de faire bouger les marchés, en temps réel :
+    statistiques macro, banques centrales, géopolitique et les comptes que
+    surveillent les traders — directement à la source.
+  </p>
+</section>
+
+{# --- Fil de news marché en direct (widget TradingView, sans clé) ------- #}
+<section class="block" aria-label="Fil de news marché">
+  <header class="block__head">
+    <h2 class="block__title"><span class="block__ico">{{ ic.icon('bolt') }}</span> <span data-en="Live market news">News marché en direct</span></h2>
+    <span class="block__sub" data-en="Auto-updating">Mise à jour automatique</span>
+  </header>
+  <div class="fi-wire">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+      {
+        "feedMode": "all_symbols",
+        "isTransparent": true,
+        "displayMode": "regular",
+        "width": "100%",
+        "height": 560,
+        "colorTheme": "dark",
+        "locale": "fr"
+      }
+      </script>
+    </div>
+  </div>
+</section>
+
+{# --- Comptes à suivre : timelines X (Twitter) en direct ---------------- #}
+<section class="block" aria-label="Comptes à suivre">
+  <header class="block__head">
+    <h2 class="block__title"><span class="block__ico">{{ ic.icon('radio') }}</span> <span data-en="Accounts to watch">Comptes à suivre</span></h2>
+    <span class="block__sub" data-en="X / Twitter · Live">X / Twitter · En direct</span>
+  </header>
+  <div class="fi-grid">
+    <div class="fi-col">
+      <p class="fi-col__name">@zerohedge</p>
+      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
+         href="https://twitter.com/zerohedge?ref_src=twsrc%5Etfw">Posts de ZeroHedge</a>
+    </div>
+    <div class="fi-col">
+      <p class="fi-col__name">@DeItaone <span class="fi-col__sub">Walter Bloomberg</span></p>
+      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
+         href="https://twitter.com/DeItaone?ref_src=twsrc%5Etfw">Posts de Walter Bloomberg</a>
+    </div>
+    <div class="fi-col">
+      <p class="fi-col__name">@financialjuice</p>
+      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
+         href="https://twitter.com/financialjuice?ref_src=twsrc%5Etfw">Posts de Financial Juice</a>
+    </div>
+    <div class="fi-col">
+      <p class="fi-col__name">@FirstSquawk</p>
+      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
+         href="https://twitter.com/FirstSquawk?ref_src=twsrc%5Etfw">Posts de First Squawk</a>
+    </div>
+    <div class="fi-col">
+      <p class="fi-col__name">@realDonaldTrump</p>
+      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
+         href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Etfw">Posts de Donald Trump</a>
+    </div>
+  </div>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <p class="fi-note" data-en="Live feeds embedded from third parties (TradingView, X/Twitter). Display depends on those platforms and may require accepting their cookies.">
+    Flux en direct intégrés depuis des tiers (TradingView, X/Twitter). Leur
+    affichage dépend de ces plateformes et peut nécessiter d'accepter leurs cookies.
+  </p>
+</section>
+{% endblock %}

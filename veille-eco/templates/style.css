@@ -427,6 +427,39 @@ body.sb-toggled .sidebar {
   border: 1px dashed var(--border); border-radius: var(--r2);
 }
 
+/* --- Flash Info (fil live + comptes X) --- */
+.sb-live, .fi-livedot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: #F87171; margin-left: 7px;
+  box-shadow: 0 0 0 0 rgba(248,113,113,0.6); animation: filive 1.8s infinite;
+}
+@keyframes filive {
+  0% { box-shadow: 0 0 0 0 rgba(248,113,113,0.55); }
+  70% { box-shadow: 0 0 0 7px rgba(248,113,113,0); }
+  100% { box-shadow: 0 0 0 0 rgba(248,113,113,0); }
+}
+.fi-wire {
+  border: 1px solid var(--border); border-radius: var(--r2);
+  overflow: hidden; background: var(--card); margin-bottom: 8px;
+}
+.fi-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+.fi-col {
+  border: 1px solid var(--border); border-radius: var(--r2);
+  background: var(--card); padding: 12px; min-height: 120px;
+}
+.fi-col__name {
+  font-family: var(--display); font-weight: 700; font-size: 14px;
+  color: var(--v2); margin-bottom: 8px;
+}
+.fi-col__sub { color: var(--text3); font-weight: 500; font-size: 12px; }
+.fi-note {
+  font-size: 12px; color: var(--text3); font-style: italic;
+  margin-top: 14px; line-height: 1.6;
+}
+
 /* --- Section « Lecture marché » (pour traders news / macro) --- */
 .bias {
   display: inline-flex; align-items: center; gap: 5px;
