@@ -760,7 +760,7 @@ html[lang="en"] .home-about::before { content: "ABOUT"; }
   transform: translateY(-4px);
   box-shadow: 0 24px 50px -28px rgba(46,91,255,0.6), 0 0 50px var(--vglow2);
 }
-.card__hit { display: block; }
+.card__hit { display: block; flex: 1 1 auto; }
 .card__kicker {
   display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
   font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
