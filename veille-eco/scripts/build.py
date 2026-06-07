@@ -54,7 +54,7 @@ FLASH_MAX_AGE_HOURS = 12     # une annonce n'est « flash » que si récente
 # placées ensuite, par poids décroissant puis ordre alpha.
 CATEGORY_ORDER = [
     "Europe", "Amériques", "Asie", "Afrique", "Océanie",
-    "Institutions", "International",
+    "Marchés", "Institutions", "International",
 ]
 
 # --------------------------------------------------------------------------- #

@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-06-06T09:00:00+00:00",
-  "count": 13,
+  "count": 15,
   "articles": [
     {
       "id": "7675a9fcc863f9e1",
@@ -58,6 +58,102 @@
           "previous": "+0,1 %"
         }
       ]
+    },
+    {
+      "id": "0cfd45407d810a63",
+      "title": "Natixis : pourquoi les taux longs resteront durablement plus élevés",
+      "title_fr": "Natixis : pourquoi les taux longs resteront durablement plus élevés",
+      "title_en": "Natixis: why long-term yields will stay structurally higher",
+      "url": "https://news.google.com/articles/natixis-taux-longs-eleves",
+      "source": "Natixis – Recherche & marchés",
+      "category": "Marchés",
+      "weight": 5,
+      "published": "2026-06-06T08:45:00+00:00",
+      "image": "https://picsum.photos/seed/0cfd45407d810a63/960/540",
+      "excerpt": "La recherche de Natixis anticipe des taux longs durablement supérieurs à la décennie 2010.",
+      "excerpt_en": "Natixis research expects long yields durably above the 2010s.",
+      "summary": "La recherche économique de Natixis défend l'idée que les taux d'intérêt à long terme resteront durablement plus élevés qu'au cours de la décennie 2010, marquée par l'argent gratuit. Plusieurs forces structurelles convergent dans ce sens.\n\nLe besoin de financement des États reste massif — transition énergétique, défense, vieillissement — au moment où les banques centrales réduisent leurs bilans et où l'épargne mondiale se fait plus rare. L'offre de dette dépasse durablement la demande naturelle.\n\nÀ cela s'ajoute une inflation moyenne probablement plus élevée qu'avant la pandémie, sous l'effet de la démondialisation et des coûts de la décarbonation, qui maintient une prime de risque sur les obligations longues.\n\nPour les investisseurs, la conséquence est concrète : un coût du capital plus élevé pèse sur les valorisations des actifs longs (technologie, immobilier) et redonne de l'attrait au portage obligataire, après des années de rendements faméliques.\n\nÀ surveiller : la trajectoire des déficits publics et le rythme de réduction des bilans des banques centrales, deux variables qui détermineront l'ampleur de la prime de terme exigée par le marché.",
+      "summary_fr": "La recherche économique de Natixis défend l'idée que les taux d'intérêt à long terme resteront durablement plus élevés qu'au cours de la décennie 2010, marquée par l'argent gratuit. Plusieurs forces structurelles convergent dans ce sens.\n\nLe besoin de financement des États reste massif — transition énergétique, défense, vieillissement — au moment où les banques centrales réduisent leurs bilans et où l'épargne mondiale se fait plus rare. L'offre de dette dépasse durablement la demande naturelle.\n\nÀ cela s'ajoute une inflation moyenne probablement plus élevée qu'avant la pandémie, sous l'effet de la démondialisation et des coûts de la décarbonation, qui maintient une prime de risque sur les obligations longues.\n\nPour les investisseurs, la conséquence est concrète : un coût du capital plus élevé pèse sur les valorisations des actifs longs (technologie, immobilier) et redonne de l'attrait au portage obligataire, après des années de rendements faméliques.\n\nÀ surveiller : la trajectoire des déficits publics et le rythme de réduction des bilans des banques centrales, deux variables qui détermineront l'ampleur de la prime de terme exigée par le marché.",
+      "summary_en": "Natixis economic research argues that long-term interest rates will stay durably higher than during the 2010s of free money. Several structural forces point the same way.\n\nGovernments' financing needs remain massive — energy transition, defence, ageing — just as central banks shrink their balance sheets and global savings grow scarcer. Debt supply durably exceeds natural demand.\n\nOn top of this, average inflation is likely higher than before the pandemic, driven by deglobalisation and decarbonisation costs, keeping a risk premium on long-dated bonds.\n\nFor investors, the consequence is concrete: a higher cost of capital weighs on long-duration valuations (tech, real estate) and restores the appeal of bond carry after years of meagre yields.\n\nWatch: the path of public deficits and the pace of central-bank balance-sheet reduction, two variables that will determine the size of the term premium the market demands.",
+      "bias": {
+        "fr": "Hausse structurelle des taux",
+        "en": "Structurally higher rates",
+        "tone": "down"
+      },
+      "impacts": [
+        {
+          "asset": "Taux longs (10A+)",
+          "dir": "up"
+        },
+        {
+          "asset": "Tech / duration",
+          "dir": "down"
+        },
+        {
+          "asset": "Banques",
+          "dir": "up"
+        },
+        {
+          "asset": "Or",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Thèse structurelle : favorise le portage obligataire et les financières, pèse sur les actifs de duration. À jouer en relatif plus qu'en pari directionnel de court terme.",
+        "en": "Structural thesis: favours bond carry and financials, weighs on duration assets. Better played in relative value than as a short-term directional bet."
+      },
+      "watch": {
+        "fr": "Déficits publics et réduction des bilans des banques centrales.",
+        "en": "Public deficits and central-bank balance-sheet reduction."
+      }
+    },
+    {
+      "id": "da9e923dab8aa52c",
+      "title": "Ostrum (Natixis) : surpondérer le crédit de qualité, prudence sur la duration",
+      "title_fr": "Ostrum (Natixis) : surpondérer le crédit de qualité, prudence sur la duration",
+      "title_en": "Ostrum (Natixis): overweight quality credit, cautious on duration",
+      "url": "https://news.google.com/articles/ostrum-strategie-credit-duration",
+      "source": "Ostrum AM (Natixis) – Stratégie marchés",
+      "category": "Marchés",
+      "weight": 4,
+      "published": "2026-06-06T08:05:00+00:00",
+      "image": "",
+      "excerpt": "La stratégie hebdomadaire d'Ostrum privilégie le crédit investment grade.",
+      "excerpt_en": "Ostrum's weekly strategy favours investment-grade credit.",
+      "summary": "Dans sa note de stratégie hebdomadaire, Ostrum Asset Management, la filiale taux de Natixis Investment Managers, recommande de surpondérer le crédit de bonne qualité (investment grade) tout en restant prudent sur la duration.\n\nLes spreads de crédit restent contenus et les rendements tout compris demeurent attractifs : pour un risque modéré, l'investment grade offre un portage intéressant dans un contexte de croissance molle mais sans récession.\n\nSur les taux, la maison reste prudente : tant que les banques centrales n'ont pas clairement engagé leur cycle de baisse, allonger la duration expose à des à-coups, comme l'ont montré les récents reculs de rendements vite corrigés.\n\nSur le change, Ostrum garde un biais constructif sur le dollar à court terme, la Fed se montrant moins pressée que la BCE de desserrer sa politique, ce qui creuse le différentiel de taux en faveur du billet vert.\n\nÀ surveiller : le ton des prochaines réunions de banques centrales et l'évolution des spreads, qui dicteront l'arbitrage entre portage du crédit et risque de duration.",
+      "summary_fr": "Dans sa note de stratégie hebdomadaire, Ostrum Asset Management, la filiale taux de Natixis Investment Managers, recommande de surpondérer le crédit de bonne qualité (investment grade) tout en restant prudent sur la duration.\n\nLes spreads de crédit restent contenus et les rendements tout compris demeurent attractifs : pour un risque modéré, l'investment grade offre un portage intéressant dans un contexte de croissance molle mais sans récession.\n\nSur les taux, la maison reste prudente : tant que les banques centrales n'ont pas clairement engagé leur cycle de baisse, allonger la duration expose à des à-coups, comme l'ont montré les récents reculs de rendements vite corrigés.\n\nSur le change, Ostrum garde un biais constructif sur le dollar à court terme, la Fed se montrant moins pressée que la BCE de desserrer sa politique, ce qui creuse le différentiel de taux en faveur du billet vert.\n\nÀ surveiller : le ton des prochaines réunions de banques centrales et l'évolution des spreads, qui dicteront l'arbitrage entre portage du crédit et risque de duration.",
+      "summary_en": "In its weekly strategy note, Ostrum Asset Management, the fixed-income arm of Natixis Investment Managers, recommends overweighting quality (investment-grade) credit while staying cautious on duration.\n\nCredit spreads remain contained and all-in yields stay attractive: for moderate risk, investment grade offers appealing carry in a soft-but-not-recessionary growth backdrop.\n\nOn rates, the firm stays cautious: until central banks have clearly begun their easing cycle, extending duration exposes to jolts, as recent quickly-reversed yield drops have shown.\n\nOn FX, Ostrum keeps a constructive short-term bias on the dollar, with the Fed less eager than the ECB to loosen policy, widening the rate differential in the greenback's favour.\n\nWatch: the tone of upcoming central-bank meetings and the path of spreads, which will dictate the trade-off between credit carry and duration risk.",
+      "bias": {
+        "fr": "Portage crédit, prudence duration",
+        "en": "Credit carry, duration caution",
+        "tone": "flat"
+      },
+      "impacts": [
+        {
+          "asset": "Crédit IG",
+          "dir": "up"
+        },
+        {
+          "asset": "Duration (taux longs)",
+          "dir": "flat"
+        },
+        {
+          "asset": "USD",
+          "dir": "up"
+        },
+        {
+          "asset": "High yield",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Vue de gérant taux : privilégier le portage du crédit de qualité, sous-pondérer la duration tant que la baisse des taux n'est pas enclenchée, biais dollar.",
+        "en": "Rates-manager view: favour quality-credit carry, underweight duration until cuts begin, dollar bias."
+      },
+      "watch": {
+        "fr": "Réunions BCE/Fed et évolution des spreads de crédit.",
+        "en": "ECB/Fed meetings and credit-spread moves."
+      }
     },
     {
       "id": "541bc9777db31434",

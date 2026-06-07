@@ -88,5 +88,17 @@
     "url": "https://www.economist.com/finance-and-economics/rss.xml",
     "category": "International",
     "weight": 3
+  },
+  {
+    "name": "Natixis – Recherche & marchés",
+    "url": "https://news.google.com/rss/search?q=when:7d%20Natixis%20(%C3%A9conomie%20OR%20march%C3%A9s%20OR%20taux%20OR%20strat%C3%A9gie)&hl=fr&gl=FR&ceid=FR:fr",
+    "category": "Marchés",
+    "weight": 5
+  },
+  {
+    "name": "Ostrum AM (Natixis) – Stratégie marchés",
+    "url": "https://news.google.com/rss/search?q=when:7d%20(Ostrum%20OR%20%22Natixis%20Investment%20Managers%22)%20(march%C3%A9s%20OR%20taux%20OR%20cr%C3%A9dit)&hl=fr&gl=FR&ceid=FR:fr",
+    "category": "Marchés",
+    "weight": 4
   }
 ]
