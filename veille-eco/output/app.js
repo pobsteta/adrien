@@ -64,7 +64,7 @@
   var TERMS = {
     "Amériques": "Americas", "Asie": "Asia", "Afrique": "Africa",
     "Océanie": "Oceania", "Europe": "Europe", "Institutions": "Institutions",
-    "International": "International", "France": "France", "Marchés": "Markets",
+    "International": "International", "France": "France", "Marchés": "Markets", "Direct": "Live",
     "À la une": "Front page", "Flash": "Flash", "La sélection": "The selection"
   };
   var DAYS = {

@@ -62,7 +62,7 @@ CATEGORY_ICONS = {
     "Europe": "euro", "Amériques": "dollar", "Asie": "yen",
     "Afrique": "sun", "Océanie": "waves", "Marchés": "chart",
     "Institutions": "bank", "International": "globe", "France": "hexagon",
-    "Crypto": "crypto",
+    "Crypto": "crypto", "Direct": "radio",
 }
 
 # --------------------------------------------------------------------------- #
@@ -140,8 +140,9 @@ def time_display(published: str | None) -> str:
     return dt.strftime("%H:%M")
 
 
-# Catégorie dédiée à sa propre page (hors flux d'actualité générale).
+# Catégories dédiées à leur propre page (hors flux d'actualité générale).
 CRYPTO_LABEL = "Crypto"
+DIRECT_LABEL = "Direct"
 
 
 def freshness_key(article: dict):
@@ -267,9 +268,12 @@ def build_context(edition_date: str) -> dict:
     # Tri par fraîcheur (plus récent d'abord), appliqué à tout l'agrégat.
     aggregated.sort(key=freshness_key, reverse=True)
 
-    # La crypto a sa page dédiée : on la sort du flux d'actualité générale.
+    # Crypto et Direct (breaking) ont leur page dédiée : on les sort du flux
+    # d'actualité générale.
     crypto = [a for a in aggregated if a.get("category") == CRYPTO_LABEL]
-    mainstream = [a for a in aggregated if a.get("category") != CRYPTO_LABEL]
+    direct = [a for a in aggregated if a.get("category") == DIRECT_LABEL]
+    mainstream = [a for a in aggregated
+                  if a.get("category") not in (CRYPTO_LABEL, DIRECT_LABEL)]
 
     # L'article « à la une » : la plus fraîche des annonces générales. On la
     # retire de sa rubrique pour éviter le doublon.
@@ -315,6 +319,8 @@ def build_context(edition_date: str) -> dict:
         "sections": sections,
         "crypto": crypto,
         "crypto_count": len(crypto),
+        "direct": direct,
+        "direct_count": len(direct),
         "ticker": ticker,
         "menu": menu,
         "total_count": len(aggregated) + len(selection),
@@ -468,13 +474,14 @@ def build(edition_date: str | None = None) -> int:
     )
     print(f"  écrit : output/crypto.html ({len(context['crypto'])} annonce(s))")
 
-    # 6 bis) Page « Flash Info » (fils live : news marché + comptes X).
+    # 6 bis) Page « Flash Info » (fil en direct : sources breaking + résumés).
     flash_tpl = env.get_template("flash-info.html")
     (OUTPUT_DIR / "flash-info.html").write_text(
-        flash_tpl.render(css_path="style.css", js_path="app.js", **context),
+        flash_tpl.render(css_path="style.css", js_path="app.js",
+                         annonces_base="annonces/", **context),
         encoding="utf-8",
     )
-    print("  écrit : output/flash-info.html")
+    print(f"  écrit : output/flash-info.html ({len(context['direct'])} annonce(s))")
 
     # 7) Une page dédiée par annonce (résumé + image + lien source).
     annonces_dir = OUTPUT_DIR / "annonces"
@@ -488,6 +495,8 @@ def build(edition_date: str | None = None) -> int:
         for art in section["articles"]:
             pool[art["id"]] = art
     for art in context["crypto"]:
+        pool[art["id"]] = art
+    for art in context["direct"]:
         pool[art["id"]] = art
     for art in context["selection"]:
         pool.setdefault(art["id"], art)

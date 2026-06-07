@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% import "_icons.html" as ic %}
+{% set annonces_base = annonces_base | default('') %}
 
 {% block title %}Flash Info — Le Terminal Économies{% endblock %}
 {% block home_href %}index.html{% endblock %}
@@ -18,77 +19,40 @@
 {% endblock %}
 
 {% block content %}
-<section class="pagehead" aria-label="Flash Info">
+<section class="pagehead pagehead--live" aria-label="Flash Info">
   <p class="pagehead__eyebrow">{{ ic.icon('radio') }} <span class="fi-livedot"></span> <span data-en="Live newswire · Market-moving">Fil en direct · Ce qui fait bouger les marchés</span></p>
   <h1 class="pagehead__title">Flash Info</h1>
-  <p class="pagehead__lead" data-en="Real-time market-moving headlines and posts: macro releases, central banks, geopolitics and the accounts traders watch — straight from the source.">
-    Les informations susceptibles de faire bouger les marchés, en temps réel :
-    statistiques macro, banques centrales, géopolitique et les comptes que
-    surveillent les traders — directement à la source.
+  <p class="pagehead__lead" data-en="Breaking, market-moving headlines from live-specialized sources, each with an instant summary and a market read. Newest first.">
+    Les annonces susceptibles de faire bouger les marchés, issues de sources
+    spécialisées dans le direct — chacune avec un résumé instantané et une
+    lecture marché. Les plus récentes d'abord.
   </p>
 </section>
 
-{# --- Fil de news marché en direct (widget TradingView, sans clé) ------- #}
-<section class="block" aria-label="Fil de news marché">
-  <header class="block__head">
-    <h2 class="block__title"><span class="block__ico">{{ ic.icon('bolt') }}</span> <span data-en="Live market news">News marché en direct</span></h2>
-    <span class="block__sub" data-en="Auto-updating">Mise à jour automatique</span>
-  </header>
-  <div class="fi-wire">
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
-      {
-        "feedMode": "all_symbols",
-        "isTransparent": true,
-        "displayMode": "regular",
-        "width": "100%",
-        "height": 560,
-        "colorTheme": "dark",
-        "locale": "fr"
-      }
-      </script>
+{% if direct %}
+<ol class="wire" aria-label="Fil en direct">
+  {% for art in direct %}
+  <li class="wire__item" style="--i: {{ loop.index0 }}">
+    <div class="wire__rail">
+      <span class="wire__time">{{ art.time_display or '—' }}</span>
+      <span class="wire__dot"></span>
     </div>
-  </div>
-</section>
-
-{# --- Comptes à suivre : timelines X (Twitter) en direct ---------------- #}
-<section class="block" aria-label="Comptes à suivre">
-  <header class="block__head">
-    <h2 class="block__title"><span class="block__ico">{{ ic.icon('radio') }}</span> <span data-en="Accounts to watch">Comptes à suivre</span></h2>
-    <span class="block__sub" data-en="X / Twitter · Live">X / Twitter · En direct</span>
-  </header>
-  <div class="fi-grid">
-    <div class="fi-col">
-      <p class="fi-col__name">@zerohedge</p>
-      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
-         href="https://twitter.com/zerohedge?ref_src=twsrc%5Etfw">Posts de ZeroHedge</a>
-    </div>
-    <div class="fi-col">
-      <p class="fi-col__name">@DeItaone <span class="fi-col__sub">Walter Bloomberg</span></p>
-      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
-         href="https://twitter.com/DeItaone?ref_src=twsrc%5Etfw">Posts de Walter Bloomberg</a>
-    </div>
-    <div class="fi-col">
-      <p class="fi-col__name">@financialjuice</p>
-      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
-         href="https://twitter.com/financialjuice?ref_src=twsrc%5Etfw">Posts de Financial Juice</a>
-    </div>
-    <div class="fi-col">
-      <p class="fi-col__name">@FirstSquawk</p>
-      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
-         href="https://twitter.com/FirstSquawk?ref_src=twsrc%5Etfw">Posts de First Squawk</a>
-    </div>
-    <div class="fi-col">
-      <p class="fi-col__name">@realDonaldTrump</p>
-      <a class="twitter-timeline" data-theme="dark" data-height="520" data-chrome="noheader nofooter transparent"
-         href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Etfw">Posts de Donald Trump</a>
-    </div>
-  </div>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <p class="fi-note" data-en="Live feeds embedded from third parties (TradingView, X/Twitter). Display depends on those platforms and may require accepting their cookies.">
-    Flux en direct intégrés depuis des tiers (TradingView, X/Twitter). Leur
-    affichage dépend de ces plateformes et peut nécessiter d'accepter leurs cookies.
-  </p>
-</section>
+    <a class="wire__card" href="{{ annonces_base }}{{ art.page_name }}">
+      <p class="wire__kicker">
+        <span class="wire__live" data-en="LIVE">DIRECT</span>
+        <span class="wire__src">{{ art.source }}</span>
+        {% if art.bias %}<span class="bias bias--{{ art.bias.tone }} wire__bias" data-en="{{ art.bias.en }}">{{ art.bias.fr }}</span>{% endif %}
+      </p>
+      <h3 class="wire__title" data-en="{{ art.title_en }}">{{ art.title_fr }}</h3>
+      {% if art.display_summary %}
+      <p class="wire__sum" data-en="{{ art.display_summary_en }}">{{ art.display_summary }}</p>
+      {% endif %}
+      <span class="wire__more" data-en="Read the summary">Lire le résumé <span aria-hidden="true">→</span></span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% else %}
+<p class="pagehead__empty" data-en="No breaking news right now. Come back in a moment.">Pas d'annonce en direct pour le moment. Revenez dans un instant.</p>
+{% endif %}
 {% endblock %}

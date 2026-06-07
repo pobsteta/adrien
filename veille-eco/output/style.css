@@ -427,10 +427,10 @@ body.sb-toggled .sidebar {
   border: 1px dashed var(--border); border-radius: var(--r2);
 }
 
-/* --- Flash Info (fil live + comptes X) --- */
+/* --- Flash Info : pastille live + fil en direct (timeline) --- */
 .sb-live, .fi-livedot {
   display: inline-block; width: 7px; height: 7px; border-radius: 50%;
-  background: #F87171; margin-left: 7px;
+  background: #F87171; margin-left: 7px; vertical-align: middle;
   box-shadow: 0 0 0 0 rgba(248,113,113,0.6); animation: filive 1.8s infinite;
 }
 @keyframes filive {
@@ -438,27 +438,61 @@ body.sb-toggled .sidebar {
   70% { box-shadow: 0 0 0 7px rgba(248,113,113,0); }
   100% { box-shadow: 0 0 0 0 rgba(248,113,113,0); }
 }
-.fi-wire {
-  border: 1px solid var(--border); border-radius: var(--r2);
-  overflow: hidden; background: var(--card); margin-bottom: 8px;
+.pagehead--live .pagehead__eyebrow { color: #F87171; }
+
+.wire { list-style: none; position: relative; }
+.wire__item {
+  display: grid; grid-template-columns: 58px 1fr; gap: 14px;
+  align-items: stretch;
+  animation: rise 0.5s cubic-bezier(.2,.7,.3,1) both;
+  animation-delay: calc(var(--i, 0) * 45ms);
 }
-.fi-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 14px;
+.wire__rail {
+  position: relative; display: flex; flex-direction: column; align-items: center;
 }
-.fi-col {
-  border: 1px solid var(--border); border-radius: var(--r2);
-  background: var(--card); padding: 12px; min-height: 120px;
+.wire__time {
+  font-variant-numeric: tabular-nums; font-size: 12.5px; font-weight: 700;
+  color: var(--text2); padding-top: 16px;
 }
-.fi-col__name {
-  font-family: var(--display); font-weight: 700; font-size: 14px;
-  color: var(--v2); margin-bottom: 8px;
+.wire__dot {
+  width: 11px; height: 11px; border-radius: 50%; margin-top: 8px;
+  background: #F87171; border: 2px solid var(--bg); z-index: 1; flex: 0 0 auto;
+  box-shadow: 0 0 0 0 rgba(248,113,113,0.5); animation: filive 2s infinite;
 }
-.fi-col__sub { color: var(--text3); font-weight: 500; font-size: 12px; }
-.fi-note {
-  font-size: 12px; color: var(--text3); font-style: italic;
-  margin-top: 14px; line-height: 1.6;
+/* trait vertical reliant les points */
+.wire__rail::after {
+  content: ''; position: absolute; top: 32px; bottom: -14px; left: 50%;
+  width: 2px; transform: translateX(-50%); background: var(--border);
 }
+.wire__item:last-child .wire__rail::after { display: none; }
+.wire__card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid rgba(248,113,113,0.55);
+  border-radius: var(--r2); padding: 14px 16px; margin-bottom: 14px;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+}
+.wire__card:hover {
+  background: var(--card-hover); transform: translateX(3px);
+  border-left-color: #F87171;
+}
+.wire__kicker {
+  display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+  font-size: 11px; color: var(--text3); margin-bottom: 7px;
+}
+.wire__live {
+  font-weight: 800; letter-spacing: 0.08em; color: #fff;
+  background: #DC2626; border-radius: var(--pill); padding: 2px 8px; font-size: 10px;
+}
+.wire__src { color: var(--text2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.wire__bias { margin-left: auto; }
+.wire__title {
+  font-family: var(--display); font-weight: 700; font-size: 17px; line-height: 1.22;
+  letter-spacing: -0.01em; margin-bottom: 7px;
+}
+.wire__card:hover .wire__title { color: var(--v3); }
+.wire__sum { font-size: 13.5px; font-weight: 300; color: var(--text2); line-height: 1.6; margin-bottom: 9px; }
+.wire__more { font-size: 12.5px; font-weight: 600; color: var(--v2); }
 
 /* --- Section « Lecture marché » (pour traders news / macro) --- */
 .bias {

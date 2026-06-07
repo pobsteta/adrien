@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-06-06T09:00:00+00:00",
-  "count": 18,
+  "count": 22,
   "articles": [
     {
       "id": "7675a9fcc863f9e1",
@@ -58,6 +58,186 @@
           "previous": "+0,1 %"
         }
       ]
+    },
+    {
+      "id": "f587008d8880ce11",
+      "title": "FLASH : l'inflation américaine ressort à 3,1 %, sous les attentes",
+      "title_fr": "FLASH : l'inflation américaine ressort à 3,1 %, sous les attentes",
+      "title_en": "FLASH: U.S. inflation comes in at 3.1%, below expectations",
+      "url": "https://www.forexlive.com/",
+      "source": "ForexLive",
+      "category": "Direct",
+      "weight": 5,
+      "published": "2026-06-06T08:57:00+00:00",
+      "image": "",
+      "excerpt": "CPI à 3,1 % sur un an contre 3,3 % attendu ; le dollar décroche.",
+      "excerpt_en": "CPI 3.1% YoY vs 3.3% expected; the dollar drops.",
+      "summary": "L'indice des prix à la consommation américain ressort à 3,1 % sur un an, en deçà des 3,3 % attendus par le consensus et après 3,4 % le mois précédent. L'inflation sous-jacente recule également à 3,4 %, contre 3,6 % attendu.\n\nLa réaction est immédiate sur les marchés : le dollar décroche de près de 0,6 % face à l'euro, qui repasse au-dessus de 1,09, et le rendement du 10 ans américain perd une dizaine de points de base.\n\nLes contrats à terme intègrent désormais une probabilité nettement plus forte d'une baisse de taux de la Fed dès la rentrée, les actions à terme bondissant dans la foulée.\n\nPour les traders, le chiffre est clairement « dovish » : tant que les données confirment la désinflation, le biais reste à la vente sur le dollar et à l'achat sur les actifs de duration.",
+      "summary_fr": "L'indice des prix à la consommation américain ressort à 3,1 % sur un an, en deçà des 3,3 % attendus par le consensus et après 3,4 % le mois précédent. L'inflation sous-jacente recule également à 3,4 %, contre 3,6 % attendu.\n\nLa réaction est immédiate sur les marchés : le dollar décroche de près de 0,6 % face à l'euro, qui repasse au-dessus de 1,09, et le rendement du 10 ans américain perd une dizaine de points de base.\n\nLes contrats à terme intègrent désormais une probabilité nettement plus forte d'une baisse de taux de la Fed dès la rentrée, les actions à terme bondissant dans la foulée.\n\nPour les traders, le chiffre est clairement « dovish » : tant que les données confirment la désinflation, le biais reste à la vente sur le dollar et à l'achat sur les actifs de duration.",
+      "summary_en": "U.S. consumer prices come in at 3.1% year on year, below the 3.3% consensus and after 3.4% the prior month. Core inflation also eases to 3.4%, versus 3.6% expected.\n\nThe reaction is immediate: the dollar drops nearly 0.6% against the euro, which moves back above 1.09, and the U.S. 10-year yield sheds about ten basis points.\n\nFutures now price a markedly higher probability of a Fed cut as soon as the autumn, with equity futures jumping in the wake.\n\nFor traders, the figure is clearly dovish: as long as data confirm disinflation, the bias stays short dollar and long duration assets.",
+      "bias": {
+        "fr": "Dovish (risk-on)",
+        "en": "Dovish (risk-on)",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "USD",
+          "dir": "down"
+        },
+        {
+          "asset": "US 10A",
+          "dir": "down"
+        },
+        {
+          "asset": "S&P 500",
+          "dir": "up"
+        },
+        {
+          "asset": "Or",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "CPI sous le consensus = soutien net aux actifs risqués, pression vendeuse sur le dollar et les rendements.",
+        "en": "CPI below consensus = clear support for risk assets, selling pressure on the dollar and yields."
+      },
+      "watch": {
+        "fr": "Réaction des membres de la Fed dans les prochaines heures.",
+        "en": "Fed officials' reaction in the coming hours."
+      }
+    },
+    {
+      "id": "de73496212a821f1",
+      "title": "La Fed pourrait ralentir la réduction de son bilan, selon une source",
+      "title_fr": "La Fed pourrait ralentir la réduction de son bilan, selon une source",
+      "title_en": "Fed may slow its balance-sheet runoff, source says",
+      "url": "https://www.zerohedge.com/",
+      "source": "ZeroHedge",
+      "category": "Direct",
+      "weight": 4,
+      "published": "2026-06-06T08:49:00+00:00",
+      "image": "",
+      "excerpt": "Des propos rapportés évoquent un possible ralentissement du QT.",
+      "excerpt_en": "Reported comments hint at a possible QT slowdown.",
+      "summary": "Selon des propos rapportés, la Réserve fédérale envisagerait de ralentir le rythme de réduction de son bilan (« quantitative tightening »), actuellement de l'ordre de plusieurs dizaines de milliards de dollars par mois.\n\nUn ralentissement du QT équivaut à un assouplissement implicite des conditions financières : il réduit la pression vendeuse sur les obligations et soutient la liquidité du système.\n\nLes marchés obligataires ont réagi par une légère détente des rendements, tandis que les actifs risqués ont brièvement accéléré à la hausse.\n\nL'information reste à confirmer officiellement : à ce stade, le marché la traite comme un signal prudemment favorable, à manier avec précaution tant qu'elle n'est pas validée.",
+      "summary_fr": "Selon des propos rapportés, la Réserve fédérale envisagerait de ralentir le rythme de réduction de son bilan (« quantitative tightening »), actuellement de l'ordre de plusieurs dizaines de milliards de dollars par mois.\n\nUn ralentissement du QT équivaut à un assouplissement implicite des conditions financières : il réduit la pression vendeuse sur les obligations et soutient la liquidité du système.\n\nLes marchés obligataires ont réagi par une légère détente des rendements, tandis que les actifs risqués ont brièvement accéléré à la hausse.\n\nL'information reste à confirmer officiellement : à ce stade, le marché la traite comme un signal prudemment favorable, à manier avec précaution tant qu'elle n'est pas validée.",
+      "summary_en": "According to reported comments, the Federal Reserve is said to be considering slowing the pace of its balance-sheet reduction (quantitative tightening), currently running at tens of billions of dollars a month.\n\nA QT slowdown amounts to an implicit easing of financial conditions: it reduces selling pressure on bonds and supports system liquidity.\n\nBond markets reacted with a mild easing of yields, while risk assets briefly accelerated higher.\n\nThe information is still to be officially confirmed: for now the market treats it as a cautiously favourable signal, to be handled carefully until validated.",
+      "bias": {
+        "fr": "Plutôt favorable (à confirmer)",
+        "en": "Mildly supportive (unconfirmed)",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "US 10A",
+          "dir": "down"
+        },
+        {
+          "asset": "Actions",
+          "dir": "up"
+        },
+        {
+          "asset": "USD",
+          "dir": "down"
+        }
+      ],
+      "market_read": {
+        "fr": "Si confirmé, ralentir le QT soutient la liquidité et les actifs risqués ; rumeur à valider.",
+        "en": "If confirmed, slowing QT supports liquidity and risk assets; rumour to be validated."
+      },
+      "watch": {
+        "fr": "Confirmation officielle par la Fed.",
+        "en": "Official confirmation from the Fed."
+      }
+    },
+    {
+      "id": "fa98566864e58849",
+      "title": "Trump menace de nouveaux droits de douane, les marchés se tendent",
+      "title_fr": "Trump menace de nouveaux droits de douane, les marchés se tendent",
+      "title_en": "Trump threatens fresh tariffs, markets turn jittery",
+      "url": "https://www.reuters.com/business/",
+      "source": "Trump · marchés (live)",
+      "category": "Direct",
+      "weight": 4,
+      "published": "2026-06-06T08:36:00+00:00",
+      "image": "",
+      "excerpt": "Des déclarations sur de possibles tarifs douaniers font réagir les Bourses.",
+      "excerpt_en": "Comments on possible tariffs ripple through stock markets.",
+      "summary": "De nouvelles déclarations évoquant d'éventuels droits de douane supplémentaires sur certaines importations ont ravivé les craintes d'une escalade commerciale, faisant brièvement reculer les indices.\n\nLes secteurs les plus exposés au commerce international — automobile, semi-conducteurs, biens industriels — ont sous-performé, tandis que les valeurs refuges et le dollar se sont raffermis.\n\nHistoriquement, ce type d'annonce génère surtout de la volatilité de court terme : l'ampleur de l'impact dépendra de la concrétisation effective des mesures et des éventuelles représailles.\n\nPour les traders, le réflexe est défensif à très court terme, mais le marché tend à relativiser tant que les menaces ne se traduisent pas en mesures concrètes.",
+      "summary_fr": "De nouvelles déclarations évoquant d'éventuels droits de douane supplémentaires sur certaines importations ont ravivé les craintes d'une escalade commerciale, faisant brièvement reculer les indices.\n\nLes secteurs les plus exposés au commerce international — automobile, semi-conducteurs, biens industriels — ont sous-performé, tandis que les valeurs refuges et le dollar se sont raffermis.\n\nHistoriquement, ce type d'annonce génère surtout de la volatilité de court terme : l'ampleur de l'impact dépendra de la concrétisation effective des mesures et des éventuelles représailles.\n\nPour les traders, le réflexe est défensif à très court terme, mais le marché tend à relativiser tant que les menaces ne se traduisent pas en mesures concrètes.",
+      "summary_en": "Fresh comments raising the prospect of additional tariffs on certain imports revived fears of a trade escalation, briefly pushing indices lower.\n\nThe sectors most exposed to global trade — autos, semiconductors, industrial goods — underperformed, while safe havens and the dollar firmed.\n\nHistorically, this type of statement mainly generates short-term volatility: the scale of the impact will depend on whether measures actually materialise and on possible retaliation.\n\nFor traders, the reflex is defensive in the very short term, but the market tends to look through threats until they turn into concrete measures.",
+      "bias": {
+        "fr": "Risk-off (court terme)",
+        "en": "Risk-off (short term)",
+        "tone": "down"
+      },
+      "impacts": [
+        {
+          "asset": "Autos / Semis",
+          "dir": "down"
+        },
+        {
+          "asset": "USD",
+          "dir": "up"
+        },
+        {
+          "asset": "Or",
+          "dir": "up"
+        },
+        {
+          "asset": "Actions",
+          "dir": "down"
+        }
+      ],
+      "market_read": {
+        "fr": "Volatilité de court terme sur le risque commercial ; impact durable conditionné à des mesures concrètes.",
+        "en": "Short-term volatility on trade risk; lasting impact conditional on concrete measures."
+      },
+      "watch": {
+        "fr": "Annonces officielles de mesures et représailles éventuelles.",
+        "en": "Official measures and possible retaliation."
+      }
+    },
+    {
+      "id": "a15067b88d450a8d",
+      "title": "EUR/USD : cassure au-dessus de 1,09 après les chiffres américains",
+      "title_fr": "EUR/USD : cassure au-dessus de 1,09 après les chiffres américains",
+      "title_en": "EUR/USD breaks above 1.09 after the U.S. data",
+      "url": "https://www.fxstreet.com/",
+      "source": "FXStreet – News",
+      "category": "Direct",
+      "weight": 4,
+      "published": "2026-06-06T08:22:00+00:00",
+      "image": "",
+      "excerpt": "La paire franchit une résistance clé sur fond de dollar faible.",
+      "excerpt_en": "The pair clears a key resistance amid a weaker dollar.",
+      "summary": "L'euro/dollar a franchi la résistance de 1,09 à la faveur d'un dollar affaibli par des statistiques américaines plus molles que prévu, validant techniquement une reprise haussière de court terme.\n\nLe prochain objectif technique se situe vers 1,0950 puis 1,10, tandis que le support immédiat est revenu autour de 1,0850 ; un repli sous ce niveau invaliderait le scénario.\n\nLe mouvement reflète surtout l'écartement attendu des politiques monétaires : une Fed jugée moins pressée de différer ses baisses face à une BCE déjà engagée.\n\nPour les opérateurs sur devises, le biais reste haussier à court terme tant que la paire se maintient au-dessus de 1,0850, avec une gestion stricte du risque sur les niveaux.",
+      "summary_fr": "L'euro/dollar a franchi la résistance de 1,09 à la faveur d'un dollar affaibli par des statistiques américaines plus molles que prévu, validant techniquement une reprise haussière de court terme.\n\nLe prochain objectif technique se situe vers 1,0950 puis 1,10, tandis que le support immédiat est revenu autour de 1,0850 ; un repli sous ce niveau invaliderait le scénario.\n\nLe mouvement reflète surtout l'écartement attendu des politiques monétaires : une Fed jugée moins pressée de différer ses baisses face à une BCE déjà engagée.\n\nPour les opérateurs sur devises, le biais reste haussier à court terme tant que la paire se maintient au-dessus de 1,0850, avec une gestion stricte du risque sur les niveaux.",
+      "summary_en": "EUR/USD broke above the 1.09 resistance on a dollar weakened by softer-than-expected U.S. data, technically validating a short-term bullish recovery.\n\nThe next technical target sits near 1.0950 then 1.10, while immediate support is back around 1.0850; a drop below that would invalidate the scenario.\n\nThe move mainly reflects the expected divergence in monetary policy: a Fed seen as less inclined to delay cuts versus an ECB already easing.\n\nFor FX traders, the bias stays bullish short term as long as the pair holds above 1.0850, with strict risk management around the levels.",
+      "bias": {
+        "fr": "Haussier EUR (court terme)",
+        "en": "Bullish EUR (short term)",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "EUR/USD",
+          "dir": "up"
+        },
+        {
+          "asset": "DXY",
+          "dir": "down"
+        }
+      ],
+      "market_read": {
+        "fr": "Biais haussier EUR/USD au-dessus de 1,0850 ; objectifs 1,0950 puis 1,10.",
+        "en": "Bullish EUR/USD bias above 1.0850; targets 1.0950 then 1.10."
+      },
+      "watch": {
+        "fr": "Tenue du support 1,0850 et prochains chiffres US.",
+        "en": "Holding of 1.0850 support and next U.S. data."
+      }
     },
     {
       "id": "e7d09ded30eabb4c",

@@ -124,5 +124,35 @@
     "url": "https://cryptoast.fr/feed/",
     "category": "Crypto",
     "weight": 3
+  },
+  {
+    "name": "ForexLive",
+    "url": "https://www.forexlive.com/feed/",
+    "category": "Direct",
+    "weight": 5
+  },
+  {
+    "name": "ZeroHedge",
+    "url": "https://feeds.feedburner.com/zerohedge/feed",
+    "category": "Direct",
+    "weight": 4
+  },
+  {
+    "name": "FXStreet – News",
+    "url": "https://www.fxstreet.com/rss/news",
+    "category": "Direct",
+    "weight": 4
+  },
+  {
+    "name": "Investing.com – Actualités",
+    "url": "https://www.investing.com/rss/news.rss",
+    "category": "Direct",
+    "weight": 4
+  },
+  {
+    "name": "Trump · marchés (live)",
+    "url": "https://news.google.com/rss/search?q=when:1d%20(Trump)%20(markets%20OR%20tariffs%20OR%20Fed%20OR%20economy)&hl=en-US&gl=US&ceid=US:en",
+    "category": "Direct",
+    "weight": 4
   }
 ]

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trump menace de nouveaux droits de douane, les marchés se tendent — Le Terminal Économies</title>
+  <meta name="description" content="Le Terminal Économies — revue de presse économique en temps quasi réel : agrégation de flux RSS et sélection éditoriale.">
+  <meta name="theme-color" content="#070A12">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="topbar__left">
+        <button class="burger" id="navToggle" aria-label="Afficher ou masquer le menu" aria-controls="sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <a class="brand" href="../index.html">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__name">LE&nbsp;TERMINAL <span class="brand__accent">ÉCONOMIES</span></span>
+        </a>
+      </div>
+      <div class="topbar__right">
+        <button class="langbtn" id="langToggle" type="button" aria-label="Switch language / Changer de langue" title="English / Français">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="lang__label">EN</span>
+        </button>
+        <span class="status"><span class="status__dot"></span>LIVE</span>
+        <span class="liveclock" id="liveClock" aria-hidden="true"></span>
+        <span class="topbar__date"><span class="js-term">Direct</span></span>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation">
+<div class="sb-group">
+  <a class="sb-item " href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg><span data-en="Today's edition">Édition du jour</span></a>
+  <a class="sb-item " href="../flash-info.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 16.2a6 6 0 0 0 0-8.4M5 5a9.5 9.5 0 0 0 0 14M19 19a9.5 9.5 0 0 0 0-14"/></svg><span data-en="Live newswire">Flash Info</span><span class="sb-live"></span></a>
+  <a class="sb-item " href="../calendrier.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg><span data-en="Economic calendar">Calendrier éco</span></a>
+  <a class="sb-item " href="../archives/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg><span data-en="Archives">Archives</span></a>
+  <a class="sb-item " href="../a-propos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.4" fill="currentColor" stroke="none"/></svg><span data-en="About">À propos</span></a>
+</div>
+
+<div class="sb-sep"></div>
+<nav class="sb-group" aria-label="L'édition">
+  <p class="sb-title" data-en="The edition">L'édition</p>
+  <a class="sb-item" href="../index.html#une"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg><span class="js-term">À la une</span></a>
+  <a class="sb-item" href="../index.html#selection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="js-term">La sélection</span></a>
+</nav>
+
+<div class="sb-sep"></div>
+<nav class="sb-group" aria-label="Zones">
+  <p class="sb-title" data-en="Zones">Zones</p>
+  <a class="sb-item" href="../index.html#r-europe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M18 7.2a6.3 6.3 0 1 0 0 9.6"/><path d="M4.5 10.5h9M4.5 13.5h9"/></svg><span class="js-term">Europe</span><span class="sb-count">3</span></a>
+  <a class="sb-item" href="../index.html#r-ameriques"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v17"/><path d="M16 7.5C16 5.8 14.2 4.8 12 4.8S8 5.7 8 7.6c0 3.7 8 2.1 8 5.9 0 2-1.8 3-4 3s-4-1-4-3"/></svg><span class="js-term">Amériques</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="../index.html#r-asie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4.5l5 7 5-7"/><path d="M12 11.5V20"/><path d="M8 13.5h8M8 16.5h8"/></svg><span class="js-term">Asie</span><span class="sb-count">1</span></a>
+  <a class="sb-item" href="../index.html#r-marches"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7.5 14.5l3.2-3.4 2.6 2 4.7-5.6"/><path d="M16 7.5h4v4"/></svg><span class="js-term">Marchés</span><span class="sb-count">2</span></a>
+  <a class="sb-item" href="../index.html#r-institutions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5 12 4l8.5 5.5"/><path d="M5.5 10v8M9.5 10v8M14.5 10v8M18.5 10v8"/><path d="M3 20.5h18"/></svg><span class="js-term">Institutions</span><span class="sb-count">5</span></a>
+  <a class="sb-item" href="../index.html#r-international"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><span class="js-term">International</span><span class="sb-count">1</span></a>
+  <a class="sb-item " href="../crypto.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 7.5h4.2a2.4 2.4 0 0 1 0 4.8H9.5m0 0h4.6a2.4 2.4 0 0 1 0 4.7H9.5m0-9.5V17m1.8-9.5V6m0 12.5V17m2.4-9.5V6m0 12.5V17"/></svg><span>Crypto</span><span class="sb-count">3</span></a>
+</nav>
+    </aside>
+
+    <div class="main-col">
+      <main class="wrap">
+<article class="annonce">
+  <a class="annonce__back" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/></svg> <span data-en="Back to the edition">Retour à l'édition</span></a>
+
+  <p class="annonce__kicker">
+    <span class="card__cat js-term">Direct</span>
+    <span class="card__sep">·</span>
+    <span class="card__source">Trump · marchés (live)</span>
+<span class="card__time">08:36</span>  </p>
+
+  <h1 class="annonce__title" data-en="Trump threatens fresh tariffs, markets turn jittery">Trump menace de nouveaux droits de douane, les marchés se tendent</h1>
+
+  <div class="annonce__media">
+    <div class="annonce__ph" aria-hidden="true">
+      <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img">
+        <defs>
+          <linearGradient id="ph-bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#16224A"/><stop offset="55%" stop-color="#0B1330"/><stop offset="100%" stop-color="#0A1B3A"/>
+          </linearGradient>
+          <linearGradient id="ph-line" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#2E5BFF"/><stop offset="100%" stop-color="#38BDF8"/>
+          </linearGradient>
+        </defs>
+        <rect width="480" height="270" fill="url(#ph-bg)"/>
+        <path d="M0,210 C70,200 110,150 160,150 C220,150 240,110 300,96 C350,84 410,70 480,52" fill="none" stroke="url(#ph-line)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="480" cy="52" r="5" fill="#38BDF8"/>
+      </svg>
+      <span class="annonce__ph-cat js-term">Direct</span>
+    </div>
+  </div>
+
+  <section class="trader" aria-label="Lecture marché">
+    <header class="trader__head">
+      <span class="trader__eyebrow" data-en="Market read">Lecture marché</span>
+<span class="bias bias--down" data-en="Risk-off (short term)">Risk-off (court terme)</span>    </header>
+
+
+    <ul class="impacts" aria-label="Actifs impactés">
+      <li class="impact impact--down">
+        <span class="impact__asset">Autos / Semis</span>
+        <span class="impact__arrow" aria-hidden="true">▼</span>
+      </li>
+      <li class="impact impact--up">
+        <span class="impact__asset">USD</span>
+        <span class="impact__arrow" aria-hidden="true">▲</span>
+      </li>
+      <li class="impact impact--up">
+        <span class="impact__asset">Or</span>
+        <span class="impact__arrow" aria-hidden="true">▲</span>
+      </li>
+      <li class="impact impact--down">
+        <span class="impact__asset">Actions</span>
+        <span class="impact__arrow" aria-hidden="true">▼</span>
+      </li>
+    </ul>
+
+    <p class="trader__read" data-en="Short-term volatility on trade risk; lasting impact conditional on concrete measures.">Volatilité de court terme sur le risque commercial ; impact durable conditionné à des mesures concrètes.</p>
+
+    <p class="trader__watch"><span class="trader__watch-tag" data-en="Watch next">À surveiller</span> <span data-en="Official measures and possible retaliation.">Annonces officielles de mesures et représailles éventuelles.</span></p>
+
+    <p class="trader__disclaimer" data-en="Automated market read, for information only — not investment advice.">Lecture marché automatisée, à titre informatif — ne constitue pas un conseil en investissement.</p>
+  </section>
+
+  <p class="annonce__eyebrow" data-en="Full analysis">Analyse complète</p>
+  <div class="annonce__lead" data-en="<p>Fresh comments raising the prospect of additional tariffs on certain imports revived fears of a trade escalation, briefly pushing indices lower.</p><p>The sectors most exposed to global trade — autos, semiconductors, industrial goods — underperformed, while safe havens and the dollar firmed.</p><p>Historically, this type of statement mainly generates short-term volatility: the scale of the impact will depend on whether measures actually materialise and on possible retaliation.</p><p>For traders, the reflex is defensive in the very short term, but the market tends to look through threats until they turn into concrete measures.</p>">
+<p>De nouvelles déclarations évoquant d&#39;éventuels droits de douane supplémentaires sur certaines importations ont ravivé les craintes d&#39;une escalade commerciale, faisant brièvement reculer les indices.</p><p>Les secteurs les plus exposés au commerce international — automobile, semi-conducteurs, biens industriels — ont sous-performé, tandis que les valeurs refuges et le dollar se sont raffermis.</p><p>Historiquement, ce type d&#39;annonce génère surtout de la volatilité de court terme : l&#39;ampleur de l&#39;impact dépendra de la concrétisation effective des mesures et des éventuelles représailles.</p><p>Pour les traders, le réflexe est défensif à très court terme, mais le marché tend à relativiser tant que les menaces ne se traduisent pas en mesures concrètes.</p>  </div>
+
+  <p class="annonce__note">
+    <span data-en="Summary generated automatically from the source feed. The full article remains with the publisher.">Résumé généré automatiquement à partir du flux de la source. L'article complet reste chez l'éditeur.</span>
+  </p>
+
+  <a class="btn btn--lg annonce__src" href="https://www.reuters.com/business/" target="_blank" rel="noopener noreferrer">
+    <span data-en="Read the full article">Lire l'article complet</span>
+    <span class="annonce__src-on" data-en="on"> sur </span>Trump · marchés (live)
+    <span class="btn__arrow" aria-hidden="true">↗</span>
+  </a>
+</article>
+      </main>
+
+      <footer class="foot">
+        <div class="foot__inner">
+          <p class="foot__line" data-en='<strong>The Economy Terminal</strong> aggregates RSS feeds and republishes only the headline and a short excerpt, with a button to the source. All rights reserved to the original publishers.'>
+            <strong>Le Terminal Économies</strong> agrège des flux RSS et n'en
+            republie que le titre et un court extrait, avec un bouton vers la
+            source. Tous droits réservés aux éditeurs d'origine.
+          </p>
+          <p class="foot__meta"><span class="js-term">Direct</span> · Trump · marchés (live)</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>
