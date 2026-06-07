@@ -52,8 +52,60 @@
     </div>
   </div>
 
-  {# --- Résumé complet (plusieurs paragraphes, FR affiché / EN via data-en) --- #}
-  <p class="annonce__eyebrow" data-en="Full summary">Résumé complet</p>
+  {# --- Lecture marché (pour traders news / macro) ----------------------- #}
+  {% if art.bias or art.impacts or art.market_read or art.data_points %}
+  <section class="trader" aria-label="Lecture marché">
+    <header class="trader__head">
+      <span class="trader__eyebrow" data-en="Market read">Lecture marché</span>
+      {% if art.bias %}<span class="bias bias--{{ art.bias.tone }}" data-en="{{ art.bias.en }}">{{ art.bias.fr }}</span>{% endif %}
+    </header>
+
+    {% if art.data_points %}
+    <table class="trader__table">
+      <thead><tr>
+        <th data-en="Indicator">Indicateur</th>
+        <th data-en="Actual">Publié</th>
+        <th data-en="Consensus">Consensus</th>
+        <th data-en="Previous">Précédent</th>
+      </tr></thead>
+      <tbody>
+        {% for d in art.data_points %}
+        <tr>
+          <td data-en="{{ d.label_en }}">{{ d.label_fr }}</td>
+          <td class="num">{{ d.actual }}</td>
+          <td class="num">{{ d.consensus }}</td>
+          <td class="num">{{ d.previous }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if art.impacts %}
+    <ul class="impacts" aria-label="Actifs impactés">
+      {% for im in art.impacts %}
+      <li class="impact impact--{{ im.dir }}">
+        <span class="impact__asset">{{ im.asset }}</span>
+        <span class="impact__arrow" aria-hidden="true">{{ '▲' if im.dir == 'up' else '▼' if im.dir == 'down' else '▬' }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if art.market_read %}
+    <p class="trader__read" data-en="{{ art.market_read.en }}">{{ art.market_read.fr }}</p>
+    {% endif %}
+
+    {% if art.watch %}
+    <p class="trader__watch"><span class="trader__watch-tag" data-en="Watch next">À surveiller</span> <span data-en="{{ art.watch.en }}">{{ art.watch.fr }}</span></p>
+    {% endif %}
+
+    <p class="trader__disclaimer" data-en="Automated market read, for information only — not investment advice.">Lecture marché automatisée, à titre informatif — ne constitue pas un conseil en investissement.</p>
+  </section>
+  {% endif %}
+
+  {# --- Analyse complète (plusieurs paragraphes, FR affiché / EN via data-en) --- #}
+  <p class="annonce__eyebrow" data-en="Full analysis">Analyse complète</p>
   {% if art.summary_fr_paras %}
   <div class="annonce__lead" data-en="{% for p in art.summary_en_paras %}<p>{{ p }}</p>{% endfor %}">
     {% for p in art.summary_fr_paras %}<p>{{ p }}</p>{% endfor %}

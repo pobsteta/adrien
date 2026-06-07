@@ -197,6 +197,12 @@ def prepare_manual(item: dict) -> dict:
         "summary_en_paras": paragraphs(full_en),
         "summary_kind": "edito",
         "time_display": "",
+        # Champs « Lecture marché » (pour traders), optionnels.
+        "bias": item.get("bias"),
+        "impacts": item.get("impacts"),
+        "market_read": item.get("market_read"),
+        "watch": item.get("watch"),
+        "data_points": item.get("data_points"),
     }
 
 

@@ -14,6 +14,7 @@
       <span class="card__sep">·</span>
       <span class="card__source">{{ art.source }}</span>
       {% if art.time_display %}<span class="card__time">{{ art.time_display }}</span>{% endif %}
+      {% if art.bias %}<span class="bias bias--{{ art.bias.tone }} card__bias" data-en="{{ art.bias.en }}">{{ art.bias.fr }}</span>{% endif %}
     </p>
     <h3 class="card__title" data-en="{{ art.title_en }}">{{ art.title_fr }}</h3>
     {% if art.display_summary %}
@@ -206,6 +207,7 @@
       <span class="hero__badge" data-en="FRONT PAGE">À LA UNE</span>
       <span class="card__source">{{ featured.source }}</span>
       {% if featured.time_display %}<span class="card__time">{{ featured.time_display }}</span>{% endif %}
+      {% if featured.bias %}<span class="bias bias--{{ featured.bias.tone }}" data-en="{{ featured.bias.en }}">{{ featured.bias.fr }}</span>{% endif %}
     </p>
     <h2 class="hero__title" data-en="{{ featured.title_en }}">{{ featured.title_fr }}</h2>
     {% if featured.display_summary %}

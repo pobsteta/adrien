@@ -49,11 +49,27 @@ PROMPT = (
     "plausible au vu de l'extrait, reste neutre et factuel.\n\n"
     "Tu dois aussi fournir une version anglaise du résumé et la traduction du "
     "titre dans les deux langues.\n\n"
+    "Enfin, ce site est utilisé par des traders « news / macro » : ajoute une "
+    "LECTURE MARCHÉ opérationnelle.\n"
+    "- biais : le biais directionnel global pour la prise de risque, avec un ton "
+    "parmi 'up' (risk-on / favorable), 'down' (risk-off / défavorable) ou 'flat' "
+    "(neutre / dépend des données), et un libellé court FR et EN "
+    "(ex. « Risk-on modéré », « Plutôt hawkish », « Neutre »).\n"
+    "- impacts : 2 à 4 actifs concrets concernés (indices, devises, taux, "
+    "matières premières) avec leur direction probable 'up', 'down' ou 'flat'.\n"
+    "- lecture : 1 à 2 phrases d'analyse marché actionnable (FR et EN), sans "
+    "conseil d'investissement.\n"
+    "- surveiller : le prochain catalyseur / rendez-vous à surveiller (FR et EN).\n"
+    "N'invente pas de chiffres précis : laisse l'analyse qualitative.\n\n"
     "Réponds UNIQUEMENT par un objet JSON valide, sans texte autour, de la "
     "forme :\n"
     '{{"titre_fr": "...", "titre_en": "...", '
     '"resume_fr": "par.1\\n\\npar.2\\n\\npar.3", '
-    '"resume_en": "p.1\\n\\np.2\\n\\np.3"}}\n\n'
+    '"resume_en": "p.1\\n\\np.2\\n\\np.3", '
+    '"bias": {{"fr": "Risk-on modéré", "en": "Mild risk-on", "tone": "up"}}, '
+    '"impacts": [{{"asset": "EUR/USD", "dir": "up"}}, {{"asset": "Bund 10A", "dir": "down"}}], '
+    '"market_read": {{"fr": "...", "en": "..."}}, '
+    '"watch": {{"fr": "...", "en": "..."}}}}\n\n'
     "Titre : {title}\nExtrait : {excerpt}"
 )
 
@@ -128,6 +144,15 @@ def main() -> int:
             art["summary_en"] = res.get("resume_en", "").strip()
             art["title_fr"] = res.get("titre_fr", "").strip() or art.get("title")
             art["title_en"] = res.get("titre_en", "").strip() or art.get("title")
+            # Lecture marché (pour traders), si fournie par le modèle.
+            if isinstance(res.get("bias"), dict):
+                art["bias"] = res["bias"]
+            if isinstance(res.get("impacts"), list):
+                art["impacts"] = res["impacts"]
+            if isinstance(res.get("market_read"), dict):
+                art["market_read"] = res["market_read"]
+            if isinstance(res.get("watch"), dict):
+                art["watch"] = res["watch"]
             done += 1
         time.sleep(0.4)  # politesse vis-à-vis de l'API
 

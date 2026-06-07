@@ -17,7 +17,47 @@
       "excerpt_en": "Activity rises 0.4% on services.",
       "summary": "La croissance de la zone euro a légèrement accéléré au deuxième trimestre, avec une hausse du produit intérieur brut de 0,4 % par rapport aux trois mois précédents. C'est un peu mieux qu'au trimestre précédent, où l'activité avait quasiment stagné.\n\nCette progression est portée avant tout par les services et par une consommation des ménages qui résiste, soutenue par le reflux de l'inflation et par des salaires qui continuent d'augmenter. Le tourisme et les loisirs, en particulier, ont tiré l'activité dans le sud de l'Europe.\n\nLe tableau reste toutefois très contrasté d'un pays à l'autre. L'Allemagne, dont l'industrie souffre d'une demande extérieure molle et de coûts de l'énergie encore élevés, continue de freiner l'ensemble de la région, tandis que l'Espagne et plusieurs économies périphériques affichent un rythme nettement plus soutenu.\n\nPour les marchés, ce chiffre conforte l'idée d'une reprise réelle mais fragile, qui ne menace pas le mouvement de désinflation en cours. Il renforce le scénario d'un assouplissement prudent et graduel de la Banque centrale européenne plutôt que d'une baisse rapide des taux.\n\nLes prochains indicateurs à surveiller sont les chiffres d'inflation de l'été et les enquêtes de confiance des entreprises : ce sont eux qui diront si cette accélération se prolonge à la rentrée ou si elle n'aura été qu'un rebond passager.",
       "summary_fr": "La croissance de la zone euro a légèrement accéléré au deuxième trimestre, avec une hausse du produit intérieur brut de 0,4 % par rapport aux trois mois précédents. C'est un peu mieux qu'au trimestre précédent, où l'activité avait quasiment stagné.\n\nCette progression est portée avant tout par les services et par une consommation des ménages qui résiste, soutenue par le reflux de l'inflation et par des salaires qui continuent d'augmenter. Le tourisme et les loisirs, en particulier, ont tiré l'activité dans le sud de l'Europe.\n\nLe tableau reste toutefois très contrasté d'un pays à l'autre. L'Allemagne, dont l'industrie souffre d'une demande extérieure molle et de coûts de l'énergie encore élevés, continue de freiner l'ensemble de la région, tandis que l'Espagne et plusieurs économies périphériques affichent un rythme nettement plus soutenu.\n\nPour les marchés, ce chiffre conforte l'idée d'une reprise réelle mais fragile, qui ne menace pas le mouvement de désinflation en cours. Il renforce le scénario d'un assouplissement prudent et graduel de la Banque centrale européenne plutôt que d'une baisse rapide des taux.\n\nLes prochains indicateurs à surveiller sont les chiffres d'inflation de l'été et les enquêtes de confiance des entreprises : ce sont eux qui diront si cette accélération se prolonge à la rentrée ou si elle n'aura été qu'un rebond passager.",
-      "summary_en": "Euro zone growth picked up slightly in the second quarter, with gross domestic product rising 0.4% from the previous three months. That is a touch better than the prior quarter, when activity had almost stalled.\n\nThe increase is driven above all by services and by resilient household spending, supported by easing inflation and wages that keep rising. Tourism and leisure in particular boosted activity across southern Europe.\n\nThe picture nonetheless remains highly uneven from one country to another. Germany, whose industry suffers from soft external demand and still-high energy costs, continues to weigh on the region, while Spain and several peripheral economies are growing at a markedly faster pace.\n\nFor markets, the figure supports the view of a real but fragile recovery that does not threaten the ongoing disinflation. It reinforces the case for a cautious, gradual easing by the European Central Bank rather than a rapid rate cut.\n\nThe key indicators to watch next are the summer inflation prints and business confidence surveys: they will show whether this acceleration extends into the autumn or proves to be only a passing rebound."
+      "summary_en": "Euro zone growth picked up slightly in the second quarter, with gross domestic product rising 0.4% from the previous three months. That is a touch better than the prior quarter, when activity had almost stalled.\n\nThe increase is driven above all by services and by resilient household spending, supported by easing inflation and wages that keep rising. Tourism and leisure in particular boosted activity across southern Europe.\n\nThe picture nonetheless remains highly uneven from one country to another. Germany, whose industry suffers from soft external demand and still-high energy costs, continues to weigh on the region, while Spain and several peripheral economies are growing at a markedly faster pace.\n\nFor markets, the figure supports the view of a real but fragile recovery that does not threaten the ongoing disinflation. It reinforces the case for a cautious, gradual easing by the European Central Bank rather than a rapid rate cut.\n\nThe key indicators to watch next are the summer inflation prints and business confidence surveys: they will show whether this acceleration extends into the autumn or proves to be only a passing rebound.",
+      "bias": {
+        "fr": "Risk-on modéré",
+        "en": "Mild risk-on",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "EUR/USD",
+          "dir": "up"
+        },
+        {
+          "asset": "Bund 10A",
+          "dir": "up"
+        },
+        {
+          "asset": "CAC 40",
+          "dir": "up"
+        },
+        {
+          "asset": "Euro Stoxx 50",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "Croissance un cran au-dessus du consensus : léger soutien aux actifs risqués européens et aux taux longs, sans remettre en cause la désinflation. Configuration plutôt favorable à l'euro à court terme.",
+        "en": "Growth a notch above consensus: mild support for European risk assets and long yields, without challenging disinflation. Setup rather supportive for the euro short term."
+      },
+      "watch": {
+        "fr": "Inflation flash de la zone euro et enquêtes PMI de l'été.",
+        "en": "Euro-zone flash inflation and summer PMI surveys."
+      },
+      "data_points": [
+        {
+          "label_fr": "PIB zone euro (T2, t/t)",
+          "label_en": "Euro-zone GDP (Q2, q/q)",
+          "actual": "+0,4 %",
+          "consensus": "+0,3 %",
+          "previous": "+0,1 %"
+        }
+      ]
     },
     {
       "id": "541bc9777db31434",
@@ -34,7 +74,47 @@
       "excerpt_en": "Investors trim bets on a hawkish ECB.",
       "summary": "Les rendements des emprunts d'État européens ont reculé, les investisseurs pariant de plus en plus sur une baisse des taux directeurs au cours de l'été. Le rendement du Bund allemand à dix ans, référence de la zone euro, est repassé sous un seuil symbolique.\n\nCe mouvement fait suite à plusieurs publications d'inflation inférieures aux attentes dans la zone euro, qui réduisent la pression sur la Banque centrale européenne. Quand l'inflation ralentit, les obligations déjà émises deviennent plus attractives, ce qui fait monter leur prix et baisser leur rendement.\n\nSur le marché des changes, l'euro a légèrement reflué face au dollar, signe que les opérateurs anticipent une politique monétaire un peu plus accommodante de ce côté-ci de l'Atlantique. Les actions sensibles aux taux, comme l'immobilier et la technologie, en ont profité.\n\nPour les États emprunteurs, ce repli des rendements est une bonne nouvelle : il allège mécaniquement le coût de la dette publique au moment où plusieurs pays cherchent à réduire leurs déficits. Pour l'épargnant, en revanche, il annonce une rémunération plus faible des placements obligataires.\n\nLa prochaine réunion de la BCE et les commentaires de ses responsables seront déterminants : un simple changement de ton pourrait inverser le mouvement si le marché jugeait l'institution moins pressée de baisser ses taux qu'il ne l'espère aujourd'hui.",
       "summary_fr": "Les rendements des emprunts d'État européens ont reculé, les investisseurs pariant de plus en plus sur une baisse des taux directeurs au cours de l'été. Le rendement du Bund allemand à dix ans, référence de la zone euro, est repassé sous un seuil symbolique.\n\nCe mouvement fait suite à plusieurs publications d'inflation inférieures aux attentes dans la zone euro, qui réduisent la pression sur la Banque centrale européenne. Quand l'inflation ralentit, les obligations déjà émises deviennent plus attractives, ce qui fait monter leur prix et baisser leur rendement.\n\nSur le marché des changes, l'euro a légèrement reflué face au dollar, signe que les opérateurs anticipent une politique monétaire un peu plus accommodante de ce côté-ci de l'Atlantique. Les actions sensibles aux taux, comme l'immobilier et la technologie, en ont profité.\n\nPour les États emprunteurs, ce repli des rendements est une bonne nouvelle : il allège mécaniquement le coût de la dette publique au moment où plusieurs pays cherchent à réduire leurs déficits. Pour l'épargnant, en revanche, il annonce une rémunération plus faible des placements obligataires.\n\nLa prochaine réunion de la BCE et les commentaires de ses responsables seront déterminants : un simple changement de ton pourrait inverser le mouvement si le marché jugeait l'institution moins pressée de baisser ses taux qu'il ne l'espère aujourd'hui.",
-      "summary_en": "European government bond yields fell as investors increasingly bet on a cut in policy rates over the summer. The yield on the ten-year German Bund, the euro area's benchmark, slipped back below a symbolic threshold.\n\nThe move follows several lower-than-expected inflation readings in the euro area, easing pressure on the European Central Bank. When inflation slows, already-issued bonds become more attractive, pushing their price up and their yield down.\n\nIn the currency market, the euro eased slightly against the dollar, a sign that traders expect somewhat more accommodative monetary policy on this side of the Atlantic. Rate-sensitive shares such as real estate and technology benefited.\n\nFor borrowing governments, the fall in yields is welcome news: it mechanically lightens the cost of public debt just as several countries seek to cut their deficits. For savers, however, it signals lower returns on bond investments.\n\nThe ECB's next meeting and officials' comments will be decisive: a mere change of tone could reverse the move if the market judged the institution less eager to cut rates than it currently hopes."
+      "summary_en": "European government bond yields fell as investors increasingly bet on a cut in policy rates over the summer. The yield on the ten-year German Bund, the euro area's benchmark, slipped back below a symbolic threshold.\n\nThe move follows several lower-than-expected inflation readings in the euro area, easing pressure on the European Central Bank. When inflation slows, already-issued bonds become more attractive, pushing their price up and their yield down.\n\nIn the currency market, the euro eased slightly against the dollar, a sign that traders expect somewhat more accommodative monetary policy on this side of the Atlantic. Rate-sensitive shares such as real estate and technology benefited.\n\nFor borrowing governments, the fall in yields is welcome news: it mechanically lightens the cost of public debt just as several countries seek to cut their deficits. For savers, however, it signals lower returns on bond investments.\n\nThe ECB's next meeting and officials' comments will be decisive: a mere change of tone could reverse the move if the market judged the institution less eager to cut rates than it currently hopes.",
+      "bias": {
+        "fr": "Plutôt dovish",
+        "en": "Leaning dovish",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "Bund 10A",
+          "dir": "down"
+        },
+        {
+          "asset": "EUR/USD",
+          "dir": "down"
+        },
+        {
+          "asset": "Euro Stoxx 50",
+          "dir": "up"
+        },
+        {
+          "asset": "Immobilier coté",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "Le marché renforce ses paris sur une baisse de la BCE : pression baissière sur les rendements et l'euro, soutien aux secteurs sensibles aux taux. Attention au risque de retournement si le ton de la BCE déçoit.",
+        "en": "Markets ramp up ECB-cut bets: downward pressure on yields and the euro, support for rate-sensitive sectors. Watch reversal risk if the ECB tone disappoints."
+      },
+      "watch": {
+        "fr": "Prochaine réunion de la BCE et interventions de ses membres.",
+        "en": "Next ECB meeting and members' speeches."
+      },
+      "data_points": [
+        {
+          "label_fr": "Bund 10 ans",
+          "label_en": "10-year Bund",
+          "actual": "2,28 %",
+          "consensus": "—",
+          "previous": "2,35 %"
+        }
+      ]
     },
     {
       "id": "bdbed2164f9610da",
@@ -51,7 +131,47 @@
       "excerpt_en": "Falling prices give breathing room to industry.",
       "summary": "Les prix de gros du gaz naturel sont repartis à la baisse en Europe, effaçant une partie de la hausse observée en début d'année. Le contrat de référence néerlandais, le TTF, est revenu vers des niveaux plus supportables pour les entreprises.\n\nCe reflux s'explique par des stocks de gaz bien remplis pour la saison, une demande industrielle qui reste contenue et des importations de gaz naturel liquéfié abondantes. Une météo clémente a également limité la consommation pour le chauffage.\n\nPour les industriels électro-intensifs — chimie, métallurgie, papier, verre — c'est un soulagement direct, après des années où la flambée énergétique avait sérieusement entamé leur compétitivité face aux concurrents américains et asiatiques.\n\nSi la tendance se confirme, elle pourrait aussi alléger la facture des ménages et atténuer les pressions inflationnistes, l'énergie restant l'un des principaux moteurs de la hausse des prix ces dernières années. Cela renforcerait la marge de manœuvre des banques centrales.\n\nLa prudence reste toutefois de mise : le marché européen demeure sensible au moindre choc géopolitique ou à une vague de froid, et les prix pourraient repartir à la hausse à l'approche du prochain hiver si les stocks venaient à se vider trop vite.",
       "summary_fr": "Les prix de gros du gaz naturel sont repartis à la baisse en Europe, effaçant une partie de la hausse observée en début d'année. Le contrat de référence néerlandais, le TTF, est revenu vers des niveaux plus supportables pour les entreprises.\n\nCe reflux s'explique par des stocks de gaz bien remplis pour la saison, une demande industrielle qui reste contenue et des importations de gaz naturel liquéfié abondantes. Une météo clémente a également limité la consommation pour le chauffage.\n\nPour les industriels électro-intensifs — chimie, métallurgie, papier, verre — c'est un soulagement direct, après des années où la flambée énergétique avait sérieusement entamé leur compétitivité face aux concurrents américains et asiatiques.\n\nSi la tendance se confirme, elle pourrait aussi alléger la facture des ménages et atténuer les pressions inflationnistes, l'énergie restant l'un des principaux moteurs de la hausse des prix ces dernières années. Cela renforcerait la marge de manœuvre des banques centrales.\n\nLa prudence reste toutefois de mise : le marché européen demeure sensible au moindre choc géopolitique ou à une vague de froid, et les prix pourraient repartir à la hausse à l'approche du prochain hiver si les stocks venaient à se vider trop vite.",
-      "summary_en": "Wholesale natural gas prices have fallen again in Europe, erasing part of the rise seen earlier in the year. The Dutch benchmark contract, the TTF, returned toward levels more bearable for businesses.\n\nThe decline reflects gas storage that is well filled for the season, industrial demand that remains contained, and abundant liquefied natural gas imports. Mild weather also limited heating consumption.\n\nFor energy-intensive manufacturers — chemicals, metals, paper, glass — it is a direct relief, after years in which the energy spike had seriously eroded their competitiveness against American and Asian rivals.\n\nIf the trend holds, it could also ease household bills and soften inflationary pressures, with energy remaining one of the main drivers of price rises in recent years. That would widen central banks' room for manoeuvre.\n\nCaution is still warranted, however: the European market remains sensitive to the slightest geopolitical shock or cold snap, and prices could rebound ahead of next winter if storage were to empty too quickly."
+      "summary_en": "Wholesale natural gas prices have fallen again in Europe, erasing part of the rise seen earlier in the year. The Dutch benchmark contract, the TTF, returned toward levels more bearable for businesses.\n\nThe decline reflects gas storage that is well filled for the season, industrial demand that remains contained, and abundant liquefied natural gas imports. Mild weather also limited heating consumption.\n\nFor energy-intensive manufacturers — chemicals, metals, paper, glass — it is a direct relief, after years in which the energy spike had seriously eroded their competitiveness against American and Asian rivals.\n\nIf the trend holds, it could also ease household bills and soften inflationary pressures, with energy remaining one of the main drivers of price rises in recent years. That would widen central banks' room for manoeuvre.\n\nCaution is still warranted, however: the European market remains sensitive to the slightest geopolitical shock or cold snap, and prices could rebound ahead of next winter if storage were to empty too quickly.",
+      "bias": {
+        "fr": "Risk-on (désinflation)",
+        "en": "Risk-on (disinflation)",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "Gaz TTF",
+          "dir": "down"
+        },
+        {
+          "asset": "Chimie / Industrie",
+          "dir": "up"
+        },
+        {
+          "asset": "Inflation anticipée",
+          "dir": "down"
+        },
+        {
+          "asset": "EUR/USD",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "Baisse du gaz = bouffée d'air pour les électro-intensifs et un facteur désinflationniste de plus. Léger positif pour les actions industrielles européennes et les anticipations de baisses de taux.",
+        "en": "Lower gas = relief for energy-intensive sectors and one more disinflationary factor. Mild positive for European industrials and rate-cut expectations."
+      },
+      "watch": {
+        "fr": "Niveau des stocks de gaz et météo avant l'hiver.",
+        "en": "Gas storage levels and weather ahead of winter."
+      },
+      "data_points": [
+        {
+          "label_fr": "Gaz TTF (€/MWh)",
+          "label_en": "TTF gas (€/MWh)",
+          "actual": "31",
+          "consensus": "—",
+          "previous": "38"
+        }
+      ]
     },
     {
       "id": "7372fe440a258896",
@@ -68,7 +188,54 @@
       "excerpt_en": "Hiring slows.",
       "summary": "Le marché du travail américain a ralenti le mois dernier, avec des créations d'emplois inférieures au rythme des mois précédents, sans pour autant s'effondrer. Le taux de chômage est resté proche de ses plus bas niveaux historiques.\n\nCe ralentissement était attendu et même souhaité par la Réserve fédérale, qui cherche à refroidir une économie restée étonnamment dynamique malgré des taux d'intérêt élevés. Un marché du travail moins tendu réduit le risque que les salaires alimentent une nouvelle vague d'inflation.\n\nLa progression des salaires se stabilise justement, ce qui éloigne le spectre d'une surchauffe tout en préservant le pouvoir d'achat des ménages. La consommation, moteur essentiel de l'économie américaine, conserve ainsi un socle solide.\n\nPour la Fed, ces chiffres confortent une posture de patience : ni assez faibles pour justifier une baisse des taux dans l'urgence, ni assez forts pour craindre une réaccélération. La banque centrale garde donc toutes ses options ouvertes.\n\nLes investisseurs scruteront désormais les prochaines données d'inflation et de consommation pour estimer le moment du premier assouplissement, un sujet qui agite fortement Wall Street et le marché obligataire.",
       "summary_fr": "Le marché du travail américain a ralenti le mois dernier, avec des créations d'emplois inférieures au rythme des mois précédents, sans pour autant s'effondrer. Le taux de chômage est resté proche de ses plus bas niveaux historiques.\n\nCe ralentissement était attendu et même souhaité par la Réserve fédérale, qui cherche à refroidir une économie restée étonnamment dynamique malgré des taux d'intérêt élevés. Un marché du travail moins tendu réduit le risque que les salaires alimentent une nouvelle vague d'inflation.\n\nLa progression des salaires se stabilise justement, ce qui éloigne le spectre d'une surchauffe tout en préservant le pouvoir d'achat des ménages. La consommation, moteur essentiel de l'économie américaine, conserve ainsi un socle solide.\n\nPour la Fed, ces chiffres confortent une posture de patience : ni assez faibles pour justifier une baisse des taux dans l'urgence, ni assez forts pour craindre une réaccélération. La banque centrale garde donc toutes ses options ouvertes.\n\nLes investisseurs scruteront désormais les prochaines données d'inflation et de consommation pour estimer le moment du premier assouplissement, un sujet qui agite fortement Wall Street et le marché obligataire.",
-      "summary_en": "The U.S. labor market slowed last month, with job creation below the pace of previous months but far from collapsing. The unemployment rate stayed near historic lows.\n\nThe slowdown was expected and even welcomed by the Federal Reserve, which is trying to cool an economy that has stayed surprisingly strong despite high interest rates. A less tight labor market reduces the risk that wages fuel a new wave of inflation.\n\nWage growth is precisely stabilizing, which eases overheating fears while preserving households' purchasing power. Consumption, a key engine of the U.S. economy, thus keeps a solid base.\n\nFor the Fed, these figures support a stance of patience: neither weak enough to justify an urgent rate cut, nor strong enough to fear a reacceleration. The central bank therefore keeps all its options open.\n\nInvestors will now scrutinize upcoming inflation and spending data to gauge the timing of the first easing, a topic that strongly stirs Wall Street and the bond market."
+      "summary_en": "The U.S. labor market slowed last month, with job creation below the pace of previous months but far from collapsing. The unemployment rate stayed near historic lows.\n\nThe slowdown was expected and even welcomed by the Federal Reserve, which is trying to cool an economy that has stayed surprisingly strong despite high interest rates. A less tight labor market reduces the risk that wages fuel a new wave of inflation.\n\nWage growth is precisely stabilizing, which eases overheating fears while preserving households' purchasing power. Consumption, a key engine of the U.S. economy, thus keeps a solid base.\n\nFor the Fed, these figures support a stance of patience: neither weak enough to justify an urgent rate cut, nor strong enough to fear a reacceleration. The central bank therefore keeps all its options open.\n\nInvestors will now scrutinize upcoming inflation and spending data to gauge the timing of the first easing, a topic that strongly stirs Wall Street and the bond market.",
+      "bias": {
+        "fr": "Risk-on (dovish)",
+        "en": "Risk-on (dovish)",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "USD",
+          "dir": "down"
+        },
+        {
+          "asset": "US 10A",
+          "dir": "down"
+        },
+        {
+          "asset": "Or",
+          "dir": "up"
+        },
+        {
+          "asset": "S&P 500",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "Emplois sous le consensus mais sans signal de récession : scénario « soft landing » qui plaide pour des taux Fed plus bas. Dollar et rendements sous pression, actions et or soutenus.",
+        "en": "Jobs below consensus but no recession signal: a 'soft landing' read that argues for lower Fed rates. Dollar and yields under pressure, equities and gold supported."
+      },
+      "watch": {
+        "fr": "Prochain CPI américain et discours de la Fed.",
+        "en": "Next U.S. CPI and Fed speakers."
+      },
+      "data_points": [
+        {
+          "label_fr": "Emplois non agricoles",
+          "label_en": "Nonfarm payrolls",
+          "actual": "+150 k",
+          "consensus": "+180 k",
+          "previous": "+210 k"
+        },
+        {
+          "label_fr": "Taux de chômage",
+          "label_en": "Unemployment rate",
+          "actual": "4,0 %",
+          "consensus": "3,9 %",
+          "previous": "3,9 %"
+        }
+      ]
     },
     {
       "id": "60fb4a2c2c0d3b26",
@@ -85,7 +252,34 @@
       "excerpt_en": "Megacap tech leads gains.",
       "summary": "Wall Street a terminé la séance en hausse, le Nasdaq inscrivant un nouveau record de clôture grâce à la vigueur des grandes valeurs technologiques. Le S&P 500 a lui aussi progressé, prolongeant une série de séances positives.\n\nLe repli des rendements obligataires a joué un rôle clé : quand les taux baissent, les profits futurs des entreprises de croissance prennent mécaniquement plus de valeur aux yeux des investisseurs, ce qui profite tout particulièrement aux géants de la technologie.\n\nL'engouement persistant pour l'intelligence artificielle continue par ailleurs de soutenir les fabricants de semi-conducteurs et les grandes plateformes, qui pèsent désormais une part considérable des indices américains. Cette concentration fait toutefois débat parmi les analystes.\n\nCette domination d'une poignée de très grandes capitalisations inquiète en effet une partie du marché : si l'une d'elles déçoit, l'ensemble des indices pourrait être entraîné à la baisse, faute d'un relais suffisant des autres secteurs.\n\nLes investisseurs attendent désormais les prochains chiffres d'inflation et la saison des résultats trimestriels, susceptibles de confirmer — ou de remettre en cause — les valorisations élevées atteintes par la cote.",
       "summary_fr": "Wall Street a terminé la séance en hausse, le Nasdaq inscrivant un nouveau record de clôture grâce à la vigueur des grandes valeurs technologiques. Le S&P 500 a lui aussi progressé, prolongeant une série de séances positives.\n\nLe repli des rendements obligataires a joué un rôle clé : quand les taux baissent, les profits futurs des entreprises de croissance prennent mécaniquement plus de valeur aux yeux des investisseurs, ce qui profite tout particulièrement aux géants de la technologie.\n\nL'engouement persistant pour l'intelligence artificielle continue par ailleurs de soutenir les fabricants de semi-conducteurs et les grandes plateformes, qui pèsent désormais une part considérable des indices américains. Cette concentration fait toutefois débat parmi les analystes.\n\nCette domination d'une poignée de très grandes capitalisations inquiète en effet une partie du marché : si l'une d'elles déçoit, l'ensemble des indices pourrait être entraîné à la baisse, faute d'un relais suffisant des autres secteurs.\n\nLes investisseurs attendent désormais les prochains chiffres d'inflation et la saison des résultats trimestriels, susceptibles de confirmer — ou de remettre en cause — les valorisations élevées atteintes par la cote.",
-      "summary_en": "Wall Street ended the session higher, with the Nasdaq setting a new closing record on the strength of megacap technology stocks. The S&P 500 also rose, extending a run of positive sessions.\n\nFalling bond yields played a key role: when rates decline, the future profits of growth companies mechanically gain value in investors' eyes, which especially benefits the technology giants.\n\nPersistent enthusiasm for artificial intelligence continues to support chipmakers and the large platforms, which now account for a considerable share of U.S. indexes. That concentration is, however, debated among analysts.\n\nThis dominance of a handful of very large caps indeed worries part of the market: if one of them disappoints, the indexes as a whole could be dragged lower, lacking a sufficient relay from other sectors.\n\nInvestors now await the next inflation figures and the quarterly earnings season, which could confirm — or call into question — the high valuations reached by the market."
+      "summary_en": "Wall Street ended the session higher, with the Nasdaq setting a new closing record on the strength of megacap technology stocks. The S&P 500 also rose, extending a run of positive sessions.\n\nFalling bond yields played a key role: when rates decline, the future profits of growth companies mechanically gain value in investors' eyes, which especially benefits the technology giants.\n\nPersistent enthusiasm for artificial intelligence continues to support chipmakers and the large platforms, which now account for a considerable share of U.S. indexes. That concentration is, however, debated among analysts.\n\nThis dominance of a handful of very large caps indeed worries part of the market: if one of them disappoints, the indexes as a whole could be dragged lower, lacking a sufficient relay from other sectors.\n\nInvestors now await the next inflation figures and the quarterly earnings season, which could confirm — or call into question — the high valuations reached by the market.",
+      "bias": {
+        "fr": "Risk-on",
+        "en": "Risk-on",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "Nasdaq 100",
+          "dir": "up"
+        },
+        {
+          "asset": "Semi-conducteurs",
+          "dir": "up"
+        },
+        {
+          "asset": "VIX",
+          "dir": "down"
+        }
+      ],
+      "market_read": {
+        "fr": "Records portés par la tech et la baisse des taux : momentum acheteur intact mais concentration extrême sur quelques méga-caps. Le risque est asymétrique si l'une d'elles déçoit aux résultats.",
+        "en": "Records driven by tech and falling rates: buying momentum intact but extreme concentration in a few megacaps. Risk is asymmetric if one disappoints on earnings."
+      },
+      "watch": {
+        "fr": "Saison des résultats et prochain CPI américain.",
+        "en": "Earnings season and next U.S. CPI."
+      }
     },
     {
       "id": "802cbdf145a5c3d8",
@@ -102,7 +296,43 @@
       "excerpt_en": "Shipments rise for a third month.",
       "summary": "Les exportations japonaises ont rebondi pour le troisième mois consécutif, soutenues par un yen affaibli qui renforce la compétitivité-prix des produits nippons à l'étranger. L'automobile et les composants électroniques ont mené la reprise.\n\nUn yen faible agit comme un coup de pouce pour les exportateurs : il rend leurs produits moins chers à l'international et gonfle, une fois reconvertis, les bénéfices réalisés à l'étranger. Les grands constructeurs automobiles en sont les premiers gagnants.\n\nLa demande en provenance de Chine reste toutefois hésitante, ce qui limite l'ampleur de la reprise et illustre la dépendance du Japon à la santé de son grand voisin. Les expéditions vers les États-Unis, en revanche, se sont montrées plus dynamiques.\n\nLe revers de la médaille est que la faiblesse du yen renchérit les importations, notamment d'énergie et de matières premières, et pèse sur le pouvoir d'achat des ménages japonais. La Banque du Japon marche ainsi sur une ligne de crête.\n\nCe regain extérieur offre malgré tout un répit bienvenu à une économie encore en quête d'une croissance durable, et alimente le débat sur le calendrier d'une éventuelle remontée des taux par la banque centrale.",
       "summary_fr": "Les exportations japonaises ont rebondi pour le troisième mois consécutif, soutenues par un yen affaibli qui renforce la compétitivité-prix des produits nippons à l'étranger. L'automobile et les composants électroniques ont mené la reprise.\n\nUn yen faible agit comme un coup de pouce pour les exportateurs : il rend leurs produits moins chers à l'international et gonfle, une fois reconvertis, les bénéfices réalisés à l'étranger. Les grands constructeurs automobiles en sont les premiers gagnants.\n\nLa demande en provenance de Chine reste toutefois hésitante, ce qui limite l'ampleur de la reprise et illustre la dépendance du Japon à la santé de son grand voisin. Les expéditions vers les États-Unis, en revanche, se sont montrées plus dynamiques.\n\nLe revers de la médaille est que la faiblesse du yen renchérit les importations, notamment d'énergie et de matières premières, et pèse sur le pouvoir d'achat des ménages japonais. La Banque du Japon marche ainsi sur une ligne de crête.\n\nCe regain extérieur offre malgré tout un répit bienvenu à une économie encore en quête d'une croissance durable, et alimente le débat sur le calendrier d'une éventuelle remontée des taux par la banque centrale.",
-      "summary_en": "Japanese exports rebounded for a third straight month, helped by a weaker yen that strengthens the price competitiveness of Japanese goods abroad. Autos and electronic components led the recovery.\n\nA weak yen acts as a boost for exporters: it makes their products cheaper internationally and inflates, once converted back, the profits earned overseas. The big carmakers are the first to gain.\n\nDemand from China nonetheless remains hesitant, which limits the scope of the recovery and illustrates Japan's dependence on the health of its large neighbour. Shipments to the United States, by contrast, proved more dynamic.\n\nThe flip side is that the weak yen raises the cost of imports, notably energy and raw materials, and weighs on Japanese households' purchasing power. The Bank of Japan is thus walking a tightrope.\n\nThis external pickup nevertheless offers a welcome respite to an economy still seeking durable growth, and fuels the debate over the timing of a possible rate hike by the central bank."
+      "summary_en": "Japanese exports rebounded for a third straight month, helped by a weaker yen that strengthens the price competitiveness of Japanese goods abroad. Autos and electronic components led the recovery.\n\nA weak yen acts as a boost for exporters: it makes their products cheaper internationally and inflates, once converted back, the profits earned overseas. The big carmakers are the first to gain.\n\nDemand from China nonetheless remains hesitant, which limits the scope of the recovery and illustrates Japan's dependence on the health of its large neighbour. Shipments to the United States, by contrast, proved more dynamic.\n\nThe flip side is that the weak yen raises the cost of imports, notably energy and raw materials, and weighs on Japanese households' purchasing power. The Bank of Japan is thus walking a tightrope.\n\nThis external pickup nevertheless offers a welcome respite to an economy still seeking durable growth, and fuels the debate over the timing of a possible rate hike by the central bank.",
+      "bias": {
+        "fr": "Neutre à risk-on",
+        "en": "Neutral to risk-on",
+        "tone": "flat"
+      },
+      "impacts": [
+        {
+          "asset": "USD/JPY",
+          "dir": "up"
+        },
+        {
+          "asset": "Nikkei 225",
+          "dir": "up"
+        },
+        {
+          "asset": "Autos JP",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "Yen faible = export et bénéfices dopés, soutien au Nikkei, mais importations plus chères et pression sur la BoJ. Tant que la demande chinoise reste molle, la reprise plafonne.",
+        "en": "Weak yen = boosted exports and profits, supporting the Nikkei, but pricier imports and pressure on the BoJ. As long as Chinese demand stays soft, the recovery is capped."
+      },
+      "watch": {
+        "fr": "Décision de la Banque du Japon et données chinoises.",
+        "en": "Bank of Japan decision and Chinese data."
+      },
+      "data_points": [
+        {
+          "label_fr": "Exportations (a/a)",
+          "label_en": "Exports (y/y)",
+          "actual": "+8,3 %",
+          "consensus": "+6,9 %",
+          "previous": "+4,1 %"
+        }
+      ]
     },
     {
       "id": "0072c8418747a19c",
@@ -119,7 +349,43 @@
       "excerpt_en": "The Governing Council leaves the deposit rate unchanged.",
       "summary": "La Banque centrale européenne a laissé ses taux directeurs inchangés, maintenant le taux de dépôt — celui qui rémunère les liquidités des banques — à son niveau actuel. La décision était largement anticipée par les marchés.\n\nDans son communiqué, l'institution réaffirme qu'elle décidera « réunion par réunion », sans s'engager à l'avance sur une trajectoire précise. Autrement dit, chaque décision dépendra des données d'inflation, de croissance et de salaires disponibles à ce moment-là.\n\nCette prudence s'explique par une inflation qui revient vers l'objectif de 2 % mais qui reste collante dans les services, où la hausse des prix est plus difficile à enrayer. La BCE veut éviter de baisser ses taux trop tôt et de relancer les tensions.\n\nPour les ménages et les entreprises, ce statu quo signifie que le coût du crédit immobilier et des prêts ne devrait pas baisser dans l'immédiat, même si une détente est attendue plus tard dans l'année si la désinflation se poursuit.\n\nLes investisseurs guetteront désormais le ton de la présidente lors de la conférence de presse et les nouvelles projections d'inflation, à la recherche du moindre indice sur la date du premier assouplissement.",
       "summary_fr": "La Banque centrale européenne a laissé ses taux directeurs inchangés, maintenant le taux de dépôt — celui qui rémunère les liquidités des banques — à son niveau actuel. La décision était largement anticipée par les marchés.\n\nDans son communiqué, l'institution réaffirme qu'elle décidera « réunion par réunion », sans s'engager à l'avance sur une trajectoire précise. Autrement dit, chaque décision dépendra des données d'inflation, de croissance et de salaires disponibles à ce moment-là.\n\nCette prudence s'explique par une inflation qui revient vers l'objectif de 2 % mais qui reste collante dans les services, où la hausse des prix est plus difficile à enrayer. La BCE veut éviter de baisser ses taux trop tôt et de relancer les tensions.\n\nPour les ménages et les entreprises, ce statu quo signifie que le coût du crédit immobilier et des prêts ne devrait pas baisser dans l'immédiat, même si une détente est attendue plus tard dans l'année si la désinflation se poursuit.\n\nLes investisseurs guetteront désormais le ton de la présidente lors de la conférence de presse et les nouvelles projections d'inflation, à la recherche du moindre indice sur la date du premier assouplissement.",
-      "summary_en": "The European Central Bank left its policy rates unchanged, keeping the deposit rate — the one that remunerates banks' liquidity — at its current level. The decision was widely anticipated by markets.\n\nIn its statement, the institution reaffirms that it will decide 'meeting by meeting', without committing in advance to a precise path. In other words, each decision will depend on the inflation, growth and wage data available at that point.\n\nThis caution reflects inflation that is returning toward the 2% target but remains sticky in services, where price rises are harder to curb. The ECB wants to avoid cutting rates too early and reigniting pressures.\n\nFor households and businesses, this status quo means the cost of mortgages and loans should not fall immediately, even though some relief is expected later in the year if disinflation continues.\n\nInvestors will now watch the president's tone at the press conference and the new inflation projections, looking for any hint about the date of the first easing."
+      "summary_en": "The European Central Bank left its policy rates unchanged, keeping the deposit rate — the one that remunerates banks' liquidity — at its current level. The decision was widely anticipated by markets.\n\nIn its statement, the institution reaffirms that it will decide 'meeting by meeting', without committing in advance to a precise path. In other words, each decision will depend on the inflation, growth and wage data available at that point.\n\nThis caution reflects inflation that is returning toward the 2% target but remains sticky in services, where price rises are harder to curb. The ECB wants to avoid cutting rates too early and reigniting pressures.\n\nFor households and businesses, this status quo means the cost of mortgages and loans should not fall immediately, even though some relief is expected later in the year if disinflation continues.\n\nInvestors will now watch the president's tone at the press conference and the new inflation projections, looking for any hint about the date of the first easing.",
+      "bias": {
+        "fr": "Neutre / data-dependent",
+        "en": "Neutral / data-dependent",
+        "tone": "flat"
+      },
+      "impacts": [
+        {
+          "asset": "EUR/USD",
+          "dir": "flat"
+        },
+        {
+          "asset": "Bund 10A",
+          "dir": "flat"
+        },
+        {
+          "asset": "Banques EU",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Statu quo conforme aux attentes : pas de catalyseur directionnel immédiat. Le marché se jouera sur le ton de la conférence et les projections — toute inflexion fera bouger l'euro et les taux courts.",
+        "en": "Hold in line with expectations: no immediate directional catalyst. The move will hinge on the press-conference tone and projections — any shift will move the euro and short rates."
+      },
+      "watch": {
+        "fr": "Conférence de presse et nouvelles projections d'inflation.",
+        "en": "Press conference and new inflation projections."
+      },
+      "data_points": [
+        {
+          "label_fr": "Taux de dépôt",
+          "label_en": "Deposit rate",
+          "actual": "2,75 %",
+          "consensus": "2,75 %",
+          "previous": "2,75 %"
+        }
+      ]
     },
     {
       "id": "a22c74101c1821ed",
@@ -136,7 +402,38 @@
       "excerpt_en": "Minutes show cautious officials.",
       "summary": "Les responsables de la Réserve fédérale ont plaidé pour la patience avant d'envisager une baisse des taux d'intérêt, selon le compte rendu de leur dernière réunion. Le ton général se veut prudent et dépendant des données à venir.\n\nLes participants veulent davantage de preuves que l'inflation revient durablement vers l'objectif de 2 %, après plusieurs mois où la désinflation avait marqué le pas. Ils redoutent de desserrer leur politique trop tôt et de devoir faire marche arrière.\n\nPlusieurs membres ont toutefois reconnu que le marché du travail se rééquilibrait progressivement et que le risque d'un ralentissement plus marqué de l'économie ne devait pas être négligé. Le débat interne porte donc sur le calendrier, plus que sur la direction.\n\nCette prudence suggère que le statu quo monétaire pourrait se prolonger encore quelques mois aux États-Unis, avec un coût du crédit qui reste élevé pour les entreprises comme pour les ménages emprunteurs.\n\nLes prochains rendez-vous — chiffres de l'inflation, de l'emploi et de la consommation — seront décisifs pour fixer le moment de la première baisse, très attendue par les marchés financiers du monde entier.",
       "summary_fr": "Les responsables de la Réserve fédérale ont plaidé pour la patience avant d'envisager une baisse des taux d'intérêt, selon le compte rendu de leur dernière réunion. Le ton général se veut prudent et dépendant des données à venir.\n\nLes participants veulent davantage de preuves que l'inflation revient durablement vers l'objectif de 2 %, après plusieurs mois où la désinflation avait marqué le pas. Ils redoutent de desserrer leur politique trop tôt et de devoir faire marche arrière.\n\nPlusieurs membres ont toutefois reconnu que le marché du travail se rééquilibrait progressivement et que le risque d'un ralentissement plus marqué de l'économie ne devait pas être négligé. Le débat interne porte donc sur le calendrier, plus que sur la direction.\n\nCette prudence suggère que le statu quo monétaire pourrait se prolonger encore quelques mois aux États-Unis, avec un coût du crédit qui reste élevé pour les entreprises comme pour les ménages emprunteurs.\n\nLes prochains rendez-vous — chiffres de l'inflation, de l'emploi et de la consommation — seront décisifs pour fixer le moment de la première baisse, très attendue par les marchés financiers du monde entier.",
-      "summary_en": "Federal Reserve officials argued for patience before considering a cut in interest rates, according to the minutes of their latest meeting. The overall tone is deliberately cautious and data-dependent.\n\nParticipants want more evidence that inflation is sustainably returning toward the 2% target, after several months in which disinflation had stalled. They fear loosening policy too early and having to backtrack.\n\nSeveral members nonetheless acknowledged that the labor market was gradually rebalancing and that the risk of a sharper economic slowdown should not be ignored. The internal debate is therefore about timing, more than direction.\n\nThis caution suggests the monetary status quo could last a few more months in the United States, with borrowing costs that remain high for businesses as well as for indebted households.\n\nThe next milestones — inflation, employment and spending figures — will be decisive in setting the timing of the first cut, eagerly awaited by financial markets worldwide."
+      "summary_en": "Federal Reserve officials argued for patience before considering a cut in interest rates, according to the minutes of their latest meeting. The overall tone is deliberately cautious and data-dependent.\n\nParticipants want more evidence that inflation is sustainably returning toward the 2% target, after several months in which disinflation had stalled. They fear loosening policy too early and having to backtrack.\n\nSeveral members nonetheless acknowledged that the labor market was gradually rebalancing and that the risk of a sharper economic slowdown should not be ignored. The internal debate is therefore about timing, more than direction.\n\nThis caution suggests the monetary status quo could last a few more months in the United States, with borrowing costs that remain high for businesses as well as for indebted households.\n\nThe next milestones — inflation, employment and spending figures — will be decisive in setting the timing of the first cut, eagerly awaited by financial markets worldwide.",
+      "bias": {
+        "fr": "Plutôt hawkish",
+        "en": "Leaning hawkish",
+        "tone": "down"
+      },
+      "impacts": [
+        {
+          "asset": "USD",
+          "dir": "up"
+        },
+        {
+          "asset": "US 10A",
+          "dir": "up"
+        },
+        {
+          "asset": "Or",
+          "dir": "down"
+        },
+        {
+          "asset": "S&P 500",
+          "dir": "down"
+        }
+      ],
+      "market_read": {
+        "fr": "Minutes patientes : la Fed n'est pas pressée de baisser. Léger soutien au dollar et aux rendements, vent de face pour l'or et les actions de duration. Le statu quo peut durer.",
+        "en": "Patient minutes: the Fed is in no rush to cut. Mild support for the dollar and yields, headwind for gold and long-duration equities. The status quo may persist."
+      },
+      "watch": {
+        "fr": "Prochain CPI et données d'emploi américaines.",
+        "en": "Next U.S. CPI and jobs data."
+      }
     },
     {
       "id": "02111acdcf61052a",
@@ -153,7 +450,43 @@
       "excerpt_en": "The Fund expects more resilient activity.",
       "summary": "Le Fonds monétaire international a légèrement relevé sa prévision de croissance mondiale pour 2026, jugeant l'activité plus résiliente que prévu face à des taux d'intérêt encore élevés. La révision, modeste, traduit surtout la bonne tenue des États-Unis et de plusieurs grands émergents.\n\nDans le détail, l'institution souligne le dynamisme de l'Inde et la stabilisation progressive de la Chine, tandis que l'Europe reste à la traîne, pénalisée par la faiblesse de son industrie. La croissance mondiale demeure donc inégale selon les régions.\n\nLe FMI met toutefois en garde contre des risques persistants : le niveau élevé des dettes publiques, la fragmentation du commerce mondial et les tensions géopolitiques, qui pourraient à tout moment peser sur la confiance et l'investissement.\n\nIl appelle les gouvernements à reconstituer des marges budgétaires pour faire face aux chocs futurs, et à poursuivre les réformes susceptibles de relever une productivité durablement faible dans les économies avancées.\n\nCette photographie servira de toile de fond aux discussions entre grands argentiers et banquiers centraux, qui doivent arbitrer entre soutien à la croissance et maîtrise des déséquilibres financiers.",
       "summary_fr": "Le Fonds monétaire international a légèrement relevé sa prévision de croissance mondiale pour 2026, jugeant l'activité plus résiliente que prévu face à des taux d'intérêt encore élevés. La révision, modeste, traduit surtout la bonne tenue des États-Unis et de plusieurs grands émergents.\n\nDans le détail, l'institution souligne le dynamisme de l'Inde et la stabilisation progressive de la Chine, tandis que l'Europe reste à la traîne, pénalisée par la faiblesse de son industrie. La croissance mondiale demeure donc inégale selon les régions.\n\nLe FMI met toutefois en garde contre des risques persistants : le niveau élevé des dettes publiques, la fragmentation du commerce mondial et les tensions géopolitiques, qui pourraient à tout moment peser sur la confiance et l'investissement.\n\nIl appelle les gouvernements à reconstituer des marges budgétaires pour faire face aux chocs futurs, et à poursuivre les réformes susceptibles de relever une productivité durablement faible dans les économies avancées.\n\nCette photographie servira de toile de fond aux discussions entre grands argentiers et banquiers centraux, qui doivent arbitrer entre soutien à la croissance et maîtrise des déséquilibres financiers.",
-      "summary_en": "The International Monetary Fund slightly raised its 2026 global growth forecast, judging activity more resilient than expected in the face of still-high interest rates. The modest revision mainly reflects the strength of the United States and several large emerging economies.\n\nIn detail, the institution highlights India's dynamism and China's gradual stabilization, while Europe lags behind, held back by the weakness of its industry. Global growth therefore remains uneven across regions.\n\nThe IMF nonetheless warns of persistent risks: high public debt levels, fragmentation of world trade and geopolitical tensions, which could weigh at any moment on confidence and investment.\n\nIt urges governments to rebuild fiscal buffers to cope with future shocks, and to pursue reforms capable of lifting persistently low productivity in advanced economies.\n\nThis snapshot will form the backdrop to discussions among finance ministers and central bankers, who must balance support for growth against control of financial imbalances."
+      "summary_en": "The International Monetary Fund slightly raised its 2026 global growth forecast, judging activity more resilient than expected in the face of still-high interest rates. The modest revision mainly reflects the strength of the United States and several large emerging economies.\n\nIn detail, the institution highlights India's dynamism and China's gradual stabilization, while Europe lags behind, held back by the weakness of its industry. Global growth therefore remains uneven across regions.\n\nThe IMF nonetheless warns of persistent risks: high public debt levels, fragmentation of world trade and geopolitical tensions, which could weigh at any moment on confidence and investment.\n\nIt urges governments to rebuild fiscal buffers to cope with future shocks, and to pursue reforms capable of lifting persistently low productivity in advanced economies.\n\nThis snapshot will form the backdrop to discussions among finance ministers and central bankers, who must balance support for growth against control of financial imbalances.",
+      "bias": {
+        "fr": "Risk-on modéré",
+        "en": "Mild risk-on",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "Actions mondiales",
+          "dir": "up"
+        },
+        {
+          "asset": "Émergents",
+          "dir": "up"
+        },
+        {
+          "asset": "Or",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Révision haussière modeste : soutien de fond aux actifs cycliques et émergents, mais le FMI insiste sur les risques de dette et de fragmentation. Impact marché surtout de sentiment.",
+        "en": "Modest upward revision: background support for cyclicals and emerging markets, but the IMF stresses debt and fragmentation risks. Market impact mostly sentiment."
+      },
+      "watch": {
+        "fr": "Détail des prévisions par pays et réactions des marchés émergents.",
+        "en": "Country-level forecast detail and EM reaction."
+      },
+      "data_points": [
+        {
+          "label_fr": "Croissance mondiale 2026",
+          "label_en": "Global growth 2026",
+          "actual": "3,2 %",
+          "consensus": "3,1 %",
+          "previous": "3,1 %"
+        }
+      ]
     },
     {
       "id": "906fa1e09fcd8b98",
@@ -170,7 +503,26 @@
       "excerpt_en": "A report stresses the role of training.",
       "summary": "L'OCDE appelle ses pays membres à investir davantage dans la formation et les compétences pour soutenir la productivité, dans un rapport publié cette semaine. L'organisation y voit l'un des principaux leviers pour relancer une croissance atone.\n\nLe document établit un lien direct entre la qualité de l'éducation et de la formation continue et la capacité des économies à s'adapter aux mutations technologiques, au premier rang desquelles l'automatisation et l'intelligence artificielle.\n\nL'OCDE recommande des politiques ciblées vers les travailleurs les plus exposés au risque d'obsolescence de leurs compétences, ainsi qu'un meilleur accès à la formation tout au long de la vie, en particulier pour les moins qualifiés.\n\nElle insiste aussi sur le rôle des entreprises, encouragées à former davantage leurs salariés plutôt qu'à les remplacer, et sur la nécessité d'aligner les cursus sur les besoins réels du marché du travail.\n\nCes recommandations s'adressent à des gouvernements aux budgets contraints, pour lesquels l'arbitrage entre dépenses immédiates et investissement de long terme dans le capital humain s'annonce délicat.",
       "summary_fr": "L'OCDE appelle ses pays membres à investir davantage dans la formation et les compétences pour soutenir la productivité, dans un rapport publié cette semaine. L'organisation y voit l'un des principaux leviers pour relancer une croissance atone.\n\nLe document établit un lien direct entre la qualité de l'éducation et de la formation continue et la capacité des économies à s'adapter aux mutations technologiques, au premier rang desquelles l'automatisation et l'intelligence artificielle.\n\nL'OCDE recommande des politiques ciblées vers les travailleurs les plus exposés au risque d'obsolescence de leurs compétences, ainsi qu'un meilleur accès à la formation tout au long de la vie, en particulier pour les moins qualifiés.\n\nElle insiste aussi sur le rôle des entreprises, encouragées à former davantage leurs salariés plutôt qu'à les remplacer, et sur la nécessité d'aligner les cursus sur les besoins réels du marché du travail.\n\nCes recommandations s'adressent à des gouvernements aux budgets contraints, pour lesquels l'arbitrage entre dépenses immédiates et investissement de long terme dans le capital humain s'annonce délicat.",
-      "summary_en": "The OECD is urging member countries to invest more in training and skills to support productivity, in a report released this week. The organization sees it as one of the main levers to revive sluggish growth.\n\nThe document draws a direct link between the quality of education and lifelong learning and economies' ability to adapt to technological change, foremost among them automation and artificial intelligence.\n\nThe OECD recommends policies targeted at workers most exposed to the risk of skills becoming obsolete, as well as better access to lifelong training, particularly for the least qualified.\n\nIt also stresses the role of companies, encouraged to train their employees more rather than replace them, and the need to align curricula with the real needs of the labor market.\n\nThese recommendations are addressed to governments with constrained budgets, for which the trade-off between immediate spending and long-term investment in human capital looks delicate."
+      "summary_en": "The OECD is urging member countries to invest more in training and skills to support productivity, in a report released this week. The organization sees it as one of the main levers to revive sluggish growth.\n\nThe document draws a direct link between the quality of education and lifelong learning and economies' ability to adapt to technological change, foremost among them automation and artificial intelligence.\n\nThe OECD recommends policies targeted at workers most exposed to the risk of skills becoming obsolete, as well as better access to lifelong training, particularly for the least qualified.\n\nIt also stresses the role of companies, encouraged to train their employees more rather than replace them, and the need to align curricula with the real needs of the labor market.\n\nThese recommendations are addressed to governments with constrained budgets, for which the trade-off between immediate spending and long-term investment in human capital looks delicate.",
+      "bias": {
+        "fr": "Neutre (structurel)",
+        "en": "Neutral (structural)",
+        "tone": "flat"
+      },
+      "impacts": [
+        {
+          "asset": "Marchés",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Sujet structurel de long terme : impact négligeable sur les prix d'actifs à court terme. À intégrer dans les thèses productivité / IA plutôt que dans un trade directionnel.",
+        "en": "Long-term structural topic: negligible short-term impact on asset prices. One for productivity / AI theses rather than a directional trade."
+      },
+      "watch": {
+        "fr": "Réformes éducatives nationales et données de productivité.",
+        "en": "National education reforms and productivity data."
+      }
     },
     {
       "id": "59a18a020ea75285",
@@ -187,7 +539,43 @@
       "excerpt_en": "Disinflation continues.",
       "summary": "La Banque de France confirme, dans ses dernières projections, une inflation qui devrait repasser durablement sous les 2 % à l'horizon 2027. La hausse des prix continuerait ainsi de ralentir après le pic atteint il y a deux ans.\n\nCette désinflation s'appuie sur le reflux des prix de l'énergie et des biens, ainsi que sur une modération progressive de la hausse des salaires, sans pour autant que celle-ci ne s'effondre. Le pouvoir d'achat des ménages se redresse donc lentement.\n\nL'institution table sur une reprise graduelle de la consommation, moteur clé de la croissance française, à mesure que les ménages retrouvent confiance et que leur épargne de précaution diminue. L'investissement des entreprises resterait, lui, plus hésitant.\n\nLa Banque de France prévoit une croissance modérée mais positive pour l'économie hexagonale, sans récession, à condition que l'environnement international ne se dégrade pas et que la consommation tienne ses promesses.\n\nCes projections nourrissent le débat sur le calendrier des baisses de taux de la BCE : une inflation maîtrisée donnerait à l'institution davantage de latitude pour assouplir sa politique sans risque de relancer les prix.",
       "summary_fr": "La Banque de France confirme, dans ses dernières projections, une inflation qui devrait repasser durablement sous les 2 % à l'horizon 2027. La hausse des prix continuerait ainsi de ralentir après le pic atteint il y a deux ans.\n\nCette désinflation s'appuie sur le reflux des prix de l'énergie et des biens, ainsi que sur une modération progressive de la hausse des salaires, sans pour autant que celle-ci ne s'effondre. Le pouvoir d'achat des ménages se redresse donc lentement.\n\nL'institution table sur une reprise graduelle de la consommation, moteur clé de la croissance française, à mesure que les ménages retrouvent confiance et que leur épargne de précaution diminue. L'investissement des entreprises resterait, lui, plus hésitant.\n\nLa Banque de France prévoit une croissance modérée mais positive pour l'économie hexagonale, sans récession, à condition que l'environnement international ne se dégrade pas et que la consommation tienne ses promesses.\n\nCes projections nourrissent le débat sur le calendrier des baisses de taux de la BCE : une inflation maîtrisée donnerait à l'institution davantage de latitude pour assouplir sa politique sans risque de relancer les prix.",
-      "summary_en": "In its latest projections, the Banque de France confirms inflation that should durably fall below 2% by 2027. Price rises would thus keep slowing after the peak reached two years ago.\n\nThis disinflation rests on the retreat of energy and goods prices, as well as on a gradual moderation of wage growth, without the latter collapsing. Households' purchasing power is therefore recovering slowly.\n\nThe institution expects a gradual recovery in consumption, a key driver of French growth, as households regain confidence and their precautionary savings shrink. Business investment, by contrast, would remain more hesitant.\n\nThe Banque de France foresees moderate but positive growth for the French economy, with no recession, provided the international environment does not deteriorate and consumption delivers on its promise.\n\nThese projections feed the debate over the timing of the ECB's rate cuts: contained inflation would give the institution more latitude to ease policy without risking a price rebound."
+      "summary_en": "In its latest projections, the Banque de France confirms inflation that should durably fall below 2% by 2027. Price rises would thus keep slowing after the peak reached two years ago.\n\nThis disinflation rests on the retreat of energy and goods prices, as well as on a gradual moderation of wage growth, without the latter collapsing. Households' purchasing power is therefore recovering slowly.\n\nThe institution expects a gradual recovery in consumption, a key driver of French growth, as households regain confidence and their precautionary savings shrink. Business investment, by contrast, would remain more hesitant.\n\nThe Banque de France foresees moderate but positive growth for the French economy, with no recession, provided the international environment does not deteriorate and consumption delivers on its promise.\n\nThese projections feed the debate over the timing of the ECB's rate cuts: contained inflation would give the institution more latitude to ease policy without risking a price rebound.",
+      "bias": {
+        "fr": "Plutôt dovish",
+        "en": "Leaning dovish",
+        "tone": "up"
+      },
+      "impacts": [
+        {
+          "asset": "OAT 10A",
+          "dir": "down"
+        },
+        {
+          "asset": "EUR/USD",
+          "dir": "down"
+        },
+        {
+          "asset": "CAC 40",
+          "dir": "up"
+        }
+      ],
+      "market_read": {
+        "fr": "Inflation ancrée sous 2 % à moyen terme : argument de plus pour des baisses de taux BCE. Léger soutien aux OAT et aux actions françaises, mais l'info reste de second rang pour le marché.",
+        "en": "Inflation anchored below 2% over the medium term: one more argument for ECB cuts. Mild support for OATs and French equities, though the news is second-tier for the market."
+      },
+      "watch": {
+        "fr": "Projections de la BCE et trajectoire des salaires.",
+        "en": "ECB projections and the wage trajectory."
+      },
+      "data_points": [
+        {
+          "label_fr": "Inflation France 2027 (proj.)",
+          "label_en": "France inflation 2027 (proj.)",
+          "actual": "1,8 %",
+          "consensus": "—",
+          "previous": "2,1 %"
+        }
+      ]
     },
     {
       "id": "7c3b932286c44384",
@@ -204,7 +592,39 @@
       "excerpt_en": "The indicator stays above its average.",
       "summary": "Le climat des affaires en France s'est stabilisé en juin, l'indicateur synthétique de l'INSEE se maintenant juste au-dessus de sa moyenne de longue période. Après plusieurs mois d'hésitation, les chefs d'entreprise ne perçoivent ni amélioration ni dégradation nette.\n\nLes services soutiennent l'ensemble, portés par une demande intérieure qui résiste, tandis que l'industrie reste plus hésitante face à une demande mondiale incertaine et à des carnets de commandes jugés un peu courts.\n\nLe commerce de détail et le bâtiment envoient des signaux contrastés : le premier profite du reflux de l'inflation, le second continue de pâtir d'un coût du crédit élevé qui pèse sur les projets immobiliers des ménages.\n\nCette stabilité conforte le scénario d'une croissance modérée mais régulière pour l'économie française, sans rebond marqué mais sans rechute non plus, dans la ligne des prévisions des grands instituts.\n\nLes prochaines enquêtes mensuelles diront si cette accalmie se transforme en véritable redémarrage à la rentrée, une fois connus les effets des baisses de taux attendues et de la poursuite de la désinflation.",
       "summary_fr": "Le climat des affaires en France s'est stabilisé en juin, l'indicateur synthétique de l'INSEE se maintenant juste au-dessus de sa moyenne de longue période. Après plusieurs mois d'hésitation, les chefs d'entreprise ne perçoivent ni amélioration ni dégradation nette.\n\nLes services soutiennent l'ensemble, portés par une demande intérieure qui résiste, tandis que l'industrie reste plus hésitante face à une demande mondiale incertaine et à des carnets de commandes jugés un peu courts.\n\nLe commerce de détail et le bâtiment envoient des signaux contrastés : le premier profite du reflux de l'inflation, le second continue de pâtir d'un coût du crédit élevé qui pèse sur les projets immobiliers des ménages.\n\nCette stabilité conforte le scénario d'une croissance modérée mais régulière pour l'économie française, sans rebond marqué mais sans rechute non plus, dans la ligne des prévisions des grands instituts.\n\nLes prochaines enquêtes mensuelles diront si cette accalmie se transforme en véritable redémarrage à la rentrée, une fois connus les effets des baisses de taux attendues et de la poursuite de la désinflation.",
-      "summary_en": "Business confidence in France stabilized in June, with INSEE's composite indicator holding just above its long-run average. After several months of hesitation, business leaders perceive neither a clear improvement nor a clear deterioration.\n\nServices support the whole, buoyed by resilient domestic demand, while industry remains more hesitant in the face of uncertain global demand and order books deemed somewhat thin.\n\nRetail and construction send mixed signals: the former benefits from easing inflation, while the latter continues to suffer from high borrowing costs that weigh on households' property projects.\n\nThis stability reinforces the scenario of moderate but steady growth for the French economy, with no sharp rebound but no relapse either, in line with the forecasts of the main institutes.\n\nThe next monthly surveys will show whether this lull turns into a genuine pickup in the autumn, once the effects of the expected rate cuts and continued disinflation become clear."
+      "summary_en": "Business confidence in France stabilized in June, with INSEE's composite indicator holding just above its long-run average. After several months of hesitation, business leaders perceive neither a clear improvement nor a clear deterioration.\n\nServices support the whole, buoyed by resilient domestic demand, while industry remains more hesitant in the face of uncertain global demand and order books deemed somewhat thin.\n\nRetail and construction send mixed signals: the former benefits from easing inflation, while the latter continues to suffer from high borrowing costs that weigh on households' property projects.\n\nThis stability reinforces the scenario of moderate but steady growth for the French economy, with no sharp rebound but no relapse either, in line with the forecasts of the main institutes.\n\nThe next monthly surveys will show whether this lull turns into a genuine pickup in the autumn, once the effects of the expected rate cuts and continued disinflation become clear.",
+      "bias": {
+        "fr": "Neutre",
+        "en": "Neutral",
+        "tone": "flat"
+      },
+      "impacts": [
+        {
+          "asset": "CAC 40",
+          "dir": "flat"
+        },
+        {
+          "asset": "EUR/USD",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Indicateur stable, proche des attentes : pas de surprise exploitable. Confirme un scénario de croissance molle mais positive ; impact marché limité.",
+        "en": "Stable indicator, close to expectations: no tradable surprise. Confirms a soft-but-positive growth scenario; limited market impact."
+      },
+      "watch": {
+        "fr": "Prochaines enquêtes mensuelles de confiance.",
+        "en": "Next monthly confidence surveys."
+      },
+      "data_points": [
+        {
+          "label_fr": "Climat des affaires",
+          "label_en": "Business climate",
+          "actual": "100",
+          "consensus": "99",
+          "previous": "100"
+        }
+      ]
     },
     {
       "id": "352fa986356c82d3",
@@ -221,7 +641,34 @@
       "excerpt_en": "Equities hold and the dollar eases.",
       "summary": "Les marchés financiers mondiaux sont restés globalement stables, les investisseurs digérant des données économiques contrastées sans prendre de paris tranchés. Les principales Bourses ont oscillé autour de l'équilibre.\n\nLe dollar s'est légèrement assoupli face aux grandes devises, dans l'attente de nouvelles indications des banques centrales sur la trajectoire des taux d'intérêt. Un billet vert plus faible profite généralement aux matières premières et aux pays émergents.\n\nSur le marché des matières premières, le pétrole est resté stable et l'or a conservé ses gains récents, soutenu par son statut de valeur refuge dans un climat d'incertitude persistante sur la croissance et la géopolitique.\n\nCette accalmie traduit un marché en mode attentiste, sans catalyseur clair à court terme : les opérateurs préfèrent attendre les prochains chiffres d'inflation et les réunions des grandes banques centrales avant de se positionner.\n\nLa moindre surprise — sur l'inflation, l'emploi ou un événement géopolitique — pourrait toutefois rompre ce calme apparent et provoquer des mouvements brusques, la volatilité restant faible mais le positionnement des investisseurs assez tendu.",
       "summary_fr": "Les marchés financiers mondiaux sont restés globalement stables, les investisseurs digérant des données économiques contrastées sans prendre de paris tranchés. Les principales Bourses ont oscillé autour de l'équilibre.\n\nLe dollar s'est légèrement assoupli face aux grandes devises, dans l'attente de nouvelles indications des banques centrales sur la trajectoire des taux d'intérêt. Un billet vert plus faible profite généralement aux matières premières et aux pays émergents.\n\nSur le marché des matières premières, le pétrole est resté stable et l'or a conservé ses gains récents, soutenu par son statut de valeur refuge dans un climat d'incertitude persistante sur la croissance et la géopolitique.\n\nCette accalmie traduit un marché en mode attentiste, sans catalyseur clair à court terme : les opérateurs préfèrent attendre les prochains chiffres d'inflation et les réunions des grandes banques centrales avant de se positionner.\n\nLa moindre surprise — sur l'inflation, l'emploi ou un événement géopolitique — pourrait toutefois rompre ce calme apparent et provoquer des mouvements brusques, la volatilité restant faible mais le positionnement des investisseurs assez tendu.",
-      "summary_en": "Global financial markets stayed broadly steady as investors digested mixed economic data without taking firm bets. The main stock exchanges hovered around the flat line.\n\nThe dollar eased slightly against major currencies, awaiting fresh guidance from central banks on the path of interest rates. A weaker greenback generally benefits commodities and emerging markets.\n\nIn the commodities market, oil held steady and gold kept its recent gains, supported by its safe-haven status amid persistent uncertainty over growth and geopolitics.\n\nThe lull reflects a wait-and-see market with no clear short-term catalyst: traders prefer to await the next inflation figures and the major central banks' meetings before positioning themselves.\n\nThe slightest surprise — on inflation, employment or a geopolitical event — could nonetheless break this apparent calm and trigger sharp moves, with volatility low but investor positioning fairly stretched."
+      "summary_en": "Global financial markets stayed broadly steady as investors digested mixed economic data without taking firm bets. The main stock exchanges hovered around the flat line.\n\nThe dollar eased slightly against major currencies, awaiting fresh guidance from central banks on the path of interest rates. A weaker greenback generally benefits commodities and emerging markets.\n\nIn the commodities market, oil held steady and gold kept its recent gains, supported by its safe-haven status amid persistent uncertainty over growth and geopolitics.\n\nThe lull reflects a wait-and-see market with no clear short-term catalyst: traders prefer to await the next inflation figures and the major central banks' meetings before positioning themselves.\n\nThe slightest surprise — on inflation, employment or a geopolitical event — could nonetheless break this apparent calm and trigger sharp moves, with volatility low but investor positioning fairly stretched.",
+      "bias": {
+        "fr": "Neutre / attentiste",
+        "en": "Neutral / wait-and-see",
+        "tone": "flat"
+      },
+      "impacts": [
+        {
+          "asset": "USD",
+          "dir": "down"
+        },
+        {
+          "asset": "Or",
+          "dir": "up"
+        },
+        {
+          "asset": "Actions mondiales",
+          "dir": "flat"
+        }
+      ],
+      "market_read": {
+        "fr": "Marché sans direction claire avant les banques centrales : volatilité faible mais positionnement tendu. Léger biais vendeur dollar, l'or garde son statut de refuge.",
+        "en": "Market lacking clear direction ahead of central banks: low volatility but stretched positioning. Mild dollar-selling bias, gold keeps its safe-haven status."
+      },
+      "watch": {
+        "fr": "Réunions des grandes banques centrales et CPI américain.",
+        "en": "Major central-bank meetings and U.S. CPI."
+      }
     }
   ]
 }
