@@ -48,8 +48,37 @@
   {% include "_sidebar.html" %}
 {% endblock %}
 
-{# --- Bandeau défilant type ticker -------------------------------------- #}
+{# --- Bandeaux défilants : cours en direct + titres -------------------- #}
 {% block ticker %}
+{% if not is_archive %}
+{# Cours de marché en temps réel (widget TradingView, sans clé API). #}
+<div class="pricetape">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "FOREXCOM:FRA40", "title": "CAC 40"},
+        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+        {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
+        {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
+        {"proName": "FX_IDC:USDJPY", "title": "USD/JPY"},
+        {"proName": "TVC:GOLD", "title": "Or"},
+        {"proName": "TVC:UKOIL", "title": "Brent"},
+        {"proName": "TVC:USOIL", "title": "WTI"},
+        {"proName": "BITSTAMP:BTCUSD", "title": "Bitcoin"},
+        {"proName": "BITSTAMP:ETHUSD", "title": "Ethereum"}
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "fr"
+    }
+    </script>
+  </div>
+</div>
+{% endif %}
 {% if ticker %}
 <div class="ticker" aria-hidden="true">
   <div class="ticker__track">

@@ -203,6 +203,13 @@ body.sb-toggled .sidebar {
   border-bottom: 1px solid var(--border);
   overflow: hidden; white-space: nowrap;
 }
+/* Bandeau de cours en direct (widget TradingView) collé sous la barre. */
+.pricetape {
+  background: rgba(255,255,255,0.015);
+  border-bottom: 1px solid var(--border);
+}
+.pricetape .tradingview-widget-container { min-height: 46px; }
+.pricetape .tradingview-widget-copyright { display: none; }
 .ticker__track { display: inline-flex; padding: 9px 0; animation: scroll 64s linear infinite; will-change: transform; }
 .ticker:hover .ticker__track { animation-play-state: paused; }
 .ticker__item {
