@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LE TERMINAL — Étude utilisateurs (~3 min)</title>
+<meta name="description" content="Aidez-nous à bâtir votre hub trading. Crypto · Forex · Actions · ETF — réunis sur un seul écran, propulsés par l'IA.">
+<meta property="og:title" content="LE TERMINAL — Étude utilisateurs (~3 min)">
+<meta property="og:description" content="Aidez-nous à bâtir votre hub trading. Les premiers inscrits débloquent un accès gratuit à la bêta.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2305080C'/%3E%3Crect x='1.5' y='1.5' width='29' height='29' rx='6' fill='none' stroke='%239DC8F6' stroke-width='2'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='14' font-weight='bold' fill='%23EAF1F8' text-anchor='middle'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05080C;
+    --panel: #0D131B;
+    --border: #1B2531;
+    --border-hover: #2C3D52;
+    --text: #EAF1F8;
+    --muted: #8FA3B8;
+    --accent: #9DC8F6;
+    --accent-ink: #06121F;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Space Grotesk", "Inter", "Archivo", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Barre de progression ---------- */
+  #progress {
+    position: fixed; top: 0; left: 0; z-index: 50;
+    height: 3px; width: 0%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(157, 200, 246, .8);
+    transition: width .25s ease;
+  }
+
+  /* ---------- Hero (couverture) ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 28px 24px 72px;
+    text-align: center;
+    background:
+      radial-gradient(1100px 520px at 28% -12%, #0B1624 0%, rgba(11, 22, 36, 0) 62%),
+      radial-gradient(900px 480px at 88% 112%, #08111C 0%, rgba(8, 17, 28, 0) 58%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 22px 38px, rgba(234,241,248,.55) 50%, transparent 51%),
+      radial-gradient(1px 1px at 154px 116px, rgba(234,241,248,.30) 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 248px 52px, rgba(157,200,246,.45) 50%, transparent 51%),
+      radial-gradient(1px 1px at 88px 188px, rgba(234,241,248,.22) 50%, transparent 51%),
+      radial-gradient(1.2px 1.2px at 312px 152px, rgba(234,241,248,.40) 50%, transparent 51%);
+    background-size: 380px 240px, 420px 300px, 460px 260px, 340px 280px, 520px 320px;
+  }
+  .brand {
+    position: relative;
+    display: flex; align-items: center; gap: 10px;
+    justify-content: flex-start;
+    font-weight: 700; font-size: .82rem;
+    letter-spacing: .42em; text-indent: .42em;
+    margin-bottom: 64px;
+  }
+  .brand-mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px;
+    border: 1.5px solid var(--text); border-radius: 8px;
+    font-family: ui-monospace, monospace;
+    font-size: .78rem; letter-spacing: 0; text-indent: 0;
+    flex: none;
+  }
+  .eyebrow {
+    position: relative;
+    color: var(--accent);
+    font-size: .8rem; font-weight: 500;
+    letter-spacing: .5em; text-indent: .5em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+  }
+  .hero h1 {
+    position: relative;
+    margin: 0 0 22px;
+    font-size: clamp(3rem, 12.5vw, 7.5rem);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.02;
+  }
+  .hero .tagline {
+    position: relative;
+    margin: 0 0 14px;
+    font-size: clamp(1.25rem, 3.4vw, 1.9rem);
+    font-weight: 700;
+  }
+  .hero .tagline strong { color: var(--accent); }
+  .hero .sub {
+    position: relative;
+    margin: 0 auto;
+    max-width: 640px;
+    color: var(--muted);
+    font-size: clamp(.95rem, 2.4vw, 1.1rem);
+  }
+
+  /* ---------- Mise en page ---------- */
+  main { max-width: 740px; margin: 0 auto; padding: 48px 20px 80px; }
+
+  .section-title {
+    display: flex; align-items: center; gap: 14px;
+    margin: 56px 0 22px;
+    font-size: .92rem; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase;
+  }
+  .section-title span { color: var(--accent); }
+  .section-title::after {
+    content: ""; flex: 1; height: 1px; background: var(--border);
+  }
+
+  /* ---------- Bloc bêta ---------- */
+  .beta {
+    background: linear-gradient(180deg, rgba(157,200,246,.10), rgba(157,200,246,.03));
+    border: 1px solid rgba(157,200,246,.35);
+    border-radius: 16px;
+    padding: 26px 22px;
+  }
+  .beta-kicker {
+    color: var(--accent);
+    font-size: .78rem; font-weight: 700;
+    letter-spacing: .3em; text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+
+  /* ---------- Questions ---------- */
+  fieldset.q, .q { border: 0; padding: 0; margin: 0 0 34px; min-width: 0; }
+  .q legend, .q .q-label {
+    float: left; width: 100%;
+    padding: 0; margin: 0 0 4px;
+    font-size: 1.06rem; font-weight: 700;
+  }
+  .q .hint {
+    clear: both;
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: .9rem;
+  }
+  .q legend + .opts, .q legend + input, .q legend + textarea,
+  .q .q-label + input, .q .q-label + textarea { clear: both; }
+  .opts { clear: both; display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }
+  .opts.cols { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 600px) { .opts.cols { grid-template-columns: 1fr; } }
+
+  label.opt {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 14px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  label.opt:hover { border-color: var(--border-hover); }
+  label.opt:has(input:checked) {
+    border-color: var(--accent);
+    background: rgba(157, 200, 246, .07);
+  }
+  label.opt input[type="radio"], label.opt input[type="checkbox"] {
+    accent-color: var(--accent);
+    width: 18px; height: 18px;
+    margin: 0; flex: none;
+    cursor: pointer;
+  }
+  label.opt .other-input { flex: 1; min-width: 0; padding: 6px 10px; margin: -4px 0; }
+
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px 15px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    font: inherit;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  label.opt .other-input { margin-top: 0; }
+  input::placeholder, textarea::placeholder { color: #5C7088; }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(157, 200, 246, .18);
+  }
+  textarea { min-height: 110px; resize: vertical; }
+
+  /* ---------- Envoi ---------- */
+  .submit-zone { margin-top: 56px; text-align: center; }
+  #submit-btn {
+    width: 100%;
+    padding: 17px 28px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: 0; border-radius: 13px;
+    font: inherit; font-size: 1.08rem; font-weight: 700;
+    letter-spacing: .02em;
+    cursor: pointer;
+    transition: filter .15s, transform .1s;
+  }
+  #submit-btn:hover { filter: brightness(1.08); }
+  #submit-btn:active { transform: translateY(1px); }
+  #submit-btn:disabled { opacity: .55; cursor: wait; }
+  .privacy {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: .82rem;
+  }
+  #form-error {
+    display: none;
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: rgba(246, 157, 157, .08);
+    border: 1px solid rgba(246, 157, 157, .4);
+    border-radius: 12px;
+    color: #F6B3B3;
+    font-size: .92rem;
+    text-align: left;
+  }
+  #form-error a { color: var(--accent); }
+
+  /* ---------- Écran de fin ---------- */
+  #done { display: none; text-align: center; padding: 70px 20px 90px; }
+  #done .check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 74px; height: 74px;
+    border-radius: 50%;
+    background: rgba(157, 200, 246, .12);
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+  #done h2 { font-size: 2rem; margin: 0 0 12px; }
+  #done p { color: var(--muted); max-width: 480px; margin: 0 auto 8px; }
+  #done .beta-confirm { color: var(--accent); font-weight: 500; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: .78rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    padding: 26px 20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header class="hero">
+  <div class="brand"><span class="brand-mark">&gt;_</span>LE TERMINAL</div>
+  <p class="eyebrow">· Étude utilisateurs · ~3 min ·</p>
+  <h1>LE TERMINAL</h1>
+  <p class="tagline">Aidez-nous à bâtir <strong>votre hub trading.</strong></p>
+  <p class="sub">Crypto · Forex · Actions · ETF — réunis sur un seul écran, propulsés par l'IA.</p>
+</header>
+
+<main>
+  <form id="survey" novalidate>
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+    <!-- ⭐ Bloc d'accueil — Accès anticipé -->
+    <div class="beta">
+      <p class="beta-kicker">⭐ Accès anticipé</p>
+
+      <fieldset class="q">
+        <legend>Voulez-vous tester LE TERMINAL en avant-première ?</legend>
+        <p class="hint">Les premiers inscrits débloquent un accès gratuit à la bêta et orientent les fonctionnalités.</p>
+        <div class="opts cols">
+          <label class="opt"><input type="radio" name="q1" value="Oui, je veux la bêta"><span>Oui, je veux la bêta</span></label>
+          <label class="opt"><input type="radio" name="q1" value="Non merci"><span>Non merci</span></label>
+        </div>
+      </fieldset>
+
+      <div class="q">
+        <label class="q-label" for="q2">Votre e-mail (pour la bêta) <span style="color:var(--muted);font-weight:400">— facultatif</span></label>
+        <p class="hint">Sert uniquement à vous prévenir du lancement de la bêta.</p>
+        <input type="email" id="q2" name="q2" placeholder="vous@exemple.com" autocomplete="email">
+      </div>
+    </div>
+
+    <!-- 01 · Votre profil -->
+    <h2 class="section-title"><span>01</span> Votre profil</h2>
+
+    <fieldset class="q">
+      <legend>Quel est votre niveau ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q3" value="Débutant"><span>Débutant</span></label>
+        <label class="opt"><input type="radio" name="q3" value="Intermédiaire"><span>Intermédiaire</span></label>
+        <label class="opt"><input type="radio" name="q3" value="Confirmé"><span>Confirmé</span></label>
+        <label class="opt"><input type="radio" name="q3" value="Professionnel"><span>Professionnel</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend>Sur quels marchés investissez-vous ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="checkbox" name="q4" value="Cryptomonnaies"><span>Cryptomonnaies</span></label>
+        <label class="opt"><input type="checkbox" name="q4" value="Forex"><span>Forex</span></label>
+        <label class="opt"><input type="checkbox" name="q4" value="Actions"><span>Actions</span></label>
+        <label class="opt"><input type="checkbox" name="q4" value="ETF"><span>ETF</span></label>
+        <label class="opt"><input type="checkbox" name="q4" value="Matières premières"><span>Matières premières</span></label>
+        <label class="opt"><input type="checkbox" name="q4" value="Indices"><span>Indices</span></label>
+        <label class="opt"><input type="checkbox" name="q4" value="Autre" data-other="q4_autre"><input type="text" class="other-input" name="q4_autre" placeholder="Autre — précisez…"></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend>À quelle fréquence tradez-vous ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q5" value="Plusieurs fois par jour"><span>Plusieurs fois par jour</span></label>
+        <label class="opt"><input type="radio" name="q5" value="Tous les jours"><span>Tous les jours</span></label>
+        <label class="opt"><input type="radio" name="q5" value="Chaque semaine"><span>Chaque semaine</span></label>
+        <label class="opt"><input type="radio" name="q5" value="Chaque mois"><span>Chaque mois</span></label>
+        <label class="opt"><input type="radio" name="q5" value="Occasionnellement"><span>Occasionnellement</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend>Quel est votre style principal ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q6" value="Scalping / Day trading"><span>Scalping / Day trading</span></label>
+        <label class="opt"><input type="radio" name="q6" value="Swing trading"><span>Swing trading</span></label>
+        <label class="opt"><input type="radio" name="q6" value="Long terme"><span>Long terme</span></label>
+        <label class="opt"><input type="radio" name="q6" value="Un mélange"><span>Un mélange</span></label>
+      </div>
+    </fieldset>
+
+    <!-- 02 · Vos habitudes -->
+    <h2 class="section-title"><span>02</span> Vos habitudes</h2>
+
+    <fieldset class="q">
+      <legend>Combien d'outils utilisez-vous en parallèle pendant une session ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q7" value="1 à 2"><span>1 à 2</span></label>
+        <label class="opt"><input type="radio" name="q7" value="3 à 4"><span>3 à 4</span></label>
+        <label class="opt"><input type="radio" name="q7" value="5 ou plus"><span>5 ou plus</span></label>
+      </div>
+    </fieldset>
+
+    <div class="q">
+      <label class="q-label" for="q8">Lesquels, concrètement ?</label>
+      <p class="hint">Ex. TradingView, Binance, votre broker, sites de news, Excel…</p>
+      <input type="text" id="q8" name="q8" placeholder="Vos outils du quotidien">
+    </div>
+
+    <fieldset class="q">
+      <legend>Quels brokers, exchanges ou wallets utilisez-vous ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="checkbox" name="q9" value="Binance"><span>Binance</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Kraken"><span>Kraken</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Coinbase"><span>Coinbase</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Bybit"><span>Bybit</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Interactive Brokers"><span>Interactive Brokers</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="MetaTrader (MT4/MT5)"><span>MetaTrader (MT4/MT5)</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Trade Republic"><span>Trade Republic</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="eToro"><span>eToro</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Degiro"><span>Degiro</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Ledger / Trezor"><span>Ledger / Trezor</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="MetaMask"><span>MetaMask</span></label>
+        <label class="opt"><input type="checkbox" name="q9" value="Autre" data-other="q9_autre"><input type="text" class="other-input" name="q9_autre" placeholder="Autre — précisez…"></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend>Vos plus grosses frustrations aujourd'hui ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="checkbox" name="q10" value="Trop d'onglets à jongler"><span>Trop d'onglets à jongler</span></label>
+        <label class="opt"><input type="checkbox" name="q10" value="Données dispersées"><span>Données dispersées</span></label>
+        <label class="opt"><input type="checkbox" name="q10" value="Manque d'alertes fiables"><span>Manque d'alertes fiables</span></label>
+        <label class="opt"><input type="checkbox" name="q10" value="Pas de vue d'ensemble du portefeuille"><span>Pas de vue d'ensemble du portefeuille</span></label>
+        <label class="opt"><input type="checkbox" name="q10" value="Outils trop chers"><span>Outils trop chers</span></label>
+        <label class="opt"><input type="checkbox" name="q10" value="Autre" data-other="q10_autre"><input type="text" class="other-input" name="q10_autre" placeholder="Autre — précisez…"></label>
+      </div>
+    </fieldset>
+
+    <!-- 03 · Les fonctionnalités -->
+    <h2 class="section-title"><span>03</span> Les fonctionnalités</h2>
+
+    <fieldset class="q">
+      <legend>Quelles fonctionnalités seraient indispensables ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="checkbox" name="q11" value="Graphiques avancés"><span>Graphiques avancés</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Watchlists"><span>Watchlists</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Alertes prix / indicateurs"><span>Alertes prix / indicateurs</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="News temps réel"><span>News temps réel</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Analyse de sentiment"><span>Analyse de sentiment</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Calendrier économique"><span>Calendrier économique</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Portefeuille consolidé multi-broker"><span>Portefeuille consolidé multi-broker</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Screener"><span>Screener</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Backtesting"><span>Backtesting</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Copy trading"><span>Copy trading</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Journal de trading"><span>Journal de trading</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Calcul des impôts / plus-values"><span>Calcul des impôts / plus-values</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Gestion du risque"><span>Gestion du risque</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Données on-chain"><span>Données on-chain</span></label>
+        <label class="opt"><input type="checkbox" name="q11" value="Analyse de setups par IA (ICT/SMC/PA)"><span>Analyse de setups par IA (ICT/SMC/PA)</span></label>
+      </div>
+    </fieldset>
+
+    <div class="q">
+      <label class="q-label" for="q12">Si vous ne deviez en garder que 3, lesquelles ?</label>
+      <p class="hint">Les plus vitales pour vous.</p>
+      <input type="text" id="q12" name="q12" placeholder="Vos 3 indispensables">
+    </div>
+
+    <fieldset class="q">
+      <legend>Côté IA, qu'est-ce qui vous séduirait le plus ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="checkbox" name="q13" value="Résumé auto des news"><span>Résumé auto des news</span></label>
+        <label class="opt"><input type="checkbox" name="q13" value="Assistant chat sur un actif"><span>Assistant chat sur un actif</span></label>
+        <label class="opt"><input type="checkbox" name="q13" value="Détection de patterns"><span>Détection de patterns</span></label>
+        <label class="opt"><input type="checkbox" name="q13" value="Score de setup /100"><span>Score de setup /100</span></label>
+        <label class="opt"><input type="checkbox" name="q13" value="Signaux &amp; opportunités"><span>Signaux &amp; opportunités</span></label>
+        <label class="opt"><input type="checkbox" name="q13" value="Analyse de mon portefeuille"><span>Analyse de mon portefeuille</span></label>
+        <label class="opt"><input type="checkbox" name="q13" value="Aucune, je décide seul"><span>Aucune, je décide seul</span></label>
+      </div>
+    </fieldset>
+
+    <div class="q">
+      <label class="q-label" for="q14">Une fonctionnalité dont vous rêvez mais qui n'existe nulle part ?</label>
+      <textarea id="q14" name="q14" placeholder="Carte blanche…"></textarea>
+    </div>
+
+    <!-- 04 · Usage & attentes -->
+    <h2 class="section-title"><span>04</span> Usage &amp; attentes</h2>
+
+    <fieldset class="q">
+      <legend>Vous l'utiliseriez surtout sur :</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q15" value="Ordinateur"><span>Ordinateur</span></label>
+        <label class="opt"><input type="radio" name="q15" value="Mobile"><span>Mobile</span></label>
+        <label class="opt"><input type="radio" name="q15" value="Les deux"><span>Les deux</span></label>
+      </div>
+    </fieldset>
+
+    <div class="q">
+      <label class="q-label" for="q16">Qu'est-ce qui vous ferait quitter vos outils actuels ?</label>
+      <textarea id="q16" name="q16" placeholder="Le déclic qui vous ferait changer…"></textarea>
+    </div>
+
+    <!-- 05 · Valeur & prix -->
+    <h2 class="section-title"><span>05</span> Valeur &amp; prix</h2>
+
+    <fieldset class="q">
+      <legend>Seriez-vous prêt à payer pour un tel outil ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q17" value="Oui"><span>Oui</span></label>
+        <label class="opt"><input type="radio" name="q17" value="Non"><span>Non</span></label>
+        <label class="opt"><input type="radio" name="q17" value="Ça dépend des fonctionnalités"><span>Ça dépend des fonctionnalités</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend>Quel budget mensuel vous semblerait juste ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q18" value="Gratuit uniquement"><span>Gratuit uniquement</span></label>
+        <label class="opt"><input type="radio" name="q18" value="Moins de 10 €"><span>Moins de 10 €</span></label>
+        <label class="opt"><input type="radio" name="q18" value="10–30 €"><span>10–30 €</span></label>
+        <label class="opt"><input type="radio" name="q18" value="30–50 €"><span>30–50 €</span></label>
+        <label class="opt"><input type="radio" name="q18" value="Plus de 50 €"><span>Plus de 50 €</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <legend>Quel modèle préféreriez-vous ?</legend>
+      <div class="opts cols">
+        <label class="opt"><input type="radio" name="q19" value="Abonnement mensuel"><span>Abonnement mensuel</span></label>
+        <label class="opt"><input type="radio" name="q19" value="Achat unique"><span>Achat unique</span></label>
+        <label class="opt"><input type="radio" name="q19" value="Freemium"><span>Freemium</span></label>
+        <label class="opt"><input type="radio" name="q19" value="Peu importe"><span>Peu importe</span></label>
+      </div>
+    </fieldset>
+
+    <div class="submit-zone">
+      <button type="submit" id="submit-btn">Envoyer mes réponses →</button>
+      <p class="privacy">Toutes les questions sont facultatives. Vos réponses restent confidentielles —
+      l'e-mail sert uniquement à vous prévenir du lancement de la bêta.</p>
+      <div id="form-error"></div>
+    </div>
+  </form>
+
+  <section id="done">
+    <div class="check">✓</div>
+    <h2>Merci !</h2>
+    <p>Vos réponses ont bien été envoyées. Elles orientent directement ce que nous construisons.</p>
+    <p class="beta-confirm" id="beta-confirm" hidden>🚀 Vous êtes sur la liste : vous serez parmi les premiers prévenus pour la bêta.</p>
+  </section>
+</main>
+
+<footer>LE TERMINAL · Étude utilisateurs</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var ENDPOINT = "https://formsubmit.co/ajax/pascal.obstetar@gmail.com";
+  var FALLBACK_EMAIL = "pascal.obstetar@gmail.com";
+  var DRAFT_KEY = "terminal_survey_draft";
+
+  var form = document.getElementById("survey");
+  var progress = document.getElementById("progress");
+  var submitBtn = document.getElementById("submit-btn");
+  var errorBox = document.getElementById("form-error");
+
+  var QUESTIONS = [
+    { name: "q1",  label: "Q1 — Tester LE TERMINAL en avant-première" },
+    { name: "q2",  label: "Q2 — E-mail (bêta)" },
+    { name: "q3",  label: "Q3 — Niveau" },
+    { name: "q4",  label: "Q4 — Marchés", other: "q4_autre" },
+    { name: "q5",  label: "Q5 — Fréquence de trading" },
+    { name: "q6",  label: "Q6 — Style principal" },
+    { name: "q7",  label: "Q7 — Outils en parallèle" },
+    { name: "q8",  label: "Q8 — Outils utilisés" },
+    { name: "q9",  label: "Q9 — Brokers / exchanges / wallets", other: "q9_autre" },
+    { name: "q10", label: "Q10 — Frustrations", other: "q10_autre" },
+    { name: "q11", label: "Q11 — Fonctionnalités indispensables" },
+    { name: "q12", label: "Q12 — Top 3 fonctionnalités" },
+    { name: "q13", label: "Q13 — Attentes côté IA" },
+    { name: "q14", label: "Q14 — Fonctionnalité rêvée" },
+    { name: "q15", label: "Q15 — Support (ordinateur / mobile)" },
+    { name: "q16", label: "Q16 — Ce qui ferait quitter les outils actuels" },
+    { name: "q17", label: "Q17 — Prêt à payer" },
+    { name: "q18", label: "Q18 — Budget mensuel" },
+    { name: "q19", label: "Q19 — Modèle préféré" }
+  ];
+
+  /* Valeur d'une question : chaîne (vide si sans réponse). */
+  function answerOf(q) {
+    var els = form.elements[q.name];
+    if (!els) return "";
+    if (els instanceof HTMLElement && (els.type === "text" || els.type === "email" || els.tagName === "TEXTAREA")) {
+      return els.value.trim();
+    }
+    var list = els.length !== undefined ? Array.prototype.slice.call(els) : [els];
+    var picked = [];
+    list.forEach(function (el) {
+      if (!el.checked) return;
+      if (el.value === "Autre" && q.other) {
+        var other = form.elements[q.other].value.trim();
+        picked.push(other ? "Autre : " + other : "Autre");
+      } else {
+        picked.push(el.value);
+      }
+    });
+    return picked.join(" · ");
+  }
+
+  /* ---------- Barre de progression ---------- */
+  function updateProgress() {
+    var answered = QUESTIONS.filter(function (q) { return answerOf(q) !== ""; }).length;
+    progress.style.width = (answered / QUESTIONS.length * 100) + "%";
+  }
+
+  /* ---------- Champs « Autre… » : taper coche la case ---------- */
+  form.querySelectorAll(".other-input").forEach(function (input) {
+    input.addEventListener("input", function () {
+      var box = form.querySelector('input[data-other="' + input.name + '"]');
+      if (box) box.checked = input.value.trim() !== "";
+    });
+  });
+
+  /* ---------- Brouillon automatique (localStorage) ---------- */
+  function saveDraft() {
+    try {
+      var data = {};
+      Array.prototype.forEach.call(form.elements, function (el) {
+        if (!el.name || el.name.charAt(0) === "_") return;
+        if (el.type === "radio" || el.type === "checkbox") {
+          if (el.checked) (data[el.name] = data[el.name] || []).push(el.value);
+        } else if (el.value) {
+          data[el.name] = el.value;
+        }
+      });
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+    } catch (e) { /* stockage indisponible : tant pis */ }
+  }
+
+  function restoreDraft() {
+    try {
+      var raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) return;
+      var data = JSON.parse(raw);
+      Object.keys(data).forEach(function (name) {
+        var els = form.elements[name];
+        if (!els) return;
+        var list = els.length !== undefined && !(els instanceof HTMLElement) ? Array.prototype.slice.call(els) : [els];
+        list.forEach(function (el) {
+          if (el.type === "radio" || el.type === "checkbox") {
+            el.checked = data[name].indexOf(el.value) !== -1;
+          } else {
+            el.value = data[name];
+          }
+        });
+      });
+    } catch (e) { /* brouillon illisible : on repart à zéro */ }
+  }
+
+  var saveTimer = null;
+  form.addEventListener("input", function () {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveDraft, 300);
+    updateProgress();
+  });
+  form.addEventListener("change", function () {
+    saveDraft();
+    updateProgress();
+  });
+
+  /* ---------- Envoi ---------- */
+  function buildPayload() {
+    var payload = {
+      _subject: "Nouvelle réponse — Étude LE TERMINAL",
+      _template: "table",
+      _captcha: "false",
+      _honey: form.elements["_honey"].value
+    };
+    var answered = 0;
+    QUESTIONS.forEach(function (q) {
+      var a = answerOf(q);
+      if (a !== "") answered++;
+      payload[q.label] = a || "—";
+    });
+    payload["Questions répondues"] = answered + "/" + QUESTIONS.length;
+    payload["Horodatage"] = new Date().toISOString();
+    var email = answerOf(QUESTIONS[1]);
+    if (email) payload._replyto = email;
+    return payload;
+  }
+
+  function mailtoFallback(payload) {
+    var body = QUESTIONS.map(function (q) { return q.label + " : " + (payload[q.label] || "—"); }).join("\n");
+    return "mailto:" + FALLBACK_EMAIL +
+      "?subject=" + encodeURIComponent("Réponse — Étude LE TERMINAL") +
+      "&body=" + encodeURIComponent(body).slice(0, 1800);
+  }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    errorBox.style.display = "none";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Envoi en cours…";
+
+    var payload = buildPayload();
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }).then(function () {
+      try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+      form.style.display = "none";
+      var done = document.getElementById("done");
+      done.style.display = "block";
+      if (answerOf(QUESTIONS[0]).indexOf("Oui") === 0 || answerOf(QUESTIONS[1]) !== "") {
+        document.getElementById("beta-confirm").hidden = false;
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }).catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Envoyer mes réponses →";
+      errorBox.innerHTML = "L'envoi a échoué (réseau ?). Vos réponses sont conservées sur cette page — " +
+        "réessayez dans un instant, ou <a href=\"" + mailtoFallback(payload) + "\">envoyez-les par e-mail en un clic</a>.";
+      errorBox.style.display = "block";
+    });
+  });
+
+  restoreDraft();
+  updateProgress();
+})();
+</script>
+</body>
+</html>

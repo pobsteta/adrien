@@ -52,3 +52,23 @@ Affiche les leads par source et par VA — base de calcul des 20 %.
 
 Le post et les messages incluent le disclaimer risque + disclosure d'affiliation
 (FxLift). À ne pas retirer.
+
+## Questionnaire « Étude utilisateurs » (`docs/index.html`)
+
+Page web autonome (un seul fichier, zéro dépendance) qui reprend la DA du
+Terminal : fond `#05080C`, accent bleu glacier `#9DC8F6`, Space Grotesk.
+Les 19 questions de l'étude, toutes facultatives, bloc bêta + e-mail en premier,
+brouillon sauvegardé en local, barre de progression, responsive mobile.
+
+**Publier (GitHub Pages)** : *Settings → Pages → Deploy from a branch* →
+branche `main`, dossier `/docs`. Le formulaire est alors en ligne sur
+`https://pobsteta.github.io/adrien/`.
+
+**Réponses** : envoyées par e-mail (mise en forme tableau) via FormSubmit à
+`pascal.obstetar@gmail.com`. ⚠️ À la **première** soumission, FormSubmit envoie
+un e-mail d'activation à cette adresse — cliquer le lien une fois, puis tout
+arrive automatiquement. Pour changer de destinataire : modifier `ENDPOINT` et
+`FALLBACK_EMAIL` dans le script en bas de `docs/index.html`.
+
+Si tu préfères un export CSV/Sheets natif, le guide Tally/Google Forms reste
+valable — cette page peut servir de version « look premium » en parallèle.
